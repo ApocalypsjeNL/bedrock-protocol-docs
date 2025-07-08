@@ -3,14 +3,16 @@ rankdir = LR
 0
 0 -> 1
 1 -> 2
-0 -> 3
-3 -> 4
+2 -> 3
+0 -> 4
+4 -> 5
 
-0 [label="DebugInfoPacket",comment="name: \"DebugInfoPacket\", typeName: \"\", id: 0, branchId: 155, recurseId: -1, attributes: 0, notes: \"\""];
-1 [label="Actor Id",comment="name: \"Actor Id\", typeName: \"ActorUniqueID\", id: 1, branchId: 0, recurseId: -1, attributes: 256, notes: \"\""];
-2 [label="ActorUniqueID",comment="name: \"ActorUniqueID\", typeName: \"\", id: 2, branchId: 0, recurseId: -1, attributes: 512, notes: \"\""];
-3 [label="Data",comment="name: \"Data\", typeName: \"\", id: 3, branchId: 0, recurseId: -1, attributes: 0, notes: \"\""];
-4 [label="string",comment="name: \"string\", typeName: \"\", id: 4, branchId: 0, recurseId: -1, attributes: 512, notes: \"\""];
-{ rank = max;2;4}
+0 [label="DebugInfoPacket",comment="name: \"DebugInfoPacket\", typeName: \"\", id: 0, branchId: 0, recurseId: -1, attributes: 0, notes: \"The system sends debug information via a generic network packet. This enables rendering of any server information on the client in for instance ImGui.\""];
+1 [label="Actor Id",comment="name: \"Actor Id\", typeName: \"\", id: 1, branchId: 0, recurseId: -1, attributes: 0, notes: \"\""];
+2 [label="Actor Unique ID",comment="name: \"Actor Unique ID\", typeName: \"\", id: 2, branchId: 0, recurseId: -1, attributes: 0, notes: \"\""];
+3 [label="varint64",comment="name: \"varint64\", typeName: \"\", id: 3, branchId: 0, recurseId: -1, attributes: 512, notes: \"\""];
+4 [label="Data",comment="name: \"Data\", typeName: \"\", id: 4, branchId: 0, recurseId: -1, attributes: 0, notes: \"\""];
+5 [label="string",comment="name: \"string\", typeName: \"\", id: 5, branchId: 0, recurseId: -1, attributes: 512, notes: \"\""];
+{ rank = max;3;5}
 
 }

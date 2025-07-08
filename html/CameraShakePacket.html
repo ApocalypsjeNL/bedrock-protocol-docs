@@ -1,6 +1,24 @@
-<!DOCTYPE html> <html> <head><style>table{font-family: arial, sans-serif;border-collapse: collapse;width: 100% ;}.tab { margin-left: 40px; }td, th{text-align: left;padding: 8px;}tr:nth-child(even) {background-color: #dddddd;}div#expand{display:block;}</style> </head> <body><img src="svg/CameraShakePacket.svg" alt="CameraShakePacket">
-<br><table><col width="10%"><col width="90%"><tr><th>Field Name</th><th>Field Notes</th></tr><tr><td>Intensity</td>
+<!DOCTYPE html> <html> <head><style>table{font-family: arial, sans-serif;border-collapse: collapse;width: 100% ;}.tab { margin-left: 40px; }td, th{text-align: left;padding: 8px;}tr:nth-child(even) {background-color: #dddddd;}div#expand{display:block;}</style> </head> <body><h1>CameraShakePacket (id: 159)</h1>
+<table><col width="1%"><col width="99%"><tr><th></th><th></th></tr><tr><td> <b>Purpose:</b> </td>
+<td>Used to control trigger camera shake movements on the client's player camera</td>
+</tr><tr><td> <b>Notes:</b> </td>
+<td>It may be used to queue or stop a camera shake</td>
+</tr></table><br><h2>Payload</h2>
+<img src="svg/CameraShakePacket.svg" alt="CameraShakePacket">
+<br><br><br><table><col width="10%"><col width="10%"><col width="15%"><col width="80%"><tr><th>Field Name</th><th>Field Type</th><th>Field Constraints</th><th>Field Notes</th></tr><tr><td>Intensity</td>
+<td>float</td>
+<td></td>
 <td>Camera shake intensity</td>
 </tr><tr><td>Seconds</td>
-<td>Duration</td>
+<td>float</td>
+<td></td>
+<td>Camera shake duration in seconds</td>
+</tr><tr><td>Shake Type</td>
+<td>enum CameraShakeType</td>
+<td></td>
+<td>The type of calculation used for determining camera shake</td>
+</tr><tr><td>Shake Action</td>
+<td>enum CameraShakeAction</td>
+<td></td>
+<td>The action to perform to camera shake</td>
 </tr></table></body> </html>

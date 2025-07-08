@@ -8,7 +8,7 @@ rankdir = LR
 0 -> 5
 5 -> 6
 
-0 [label="GuiDataPickItemPacket",comment="name: \"GuiDataPickItemPacket\", typeName: \"\", id: 0, branchId: 54, recurseId: -1, attributes: 0, notes: \"\""];
+0 [label="GuiDataPickItemPacket",comment="name: \"GuiDataPickItemPacket\", typeName: \"\", id: 0, branchId: 0, recurseId: -1, attributes: 0, notes: \"The server telling the client what item slot to hover over in the hotbar.\""];
 1 [label="Item Name",comment="name: \"Item Name\", typeName: \"\", id: 1, branchId: 0, recurseId: -1, attributes: 0, notes: \"\""];
 2 [label="string",comment="name: \"string\", typeName: \"\", id: 2, branchId: 0, recurseId: -1, attributes: 512, notes: \"\""];
 3 [label="Item Effect Name",comment="name: \"Item Effect Name\", typeName: \"\", id: 3, branchId: 0, recurseId: -1, attributes: 0, notes: \"\""];

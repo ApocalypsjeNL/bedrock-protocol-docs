@@ -2,7 +2,7 @@ digraph "ClientboundCloseFormPacket" {
 rankdir = LR
 0
 
-0 [label="ClientboundCloseFormPacket",comment="name: \"ClientboundCloseFormPacket\", typeName: \"\", id: 0, branchId: 310, recurseId: -1, attributes: 0, notes: \"\""];
+0 [label="ClientboundCloseFormPacket",comment="name: \"ClientboundCloseFormPacket\", typeName: \"\", id: 0, branchId: 0, recurseId: -1, attributes: 0, notes: \"Sent from the server to client to force close all server forms on the stack and return to the HUD screen.\""];
 { rank = max}
 
 }

@@ -1,2 +1,16 @@
-<!DOCTYPE html> <html> <head><style>table{font-family: arial, sans-serif;border-collapse: collapse;width: 100% ;}.tab { margin-left: 40px; }td, th{text-align: left;padding: 8px;}tr:nth-child(even) {background-color: #dddddd;}div#expand{display:block;}</style> </head> <body><img src="svg/UnlockedRecipesPacket.svg" alt="UnlockedRecipesPacket">
-<br></body> </html>
+<!DOCTYPE html> <html> <head><style>table{font-family: arial, sans-serif;border-collapse: collapse;width: 100% ;}.tab { margin-left: 40px; }td, th{text-align: left;padding: 8px;}tr:nth-child(even) {background-color: #dddddd;}div#expand{display:block;}</style> </head> <body><h1>UnlockedRecipesPacket (id: 199)</h1>
+<table><col width="1%"><col width="99%"><tr><th></th><th></th></tr><tr><td> <b>Purpose:</b> </td>
+<td>Sent from server to client, for all previously unlocked recipes on load and for any newly unlocked recipes during gameplay.</td>
+</tr><tr><td> <b>Notes:</b> </td>
+<td></td>
+</tr></table><br><h2>Payload</h2>
+<img src="svg/UnlockedRecipesPacket.svg" alt="UnlockedRecipesPacket">
+<br><br><br><table><col width="10%"><col width="10%"><col width="15%"><col width="80%"><tr><th>Field Name</th><th>Field Type</th><th>Field Constraints</th><th>Field Notes</th></tr><tr><td>Packet Type</td>
+<td>enum UnlockedRecipesPacketPayload::PacketType</td>
+<td></td>
+<td></td>
+</tr><tr><td>Unlocked Recipes List</td>
+<td>vector&lt;string&gt;</td>
+<td></td>
+<td></td>
+</tr></table></body> </html>

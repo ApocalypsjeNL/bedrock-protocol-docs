@@ -7,14 +7,18 @@ rankdir = LR
 1 -> 4
 4 -> 5
 5 -> 6
+4 -> 7
+7 -> 8
 
-0 [label="ContainerRegistryCleanupPacket",comment="name: \"ContainerRegistryCleanupPacket\", typeName: \"\", id: 0, branchId: 317, recurseId: -1, attributes: 0, notes: \"\""];
-1 [label="Removed Containers",comment="name: \"Removed Containers\", typeName: \"\", id: 1, branchId: 0, recurseId: -1, attributes: 8, notes: \"\""];
+0 [label="ContainerRegistryCleanupPacket",comment="name: \"ContainerRegistryCleanupPacket\", typeName: \"\", id: 0, branchId: 0, recurseId: -1, attributes: 0, notes: \"This is used to trigger a clientside cleanup of the dynamic container registry.\""];
+1 [label="Removed Containers",comment="name: \"Removed Containers\", typeName: \"\", id: 1, branchId: 0, recurseId: -1, attributes: 0, notes: \"\""];
 2 [label="List Size",comment="name: \"List Size\", typeName: \"\", id: 2, branchId: 0, recurseId: -1, attributes: 0, notes: \"\""];
-3 [label="unsigned varint",comment="name: \"unsigned varint\", typeName: \"\", id: 3, branchId: 0, recurseId: -1, attributes: 512, notes: \"\""];
+3 [label="unsigned varint",comment="name: \"unsigned varint\", typeName: \"\", id: 3, branchId: 0, recurseId: -1, attributes: 0, notes: \"\""];
 4 [label="example element",style=dotted,comment="name: \"example element\", typeName: \"\", id: 4, branchId: 0, recurseId: -1, attributes: 16, notes: \"\""];
-5 [label="Full Container Name",comment="name: \"Full Container Name\", typeName: \"FullContainerName\", id: 5, branchId: 0, recurseId: -1, attributes: 256, notes: \"\""];
-6 [label="FullContainerName",comment="name: \"FullContainerName\", typeName: \"\", id: 6, branchId: 0, recurseId: -1, attributes: 512, notes: \"\""];
-{ rank = max;3;6}
+5 [label="Container Name",comment="name: \"Container Name\", typeName: \"\", id: 5, branchId: 0, recurseId: -1, attributes: 0, notes: \"\""];
+6 [label="enum ContainerEnumName",comment="name: \"enum ContainerEnumName\", typeName: \"\", id: 6, branchId: 0, recurseId: -1, attributes: 512, notes: \"\""];
+7 [label="Dynamic ID",comment="name: \"Dynamic ID\", typeName: \"\", id: 7, branchId: 0, recurseId: -1, attributes: 0, notes: \"\""];
+8 [label="unsigned int",comment="name: \"unsigned int\", typeName: \"\", id: 8, branchId: 0, recurseId: -1, attributes: 512, notes: \"\""];
+{ rank = max;6;8}
 
 }

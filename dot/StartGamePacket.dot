@@ -52,7 +52,9 @@ rankdir = LR
 0 -> 189
 189 -> 190
 0 -> 191
-191 -> 195
+191 -> 192
+0 -> 193
+193 -> 197
 
 0 [label="StartGamePacket",comment="name: \"StartGamePacket\", typeName: \"\", id: 0, branchId: 11, recurseId: -1, attributes: 0, notes: \"\""];
 1 [label="Entity ID",comment="name: \"Entity ID\", typeName: \"ActorUniqueID\", id: 1, branchId: 0, recurseId: -1, attributes: 256, notes: \"\""];
@@ -105,8 +107,10 @@ rankdir = LR
 188 [label="bool",comment="name: \"bool\", typeName: \"\", id: 188, branchId: 0, recurseId: -1, attributes: 512, notes: \"\""];
 189 [label="BlockNetworkIds Are Hashes",comment="name: \"BlockNetworkIds Are Hashes\", typeName: \"\", id: 189, branchId: 0, recurseId: -1, attributes: 0, notes: \"\""];
 190 [label="bool",comment="name: \"bool\", typeName: \"\", id: 190, branchId: 0, recurseId: -1, attributes: 512, notes: \"\""];
-191 [label="NetworkPermissions",comment="name: \"NetworkPermissions\", typeName: \"NetworkPermissions\", id: 191, branchId: 0, recurseId: -1, attributes: 256, notes: \"\""];
-195 [label="NetworkPermissions",comment="name: \"NetworkPermissions\", typeName: \"\", id: 195, branchId: 0, recurseId: -1, attributes: 512, notes: \"\""];
-{ rank = max;5;10;12;14;21;147;149;151;153;155;162;164;166;169;172;174;176;178;180;182;184;186;188;190;195}
+191 [label="TickDeathSystems Enabled",comment="name: \"TickDeathSystems Enabled\", typeName: \"\", id: 191, branchId: 0, recurseId: -1, attributes: 0, notes: \"Whether the new tick death systems are enabled. This will eventually be required.\""];
+192 [label="bool",comment="name: \"bool\", typeName: \"\", id: 192, branchId: 0, recurseId: -1, attributes: 512, notes: \"\""];
+193 [label="NetworkPermissions",comment="name: \"NetworkPermissions\", typeName: \"NetworkPermissions\", id: 193, branchId: 0, recurseId: -1, attributes: 256, notes: \"\""];
+197 [label="NetworkPermissions",comment="name: \"NetworkPermissions\", typeName: \"\", id: 197, branchId: 0, recurseId: -1, attributes: 512, notes: \"\""];
+{ rank = max;5;10;12;14;21;147;149;151;153;155;162;164;166;169;172;174;176;178;180;182;184;186;188;190;192;197}
 
 }

@@ -3,14 +3,18 @@ rankdir = LR
 0
 0 -> 1
 1 -> 2
-0 -> 3
-3 -> 4
+2 -> 3
+0 -> 4
+4 -> 5
+5 -> 6
 
-0 [label="TakeItemActorPacket",comment="name: \"TakeItemActorPacket\", typeName: \"\", id: 0, branchId: 17, recurseId: -1, attributes: 0, notes: \"\""];
-1 [label="Item Runtime ID",comment="name: \"Item Runtime ID\", typeName: \"ActorRuntimeID\", id: 1, branchId: 0, recurseId: -1, attributes: 256, notes: \"\""];
-2 [label="ActorRuntimeID",comment="name: \"ActorRuntimeID\", typeName: \"\", id: 2, branchId: 0, recurseId: -1, attributes: 512, notes: \"\""];
-3 [label="Actor Runtime ID",comment="name: \"Actor Runtime ID\", typeName: \"ActorRuntimeID\", id: 3, branchId: 0, recurseId: -1, attributes: 256, notes: \"\""];
-4 [label="ActorRuntimeID",comment="name: \"ActorRuntimeID\", typeName: \"\", id: 4, branchId: 0, recurseId: -1, attributes: 512, notes: \"\""];
-{ rank = max;2;4}
+0 [label="TakeItemActorPacket",comment="name: \"TakeItemActorPacket\", typeName: \"\", id: 0, branchId: 0, recurseId: -1, attributes: 0, notes: \"A packet sent to the server when deal with picking up an item off the ground in the world.\""];
+1 [label="Item Runtime ID",comment="name: \"Item Runtime ID\", typeName: \"\", id: 1, branchId: 0, recurseId: -1, attributes: 0, notes: \"\""];
+2 [label="Actor Runtime ID",comment="name: \"Actor Runtime ID\", typeName: \"\", id: 2, branchId: 0, recurseId: -1, attributes: 0, notes: \"\""];
+3 [label="unsigned varint64",comment="name: \"unsigned varint64\", typeName: \"\", id: 3, branchId: 0, recurseId: -1, attributes: 512, notes: \"\""];
+4 [label="Actor Runtime ID",comment="name: \"Actor Runtime ID\", typeName: \"\", id: 4, branchId: 0, recurseId: -1, attributes: 0, notes: \"\""];
+5 [label="Actor Runtime ID",comment="name: \"Actor Runtime ID\", typeName: \"\", id: 5, branchId: 0, recurseId: -1, attributes: 0, notes: \"\""];
+6 [label="unsigned varint64",comment="name: \"unsigned varint64\", typeName: \"\", id: 6, branchId: 0, recurseId: -1, attributes: 512, notes: \"\""];
+{ rank = max;3;6}
 
 }

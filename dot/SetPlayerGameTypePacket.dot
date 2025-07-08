@@ -4,9 +4,9 @@ rankdir = LR
 0 -> 1
 1 -> 2
 
-0 [label="SetPlayerGameTypePacket",comment="name: \"SetPlayerGameTypePacket\", typeName: \"\", id: 0, branchId: 62, recurseId: -1, attributes: 0, notes: \"\""];
+0 [label="SetPlayerGameTypePacket",comment="name: \"SetPlayerGameTypePacket\", typeName: \"\", id: 0, branchId: 0, recurseId: -1, attributes: 0, notes: \"Set Player Game Type\""];
 1 [label="Player Game Type",comment="name: \"Player Game Type\", typeName: \"\", id: 1, branchId: 0, recurseId: -1, attributes: 0, notes: \"\""];
-2 [label="varint",comment="name: \"varint\", typeName: \"\", id: 2, branchId: 0, recurseId: -1, attributes: 512, notes: \"\""];
+2 [label="enum GameType",comment="name: \"enum GameType\", typeName: \"\", id: 2, branchId: 0, recurseId: -1, attributes: 512, notes: \"\""];
 { rank = max;2}
 
 }

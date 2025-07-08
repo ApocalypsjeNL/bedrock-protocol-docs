@@ -3,14 +3,18 @@ rankdir = LR
 0
 0 -> 1
 1 -> 2
-0 -> 3
-3 -> 4
+2 -> 3
+0 -> 4
+4 -> 5
+5 -> 6
 
-0 [label="CameraPacket",comment="name: \"CameraPacket\", typeName: \"\", id: 0, branchId: 73, recurseId: -1, attributes: 0, notes: \"\""];
-1 [label="Camera ID",comment="name: \"Camera ID\", typeName: \"ActorUniqueID\", id: 1, branchId: 0, recurseId: -1, attributes: 256, notes: \"\""];
-2 [label="ActorUniqueID",comment="name: \"ActorUniqueID\", typeName: \"\", id: 2, branchId: 0, recurseId: -1, attributes: 512, notes: \"\""];
-3 [label="Target Player ID",comment="name: \"Target Player ID\", typeName: \"ActorUniqueID\", id: 3, branchId: 0, recurseId: -1, attributes: 256, notes: \"\""];
-4 [label="ActorUniqueID",comment="name: \"ActorUniqueID\", typeName: \"\", id: 4, branchId: 0, recurseId: -1, attributes: 512, notes: \"\""];
-{ rank = max;2;4}
+0 [label="CameraPacket",comment="name: \"CameraPacket\", typeName: \"\", id: 0, branchId: 0, recurseId: -1, attributes: 0, notes: \"Used only in EDU through the tripod camera item or the TakePictureCommand. Sends the camera actor id and the target player id from the server.\""];
+1 [label="Camera ID",comment="name: \"Camera ID\", typeName: \"\", id: 1, branchId: 0, recurseId: -1, attributes: 0, notes: \"\""];
+2 [label="Actor Unique ID",comment="name: \"Actor Unique ID\", typeName: \"\", id: 2, branchId: 0, recurseId: -1, attributes: 0, notes: \"\""];
+3 [label="varint64",comment="name: \"varint64\", typeName: \"\", id: 3, branchId: 0, recurseId: -1, attributes: 512, notes: \"\""];
+4 [label="Target Player ID",comment="name: \"Target Player ID\", typeName: \"\", id: 4, branchId: 0, recurseId: -1, attributes: 0, notes: \"\""];
+5 [label="Actor Unique ID",comment="name: \"Actor Unique ID\", typeName: \"\", id: 5, branchId: 0, recurseId: -1, attributes: 0, notes: \"\""];
+6 [label="varint64",comment="name: \"varint64\", typeName: \"\", id: 6, branchId: 0, recurseId: -1, attributes: 512, notes: \"\""];
+{ rank = max;3;6}
 
 }

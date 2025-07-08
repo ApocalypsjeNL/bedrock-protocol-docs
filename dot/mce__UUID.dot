@@ -1,16 +1,16 @@
 digraph "mce::UUID" {
 rankdir = LR
-43
-43 -> 44
-44 -> 45
-43 -> 46
-46 -> 47
+0
+0 -> 1
+1 -> 2
+0 -> 3
+3 -> 4
 
-43 [label="mce::UUID",comment="name: \"mce::UUID\", typeName: \"\", id: 43, branchId: 0, recurseId: -1, attributes: 0, notes: \"\""];
-44 [label="Most Significant Bits",comment="name: \"Most Significant Bits\", typeName: \"\", id: 44, branchId: 0, recurseId: -1, attributes: 0, notes: \"\""];
-45 [label="unsigned int64",comment="name: \"unsigned int64\", typeName: \"\", id: 45, branchId: 0, recurseId: -1, attributes: 512, notes: \"\""];
-46 [label="Least Significant Bits",comment="name: \"Least Significant Bits\", typeName: \"\", id: 46, branchId: 0, recurseId: -1, attributes: 0, notes: \"\""];
-47 [label="unsigned int64",comment="name: \"unsigned int64\", typeName: \"\", id: 47, branchId: 0, recurseId: -1, attributes: 512, notes: \"\""];
-{ rank = max;45;47}
+0 [label="mce::UUID",comment="name: \"mce::UUID\", typeName: \"\", id: 0, branchId: 0, recurseId: -1, attributes: 0, notes: \"\""];
+1 [label="Most Significant Bits",comment="name: \"Most Significant Bits\", typeName: \"\", id: 1, branchId: 0, recurseId: -1, attributes: 0, notes: \"\""];
+2 [label="unsigned int64",comment="name: \"unsigned int64\", typeName: \"\", id: 2, branchId: 0, recurseId: -1, attributes: 512, notes: \"\""];
+3 [label="Least Significant Bits",comment="name: \"Least Significant Bits\", typeName: \"\", id: 3, branchId: 0, recurseId: -1, attributes: 0, notes: \"\""];
+4 [label="unsigned int64",comment="name: \"unsigned int64\", typeName: \"\", id: 4, branchId: 0, recurseId: -1, attributes: 512, notes: \"\""];
+{ rank = max;2;4}
 
 }

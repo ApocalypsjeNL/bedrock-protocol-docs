@@ -1,28 +1,28 @@
 digraph "BiomeMultinoiseGenRulesData" {
 rankdir = LR
-342
-342 -> 343
+340
+340 -> 341
+341 -> 342
+340 -> 343
 343 -> 344
-342 -> 345
+340 -> 345
 345 -> 346
-342 -> 347
+340 -> 347
 347 -> 348
-342 -> 349
+340 -> 349
 349 -> 350
-342 -> 351
-351 -> 352
 
-342 [label="BiomeMultinoiseGenRulesData",comment="name: \"BiomeMultinoiseGenRulesData\", typeName: \"\", id: 342, branchId: 0, recurseId: -1, attributes: 0, notes: \"\""];
-343 [label="temperature",comment="name: \"temperature\", typeName: \"\", id: 343, branchId: 0, recurseId: -1, attributes: 0, notes: \"\""];
+340 [label="BiomeMultinoiseGenRulesData",comment="name: \"BiomeMultinoiseGenRulesData\", typeName: \"\", id: 340, branchId: 0, recurseId: -1, attributes: 0, notes: \"\""];
+341 [label="temperature",comment="name: \"temperature\", typeName: \"\", id: 341, branchId: 0, recurseId: -1, attributes: 0, notes: \"\""];
+342 [label="float",comment="name: \"float\", typeName: \"\", id: 342, branchId: 0, recurseId: -1, attributes: 512, notes: \"\""];
+343 [label="humidity",comment="name: \"humidity\", typeName: \"\", id: 343, branchId: 0, recurseId: -1, attributes: 0, notes: \"\""];
 344 [label="float",comment="name: \"float\", typeName: \"\", id: 344, branchId: 0, recurseId: -1, attributes: 512, notes: \"\""];
-345 [label="humidity",comment="name: \"humidity\", typeName: \"\", id: 345, branchId: 0, recurseId: -1, attributes: 0, notes: \"\""];
+345 [label="altitude",comment="name: \"altitude\", typeName: \"\", id: 345, branchId: 0, recurseId: -1, attributes: 0, notes: \"\""];
 346 [label="float",comment="name: \"float\", typeName: \"\", id: 346, branchId: 0, recurseId: -1, attributes: 512, notes: \"\""];
-347 [label="altitude",comment="name: \"altitude\", typeName: \"\", id: 347, branchId: 0, recurseId: -1, attributes: 0, notes: \"\""];
+347 [label="weirdness",comment="name: \"weirdness\", typeName: \"\", id: 347, branchId: 0, recurseId: -1, attributes: 0, notes: \"\""];
 348 [label="float",comment="name: \"float\", typeName: \"\", id: 348, branchId: 0, recurseId: -1, attributes: 512, notes: \"\""];
-349 [label="weirdness",comment="name: \"weirdness\", typeName: \"\", id: 349, branchId: 0, recurseId: -1, attributes: 0, notes: \"\""];
+349 [label="weight",comment="name: \"weight\", typeName: \"\", id: 349, branchId: 0, recurseId: -1, attributes: 0, notes: \"\""];
 350 [label="float",comment="name: \"float\", typeName: \"\", id: 350, branchId: 0, recurseId: -1, attributes: 512, notes: \"\""];
-351 [label="weight",comment="name: \"weight\", typeName: \"\", id: 351, branchId: 0, recurseId: -1, attributes: 0, notes: \"\""];
-352 [label="float",comment="name: \"float\", typeName: \"\", id: 352, branchId: 0, recurseId: -1, attributes: 512, notes: \"\""];
-{ rank = max;344;346;348;350;352}
+{ rank = max;342;344;346;348;350}
 
 }

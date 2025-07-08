@@ -1,2 +1,12 @@
-<!DOCTYPE html> <html> <head><style>table{font-family: arial, sans-serif;border-collapse: collapse;width: 100% ;}.tab { margin-left: 40px; }td, th{text-align: left;padding: 8px;}tr:nth-child(even) {background-color: #dddddd;}div#expand{display:block;}</style> </head> <body><img src="svg/SetPlayerGameTypePacket.svg" alt="SetPlayerGameTypePacket">
-<br></body> </html>
+<!DOCTYPE html> <html> <head><style>table{font-family: arial, sans-serif;border-collapse: collapse;width: 100% ;}.tab { margin-left: 40px; }td, th{text-align: left;padding: 8px;}tr:nth-child(even) {background-color: #dddddd;}div#expand{display:block;}</style> </head> <body><h1>SetPlayerGameTypePacket (id: 62)</h1>
+<table><col width="1%"><col width="99%"><tr><th></th><th></th></tr><tr><td> <b>Purpose:</b> </td>
+<td>Set Player Game Type</td>
+</tr><tr><td> <b>Notes:</b> </td>
+<td>The client handles the change of the UI element (the gametype dropdown, although this can be avoided by changing via command or on the server), then the client sends a packet to the server, then the server changes the player's gametype and sends a packet back (UpdatePlayerGameTypePacket) to make sure it matches on the client.</td>
+</tr></table><br><h2>Payload</h2>
+<img src="svg/SetPlayerGameTypePacket.svg" alt="SetPlayerGameTypePacket">
+<br><br><br><table><col width="10%"><col width="10%"><col width="15%"><col width="80%"><tr><th>Field Name</th><th>Field Type</th><th>Field Constraints</th><th>Field Notes</th></tr><tr><td>Player Game Type</td>
+<td>enum GameType</td>
+<td></td>
+<td></td>
+</tr></table></body> </html>
