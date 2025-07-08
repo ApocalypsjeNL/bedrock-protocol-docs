@@ -2,14 +2,22 @@
 For r21_u10, Network Protocol Version 827
 
 ## Packet Changes
-// 819: Added mTickDeathSystemsEnabled to StartGamePacket
-// 820: Added setting custom FOV to camera command
-// 821: Added clearing custom FOV to camera command
-// 822: Renamed rotation to vehicle rotation and removed conditional writes of rotation and vehicleAngularVelocity from CorrectPlayerMovePredictionPacket
-// 823: Added CameraAimAssistPacket::mShowDebugRender
-// 824: Added ease duration and type to custom FOV camera command
-// 825: Added fovBounds to the custom FOV camera command
-// 826: Added ease duration and type for clearing a custom FOV from a camera
+StartGamePacket
+* Added mTickDeathSystemsEnabled (bool) - Used to indicate whether the new tick death systems are enabled.
+
+Camera Instruction:
+* Added optional Field of View instruction object to the packet. This is related to changes in the camera_command.
+* Still need to Make sure Fov instruction has a proper structure and svg. Also Enum
+  * Float - Field of View
+  * EasingType Enum (Unsigned Byte) - FOV Ease Type
+  * bool - Field of View Clear
+
+CorrectPlayerMovePredictionPacket
+* Renamed rotation to vehicle rotation and removed conditional writes of rotation and vehicleAngularVelocity from CorrectPlayerMovePredictionPacket
+
+CameraAimAssistPacket
+* Added mShowDebugRender (bool) ["Show Debug Render]
+
 
 ## Enum Changes
 
