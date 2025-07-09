@@ -6,17 +6,13 @@ StartGamePacket
 * Added mTickDeathSystemsEnabled (bool) - Used to indicate whether the new tick death systems are enabled.
 
 Camera Instruction:
-* Added optional Field of View instruction object to the packet. This is related to changes in the camera_command.
-* Still need to Make sure Fov instruction has a proper structure and svg. Also Enum
-  * Float - Field of View
-  * EasingType Enum (Unsigned Byte) - FOV Ease Type
-  * bool - Field of View Clear
+* Added optional Field of View instruction object to the packet.
 
 CorrectPlayerMovePredictionPacket
 * Renamed rotation to vehicle rotation and removed conditional writes of rotation and vehicleAngularVelocity from CorrectPlayerMovePredictionPacket
 
 CameraAimAssistPacket
-* Added mShowDebugRender (bool) ["Show Debug Render]
+* Added mShowDebugRender (bool) [Show Debug Rende]
 
 
 ## Enum Changes
@@ -69,14 +65,3 @@ SharedTypes::Legacy::LevelSoundEvent:
   Added EquipCopper (561) []
   Added RecordLavaChicken (562) []
   Displaced Undefined
-
-# Need to check
-ServerAuthMovementMode writeEnum or writeVarEnum not found!
-ServerAuthMovementMode declaration not found. Has it been removed?
-
-SimpleEventPacket::Subtype writeEnum or writeVarEnum not found!
-SimpleEventPacket::Subtype declaration not found. Has it been removed?
-
-
-SetTitlePacket::TitleType writeEnum or writeVarEnum not found!
-SetTitlePacket::TitleType declaration not found. Has it been removed?
