@@ -14,7 +14,7 @@ rankdir = LR
 2 [label="Actor Runtime ID",comment="name: \"Actor Runtime ID\", typeName: \"\", id: 2, branchId: 0, recurseId: -1, attributes: 0, notes: \"\""];
 3 [label="unsigned varint64",comment="name: \"unsigned varint64\", typeName: \"\", id: 3, branchId: 0, recurseId: -1, attributes: 512, notes: \"\""];
 4 [label="Event ID",comment="name: \"Event ID\", typeName: \"\", id: 4, branchId: 0, recurseId: -1, attributes: 0, notes: \"\""];
-5 [label="enum ActorEvent",comment="name: \"enum ActorEvent\", typeName: \"\", id: 5, branchId: 0, recurseId: -1, attributes: 512, notes: \"\""];
+5 [label="enum enum ActorEvent",comment="name: \"enum enum ActorEvent\", typeName: \"\", id: 5, branchId: 0, recurseId: -1, attributes: 512, notes: \"\""];
 6 [label="Data",comment="name: \"Data\", typeName: \"\", id: 6, branchId: 0, recurseId: -1, attributes: 0, notes: \"\""];
 7 [label="varint",comment="name: \"varint\", typeName: \"\", id: 7, branchId: 0, recurseId: -1, attributes: 512, notes: \"\""];
 { rank = max;3;5;7}

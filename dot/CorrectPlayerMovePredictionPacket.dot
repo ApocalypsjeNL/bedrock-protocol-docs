@@ -32,7 +32,7 @@ rankdir = LR
 
 0 [label="CorrectPlayerMovePredictionPacket",comment="name: \"CorrectPlayerMovePredictionPacket\", typeName: \"\", id: 0, branchId: 0, recurseId: -1, attributes: 0, notes: \"Sent to a player when their simulation of movement mismatches enough from the server that it wants to correct the client.\""];
 1 [label="PredictionType",comment="name: \"PredictionType\", typeName: \"\", id: 1, branchId: 0, recurseId: -1, attributes: 0, notes: \"Vehicle or Player Prediction\""];
-2 [label="enum RewindType",comment="name: \"enum RewindType\", typeName: \"\", id: 2, branchId: 0, recurseId: -1, attributes: 512, notes: \"Vehicle or Player Prediction\""];
+2 [label="enum enum RewindType",comment="name: \"enum enum RewindType\", typeName: \"\", id: 2, branchId: 0, recurseId: -1, attributes: 512, notes: \"Vehicle or Player Prediction\""];
 3 [label="Pos",comment="name: \"Pos\", typeName: \"\", id: 3, branchId: 0, recurseId: -1, attributes: 0, notes: \"Corrected position\""];
 4 [label="X",comment="name: \"X\", typeName: \"\", id: 4, branchId: 0, recurseId: -1, attributes: 0, notes: \"\""];
 5 [label="float",comment="name: \"float\", typeName: \"\", id: 5, branchId: 0, recurseId: -1, attributes: 512, notes: \"\""];
