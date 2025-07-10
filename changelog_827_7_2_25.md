@@ -12,7 +12,10 @@ CorrectPlayerMovePredictionPacket
 * Renamed rotation to vehicle rotation and removed conditional writes of rotation and vehicleAngularVelocity from CorrectPlayerMovePredictionPacket
 
 CameraAimAssistPacket
-* Added mShowDebugRender (bool) [Show Debug Rende]
+* Added mShowDebugRender (bool) [Show Debug Render]
+
+BiomeDefinitionData
+* id is no longer std::optional<unsigned short> and is now BiomeIdType
 
 
 ## Enum Changes
