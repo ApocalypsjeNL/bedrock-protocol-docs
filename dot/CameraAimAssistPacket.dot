@@ -5,24 +5,34 @@ rankdir = LR
 1 -> 2
 0 -> 3
 3 -> 4
-0 -> 5
-5 -> 6
-0 -> 7
-7 -> 8
-0 -> 9
-9 -> 10
+4 -> 5
+3 -> 6
+6 -> 7
+0 -> 8
+8 -> 9
+0 -> 10
+10 -> 11
+0 -> 12
+12 -> 13
+0 -> 14
+14 -> 15
 
-0 [label="CameraAimAssistPacket",comment="name: \"CameraAimAssistPacket\", typeName: \"\", id: 0, branchId: 316, recurseId: -1, attributes: 0, notes: \"\""];
+0 [label="CameraAimAssistPacket",comment="name: \"CameraAimAssistPacket\", typeName: \"\", id: 0, branchId: 0, recurseId: -1, attributes: 0, notes: \"CameraAimAssist\""];
 1 [label="Preset Id",comment="name: \"Preset Id\", typeName: \"\", id: 1, branchId: 0, recurseId: -1, attributes: 0, notes: \"\""];
 2 [label="string",comment="name: \"string\", typeName: \"\", id: 2, branchId: 0, recurseId: -1, attributes: 512, notes: \"\""];
-3 [label="View Angle",comment="name: \"View Angle\", typeName: \"Vec2\", id: 3, branchId: 0, recurseId: -1, attributes: 256, notes: \"\""];
-4 [label="Vec2",comment="name: \"Vec2\", typeName: \"\", id: 4, branchId: 0, recurseId: -1, attributes: 512, notes: \"\""];
-5 [label="Distance",comment="name: \"Distance\", typeName: \"\", id: 5, branchId: 0, recurseId: -1, attributes: 0, notes: \"\""];
-6 [label="float",comment="name: \"float\", typeName: \"\", id: 6, branchId: 0, recurseId: -1, attributes: 512, notes: \"\""];
-7 [label="Target Mode",comment="name: \"Target Mode\", typeName: \"\", id: 7, branchId: 0, recurseId: -1, attributes: 0, notes: \"\""];
-8 [label="byte",comment="name: \"byte\", typeName: \"\", id: 8, branchId: 0, recurseId: -1, attributes: 512, notes: \"\""];
-9 [label="Action",comment="name: \"Action\", typeName: \"\", id: 9, branchId: 0, recurseId: -1, attributes: 0, notes: \"\""];
-10 [label="byte",comment="name: \"byte\", typeName: \"\", id: 10, branchId: 0, recurseId: -1, attributes: 512, notes: \"\""];
-{ rank = max;2;4;6;8;10}
+3 [label="View Angle",comment="name: \"View Angle\", typeName: \"\", id: 3, branchId: 0, recurseId: -1, attributes: 0, notes: \"\""];
+4 [label="X",comment="name: \"X\", typeName: \"\", id: 4, branchId: 0, recurseId: -1, attributes: 0, notes: \"\""];
+5 [label="float",comment="name: \"float\", typeName: \"\", id: 5, branchId: 0, recurseId: -1, attributes: 512, notes: \"\""];
+6 [label="Y",comment="name: \"Y\", typeName: \"\", id: 6, branchId: 0, recurseId: -1, attributes: 0, notes: \"\""];
+7 [label="float",comment="name: \"float\", typeName: \"\", id: 7, branchId: 0, recurseId: -1, attributes: 512, notes: \"\""];
+8 [label="Distance",comment="name: \"Distance\", typeName: \"\", id: 8, branchId: 0, recurseId: -1, attributes: 0, notes: \"\""];
+9 [label="float",comment="name: \"float\", typeName: \"\", id: 9, branchId: 0, recurseId: -1, attributes: 512, notes: \"\""];
+10 [label="Target Mode",comment="name: \"Target Mode\", typeName: \"\", id: 10, branchId: 0, recurseId: -1, attributes: 0, notes: \"\""];
+11 [label="enum CameraAimAssistPacketPayload TargetMode",comment="name: \"enum CameraAimAssistPacketPayload TargetMode\", typeName: \"\", id: 11, branchId: 0, recurseId: -1, attributes: 512, notes: \"\""];
+12 [label="Action",comment="name: \"Action\", typeName: \"\", id: 12, branchId: 0, recurseId: -1, attributes: 0, notes: \"\""];
+13 [label="enum CameraAimAssistPacketPayload Action",comment="name: \"enum CameraAimAssistPacketPayload Action\", typeName: \"\", id: 13, branchId: 0, recurseId: -1, attributes: 512, notes: \"\""];
+14 [label="Show Debug Render",comment="name: \"Show Debug Render\", typeName: \"\", id: 14, branchId: 0, recurseId: -1, attributes: 0, notes: \"\""];
+15 [label="bool",comment="name: \"bool\", typeName: \"\", id: 15, branchId: 0, recurseId: -1, attributes: 512, notes: \"\""];
+{ rank = max;2;5;7;9;11;13;15}
 
 }

@@ -12,7 +12,7 @@ rankdir = LR
 0 -> 9
 9 -> 10
 
-0 [label="PlayerToggleCrafterSlotRequestPacket",comment="name: \"PlayerToggleCrafterSlotRequestPacket\", typeName: \"\", id: 0, branchId: 306, recurseId: -1, attributes: 0, notes: \"\""];
+0 [label="PlayerToggleCrafterSlotRequestPacket",comment="name: \"PlayerToggleCrafterSlotRequestPacket\", typeName: \"\", id: 0, branchId: 0, recurseId: -1, attributes: 0, notes: \"PlayerToggleCrafterSlotRequestPacket\""];
 1 [label="Pos X",comment="name: \"Pos X\", typeName: \"\", id: 1, branchId: 0, recurseId: -1, attributes: 0, notes: \"\""];
 2 [label="int",comment="name: \"int\", typeName: \"\", id: 2, branchId: 0, recurseId: -1, attributes: 512, notes: \"\""];
 3 [label="Pos Y",comment="name: \"Pos Y\", typeName: \"\", id: 3, branchId: 0, recurseId: -1, attributes: 0, notes: \"\""];
@@ -20,7 +20,7 @@ rankdir = LR
 5 [label="Pos Z",comment="name: \"Pos Z\", typeName: \"\", id: 5, branchId: 0, recurseId: -1, attributes: 0, notes: \"\""];
 6 [label="int",comment="name: \"int\", typeName: \"\", id: 6, branchId: 0, recurseId: -1, attributes: 512, notes: \"\""];
 7 [label="Slot Index",comment="name: \"Slot Index\", typeName: \"\", id: 7, branchId: 0, recurseId: -1, attributes: 0, notes: \"\""];
-8 [label="byte",comment="name: \"byte\", typeName: \"\", id: 8, branchId: 0, recurseId: -1, attributes: 512, notes: \"\""];
+8 [label="unsigned byte",comment="name: \"unsigned byte\", typeName: \"\", id: 8, branchId: 0, recurseId: -1, attributes: 512, notes: \"\""];
 9 [label="Is Disabled",comment="name: \"Is Disabled\", typeName: \"\", id: 9, branchId: 0, recurseId: -1, attributes: 0, notes: \"\""];
 10 [label="bool",comment="name: \"bool\", typeName: \"\", id: 10, branchId: 0, recurseId: -1, attributes: 512, notes: \"\""];
 { rank = max;2;4;6;8;10}

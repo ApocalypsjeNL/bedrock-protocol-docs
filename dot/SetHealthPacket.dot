@@ -4,7 +4,7 @@ rankdir = LR
 0 -> 1
 1 -> 2
 
-0 [label="SetHealthPacket",comment="name: \"SetHealthPacket\", typeName: \"\", id: 0, branchId: 42, recurseId: -1, attributes: 0, notes: \"\""];
+0 [label="SetHealthPacket",comment="name: \"SetHealthPacket\", typeName: \"\", id: 0, branchId: 0, recurseId: -1, attributes: 0, notes: \"This packet is sent to the client when the player is spawned in and when they respawn.\""];
 1 [label="Health",comment="name: \"Health\", typeName: \"\", id: 1, branchId: 0, recurseId: -1, attributes: 0, notes: \"\""];
 2 [label="varint",comment="name: \"varint\", typeName: \"\", id: 2, branchId: 0, recurseId: -1, attributes: 512, notes: \"\""];
 { rank = max;2}

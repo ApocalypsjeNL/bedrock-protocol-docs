@@ -8,7 +8,7 @@ rankdir = LR
 0 -> 5
 5 -> 6
 
-0 [label="LessonProgressPacket",comment="name: \"LessonProgressPacket\", typeName: \"\", id: 0, branchId: 183, recurseId: -1, attributes: 0, notes: \"\""];
+0 [label="LessonProgressPacket",comment="name: \"LessonProgressPacket\", typeName: \"\", id: 0, branchId: 0, recurseId: -1, attributes: 0, notes: \"Lesson Progress\""];
 1 [label="Lesson Action",comment="name: \"Lesson Action\", typeName: \"\", id: 1, branchId: 0, recurseId: -1, attributes: 0, notes: \"\""];
 2 [label="varint",comment="name: \"varint\", typeName: \"\", id: 2, branchId: 0, recurseId: -1, attributes: 512, notes: \"\""];
 3 [label="Score",comment="name: \"Score\", typeName: \"\", id: 3, branchId: 0, recurseId: -1, attributes: 0, notes: \"\""];

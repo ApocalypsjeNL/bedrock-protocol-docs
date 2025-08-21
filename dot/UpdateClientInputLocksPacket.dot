@@ -5,12 +5,22 @@ rankdir = LR
 1 -> 2
 0 -> 3
 3 -> 4
+4 -> 5
+3 -> 6
+6 -> 7
+3 -> 8
+8 -> 9
 
-0 [label="UpdateClientInputLocksPacket",comment="name: \"UpdateClientInputLocksPacket\", typeName: \"\", id: 0, branchId: 196, recurseId: -1, attributes: 0, notes: \"\""];
+0 [label="UpdateClientInputLocksPacket",comment="name: \"UpdateClientInputLocksPacket\", typeName: \"\", id: 0, branchId: 0, recurseId: -1, attributes: 0, notes: \"UpdateClientInputLocksPacket\""];
 1 [label="Input Lock ComponentData",comment="name: \"Input Lock ComponentData\", typeName: \"\", id: 1, branchId: 0, recurseId: -1, attributes: 0, notes: \"\""];
 2 [label="unsigned varint",comment="name: \"unsigned varint\", typeName: \"\", id: 2, branchId: 0, recurseId: -1, attributes: 512, notes: \"\""];
-3 [label="Server Pos",comment="name: \"Server Pos\", typeName: \"Vec3\", id: 3, branchId: 0, recurseId: -1, attributes: 256, notes: \"\""];
-4 [label="Vec3",comment="name: \"Vec3\", typeName: \"\", id: 4, branchId: 0, recurseId: -1, attributes: 512, notes: \"\""];
-{ rank = max;2;4}
+3 [label="Server Pos",comment="name: \"Server Pos\", typeName: \"\", id: 3, branchId: 0, recurseId: -1, attributes: 0, notes: \"\""];
+4 [label="X",comment="name: \"X\", typeName: \"\", id: 4, branchId: 0, recurseId: -1, attributes: 0, notes: \"\""];
+5 [label="float",comment="name: \"float\", typeName: \"\", id: 5, branchId: 0, recurseId: -1, attributes: 512, notes: \"\""];
+6 [label="Y",comment="name: \"Y\", typeName: \"\", id: 6, branchId: 0, recurseId: -1, attributes: 0, notes: \"\""];
+7 [label="float",comment="name: \"float\", typeName: \"\", id: 7, branchId: 0, recurseId: -1, attributes: 512, notes: \"\""];
+8 [label="Z",comment="name: \"Z\", typeName: \"\", id: 8, branchId: 0, recurseId: -1, attributes: 0, notes: \"\""];
+9 [label="float",comment="name: \"float\", typeName: \"\", id: 9, branchId: 0, recurseId: -1, attributes: 512, notes: \"\""];
+{ rank = max;2;5;7;9}
 
 }

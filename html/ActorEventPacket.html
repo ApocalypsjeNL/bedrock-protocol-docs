@@ -1,2 +1,20 @@
-<!DOCTYPE html> <html> <head><style>table{font-family: arial, sans-serif;border-collapse: collapse;width: 100% ;}.tab { margin-left: 40px; }td, th{text-align: left;padding: 8px;}tr:nth-child(even) {background-color: #dddddd;}div#expand{display:block;}</style> </head> <body><img src="svg/ActorEventPacket.svg" alt="ActorEventPacket">
-<br></body> </html>
+<!DOCTYPE html> <html> <head><style>table{font-family: arial, sans-serif;border-collapse: collapse;width: 100% ;}.tab { margin-left: 40px; }td, th{text-align: left;padding: 8px;}tr:nth-child(even) {background-color: #dddddd;}div#expand{display:block;}</style> </head> <body><h1>ActorEventPacket (id: 27)</h1>
+<table><col width="1%"><col width="99%"><tr><th></th><th></th></tr><tr><td> <b>Purpose:</b> </td>
+<td>All kinds of actor state changes (see Actor::handleEntityEvent).</td>
+</tr><tr><td> <b>Notes:</b> </td>
+<td>Ranges from a crossbow being ready to fire to taming animals..., some of which may be obsolete (frex, ADD_PLAYER_LEVELS)</td>
+</tr></table><br><h2>Payload</h2>
+<img src="svg/ActorEventPacket.svg" alt="ActorEventPacket">
+<br><br><br><table><col width="10%"><col width="10%"><col width="15%"><col width="80%"><tr><th>Field Name</th><th>Field Type</th><th>Field Constraints</th><th>Field Notes</th></tr><tr><td>Target Runtime ID</td>
+<td>ActorRuntimeID</td>
+<td></td>
+<td></td>
+</tr><tr><td>Event ID</td>
+<td>enum enum ActorEvent</td>
+<td></td>
+<td></td>
+</tr><tr><td>Data</td>
+<td>varint</td>
+<td></td>
+<td></td>
+</tr></table></body> </html>

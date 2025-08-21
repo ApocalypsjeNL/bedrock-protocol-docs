@@ -2,7 +2,7 @@ digraph "ServerSettingsRequestPacket" {
 rankdir = LR
 0
 
-0 [label="ServerSettingsRequestPacket",comment="name: \"ServerSettingsRequestPacket\", typeName: \"\", id: 0, branchId: 102, recurseId: -1, attributes: 0, notes: \"\""];
+0 [label="ServerSettingsRequestPacket",comment="name: \"ServerSettingsRequestPacket\", typeName: \"\", id: 0, branchId: 0, recurseId: -1, attributes: 0, notes: \"Sent during the initialization of world settings on the client.\""];
 { rank = max}
 
 }

@@ -6,7 +6,7 @@ rankdir = LR
 0 -> 3
 3 -> 4
 
-0 [label="ServerStatsPacket",comment="name: \"ServerStatsPacket\", typeName: \"\", id: 0, branchId: 192, recurseId: -1, attributes: 0, notes: \"\""];
+0 [label="ServerStatsPacket",comment="name: \"ServerStatsPacket\", typeName: \"\", id: 0, branchId: 0, recurseId: -1, attributes: 0, notes: \"Used to send performance and other valuable stats back to the client\""];
 1 [label="ServerTime",comment="name: \"ServerTime\", typeName: \"\", id: 1, branchId: 0, recurseId: -1, attributes: 0, notes: \"\""];
 2 [label="float",comment="name: \"float\", typeName: \"\", id: 2, branchId: 0, recurseId: -1, attributes: 512, notes: \"\""];
 3 [label="NetworkTime",comment="name: \"NetworkTime\", typeName: \"\", id: 3, branchId: 0, recurseId: -1, attributes: 0, notes: \"\""];

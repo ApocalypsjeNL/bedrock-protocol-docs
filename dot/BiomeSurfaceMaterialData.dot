@@ -1,32 +1,32 @@
 digraph "BiomeSurfaceMaterialData" {
 rankdir = LR
-194
-194 -> 195
+192
+192 -> 193
+193 -> 194
+192 -> 195
 195 -> 196
-194 -> 197
+192 -> 197
 197 -> 198
-194 -> 199
+192 -> 199
 199 -> 200
-194 -> 201
+192 -> 201
 201 -> 202
-194 -> 203
+192 -> 203
 203 -> 204
-194 -> 205
-205 -> 206
 
-194 [label="BiomeSurfaceMaterialData",comment="name: \"BiomeSurfaceMaterialData\", typeName: \"\", id: 194, branchId: 0, recurseId: -1, attributes: 0, notes: \"\""];
-195 [label="top block",comment="name: \"top block\", typeName: \"int\", id: 195, branchId: 0, recurseId: -1, attributes: 256, notes: \"\""];
+192 [label="BiomeSurfaceMaterialData",comment="name: \"BiomeSurfaceMaterialData\", typeName: \"\", id: 192, branchId: 0, recurseId: -1, attributes: 0, notes: \"\""];
+193 [label="top block",comment="name: \"top block\", typeName: \"int\", id: 193, branchId: 0, recurseId: -1, attributes: 256, notes: \"\""];
+194 [label="int",comment="name: \"int\", typeName: \"\", id: 194, branchId: 0, recurseId: -1, attributes: 512, notes: \"\""];
+195 [label="mid block",comment="name: \"mid block\", typeName: \"int\", id: 195, branchId: 0, recurseId: -1, attributes: 256, notes: \"\""];
 196 [label="int",comment="name: \"int\", typeName: \"\", id: 196, branchId: 0, recurseId: -1, attributes: 512, notes: \"\""];
-197 [label="mid block",comment="name: \"mid block\", typeName: \"int\", id: 197, branchId: 0, recurseId: -1, attributes: 256, notes: \"\""];
+197 [label="sea floor block",comment="name: \"sea floor block\", typeName: \"int\", id: 197, branchId: 0, recurseId: -1, attributes: 256, notes: \"\""];
 198 [label="int",comment="name: \"int\", typeName: \"\", id: 198, branchId: 0, recurseId: -1, attributes: 512, notes: \"\""];
-199 [label="sea floor block",comment="name: \"sea floor block\", typeName: \"int\", id: 199, branchId: 0, recurseId: -1, attributes: 256, notes: \"\""];
+199 [label="foundation block",comment="name: \"foundation block\", typeName: \"int\", id: 199, branchId: 0, recurseId: -1, attributes: 256, notes: \"\""];
 200 [label="int",comment="name: \"int\", typeName: \"\", id: 200, branchId: 0, recurseId: -1, attributes: 512, notes: \"\""];
-201 [label="foundation block",comment="name: \"foundation block\", typeName: \"int\", id: 201, branchId: 0, recurseId: -1, attributes: 256, notes: \"\""];
+201 [label="sea block",comment="name: \"sea block\", typeName: \"int\", id: 201, branchId: 0, recurseId: -1, attributes: 256, notes: \"\""];
 202 [label="int",comment="name: \"int\", typeName: \"\", id: 202, branchId: 0, recurseId: -1, attributes: 512, notes: \"\""];
-203 [label="sea block",comment="name: \"sea block\", typeName: \"int\", id: 203, branchId: 0, recurseId: -1, attributes: 256, notes: \"\""];
+203 [label="sea floor depth",comment="name: \"sea floor depth\", typeName: \"\", id: 203, branchId: 0, recurseId: -1, attributes: 0, notes: \"\""];
 204 [label="int",comment="name: \"int\", typeName: \"\", id: 204, branchId: 0, recurseId: -1, attributes: 512, notes: \"\""];
-205 [label="sea floor depth",comment="name: \"sea floor depth\", typeName: \"\", id: 205, branchId: 0, recurseId: -1, attributes: 0, notes: \"\""];
-206 [label="int",comment="name: \"int\", typeName: \"\", id: 206, branchId: 0, recurseId: -1, attributes: 512, notes: \"\""];
-{ rank = max;196;198;200;202;204;206}
+{ rank = max;194;196;198;200;202;204}
 
 }

@@ -6,11 +6,11 @@ rankdir = LR
 0 -> 3
 3 -> 4
 
-0 [label="ServerboundLoadingScreenPacket",comment="name: \"ServerboundLoadingScreenPacket\", typeName: \"\", id: 0, branchId: 312, recurseId: -1, attributes: 0, notes: \"\""];
+0 [label="ServerboundLoadingScreenPacket",comment="name: \"ServerboundLoadingScreenPacket\", typeName: \"\", id: 0, branchId: 0, recurseId: -1, attributes: 0, notes: \"Sent from the client to the server to message to the server about the state of the loading screen.\""];
 1 [label="Loading Screen Packet Type",comment="name: \"Loading Screen Packet Type\", typeName: \"\", id: 1, branchId: 0, recurseId: -1, attributes: 0, notes: \"\""];
-2 [label="varint",comment="name: \"varint\", typeName: \"\", id: 2, branchId: 0, recurseId: -1, attributes: 512, notes: \"\""];
-3 [label="Loading Screen Id",comment="name: \"Loading Screen Id\", typeName: \"std::optional<unsigned int>\", id: 3, branchId: 0, recurseId: -1, attributes: 256, notes: \"This will be set if the server gives us a value. If the server doesn't expect this value, then the client will get disconnected.\""];
-4 [label="std::optional<unsigned int>",comment="name: \"std::optional<unsigned int>\", typeName: \"\", id: 4, branchId: 0, recurseId: -1, attributes: 512, notes: \"\""];
+2 [label="enum ServerboundLoadingScreenPacketType",comment="name: \"enum ServerboundLoadingScreenPacketType\", typeName: \"\", id: 2, branchId: 0, recurseId: -1, attributes: 512, notes: \"\""];
+3 [label="Loading Screen Id",comment="name: \"Loading Screen Id\", typeName: \"\", id: 3, branchId: 0, recurseId: -1, attributes: 0, notes: \"This will be set if the server gives us a value. If the server doesn't expect this value, then the client will get disconnected.\""];
+4 [label="unsigned int",comment="name: \"unsigned int\", typeName: \"\", id: 4, branchId: 0, recurseId: -1, attributes: 512, notes: \"This will be set if the server gives us a value. If the server doesn't expect this value, then the client will get disconnected.\""];
 { rank = max;2;4}
 
 }

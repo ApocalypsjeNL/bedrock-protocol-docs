@@ -11,6 +11,8 @@ rankdir = LR
 131 -> 142
 2 -> 143
 143 -> 144
+2 -> 145
+145 -> 160
 
 2 [label="CameraInstruction",comment="name: \"CameraInstruction\", typeName: \"\", id: 2, branchId: 0, recurseId: -1, attributes: 0, notes: \"\""];
 3 [label="Set",comment="name: \"Set\", typeName: \"std::optional<struct CameraInstruction::SetInstruction>\", id: 3, branchId: 0, recurseId: -1, attributes: 256, notes: \"\""];
@@ -23,6 +25,8 @@ rankdir = LR
 142 [label="std::optional<struct CameraInstruction::TargetInstruction>",comment="name: \"std::optional<struct CameraInstruction::TargetInstruction>\", typeName: \"\", id: 142, branchId: 0, recurseId: -1, attributes: 512, notes: \"\""];
 143 [label="RemoveTarget",comment="name: \"RemoveTarget\", typeName: \"std::optional<bool>\", id: 143, branchId: 0, recurseId: -1, attributes: 256, notes: \"\""];
 144 [label="std::optional<bool>",comment="name: \"std::optional<bool>\", typeName: \"\", id: 144, branchId: 0, recurseId: -1, attributes: 512, notes: \"\""];
-{ rank = max;92;94;130;142;144}
+145 [label="FieldOfView",comment="name: \"FieldOfView\", typeName: \"std::optional<struct CameraInstruction::FovInstruction>\", id: 145, branchId: 0, recurseId: -1, attributes: 256, notes: \"\""];
+160 [label="std::optional<struct CameraInstruction::FovInstruction>",comment="name: \"std::optional<struct CameraInstruction::FovInstruction>\", typeName: \"\", id: 160, branchId: 0, recurseId: -1, attributes: 512, notes: \"\""];
+{ rank = max;92;94;130;142;144;160}
 
 }
