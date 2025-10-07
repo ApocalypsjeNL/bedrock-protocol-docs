@@ -1,8 +1,0 @@
-digraph "char" {
-rankdir = LR
-47
-
-47 [label="char",comment="name: \"char\", typeName: \"\", id: 47, branchId: 0, recurseId: -1, attributes: 0, notes: \"\""];
-{ rank = max}
-
-}

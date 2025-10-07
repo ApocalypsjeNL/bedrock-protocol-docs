@@ -1,0 +1,117 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "43940255",
+    "x-format-version": "MISSING VERSION",
+    "x-minecraft-version": "1.21.120",
+    "x-protocol-version": 859,
+    "definitions": {
+        "4170358298": {
+            "title": "NetworkChunkPublisherUpdatePacketPayload",
+            "type": "object",
+            "properties": {
+                "New position for view": {
+                    "$ref": "#/definitions/820712576",
+                    "x-ordinal-index": 0
+                },
+                "New radius for view": {
+                    "type": "integer",
+                    "x-underlying-type": "uint32",
+                    "x-serialization-options": [
+                        "Compression"
+                    ],
+                    "x-ordinal-index": 1
+                },
+                "Server Built Chunks List": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/1052043680"
+                    },
+                    "x-serialization-options": [
+                        "NoSizeCompression"
+                    ],
+                    "x-ordinal-index": 2,
+                    "maxItems": 9216
+                }
+            },
+            "required": [
+                "New position for view",
+                "New radius for view",
+                "Server Built Chunks List"
+            ]
+        },
+        "820712576": {
+            "title": "BlockPos",
+            "type": "object",
+            "properties": {
+                "X": {
+                    "type": "integer",
+                    "x-underlying-type": "int32",
+                    "x-serialization-options": [
+                        "Compression"
+                    ],
+                    "x-ordinal-index": 0
+                },
+                "Y": {
+                    "type": "integer",
+                    "x-underlying-type": "int32",
+                    "x-serialization-options": [
+                        "Compression"
+                    ],
+                    "x-ordinal-index": 1
+                },
+                "Z": {
+                    "type": "integer",
+                    "x-underlying-type": "int32",
+                    "x-serialization-options": [
+                        "Compression"
+                    ],
+                    "x-ordinal-index": 2
+                }
+            },
+            "required": [
+                "X",
+                "Y",
+                "Z"
+            ]
+        },
+        "1052043680": {
+            "title": "ChunkPos",
+            "type": "object",
+            "properties": {
+                "X": {
+                    "type": "integer",
+                    "x-underlying-type": "int32",
+                    "x-serialization-options": [
+                        "Compression"
+                    ],
+                    "x-ordinal-index": 0
+                },
+                "Z": {
+                    "type": "integer",
+                    "x-underlying-type": "int32",
+                    "x-serialization-options": [
+                        "Compression"
+                    ],
+                    "x-ordinal-index": 1
+                }
+            },
+            "required": [
+                "X",
+                "Z"
+            ]
+        }
+    },
+    "title": "NetworkChunkPublisherUpdatePacket",
+    "description": "Tells clients to update the chunk view for the local player.",
+    "type": "object",
+    "properties": {
+        "mPayload": {
+            "$ref": "#/definitions/4170358298",
+            "x-ordinal-index": 0
+        }
+    },
+    "$metaProperties": {
+        "[cereal:packet]": 121,
+        "[cereal:packet_details]": "Used (from the server) when a user's Chunk View moves, I.e. the area that determines what chunks exist. For ClientSideGeneration we also send the client a list of ChunkPos that the Server will fully build."
+    }
+}

@@ -1,0 +1,57 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "1165808590",
+    "x-format-version": "MISSING VERSION",
+    "x-minecraft-version": "1.21.120",
+    "x-protocol-version": 859,
+    "definitions": {
+        "545737307": {
+            "title": "CameraPacketPayload",
+            "type": "object",
+            "properties": {
+                "Camera ID": {
+                    "$ref": "#/definitions/1221684255",
+                    "x-ordinal-index": 0
+                },
+                "Target Player ID": {
+                    "$ref": "#/definitions/1221684255",
+                    "x-ordinal-index": 1
+                }
+            },
+            "required": [
+                "Camera ID",
+                "Target Player ID"
+            ]
+        },
+        "1221684255": {
+            "title": "ActorUniqueID",
+            "type": "object",
+            "properties": {
+                "Actor Unique ID": {
+                    "type": "integer",
+                    "x-underlying-type": "int64",
+                    "x-serialization-options": [
+                        "Compression"
+                    ],
+                    "x-ordinal-index": 0
+                }
+            },
+            "required": [
+                "Actor Unique ID"
+            ]
+        }
+    },
+    "title": "CameraPacket",
+    "description": "Used only in EDU through the tripod camera item or the TakePictureCommand. Sends the camera actor id and the target player id from the server.",
+    "type": "object",
+    "properties": {
+        "mPayload": {
+            "$ref": "#/definitions/545737307",
+            "x-ordinal-index": 0
+        }
+    },
+    "$metaProperties": {
+        "[cereal:packet]": 73,
+        "[cereal:packet_details]": ""
+    }
+}

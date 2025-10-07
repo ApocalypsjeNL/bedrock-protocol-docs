@@ -1,0 +1,127 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "1898950292",
+    "x-format-version": "MISSING VERSION",
+    "x-minecraft-version": "1.21.120",
+    "x-protocol-version": 859,
+    "definitions": {
+        "3541243607": {
+            "title": "ActorRuntimeID",
+            "type": "object",
+            "properties": {
+                "Actor Runtime ID": {
+                    "type": "integer",
+                    "x-underlying-type": "uint64",
+                    "x-serialization-options": [
+                        "Compression"
+                    ],
+                    "x-ordinal-index": 0
+                }
+            },
+            "required": [
+                "Actor Runtime ID"
+            ]
+        },
+        "661741895": {
+            "title": "struct MoveActorAbsolutePacketPayload",
+            "type": "object",
+            "properties": {
+                "Move Data": {
+                    "description": "This is client bound for normal actor motion updates.",
+                    "$ref": "#/definitions/1756907636",
+                    "x-ordinal-index": 0
+                }
+            },
+            "required": [
+                "Move Data"
+            ]
+        },
+        "1756907636": {
+            "title": "class MoveActorAbsoluteData",
+            "type": "object",
+            "properties": {
+                "ActorRuntimeID": {
+                    "description": "The runtime id of the actor being moved",
+                    "$ref": "#/definitions/3541243607",
+                    "x-ordinal-index": 0
+                },
+                "Header": {
+                    "description": "Header bits describing the status of the actor, see additional documentation in the supplemental documentation folder",
+                    "type": "integer",
+                    "x-underlying-type": "uint8",
+                    "x-ordinal-index": 1
+                },
+                "Position": {
+                    "description": "X/Y/Z coordinates of the position of the actor, each being a 4 byte float",
+                    "$ref": "#/definitions/4004946602",
+                    "x-ordinal-index": 2
+                },
+                "Rotation X": {
+                    "description": "The X rotation of the actor stored as an integer",
+                    "type": "integer",
+                    "x-underlying-type": "uint8",
+                    "x-ordinal-index": 3
+                },
+                "Rotation Y": {
+                    "description": "The Y rotation of the actor stored as an integer",
+                    "type": "integer",
+                    "x-underlying-type": "uint8",
+                    "x-ordinal-index": 4
+                },
+                "Rotation Y Head": {
+                    "description": "The head rotation of the actor if and only if it's a Mob type, stored as an integer",
+                    "type": "integer",
+                    "x-underlying-type": "uint8",
+                    "x-ordinal-index": 5
+                }
+            },
+            "required": [
+                "ActorRuntimeID",
+                "Header",
+                "Position",
+                "Rotation X",
+                "Rotation Y",
+                "Rotation Y Head"
+            ]
+        },
+        "4004946602": {
+            "title": "Vec3",
+            "type": "object",
+            "properties": {
+                "X": {
+                    "type": "number",
+                    "x-underlying-type": "float",
+                    "x-ordinal-index": 0
+                },
+                "Y": {
+                    "type": "number",
+                    "x-underlying-type": "float",
+                    "x-ordinal-index": 1
+                },
+                "Z": {
+                    "type": "number",
+                    "x-underlying-type": "float",
+                    "x-ordinal-index": 2
+                }
+            },
+            "required": [
+                "X",
+                "Y",
+                "Z"
+            ]
+        }
+    },
+    "title": "MoveActorAbsolutePacket",
+    "description": "This is used primarily for motion updates of all actors from server to client.",
+    "type": "object",
+    "properties": {
+        "mPayload": {
+            "$ref": "#/definitions/661741895",
+            "x-ordinal-index": 0
+        }
+    },
+    "$metaProperties": {
+        "[cereal:packet]": 18,
+        "[cereal:packet_details]": ""
+    }
+}

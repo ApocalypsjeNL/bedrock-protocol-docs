@@ -1,0 +1,74 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "1200923524",
+    "x-format-version": "MISSING VERSION",
+    "x-minecraft-version": "1.21.120",
+    "x-protocol-version": 859,
+    "definitions": {
+        "3428681501": {
+            "title": "AgentActionEventPacketPayload",
+            "type": "object",
+            "properties": {
+                "Action": {
+                    "title": "AgentActionType",
+                    "type": "string",
+                    "enum": [
+                        "Attack",
+                        "Collect",
+                        "Destroy",
+                        "DetectRedstone",
+                        "DetectObstacle",
+                        "Drop",
+                        "DropAll",
+                        "Inspect",
+                        "InspectData",
+                        "InspectItemCount",
+                        "InspectItemDetail",
+                        "InspectItemSpace",
+                        "Interact",
+                        "Move",
+                        "PlaceBlock",
+                        "Till",
+                        "TransferItemTo",
+                        "Turn"
+                    ],
+                    "x-underlying-type": "int32",
+                    "x-serialization-options": [
+                        "EnumAsValue"
+                    ],
+                    "x-ordinal-index": 1
+                },
+                "Request Id": {
+                    "type": "string",
+                    "x-ordinal-index": 0
+                },
+                "Response": {
+                    "$ref": "#/definitions/315535208",
+                    "x-ordinal-index": 2
+                }
+            },
+            "required": [
+                "Action",
+                "Request Id",
+                "Response"
+            ]
+        },
+        "315535208": {
+            "title": "Json::Value",
+            "type": "string"
+        }
+    },
+    "title": "AgentActionEventPacket",
+    "description": "packet containing data of Agent Action Type",
+    "type": "object",
+    "properties": {
+        "mPayload": {
+            "$ref": "#/definitions/3428681501",
+            "x-ordinal-index": 0
+        }
+    },
+    "$metaProperties": {
+        "[cereal:packet]": 181,
+        "[cereal:packet_details]": ""
+    }
+}

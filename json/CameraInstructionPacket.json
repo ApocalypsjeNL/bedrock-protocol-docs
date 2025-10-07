@@ -1,0 +1,521 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "4233761218",
+    "x-format-version": "MISSING VERSION",
+    "x-minecraft-version": "1.21.120",
+    "x-protocol-version": 859,
+    "definitions": {
+        "3784246425": {
+            "title": "CameraInstructionPacketPayload",
+            "type": "object",
+            "properties": {
+                "Camera Instruction": {
+                    "$ref": "#/definitions/1219428877",
+                    "x-ordinal-index": 0
+                }
+            },
+            "required": [
+                "Camera Instruction"
+            ]
+        },
+        "1219428877": {
+            "title": "CameraInstruction",
+            "type": "object",
+            "properties": {
+                "AttachToEntity": {
+                    "$ref": "#/definitions/2100148614",
+                    "x-ordinal-index": 7
+                },
+                "Clear": {
+                    "type": "boolean",
+                    "x-ordinal-index": 1
+                },
+                "DetachFromEntity": {
+                    "type": "boolean",
+                    "x-ordinal-index": 8
+                },
+                "Fade": {
+                    "$ref": "#/definitions/807276817",
+                    "x-ordinal-index": 2
+                },
+                "FieldOfView": {
+                    "$ref": "#/definitions/1098411468",
+                    "x-ordinal-index": 5
+                },
+                "RemoveTarget": {
+                    "type": "boolean",
+                    "x-ordinal-index": 4
+                },
+                "Set": {
+                    "$ref": "#/definitions/3251651569",
+                    "x-ordinal-index": 0
+                },
+                "Spline": {
+                    "$ref": "#/definitions/2683916060",
+                    "x-ordinal-index": 6
+                },
+                "Target": {
+                    "$ref": "#/definitions/3976246368",
+                    "x-ordinal-index": 3
+                }
+            },
+            "required": [
+                "AttachToEntity",
+                "Clear",
+                "DetachFromEntity",
+                "Fade",
+                "FieldOfView",
+                "RemoveTarget",
+                "Set",
+                "Spline",
+                "Target"
+            ]
+        },
+        "2371113601": {
+            "title": "CameraInstruction::FadeInstruction::TimeOption",
+            "type": "object",
+            "properties": {
+                "Fade In Time": {
+                    "type": "number",
+                    "x-underlying-type": "float",
+                    "x-ordinal-index": 0
+                },
+                "Fade Out Time": {
+                    "type": "number",
+                    "x-underlying-type": "float",
+                    "x-ordinal-index": 2
+                },
+                "Hold Time": {
+                    "type": "number",
+                    "x-underlying-type": "float",
+                    "x-ordinal-index": 1
+                }
+            },
+            "required": [
+                "Fade In Time",
+                "Fade Out Time",
+                "Hold Time"
+            ]
+        },
+        "2100148614": {
+            "title": "CameraInstruction::AttachToEntityInstruction",
+            "type": "object",
+            "properties": {
+                "Entity Actor ID": {
+                    "type": "integer",
+                    "x-underlying-type": "int64",
+                    "x-ordinal-index": 0
+                }
+            },
+            "required": [
+                "Entity Actor ID"
+            ]
+        },
+        "1098411468": {
+            "title": "CameraInstruction::FovInstruction",
+            "type": "object",
+            "properties": {
+                "FOV Ease Time": {
+                    "type": "number",
+                    "x-underlying-type": "float",
+                    "x-ordinal-index": 1
+                },
+                "FOV Ease Type": {
+                    "title": "easing_function",
+                    "type": "string",
+                    "enum": [
+                        "linear",
+                        "spring",
+                        "in_quad",
+                        "out_quad",
+                        "in_out_quad",
+                        "in_cubic",
+                        "out_cubic",
+                        "in_out_cubic",
+                        "in_quart",
+                        "out_quart",
+                        "in_out_quart",
+                        "in_quint",
+                        "out_quint",
+                        "in_out_quint",
+                        "in_sine",
+                        "out_sine",
+                        "in_out_sine",
+                        "in_expo",
+                        "out_expo",
+                        "in_out_expo",
+                        "in_circ",
+                        "out_circ",
+                        "in_out_circ",
+                        "in_bounce",
+                        "out_bounce",
+                        "in_out_bounce",
+                        "in_back",
+                        "out_back",
+                        "in_out_back",
+                        "in_elastic",
+                        "out_elastic",
+                        "in_out_elastic"
+                    ],
+                    "x-underlying-type": "int32",
+                    "x-ordinal-index": 2
+                },
+                "Field of View": {
+                    "type": "number",
+                    "x-underlying-type": "float",
+                    "x-ordinal-index": 0
+                },
+                "Field of View Clear": {
+                    "type": "boolean",
+                    "x-ordinal-index": 3
+                }
+            },
+            "required": [
+                "FOV Ease Time",
+                "FOV Ease Type",
+                "Field of View"
+            ]
+        },
+        "807276817": {
+            "title": "CameraInstruction::FadeInstruction",
+            "type": "object",
+            "properties": {
+                "Color": {
+                    "$ref": "#/definitions/2305216605",
+                    "x-ordinal-index": 1
+                },
+                "Time": {
+                    "$ref": "#/definitions/2371113601",
+                    "x-ordinal-index": 0
+                }
+            },
+            "required": [
+                "Color",
+                "Time"
+            ]
+        },
+        "4132291350": {
+            "title": "CameraInstruction::SetInstruction::EaseOption",
+            "type": "object",
+            "properties": {
+                "time": {
+                    "type": "number",
+                    "x-underlying-type": "float",
+                    "x-ordinal-index": 1
+                },
+                "type": {
+                    "type": "integer",
+                    "x-underlying-type": "uint8",
+                    "x-ordinal-index": 0
+                }
+            },
+            "required": [
+                "time"
+            ]
+        },
+        "3976246368": {
+            "title": "CameraInstruction::TargetInstruction",
+            "type": "object",
+            "properties": {
+                "Target Actor ID": {
+                    "type": "integer",
+                    "x-underlying-type": "int64",
+                    "x-ordinal-index": 1
+                },
+                "Target Center Offset": {
+                    "$ref": "#/definitions/4004946602",
+                    "x-ordinal-index": 0
+                }
+            },
+            "required": [
+                "Target Actor ID",
+                "Target Center Offset"
+            ]
+        },
+        "2305216605": {
+            "title": "CameraInstruction::FadeInstruction::ColorOption",
+            "type": "object",
+            "properties": {
+                "Blue": {
+                    "type": "number",
+                    "x-underlying-type": "float",
+                    "x-ordinal-index": 2
+                },
+                "Green": {
+                    "type": "number",
+                    "x-underlying-type": "float",
+                    "x-ordinal-index": 1
+                },
+                "Red": {
+                    "type": "number",
+                    "x-underlying-type": "float",
+                    "x-ordinal-index": 0
+                }
+            },
+            "required": [
+                "Blue",
+                "Green",
+                "Red"
+            ]
+        },
+        "3251651569": {
+            "title": "CameraInstruction::SetInstruction",
+            "type": "object",
+            "properties": {
+                "default": {
+                    "type": "boolean",
+                    "x-ordinal-index": 7
+                },
+                "ease": {
+                    "$ref": "#/definitions/4132291350",
+                    "x-ordinal-index": 1
+                },
+                "entity_offset": {
+                    "$ref": "#/definitions/3965305824",
+                    "x-ordinal-index": 6
+                },
+                "facing": {
+                    "$ref": "#/definitions/2547336686",
+                    "x-ordinal-index": 4
+                },
+                "pos": {
+                    "$ref": "#/definitions/1580131348",
+                    "x-ordinal-index": 2
+                },
+                "preset": {
+                    "type": "integer",
+                    "x-underlying-type": "uint32",
+                    "x-ordinal-index": 0
+                },
+                "removeIgnoreStartingValuesComponent": {
+                    "type": "boolean",
+                    "x-ordinal-index": 8
+                },
+                "rot": {
+                    "$ref": "#/definitions/4253471767",
+                    "x-ordinal-index": 3
+                },
+                "view_offset": {
+                    "$ref": "#/definitions/3883430306",
+                    "x-ordinal-index": 5
+                }
+            },
+            "required": [
+                "preset"
+            ]
+        },
+        "3965305824": {
+            "title": "CameraInstruction::SetInstruction::EntityOffsetOption",
+            "type": "object",
+            "properties": {
+                "entity_offset_x": {
+                    "type": "number",
+                    "x-underlying-type": "float",
+                    "x-ordinal-index": 0
+                },
+                "entity_offset_y": {
+                    "type": "number",
+                    "x-underlying-type": "float",
+                    "x-ordinal-index": 1
+                },
+                "entity_offset_z": {
+                    "type": "number",
+                    "x-underlying-type": "float",
+                    "x-ordinal-index": 2
+                }
+            },
+            "required": [
+                "entity_offset_x",
+                "entity_offset_y",
+                "entity_offset_z"
+            ]
+        },
+        "2547336686": {
+            "title": "CameraInstruction::SetInstruction::FacingOption",
+            "type": "object",
+            "properties": {
+                "pos": {
+                    "$ref": "#/definitions/4004946602",
+                    "x-ordinal-index": 0
+                }
+            },
+            "required": [
+                "pos"
+            ]
+        },
+        "3883430306": {
+            "title": "CameraInstruction::SetInstruction::ViewOffsetOption",
+            "type": "object",
+            "properties": {
+                "x": {
+                    "type": "number",
+                    "x-underlying-type": "float",
+                    "x-ordinal-index": 0
+                },
+                "y": {
+                    "type": "number",
+                    "x-underlying-type": "float",
+                    "x-ordinal-index": 1
+                }
+            },
+            "required": [
+                "x",
+                "y"
+            ]
+        },
+        "4004946602": {
+            "title": "Vec3",
+            "type": "object",
+            "properties": {
+                "X": {
+                    "type": "number",
+                    "x-underlying-type": "float",
+                    "x-ordinal-index": 0
+                },
+                "Y": {
+                    "type": "number",
+                    "x-underlying-type": "float",
+                    "x-ordinal-index": 1
+                },
+                "Z": {
+                    "type": "number",
+                    "x-underlying-type": "float",
+                    "x-ordinal-index": 2
+                }
+            },
+            "required": [
+                "X",
+                "Y",
+                "Z"
+            ]
+        },
+        "1580131348": {
+            "title": "CameraInstruction::SetInstruction::PosOption",
+            "type": "object",
+            "properties": {
+                "Pos": {
+                    "$ref": "#/definitions/4004946602",
+                    "x-ordinal-index": 0
+                }
+            },
+            "required": [
+                "Pos"
+            ]
+        },
+        "4253471767": {
+            "title": "CameraInstruction::SetInstruction::RotOption",
+            "type": "object",
+            "properties": {
+                "x": {
+                    "type": "number",
+                    "x-underlying-type": "float",
+                    "x-ordinal-index": 0
+                },
+                "y": {
+                    "type": "number",
+                    "x-underlying-type": "float",
+                    "x-ordinal-index": 1
+                }
+            },
+            "required": [
+                "x",
+                "y"
+            ]
+        },
+        "2683916060": {
+            "title": "CameraInstruction::SplineInstruction",
+            "type": "object",
+            "properties": {
+                "curve": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/4004946602"
+                    },
+                    "x-ordinal-index": 2
+                },
+                "progressKeyFrames": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/4021724221"
+                    },
+                    "x-ordinal-index": 3
+                },
+                "rotationOption": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/3290637238"
+                    },
+                    "x-ordinal-index": 4
+                },
+                "totalTime": {
+                    "type": "number",
+                    "x-underlying-type": "float",
+                    "x-ordinal-index": 0
+                },
+                "type": {
+                    "type": "integer",
+                    "x-underlying-type": "uint8",
+                    "x-ordinal-index": 1
+                }
+            },
+            "required": [
+                "curve",
+                "progressKeyFrames",
+                "totalTime",
+                "type"
+            ]
+        },
+        "4021724221": {
+            "title": "Vec2",
+            "type": "object",
+            "properties": {
+                "X": {
+                    "type": "number",
+                    "x-underlying-type": "float",
+                    "x-ordinal-index": 0
+                },
+                "Y": {
+                    "type": "number",
+                    "x-underlying-type": "float",
+                    "x-ordinal-index": 1
+                }
+            },
+            "required": [
+                "X",
+                "Y"
+            ]
+        },
+        "3290637238": {
+            "title": "CameraInstruction::SplineInstruction::SplineRotationOption",
+            "type": "object",
+            "properties": {
+                "Key frame times": {
+                    "type": "number",
+                    "x-underlying-type": "float",
+                    "x-ordinal-index": 1
+                },
+                "Key frame values": {
+                    "$ref": "#/definitions/4004946602",
+                    "x-ordinal-index": 0
+                }
+            },
+            "required": [
+                "Key frame times",
+                "Key frame values"
+            ]
+        }
+    },
+    "title": "CameraInstructionPacket",
+    "description": "Used to send a CameraInstruction from the server to the specified clients.",
+    "type": "object",
+    "properties": {
+        "mPayload": {
+            "$ref": "#/definitions/3784246425",
+            "x-ordinal-index": 0
+        }
+    },
+    "$metaProperties": {
+        "[cereal:packet]": 300,
+        "[cereal:packet_details]": ""
+    }
+}

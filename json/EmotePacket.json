@@ -1,0 +1,82 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "1385893495",
+    "x-format-version": "MISSING VERSION",
+    "x-minecraft-version": "1.21.120",
+    "x-protocol-version": 859,
+    "definitions": {
+        "426128094": {
+            "title": "EmotePacketPayload",
+            "type": "object",
+            "properties": {
+                "Actor Runtime Id": {
+                    "$ref": "#/definitions/3541243607",
+                    "x-ordinal-index": 0
+                },
+                "Emote Id": {
+                    "type": "string",
+                    "x-ordinal-index": 1
+                },
+                "Emote Length Ticks": {
+                    "type": "integer",
+                    "x-underlying-type": "uint32",
+                    "x-serialization-options": [
+                        "Compression"
+                    ],
+                    "x-ordinal-index": 2
+                },
+                "Flags": {
+                    "type": "integer",
+                    "x-underlying-type": "uint8",
+                    "x-ordinal-index": 5
+                },
+                "PlatformId": {
+                    "type": "string",
+                    "x-ordinal-index": 4
+                },
+                "Xuid": {
+                    "type": "string",
+                    "x-ordinal-index": 3
+                }
+            },
+            "required": [
+                "Actor Runtime Id",
+                "Emote Id",
+                "Emote Length Ticks",
+                "Flags",
+                "PlatformId",
+                "Xuid"
+            ]
+        },
+        "3541243607": {
+            "title": "ActorRuntimeID",
+            "type": "object",
+            "properties": {
+                "Actor Runtime ID": {
+                    "type": "integer",
+                    "x-underlying-type": "uint64",
+                    "x-serialization-options": [
+                        "Compression"
+                    ],
+                    "x-ordinal-index": 0
+                }
+            },
+            "required": [
+                "Actor Runtime ID"
+            ]
+        }
+    },
+    "title": "EmotePacket",
+    "description": "A client sends this to the server to notify other clients about the emote.",
+    "type": "object",
+    "properties": {
+        "mPayload": {
+            "$ref": "#/definitions/426128094",
+            "x-ordinal-index": 0
+        }
+    },
+    "$metaProperties": {
+        "[cereal:packet]": 138,
+        "[cereal:packet_details]": "Sent in both directions; by client to request that an emote is played and then from the server to the clients to indicate which player needs to now emote."
+    }
+}

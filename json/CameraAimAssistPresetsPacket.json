@@ -1,0 +1,227 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "2895740380",
+    "x-format-version": "MISSING VERSION",
+    "x-minecraft-version": "1.21.120",
+    "x-protocol-version": 859,
+    "definitions": {
+        "1646357081": {
+            "title": "struct CameraAimAssistPresetsPacketPayload",
+            "type": "object",
+            "properties": {
+                "Camera Aim-Assist Categories": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/484447252"
+                    },
+                    "x-ordinal-index": 1
+                },
+                "Camera Aim-Assist Presets": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/2938198659"
+                    },
+                    "x-ordinal-index": 0
+                },
+                "Operation": {
+                    "title": "enum CameraAimAssistPresetsPacketOperation",
+                    "type": "string",
+                    "enum": [
+                        "Set",
+                        "AddToExisting"
+                    ],
+                    "x-underlying-type": "uint8",
+                    "x-serialization-options": [
+                        "EnumAsValue"
+                    ],
+                    "x-ordinal-index": 2
+                }
+            },
+            "required": [
+                "Camera Aim-Assist Categories",
+                "Camera Aim-Assist Presets",
+                "Operation"
+            ]
+        },
+        "484447252": {
+            "title": "CameraAimAssistPresetDefinition",
+            "type": "object",
+            "properties": {
+                "default_item_settings": {
+                    "description": "Optional. Default Aim-Assist Category used for Items not found in 'item_settings'.",
+                    "$ref": "#/definitions/3674175389",
+                    "x-ordinal-index": 4
+                },
+                "exclusion_list": {
+                    "description": "Optional. List of block/entity identifiers to exclude from aim assist targeting.",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/69792695"
+                    },
+                    "x-ordinal-index": 1
+                },
+                "hand_settings": {
+                    "description": "Optional. Aim-assist Category used for an empty hand.",
+                    "$ref": "#/definitions/3674175389",
+                    "x-ordinal-index": 5
+                },
+                "identifier": {
+                    "description": "Namespaced identifier for Camera Aim-Assist preset. Namespace and name must be separated by a ':'.",
+                    "$ref": "#/definitions/3574116620",
+                    "x-ordinal-index": 0
+                },
+                "item_settings": {
+                    "description": "Optional. Map of Item identifiers to Aim-Assist Category names found in the specified 'categories'.",
+                    "type": "object",
+                    "additionalProperties": {
+                        "description": "Optional. Map of Item identifiers to Aim-Assist Category names found in the specified 'categories'.",
+                        "type": "object",
+                        "properties": {
+                            "key": {
+                                "$ref": "#/definitions/3470474886"
+                            },
+                            "value": {
+                                "$ref": "#/definitions/3674175389"
+                            }
+                        }
+                    },
+                    "x-ordinal-index": 3
+                },
+                "liquid_targeting_list": {
+                    "description": "Optional. List of item identifiers that will target liquid blocks with aim-assist when being held.",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/3470474886"
+                    },
+                    "x-ordinal-index": 2
+                }
+            },
+            "required": [
+                "identifier"
+            ]
+        },
+        "3674175389": {
+            "title": "Reference",
+            "type": "string"
+        },
+        "3574116620": {
+            "title": "Identifier",
+            "type": "string"
+        },
+        "3470474886": {
+            "title": "Reference",
+            "type": "string"
+        },
+        "1765013198": {
+            "title": "CameraAimAssistCategoryPriorities",
+            "type": "object",
+            "properties": {
+                "block_default": {
+                    "description": "Optional. Default Aim-Assist targeting priority used for Blocks not found in 'blocks'.",
+                    "type": "integer",
+                    "x-underlying-type": "int32",
+                    "x-ordinal-index": 3,
+                    "minimum": 0.0,
+                    "maximum": 100.0
+                },
+                "blocks": {
+                    "description": "Optional. Map of Block identifiers to Aim-Assist targeting priority. Larger numbers have greater priority.",
+                    "type": "object",
+                    "additionalProperties": {
+                        "description": "Optional. Map of Block identifiers to Aim-Assist targeting priority. Larger numbers have greater priority.",
+                        "type": "object",
+                        "properties": {
+                            "key": {
+                                "$ref": "#/definitions/1527037515"
+                            },
+                            "value": {
+                                "type": "integer",
+                                "x-underlying-type": "int32"
+                            }
+                        },
+                        "minimum": 0.0,
+                        "maximum": 100.0
+                    },
+                    "x-ordinal-index": 1
+                },
+                "entities": {
+                    "description": "Optional. Map of Entity identifiers to Aim-Assist targeting priority. Larger numbers have greater priority.",
+                    "type": "object",
+                    "additionalProperties": {
+                        "description": "Optional. Map of Entity identifiers to Aim-Assist targeting priority. Larger numbers have greater priority.",
+                        "type": "object",
+                        "properties": {
+                            "key": {
+                                "$ref": "#/definitions/1493335182"
+                            },
+                            "value": {
+                                "type": "integer",
+                                "x-underlying-type": "int32"
+                            }
+                        },
+                        "minimum": 0.0,
+                        "maximum": 100.0
+                    },
+                    "x-ordinal-index": 0
+                },
+                "entity_default": {
+                    "description": "Optional. Default Aim-Assist targeting priority used for Entities not found in 'entities'.",
+                    "type": "integer",
+                    "x-underlying-type": "int32",
+                    "x-ordinal-index": 2,
+                    "minimum": 0.0,
+                    "maximum": 100.0
+                }
+            }
+        },
+        "69792695": {
+            "title": "Reference",
+            "type": "string"
+        },
+        "2938198659": {
+            "title": "CameraAimAssistCategoryDefinition",
+            "type": "object",
+            "properties": {
+                "name": {
+                    "description": "Name of the Aim-Assist Category used during lookup.",
+                    "$ref": "#/definitions/3607524763",
+                    "x-ordinal-index": 0
+                },
+                "priorities": {
+                    "description": "The set of priorities used when determining aim-assist selection.",
+                    "$ref": "#/definitions/1765013198",
+                    "x-ordinal-index": 1
+                }
+            },
+            "required": [
+                "name",
+                "priorities"
+            ]
+        },
+        "3607524763": {
+            "title": "Identifier",
+            "type": "string"
+        },
+        "1527037515": {
+            "title": "Reference",
+            "type": "string"
+        },
+        "1493335182": {
+            "title": "Reference",
+            "type": "string"
+        }
+    },
+    "title": "CameraAimAssistPresetsPacket",
+    "description": "Camera aim-assist registry presets/categories data sent from the server to clients.",
+    "type": "object",
+    "properties": {
+        "mPayload": {
+            "$ref": "#/definitions/1646357081",
+            "x-ordinal-index": 0
+        }
+    },
+    "$metaProperties": {
+        "[cereal:packet]": 320,
+        "[cereal:packet_details]": "\n\tSent by the server to clients for initializing and updating the client aim-assist registry.\n\tAddToExisting operations are sent by the server when new presets/categories are added to the registry through creator facing APIs.\n\t"
+    }
+}

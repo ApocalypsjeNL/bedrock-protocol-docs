@@ -1,0 +1,257 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "1030299093",
+    "x-format-version": "MISSING VERSION",
+    "x-minecraft-version": "1.21.120",
+    "x-protocol-version": 859,
+    "definitions": {
+        "2461165538": {
+            "title": "struct StructureTemplateDataRequestPacketPayload",
+            "type": "object",
+            "properties": {
+                "Requested Operation": {
+                    "title": "enum StructureTemplateRequestOperation",
+                    "type": "string",
+                    "enum": [
+                        "None",
+                        "ExportFromSaveMode",
+                        "ExportFromLoadMode",
+                        "QuerySavedStructure"
+                    ],
+                    "x-underlying-type": "uint8",
+                    "x-serialization-options": [
+                        "EnumAsValue"
+                    ],
+                    "x-ordinal-index": 3
+                },
+                "Structure Name": {
+                    "type": "string",
+                    "x-ordinal-index": 0
+                },
+                "Structure Position": {
+                    "$ref": "#/definitions/269289973",
+                    "x-ordinal-index": 1
+                },
+                "Structure Settings": {
+                    "$ref": "#/definitions/684344651",
+                    "x-ordinal-index": 2
+                }
+            },
+            "required": [
+                "Requested Operation",
+                "Structure Name",
+                "Structure Position",
+                "Structure Settings"
+            ]
+        },
+        "269289973": {
+            "title": "NetworkBlockPosition",
+            "type": "object",
+            "properties": {
+                "X": {
+                    "type": "integer",
+                    "x-underlying-type": "int32",
+                    "x-serialization-options": [
+                        "Compression"
+                    ],
+                    "x-ordinal-index": 0
+                },
+                "Y": {
+                    "type": "integer",
+                    "x-underlying-type": "uint32",
+                    "x-serialization-options": [
+                        "Compression"
+                    ],
+                    "x-ordinal-index": 1
+                },
+                "Z": {
+                    "type": "integer",
+                    "x-underlying-type": "int32",
+                    "x-serialization-options": [
+                        "Compression"
+                    ],
+                    "x-ordinal-index": 2
+                }
+            },
+            "required": [
+                "X",
+                "Y",
+                "Z"
+            ]
+        },
+        "4004946602": {
+            "title": "Vec3",
+            "type": "object",
+            "properties": {
+                "X": {
+                    "type": "number",
+                    "x-underlying-type": "float",
+                    "x-ordinal-index": 0
+                },
+                "Y": {
+                    "type": "number",
+                    "x-underlying-type": "float",
+                    "x-ordinal-index": 1
+                },
+                "Z": {
+                    "type": "number",
+                    "x-underlying-type": "float",
+                    "x-ordinal-index": 2
+                }
+            },
+            "required": [
+                "X",
+                "Y",
+                "Z"
+            ]
+        },
+        "684344651": {
+            "title": "class StructureSettings",
+            "type": "object",
+            "properties": {
+                "Animation Mode": {
+                    "title": "enum AnimationMode",
+                    "type": "string",
+                    "enum": [
+                        "None",
+                        "Layers",
+                        "Blocks"
+                    ],
+                    "x-underlying-type": "uint8",
+                    "x-serialization-options": [
+                        "EnumAsValue"
+                    ],
+                    "x-ordinal-index": 9
+                },
+                "Animation Seconds": {
+                    "type": "number",
+                    "x-underlying-type": "float",
+                    "x-ordinal-index": 10
+                },
+                "Integrity Seed": {
+                    "type": "integer",
+                    "x-underlying-type": "uint32",
+                    "x-ordinal-index": 12
+                },
+                "Integrity Value": {
+                    "type": "number",
+                    "x-underlying-type": "float",
+                    "x-ordinal-index": 11
+                },
+                "Last Edit Player": {
+                    "description": "Player who last edited the structure block.",
+                    "$ref": "#/definitions/1221684255",
+                    "x-ordinal-index": 6
+                },
+                "Mirror": {
+                    "title": "enum Mirror",
+                    "type": "string",
+                    "enum": [
+                        "None",
+                        "X",
+                        "Z",
+                        "XZ"
+                    ],
+                    "x-underlying-type": "uint8",
+                    "x-serialization-options": [
+                        "EnumAsValue"
+                    ],
+                    "x-ordinal-index": 8
+                },
+                "Rotation": {
+                    "title": "Rotation",
+                    "type": "string",
+                    "enum": [
+                        "None",
+                        "Rotate90",
+                        "Rotate180",
+                        "Rotate270",
+                        "Clockwise90",
+                        "Clockwise180",
+                        "CounterClockwise90"
+                    ],
+                    "x-underlying-type": "uint8",
+                    "x-serialization-options": [
+                        "EnumAsValue"
+                    ],
+                    "x-ordinal-index": 7
+                },
+                "Rotation Pivot": {
+                    "description": "Pivot used to rotate a structure around.",
+                    "$ref": "#/definitions/4004946602",
+                    "x-ordinal-index": 13
+                },
+                "Should Allow Non Ticking Player and Ticking Area Chunks": {
+                    "type": "boolean",
+                    "x-ordinal-index": 3
+                },
+                "Should ignore blocks?": {
+                    "type": "boolean",
+                    "x-ordinal-index": 2
+                },
+                "Should ignore entities?": {
+                    "type": "boolean",
+                    "x-ordinal-index": 1
+                },
+                "Structure Offset": {
+                    "$ref": "#/definitions/269289973",
+                    "x-ordinal-index": 5
+                },
+                "Structure Palette Name": {
+                    "type": "string",
+                    "x-ordinal-index": 0
+                },
+                "Structure Size": {
+                    "$ref": "#/definitions/269289973",
+                    "x-ordinal-index": 4
+                }
+            },
+            "required": [
+                "Animation Mode",
+                "Animation Seconds",
+                "Integrity Seed",
+                "Integrity Value",
+                "Last Edit Player",
+                "Mirror",
+                "Rotation",
+                "Rotation Pivot",
+                "Should Allow Non Ticking Player and Ticking Area Chunks",
+                "Should ignore blocks?",
+                "Should ignore entities?",
+                "Structure Offset",
+                "Structure Palette Name",
+                "Structure Size"
+            ]
+        },
+        "1221684255": {
+            "title": "ActorUniqueID",
+            "type": "object",
+            "properties": {
+                "Actor Unique ID": {
+                    "type": "integer",
+                    "x-underlying-type": "int64",
+                    "x-serialization-options": [
+                        "Compression"
+                    ],
+                    "x-ordinal-index": 0
+                }
+            },
+            "required": [
+                "Actor Unique ID"
+            ]
+        }
+    },
+    "title": "StructureTemplateDataRequestPacket",
+    "description": "Used to request structure information from a server.",
+    "type": "object",
+    "properties": {
+        "mPayload": {
+            "$ref": "#/definitions/2461165538",
+            "x-ordinal-index": 0
+        }
+    },
+    "$metaProperties": {
+        "[cereal:packet]": 132,
+        "[cereal:packet_details]": "This is used to kick off the process of loading and returning a structure in a Tag from the server back to the client. Currently this functionality is completely disabled and does nothing."
+    }
+}

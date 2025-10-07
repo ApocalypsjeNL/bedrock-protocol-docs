@@ -1,0 +1,128 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "2122488333",
+    "x-format-version": "MISSING VERSION",
+    "x-minecraft-version": "1.21.120",
+    "x-protocol-version": 859,
+    "definitions": {
+        "4169773106": {
+            "title": "ContainerRegistryCleanupPacketPayload",
+            "type": "object",
+            "properties": {
+                "Removed Containers": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/2021346555"
+                    },
+                    "x-ordinal-index": 0
+                }
+            },
+            "required": [
+                "Removed Containers"
+            ]
+        },
+        "2021346555": {
+            "title": "FullContainerName",
+            "type": "object",
+            "properties": {
+                "Container Name": {
+                    "title": "ContainerEnumName",
+                    "type": "string",
+                    "enum": [
+                        "AnvilInputContainer",
+                        "AnvilMaterialContainer",
+                        "AnvilResultPreviewContainer",
+                        "SmithingTableInputContainer",
+                        "SmithingTableMaterialContainer",
+                        "SmithingTableResultPreviewContainer",
+                        "ArmorContainer",
+                        "LevelEntityContainer",
+                        "BeaconPaymentContainer",
+                        "BrewingStandInputContainer",
+                        "BrewingStandResultContainer",
+                        "BrewingStandFuelContainer",
+                        "CombinedHotbarAndInventoryContainer",
+                        "CraftingInputContainer",
+                        "CraftingOutputPreviewContainer",
+                        "RecipeConstructionContainer",
+                        "RecipeNatureContainer",
+                        "RecipeItemsContainer",
+                        "RecipeSearchContainer",
+                        "RecipeSearchBarContainer",
+                        "RecipeEquipmentContainer",
+                        "RecipeBookContainer",
+                        "EnchantingInputContainer",
+                        "EnchantingMaterialContainer",
+                        "FurnaceFuelContainer",
+                        "FurnaceIngredientContainer",
+                        "FurnaceResultContainer",
+                        "HorseEquipContainer",
+                        "HotbarContainer",
+                        "InventoryContainer",
+                        "ShulkerBoxContainer",
+                        "TradeIngredient1Container",
+                        "TradeIngredient2Container",
+                        "TradeResultPreviewContainer",
+                        "OffhandContainer",
+                        "CompoundCreatorInput",
+                        "CompoundCreatorOutputPreview",
+                        "ElementConstructorOutputPreview",
+                        "MaterialReducerInput",
+                        "MaterialReducerOutput",
+                        "LabTableInput",
+                        "LoomInputContainer",
+                        "LoomDyeContainer",
+                        "LoomMaterialContainer",
+                        "LoomResultPreviewContainer",
+                        "BlastFurnaceIngredientContainer",
+                        "SmokerIngredientContainer",
+                        "Trade2Ingredient1Container",
+                        "Trade2Ingredient2Container",
+                        "Trade2ResultPreviewContainer",
+                        "GrindstoneInputContainer",
+                        "GrindstoneAdditionalContainer",
+                        "GrindstoneResultPreviewContainer",
+                        "StonecutterInputContainer",
+                        "StonecutterResultPreviewContainer",
+                        "CartographyInputContainer",
+                        "CartographyAdditionalContainer",
+                        "CartographyResultPreviewContainer",
+                        "BarrelContainer",
+                        "CursorContainer",
+                        "CreatedOutputContainer",
+                        "SmithingTableTemplateContainer",
+                        "CrafterLevelEntityContainer",
+                        "DynamicContainer"
+                    ],
+                    "x-underlying-type": "uint8",
+                    "x-serialization-options": [
+                        "EnumAsValue"
+                    ],
+                    "x-ordinal-index": 0
+                },
+                "Dynamic ID": {
+                    "type": "integer",
+                    "x-underlying-type": "uint32",
+                    "x-ordinal-index": 1
+                }
+            },
+            "required": [
+                "Container Name",
+                "Dynamic ID"
+            ]
+        }
+    },
+    "title": "ContainerRegistryCleanupPacket",
+    "description": "This is used to trigger a clientside cleanup of the dynamic container registry.",
+    "type": "object",
+    "properties": {
+        "mPayload": {
+            "$ref": "#/definitions/4169773106",
+            "x-ordinal-index": 0
+        }
+    },
+    "$metaProperties": {
+        "[cereal:packet]": 317,
+        "[cereal:packet_details]": "\n\tWhenever the serverside ContainerRegistry does a clean, identifiers for the removed containers are gathered in a ContainerRegistryCleanUp\n\tpacket and sent to the client so that the clientside container registry can remove those same containers.\n\t"
+    }
+}

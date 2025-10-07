@@ -1,0 +1,59 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "2972498078",
+    "x-format-version": "MISSING VERSION",
+    "x-minecraft-version": "1.21.120",
+    "x-protocol-version": 859,
+    "definitions": {
+        "3652042133": {
+            "title": "MapCreateLockedCopyPacketPayload",
+            "type": "object",
+            "properties": {
+                "New Map Id": {
+                    "description": "Id that the new map should have.",
+                    "$ref": "#/definitions/1221684255",
+                    "x-ordinal-index": 1
+                },
+                "Original Map Id": {
+                    "description": "Id of the map being locked.",
+                    "$ref": "#/definitions/1221684255",
+                    "x-ordinal-index": 0
+                }
+            },
+            "required": [
+                "New Map Id",
+                "Original Map Id"
+            ]
+        },
+        "1221684255": {
+            "title": "ActorUniqueID",
+            "type": "object",
+            "properties": {
+                "Actor Unique ID": {
+                    "type": "integer",
+                    "x-underlying-type": "int64",
+                    "x-serialization-options": [
+                        "Compression"
+                    ],
+                    "x-ordinal-index": 0
+                }
+            },
+            "required": [
+                "Actor Unique ID"
+            ]
+        }
+    },
+    "title": "MapCreateLockedCopyPacket",
+    "description": "This is fired when the user locks a map item utilizing the Cartography Table in game.",
+    "type": "object",
+    "properties": {
+        "mPayload": {
+            "$ref": "#/definitions/3652042133",
+            "x-ordinal-index": 0
+        }
+    },
+    "$metaProperties": {
+        "[cereal:packet]": 131,
+        "[cereal:packet_details]": "\n\tIt sends the original map id and the new map id. \n\tOn the server it follows a similar process to creating a new map, sends the data and the map info to the client.\n\t"
+    }
+}

@@ -1,8 +1,0 @@
-digraph "ClientToServerHandshakePacket" {
-rankdir = LR
-0
-
-0 [label="ClientToServerHandshakePacket",comment="name: \"ClientToServerHandshakePacket\", typeName: \"\", id: 0, branchId: 0, recurseId: -1, attributes: 0, notes: \"Sets up encryption and authenticates in educational version once at level startup from client.\""];
-{ rank = max}
-
-}

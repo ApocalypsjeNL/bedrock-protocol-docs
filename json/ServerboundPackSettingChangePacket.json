@@ -1,0 +1,79 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "4020927845",
+    "x-format-version": "MISSING VERSION",
+    "x-minecraft-version": "1.21.120",
+    "x-protocol-version": 859,
+    "definitions": {
+        "227770678": {
+            "title": "ServerboundPackSettingChangePacketPayload",
+            "type": "object",
+            "properties": {
+                "PackId": {
+                    "description": "The UUID of the pack whose setting is being changed.",
+                    "$ref": "#/definitions/1616419299",
+                    "x-ordinal-index": 0
+                },
+                "PackSettingName": {
+                    "description": "The name of the setting being changed.",
+                    "type": "string",
+                    "x-ordinal-index": 1,
+                    "maxLength": 128
+                },
+                "PackSettingValue": {
+                    "description": "The value of the setting being changed.",
+                    "oneOf": [
+                        {
+                            "type": "number",
+                            "x-underlying-type": "float"
+                        },
+                        {
+                            "type": "boolean"
+                        },
+                        {
+                            "type": "string"
+                        }
+                    ]
+                }
+            },
+            "required": [
+                "PackId",
+                "PackSettingName",
+                "PackSettingValue"
+            ]
+        },
+        "1616419299": {
+            "title": "mce::UUID",
+            "type": "object",
+            "properties": {
+                "Least Significant Bits": {
+                    "type": "integer",
+                    "x-underlying-type": "uint64",
+                    "x-ordinal-index": 1
+                },
+                "Most Significant Bits": {
+                    "type": "integer",
+                    "x-underlying-type": "uint64",
+                    "x-ordinal-index": 0
+                }
+            },
+            "required": [
+                "Least Significant Bits",
+                "Most Significant Bits"
+            ]
+        }
+    },
+    "title": "ServerboundPackSettingChangePacket",
+    "description": "Sent from the client to the server when players change Pack Settings (pack UI).",
+    "type": "object",
+    "properties": {
+        "mPayload": {
+            "$ref": "#/definitions/227770678",
+            "x-ordinal-index": 0
+        }
+    },
+    "$metaProperties": {
+        "[cereal:packet]": 329,
+        "[cereal:packet_details]": ""
+    }
+}

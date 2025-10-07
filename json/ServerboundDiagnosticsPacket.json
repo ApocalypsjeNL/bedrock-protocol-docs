@@ -1,0 +1,84 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "1692583562",
+    "x-format-version": "MISSING VERSION",
+    "x-minecraft-version": "1.21.120",
+    "x-protocol-version": 859,
+    "definitions": {
+        "833110655": {
+            "title": "struct ServerboundDiagnosticsPacketPayload",
+            "type": "object",
+            "properties": {
+                "AvgBeginFrameTimeMS": {
+                    "type": "number",
+                    "x-underlying-type": "float",
+                    "x-ordinal-index": 3
+                },
+                "AvgClientSimTickTimeMS": {
+                    "type": "number",
+                    "x-underlying-type": "float",
+                    "x-ordinal-index": 2
+                },
+                "AvgEndFrameTimeMS": {
+                    "type": "number",
+                    "x-underlying-type": "float",
+                    "x-ordinal-index": 6
+                },
+                "AvgFps": {
+                    "type": "number",
+                    "x-underlying-type": "float",
+                    "x-ordinal-index": 0
+                },
+                "AvgInputTimeMS": {
+                    "type": "number",
+                    "x-underlying-type": "float",
+                    "x-ordinal-index": 4
+                },
+                "AvgRemainderTimePercent": {
+                    "type": "number",
+                    "x-underlying-type": "float",
+                    "x-ordinal-index": 7
+                },
+                "AvgRenderTimeMS": {
+                    "type": "number",
+                    "x-underlying-type": "float",
+                    "x-ordinal-index": 5
+                },
+                "AvgServerSimTickTimeMS": {
+                    "type": "number",
+                    "x-underlying-type": "float",
+                    "x-ordinal-index": 1
+                },
+                "AvgUnaccountedTimePercent": {
+                    "type": "number",
+                    "x-underlying-type": "float",
+                    "x-ordinal-index": 8
+                }
+            },
+            "required": [
+                "AvgBeginFrameTimeMS",
+                "AvgClientSimTickTimeMS",
+                "AvgEndFrameTimeMS",
+                "AvgFps",
+                "AvgInputTimeMS",
+                "AvgRemainderTimePercent",
+                "AvgRenderTimeMS",
+                "AvgServerSimTickTimeMS",
+                "AvgUnaccountedTimePercent"
+            ]
+        }
+    },
+    "title": "ServerboundDiagnosticsPacket",
+    "description": "Sent from the client to the server IF ProfilerLite is enabled AND the creator toggle for additional client telemetry is enabled AND new telemetry data is ready (every 500 ms).",
+    "type": "object",
+    "properties": {
+        "mPayload": {
+            "$ref": "#/definitions/833110655",
+            "x-ordinal-index": 0
+        }
+    },
+    "$metaProperties": {
+        "[cereal:packet]": 315,
+        "[cereal:packet_details]": ""
+    }
+}

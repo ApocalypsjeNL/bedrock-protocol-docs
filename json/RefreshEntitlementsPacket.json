@@ -1,0 +1,25 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "2645288336",
+    "x-format-version": "MISSING VERSION",
+    "x-minecraft-version": "1.21.120",
+    "x-protocol-version": 859,
+    "definitions": {
+        "552288151": {
+            "title": "RefreshEntitlementsPacketPayload"
+        }
+    },
+    "title": "RefreshEntitlementsPacket",
+    "description": "Refresh Entitlements",
+    "type": "object",
+    "properties": {
+        "mPayload": {
+            "$ref": "#/definitions/552288151",
+            "x-ordinal-index": 0
+        }
+    },
+    "$metaProperties": {
+        "[cereal:packet]": 305,
+        "[cereal:packet_details]": ""
+    }
+}

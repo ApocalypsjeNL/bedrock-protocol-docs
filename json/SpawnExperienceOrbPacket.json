@@ -1,0 +1,70 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "2609444773",
+    "x-format-version": "MISSING VERSION",
+    "x-minecraft-version": "1.21.120",
+    "x-protocol-version": 859,
+    "definitions": {
+        "1983183434": {
+            "title": "SpawnExperienceOrbPacketPayload",
+            "type": "object",
+            "properties": {
+                "Position": {
+                    "$ref": "#/definitions/4004946602",
+                    "x-ordinal-index": 0
+                },
+                "XP Value": {
+                    "type": "integer",
+                    "x-underlying-type": "int32",
+                    "x-serialization-options": [
+                        "Compression"
+                    ],
+                    "x-ordinal-index": 1
+                }
+            },
+            "required": [
+                "Position",
+                "XP Value"
+            ]
+        },
+        "4004946602": {
+            "title": "Vec3",
+            "type": "object",
+            "properties": {
+                "X": {
+                    "type": "number",
+                    "x-underlying-type": "float",
+                    "x-ordinal-index": 0
+                },
+                "Y": {
+                    "type": "number",
+                    "x-underlying-type": "float",
+                    "x-ordinal-index": 1
+                },
+                "Z": {
+                    "type": "number",
+                    "x-underlying-type": "float",
+                    "x-ordinal-index": 2
+                }
+            },
+            "required": [
+                "X",
+                "Y",
+                "Z"
+            ]
+        }
+    },
+    "title": "SpawnExperienceOrbPacket",
+    "description": "Spawn Experience Orb",
+    "type": "object",
+    "properties": {
+        "mPayload": {
+            "$ref": "#/definitions/1983183434",
+            "x-ordinal-index": 0
+        }
+    },
+    "$metaProperties": {
+        "[cereal:packet]": 66,
+        "[cereal:packet_details]": "Note: This can be seen as \"ContainerWantSetSlotPacket\" when sent from client to server. Currently, the client handles side-effects relating to it's own inventory, regardless of the success of the operation."
+    }
+}

@@ -93,7 +93,7 @@ rankdir = LR
 27 [label="unsigned varint",comment="name: \"unsigned varint\", typeName: \"\", id: 27, branchId: 0, recurseId: -1, attributes: 512, notes: \"\""];
 28 [label="New Interaction Model",comment="name: \"New Interaction Model\", typeName: \"\", id: 28, branchId: 0, recurseId: -1, attributes: 0, notes: \"\""];
 29 [label="unsigned varint",comment="name: \"unsigned varint\", typeName: \"\", id: 29, branchId: 0, recurseId: -1, attributes: 512, notes: \"\""];
-30 [label="Interact Rotation",comment="name: \"Interact Rotation\", typeName: \"Vec2\", id: 30, branchId: 0, recurseId: -1, attributes: 256, notes: \"The rotation the player is looking that they intend to use for interactions. In default modes this is the same as Player Rotation. For creator cameras and VR it may not.\""];
+30 [label="Interact Rotation",comment="name: \"Interact Rotation\", typeName: \"Vec2\", id: 30, branchId: 0, recurseId: -1, attributes: 256, notes: \"The rotation the player is looking that they intend to use for interactions. In default modes this is the same as Player Rotation. For creator cameras it may not.\""];
 31 [label="Vec2",comment="name: \"Vec2\", typeName: \"\", id: 31, branchId: 0, recurseId: -1, attributes: 512, notes: \"\""];
 32 [label="Client tick",comment="name: \"Client tick\", typeName: \"PlayerInputTick\", id: 32, branchId: 0, recurseId: -1, attributes: 256, notes: \"Which simulation frame client is on. The server should send back the most recently processed PlayerInputTick in any client-bound packets referring to player data that have a PlayerInputTick.\""];
 33 [label="PlayerInputTick",comment="name: \"PlayerInputTick\", typeName: \"\", id: 33, branchId: 0, recurseId: -1, attributes: 512, notes: \"\""];
