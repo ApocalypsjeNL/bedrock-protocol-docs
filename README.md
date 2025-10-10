@@ -4,3 +4,4 @@ We share our Network Protocol with server partners so they can write their own M
 Protocol is subject to change release over release.
 
 Current Release - r/21_U12
+Network Version - 859
