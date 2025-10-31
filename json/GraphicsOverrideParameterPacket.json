@@ -1,0 +1,103 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "4150228171",
+    "x-format-version": "MISSING VERSION",
+    "x-minecraft-version": "1.21.120",
+    "x-protocol-version": 859,
+    "definitions": {
+        "2955598982": {
+            "title": "GraphicsParameterOverridePacketPayload",
+            "type": "object",
+            "properties": {
+                "Biome Identifier": {
+                    "description": "Determines which biome the override parameter is applied to",
+                    "type": "string",
+                    "x-ordinal-index": 1,
+                    "maxLength": 255
+                },
+                "Identifier for Parameter": {
+                    "title": "GraphicsOverrideParameterType",
+                    "description": "Identifier for the parameter that is having its value changed",
+                    "type": "string",
+                    "enum": [
+                        "SkyZenithColor"
+                    ],
+                    "x-underlying-type": "uint8",
+                    "x-serialization-options": [
+                        "EnumAsValue"
+                    ],
+                    "x-ordinal-index": 2
+                },
+                "Parameter Keyframe Values": {
+                    "description": "Time of Day key to Graphics Parameter value, Depending on the parameters, either all three components are used as a color or just the x component is used as a float, int, or bool",
+                    "type": "object",
+                    "additionalProperties": {
+                        "description": "Time of Day key to Graphics Parameter value, Depending on the parameters, either all three components are used as a color or just the x component is used as a float, int, or bool",
+                        "type": "object",
+                        "properties": {
+                            "key": {
+                                "type": "number",
+                                "x-underlying-type": "float"
+                            },
+                            "value": {
+                                "$ref": "#/definitions/4004946602"
+                            }
+                        }
+                    },
+                    "x-ordinal-index": 0,
+                    "maxProperties": 255
+                },
+                "Reset Parameter": {
+                    "description": "If true, the specified parameter will be reset. If false, the parameter will be set using the data fields.",
+                    "type": "boolean",
+                    "x-ordinal-index": 3
+                }
+            },
+            "required": [
+                "Biome Identifier",
+                "Identifier for Parameter",
+                "Parameter Keyframe Values",
+                "Reset Parameter"
+            ]
+        },
+        "4004946602": {
+            "title": "Vec3",
+            "type": "object",
+            "properties": {
+                "X": {
+                    "type": "number",
+                    "x-underlying-type": "float",
+                    "x-ordinal-index": 0
+                },
+                "Y": {
+                    "type": "number",
+                    "x-underlying-type": "float",
+                    "x-ordinal-index": 1
+                },
+                "Z": {
+                    "type": "number",
+                    "x-underlying-type": "float",
+                    "x-ordinal-index": 2
+                }
+            },
+            "required": [
+                "X",
+                "Y",
+                "Z"
+            ]
+        }
+    },
+    "title": "GraphicsOverrideParameterPacket",
+    "description": "Sent from the server to the client when a server script changes the rendering settings",
+    "type": "object",
+    "properties": {
+        "mPayload": {
+            "$ref": "#/definitions/2955598982",
+            "x-ordinal-index": 0
+        }
+    },
+    "$metaProperties": {
+        "[cereal:packet]": 331,
+        "[cereal:packet_details]": ""
+    }
+}

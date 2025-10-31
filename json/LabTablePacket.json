@@ -1,0 +1,110 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "2373651880",
+    "x-format-version": "MISSING VERSION",
+    "x-minecraft-version": "1.21.120",
+    "x-protocol-version": 859,
+    "definitions": {
+        "1496583525": {
+            "title": "LabTablePacketPayload",
+            "type": "object",
+            "properties": {
+                "Position": {
+                    "$ref": "#/definitions/820712576",
+                    "x-ordinal-index": 1
+                },
+                "Reaction": {
+                    "title": "LabTableReactionType",
+                    "type": "string",
+                    "enum": [
+                        "None",
+                        "IceBomb",
+                        "Bleach",
+                        "ElephantToothpaste",
+                        "Fertilizer",
+                        "HeatBlock",
+                        "MagnesiumSalts",
+                        "MiscFire",
+                        "MiscExplosion",
+                        "MiscLava",
+                        "MiscMystical",
+                        "MiscSmoke",
+                        "MiscLargeSmoke"
+                    ],
+                    "x-underlying-type": "uint8",
+                    "x-serialization-options": [
+                        "EnumAsValue"
+                    ],
+                    "x-ordinal-index": 2
+                },
+                "Type": {
+                    "title": "LabTablePacketPayload::Type",
+                    "type": "string",
+                    "enum": [
+                        "StartCombine",
+                        "StartReaction",
+                        "Reset"
+                    ],
+                    "x-underlying-type": "uint8",
+                    "x-serialization-options": [
+                        "EnumAsValue"
+                    ],
+                    "x-ordinal-index": 0
+                }
+            },
+            "required": [
+                "Position",
+                "Reaction",
+                "Type"
+            ]
+        },
+        "820712576": {
+            "title": "BlockPos",
+            "type": "object",
+            "properties": {
+                "X": {
+                    "type": "integer",
+                    "x-underlying-type": "int32",
+                    "x-serialization-options": [
+                        "Compression"
+                    ],
+                    "x-ordinal-index": 0
+                },
+                "Y": {
+                    "type": "integer",
+                    "x-underlying-type": "int32",
+                    "x-serialization-options": [
+                        "Compression"
+                    ],
+                    "x-ordinal-index": 1
+                },
+                "Z": {
+                    "type": "integer",
+                    "x-underlying-type": "int32",
+                    "x-serialization-options": [
+                        "Compression"
+                    ],
+                    "x-ordinal-index": 2
+                }
+            },
+            "required": [
+                "X",
+                "Y",
+                "Z"
+            ]
+        }
+    },
+    "title": "LabTablePacket",
+    "description": "For the EDU Chemistry Lab Table block actor.",
+    "type": "object",
+    "properties": {
+        "mPayload": {
+            "$ref": "#/definitions/1496583525",
+            "x-ordinal-index": 0
+        }
+    },
+    "$metaProperties": {
+        "[cereal:packet]": 109,
+        "[cereal:packet_details]": "The packet can be fired from the client through the UI or from the server during updates."
+    }
+}

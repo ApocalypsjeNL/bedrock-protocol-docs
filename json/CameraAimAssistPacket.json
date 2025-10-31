@@ -1,0 +1,101 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "2713328744",
+    "x-format-version": "MISSING VERSION",
+    "x-minecraft-version": "1.21.120",
+    "x-protocol-version": 859,
+    "definitions": {
+        "3246343383": {
+            "title": "CameraAimAssistPacketPayload",
+            "type": "object",
+            "properties": {
+                "Action": {
+                    "title": "CameraAimAssistPacketPayload Action",
+                    "type": "string",
+                    "enum": [
+                        "Set",
+                        "Clear"
+                    ],
+                    "x-underlying-type": "uint8",
+                    "x-serialization-options": [
+                        "EnumAsValue"
+                    ],
+                    "x-ordinal-index": 4
+                },
+                "Distance": {
+                    "type": "number",
+                    "x-underlying-type": "float",
+                    "x-ordinal-index": 2,
+                    "minimum": 1.0,
+                    "maximum": 16.0
+                },
+                "Preset Id": {
+                    "type": "string",
+                    "x-ordinal-index": 0
+                },
+                "Show Debug Render": {
+                    "type": "boolean",
+                    "x-ordinal-index": 5
+                },
+                "Target Mode": {
+                    "title": "CameraAimAssistPacketPayload TargetMode",
+                    "type": "string",
+                    "enum": [
+                        "Angle",
+                        "Distance"
+                    ],
+                    "x-underlying-type": "uint8",
+                    "x-serialization-options": [
+                        "EnumAsValue"
+                    ],
+                    "x-ordinal-index": 3
+                },
+                "View Angle": {
+                    "$ref": "#/definitions/4021724221",
+                    "x-ordinal-index": 1
+                }
+            },
+            "required": [
+                "Action",
+                "Distance",
+                "Preset Id",
+                "Show Debug Render",
+                "Target Mode",
+                "View Angle"
+            ]
+        },
+        "4021724221": {
+            "title": "Vec2",
+            "type": "object",
+            "properties": {
+                "X": {
+                    "type": "number",
+                    "x-underlying-type": "float",
+                    "x-ordinal-index": 0
+                },
+                "Y": {
+                    "type": "number",
+                    "x-underlying-type": "float",
+                    "x-ordinal-index": 1
+                }
+            },
+            "required": [
+                "X",
+                "Y"
+            ]
+        }
+    },
+    "title": "CameraAimAssistPacket",
+    "description": "CameraAimAssist",
+    "type": "object",
+    "properties": {
+        "mPayload": {
+            "$ref": "#/definitions/3246343383",
+            "x-ordinal-index": 0
+        }
+    },
+    "$metaProperties": {
+        "[cereal:packet]": 316,
+        "[cereal:packet_details]": ""
+    }
+}

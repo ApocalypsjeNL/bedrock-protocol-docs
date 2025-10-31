@@ -1,0 +1,78 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "1336209520",
+    "x-format-version": "MISSING VERSION",
+    "x-minecraft-version": "1.21.120",
+    "x-protocol-version": 859,
+    "definitions": {
+        "1221684255": {
+            "title": "ActorUniqueID",
+            "type": "object",
+            "properties": {
+                "Actor Unique ID": {
+                    "type": "integer",
+                    "x-underlying-type": "int64",
+                    "x-serialization-options": [
+                        "Compression"
+                    ],
+                    "x-ordinal-index": 0
+                }
+            },
+            "required": [
+                "Actor Unique ID"
+            ]
+        },
+        "3451135075": {
+            "title": "struct UpdateEquipPacketPayload",
+            "type": "object",
+            "properties": {
+                "Container Id": {
+                    "type": "integer",
+                    "x-underlying-type": "uint8",
+                    "x-ordinal-index": 0
+                },
+                "Data": {
+                    "$ref": "#/definitions/4158325036",
+                    "x-ordinal-index": 4
+                },
+                "Entity Unique Id": {
+                    "$ref": "#/definitions/1221684255",
+                    "x-ordinal-index": 3
+                },
+                "Size": {
+                    "type": "integer",
+                    "x-underlying-type": "int32",
+                    "x-serialization-options": [
+                        "Compression"
+                    ],
+                    "x-ordinal-index": 2
+                },
+                "Type": {
+                    "type": "integer",
+                    "x-underlying-type": "uint8",
+                    "x-ordinal-index": 1
+                }
+            },
+            "required": [
+                "Container Id",
+                "Data",
+                "Entity Unique Id",
+                "Size",
+                "Type"
+            ]
+        }
+    },
+    "title": "UpdateEquipPacket",
+    "description": "Seemingly only used for the Horse Inventory... More specifically when the player opens the horse inventory.",
+    "type": "object",
+    "properties": {
+        "mPayload": {
+            "$ref": "#/definitions/3451135075",
+            "x-ordinal-index": 0
+        }
+    },
+    "$metaProperties": {
+        "[cereal:packet]": 81,
+        "[cereal:packet_details]": ""
+    }
+}

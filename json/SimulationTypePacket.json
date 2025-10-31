@@ -1,0 +1,46 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "406421174",
+    "x-format-version": "MISSING VERSION",
+    "x-minecraft-version": "1.21.120",
+    "x-protocol-version": 859,
+    "definitions": {
+        "875732083": {
+            "title": "SimulationTypePacketPayload",
+            "type": "object",
+            "properties": {
+                "Sim Type": {
+                    "title": "SimulationType",
+                    "type": "string",
+                    "enum": [
+                        "Game",
+                        "Editor",
+                        "Test",
+                        "INVALID"
+                    ],
+                    "x-underlying-type": "uint8",
+                    "x-serialization-options": [
+                        "EnumAsValue"
+                    ],
+                    "x-ordinal-index": 0
+                }
+            },
+            "required": [
+                "Sim Type"
+            ]
+        }
+    },
+    "title": "SimulationTypePacket",
+    "description": "Sent from the server to the client when setting the simulation type for toolbox mode. (Not yet suported)",
+    "type": "object",
+    "properties": {
+        "mPayload": {
+            "$ref": "#/definitions/875732083",
+            "x-ordinal-index": 0
+        }
+    },
+    "$metaProperties": {
+        "[cereal:packet]": 168,
+        "[cereal:packet_details]": "- mSimType: an enum representing the simulation type to switch to."
+    }
+}

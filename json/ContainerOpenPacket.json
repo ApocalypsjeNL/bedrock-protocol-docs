@@ -1,0 +1,104 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "1116981856",
+    "x-format-version": "MISSING VERSION",
+    "x-minecraft-version": "1.21.120",
+    "x-protocol-version": 859,
+    "definitions": {
+        "1053520343": {
+            "title": "ContainerOpenPacketPayload",
+            "type": "object",
+            "properties": {
+                "Container Id": {
+                    "type": "integer",
+                    "x-underlying-type": "uint8",
+                    "x-ordinal-index": 0
+                },
+                "Container Type": {
+                    "type": "integer",
+                    "x-underlying-type": "uint8",
+                    "x-ordinal-index": 1
+                },
+                "Position": {
+                    "$ref": "#/definitions/269289973",
+                    "x-ordinal-index": 2
+                },
+                "Target Actor ID": {
+                    "$ref": "#/definitions/1221684255",
+                    "x-ordinal-index": 3
+                }
+            },
+            "required": [
+                "Container Id",
+                "Container Type",
+                "Position",
+                "Target Actor ID"
+            ]
+        },
+        "269289973": {
+            "title": "NetworkBlockPosition",
+            "type": "object",
+            "properties": {
+                "X": {
+                    "type": "integer",
+                    "x-underlying-type": "int32",
+                    "x-serialization-options": [
+                        "Compression"
+                    ],
+                    "x-ordinal-index": 0
+                },
+                "Y": {
+                    "type": "integer",
+                    "x-underlying-type": "uint32",
+                    "x-serialization-options": [
+                        "Compression"
+                    ],
+                    "x-ordinal-index": 1
+                },
+                "Z": {
+                    "type": "integer",
+                    "x-underlying-type": "int32",
+                    "x-serialization-options": [
+                        "Compression"
+                    ],
+                    "x-ordinal-index": 2
+                }
+            },
+            "required": [
+                "X",
+                "Y",
+                "Z"
+            ]
+        },
+        "1221684255": {
+            "title": "ActorUniqueID",
+            "type": "object",
+            "properties": {
+                "Actor Unique ID": {
+                    "type": "integer",
+                    "x-underlying-type": "int64",
+                    "x-serialization-options": [
+                        "Compression"
+                    ],
+                    "x-ordinal-index": 0
+                }
+            },
+            "required": [
+                "Actor Unique ID"
+            ]
+        }
+    },
+    "title": "ContainerOpenPacket",
+    "description": "Sent from the server so that the client knows to open the container screen and do the chest opening animation.",
+    "type": "object",
+    "properties": {
+        "mPayload": {
+            "$ref": "#/definitions/1053520343",
+            "x-ordinal-index": 0
+        }
+    },
+    "$metaProperties": {
+        "[cereal:packet]": 46,
+        "[cereal:packet_details]": ""
+    }
+}

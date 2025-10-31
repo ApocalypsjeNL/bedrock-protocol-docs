@@ -1,0 +1,80 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "2103671872",
+    "x-format-version": "MISSING VERSION",
+    "x-minecraft-version": "1.21.120",
+    "x-protocol-version": 859,
+    "definitions": {
+        "800512645": {
+            "title": "RemoveVolumeEntityPacketPayload",
+            "type": "object",
+            "properties": {
+                "Dimension Type": {
+                    "$ref": "#/definitions/2872336518",
+                    "x-serialization-options": [
+                        "Compression"
+                    ],
+                    "x-ordinal-index": 1
+                },
+                "Entity Network Id": {
+                    "$ref": "#/definitions/3323842864",
+                    "x-serialization-options": [
+                        "Compression"
+                    ],
+                    "x-ordinal-index": 0
+                }
+            },
+            "required": [
+                "Dimension Type",
+                "Entity Network Id"
+            ]
+        },
+        "2872336518": {
+            "title": "DimensionType",
+            "type": "object",
+            "properties": {
+                "value": {
+                    "type": "integer",
+                    "x-underlying-type": "int32",
+                    "x-serialization-options": [
+                        "Compression"
+                    ],
+                    "x-ordinal-index": 0
+                }
+            },
+            "required": [
+                "value"
+            ]
+        },
+        "3323842864": {
+            "title": "EntityNetId",
+            "type": "object",
+            "properties": {
+                "Raw Id": {
+                    "type": "integer",
+                    "x-underlying-type": "uint32",
+                    "x-serialization-options": [
+                        "Compression"
+                    ],
+                    "x-ordinal-index": 0
+                }
+            },
+            "required": [
+                "Raw Id"
+            ]
+        }
+    },
+    "title": "RemoveVolumeEntityPacket",
+    "description": "Sends a volume entity to be removed from server to client.",
+    "type": "object",
+    "properties": {
+        "mPayload": {
+            "$ref": "#/definitions/800512645",
+            "x-ordinal-index": 0
+        }
+    },
+    "$metaProperties": {
+        "[cereal:packet]": 167,
+        "[cereal:packet_details]": ""
+    }
+}

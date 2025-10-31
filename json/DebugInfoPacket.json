@@ -1,0 +1,57 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "1364892468",
+    "x-format-version": "MISSING VERSION",
+    "x-minecraft-version": "1.21.120",
+    "x-protocol-version": 859,
+    "definitions": {
+        "2328829919": {
+            "title": "DebugInfoPacketPayload",
+            "type": "object",
+            "properties": {
+                "Actor Id": {
+                    "$ref": "#/definitions/1221684255",
+                    "x-ordinal-index": 0
+                },
+                "Data": {
+                    "type": "string",
+                    "x-ordinal-index": 1
+                }
+            },
+            "required": [
+                "Actor Id",
+                "Data"
+            ]
+        },
+        "1221684255": {
+            "title": "ActorUniqueID",
+            "type": "object",
+            "properties": {
+                "Actor Unique ID": {
+                    "type": "integer",
+                    "x-underlying-type": "int64",
+                    "x-serialization-options": [
+                        "Compression"
+                    ],
+                    "x-ordinal-index": 0
+                }
+            },
+            "required": [
+                "Actor Unique ID"
+            ]
+        }
+    },
+    "title": "DebugInfoPacket",
+    "description": "The system sends debug information via a generic network packet. This enables rendering of any server information on the client in for instance ImGui.",
+    "type": "object",
+    "properties": {
+        "mPayload": {
+            "$ref": "#/definitions/2328829919",
+            "x-ordinal-index": 0
+        }
+    },
+    "$metaProperties": {
+        "[cereal:packet]": 155,
+        "[cereal:packet_details]": ""
+    }
+}

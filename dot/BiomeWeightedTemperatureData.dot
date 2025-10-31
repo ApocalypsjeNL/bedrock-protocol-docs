@@ -1,16 +1,16 @@
 digraph "BiomeWeightedTemperatureData" {
 rankdir = LR
-327
-327 -> 328
-328 -> 329
-327 -> 330
-330 -> 331
+315
+315 -> 316
+316 -> 317
+315 -> 318
+318 -> 319
 
-327 [label="BiomeWeightedTemperatureData",comment="name: \"BiomeWeightedTemperatureData\", typeName: \"\", id: 327, branchId: 0, recurseId: -1, attributes: 0, notes: \"\""];
-328 [label="temperature",comment="name: \"temperature\", typeName: \"\", id: 328, branchId: 0, recurseId: -1, attributes: 0, notes: \"\""];
-329 [label="varint",comment="name: \"varint\", typeName: \"\", id: 329, branchId: 0, recurseId: -1, attributes: 512, notes: \"\""];
-330 [label="weight",comment="name: \"weight\", typeName: \"\", id: 330, branchId: 0, recurseId: -1, attributes: 0, notes: \"\""];
-331 [label="unsigned int",comment="name: \"unsigned int\", typeName: \"\", id: 331, branchId: 0, recurseId: -1, attributes: 512, notes: \"\""];
-{ rank = max;329;331}
+315 [label="BiomeWeightedTemperatureData",comment="name: \"BiomeWeightedTemperatureData\", typeName: \"\", id: 315, branchId: 0, recurseId: -1, attributes: 0, notes: \"\""];
+316 [label="temperature",comment="name: \"temperature\", typeName: \"\", id: 316, branchId: 0, recurseId: -1, attributes: 0, notes: \"\""];
+317 [label="varint",comment="name: \"varint\", typeName: \"\", id: 317, branchId: 0, recurseId: -1, attributes: 512, notes: \"\""];
+318 [label="weight",comment="name: \"weight\", typeName: \"\", id: 318, branchId: 0, recurseId: -1, attributes: 0, notes: \"\""];
+319 [label="unsigned int",comment="name: \"unsigned int\", typeName: \"\", id: 319, branchId: 0, recurseId: -1, attributes: 512, notes: \"\""];
+{ rank = max;317;319}
 
 }

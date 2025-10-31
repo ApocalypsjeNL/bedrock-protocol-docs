@@ -1,0 +1,36 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "1286288593",
+    "x-format-version": "MISSING VERSION",
+    "x-minecraft-version": "1.21.120",
+    "x-protocol-version": 859,
+    "definitions": {
+        "2598383210": {
+            "title": "AwardAchievementPacketPayload",
+            "type": "object",
+            "properties": {
+                "AchievementID": {
+                    "type": "integer",
+                    "x-underlying-type": "int32",
+                    "x-ordinal-index": 0
+                }
+            },
+            "required": [
+                "AchievementID"
+            ]
+        }
+    },
+    "title": "AwardAchievementPacket",
+    "description": "Contains the ID of the achievement to award",
+    "type": "object",
+    "properties": {
+        "mPayload": {
+            "$ref": "#/definitions/2598383210",
+            "x-ordinal-index": 0
+        }
+    },
+    "$metaProperties": {
+        "[cereal:packet]": 309,
+        "[cereal:packet_details]": ""
+    }
+}
