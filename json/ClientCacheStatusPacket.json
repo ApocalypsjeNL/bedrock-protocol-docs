@@ -2,34 +2,19 @@
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "296946390",
     "x-format-version": "MISSING VERSION",
-    "x-minecraft-version": "1.21.120",
-    "x-protocol-version": 859,
-    "definitions": {
-        "130637425": {
-            "title": "ClientCacheStatusPacketPayload",
-            "type": "object",
-            "properties": {
-                "Is cache supported?": {
-                    "type": "boolean",
-                    "x-ordinal-index": 0
-                }
-            },
-            "required": [
-                "Is cache supported?"
-            ]
-        }
-    },
+    "x-minecraft-version": "1.21.130",
+    "x-protocol-version": 893,
     "title": "ClientCacheStatusPacket",
     "description": "It is sent by the Client once, at login, to communicate if it supports the cache or not.",
     "type": "object",
     "properties": {
-        "mPayload": {
-            "$ref": "#/definitions/130637425",
+        "Is cache supported?": {
+            "type": "boolean",
+            "x-underlying-type": "bool",
             "x-ordinal-index": 0
         }
     },
-    "$metaProperties": {
-        "[cereal:packet]": 129,
-        "[cereal:packet_details]": "Sent by the Client once, at login, to communicate if it supports the client blob cache protocol or not.\n\t<br> Documented in <a href=https://github.com/Mojang/bedrock-docs/blob/master/GameplaySystems/ClientBlobCacheProtocol.md>https://github.com/Mojang/bedrock-docs/blob/master/GameplaySystems/ClientBlobCacheProtocol.md</a>"
-    }
+    "required": [
+        "Is cache supported?"
+    ]
 }

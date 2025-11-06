@@ -2,8 +2,8 @@
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "3404362253",
     "x-format-version": "MISSING VERSION",
-    "x-minecraft-version": "1.21.120",
-    "x-protocol-version": 859,
+    "x-minecraft-version": "1.21.130",
+    "x-protocol-version": 893,
     "title": "enum ScriptModuleDebugUtilities::ScriptDebugShapeType",
     "type": "string",
     "enum": [
@@ -13,6 +13,5 @@
         "Circle",
         "Text",
         "Arrow"
-    ],
-    "x-underlying-type": "uint8"
+    ]
 }

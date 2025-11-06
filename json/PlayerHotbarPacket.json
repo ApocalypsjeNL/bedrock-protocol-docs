@@ -2,52 +2,41 @@
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "771627580",
     "x-format-version": "MISSING VERSION",
-    "x-minecraft-version": "1.21.120",
-    "x-protocol-version": 859,
-    "definitions": {
-        "1633250333": {
-            "title": "struct PlayerHotbarPacketPayload",
-            "type": "object",
-            "properties": {
-                "Container ID": {
-                    "type": "integer",
-                    "x-underlying-type": "uint8",
-                    "x-serialization-options": [
-                        "EnumAsValue"
-                    ],
-                    "x-ordinal-index": 1
-                },
-                "Selected Slot": {
-                    "type": "integer",
-                    "x-underlying-type": "uint32",
-                    "x-serialization-options": [
-                        "Compression"
-                    ],
-                    "x-ordinal-index": 0
-                },
-                "Should select slot?": {
-                    "type": "boolean",
-                    "x-ordinal-index": 2
-                }
-            },
-            "required": [
-                "Container ID",
-                "Selected Slot",
-                "Should select slot?"
-            ]
-        }
-    },
+    "x-minecraft-version": "1.21.130",
+    "x-protocol-version": 893,
     "title": "PlayerHotbarPacket",
     "description": "Sent from the server when the player uses pick block on actors or blocks, in addition to the player uses the clear, give, or replace item command or if the serverplayer uses _sendAdditionalLevelData(). ",
     "type": "object",
     "properties": {
-        "mPayload": {
-            "$ref": "#/definitions/1633250333",
-            "x-ordinal-index": 0
+        "Container ID": {
+            "type": "integer",
+            "x-underlying-type": "unsigned char",
+            "x-serialization-options": [
+                "Enum-as-Value"
+            ],
+            "x-ordinal-index": 1,
+            "minimum": 0.0,
+            "maximum": 255.0
+        },
+        "Selected Slot": {
+            "type": "integer",
+            "x-underlying-type": "unsigned int",
+            "x-serialization-options": [
+                "Compression"
+            ],
+            "x-ordinal-index": 0,
+            "minimum": 0.0,
+            "maximum": 4294967295.0
+        },
+        "Should select slot?": {
+            "type": "boolean",
+            "x-underlying-type": "bool",
+            "x-ordinal-index": 2
         }
     },
-    "$metaProperties": {
-        "[cereal:packet]": 48,
-        "[cereal:packet_details]": ""
-    }
+    "required": [
+        "Container ID",
+        "Selected Slot",
+        "Should select slot?"
+    ]
 }

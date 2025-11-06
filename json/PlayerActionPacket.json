@@ -2,121 +2,42 @@
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "4021593386",
     "x-format-version": "MISSING VERSION",
-    "x-minecraft-version": "1.21.120",
-    "x-protocol-version": 859,
+    "x-minecraft-version": "1.21.130",
+    "x-protocol-version": 893,
     "definitions": {
-        "1697950331": {
-            "title": "PlayerActionPacketPayload",
-            "type": "object",
-            "properties": {
-                "Action": {
-                    "title": "PlayerActionType",
-                    "type": "string",
-                    "enum": [
-                        "Unknown",
-                        "StartDestroyBlock",
-                        "AbortDestroyBlock",
-                        "StopDestroyBlock",
-                        "GetUpdatedBlock",
-                        "DropItem",
-                        "StartSleeping",
-                        "StopSleeping",
-                        "Respawn",
-                        "StartJump",
-                        "StartSprinting",
-                        "StopSprinting",
-                        "StartSneaking",
-                        "StopSneaking",
-                        "CreativeDestroyBlock",
-                        "ChangeDimensionAck",
-                        "StartGliding",
-                        "StopGliding",
-                        "DenyDestroyBlock",
-                        "CrackBlock",
-                        "ChangeSkin",
-                        "UpdatedEnchantingSeed",
-                        "StartSwimming",
-                        "StopSwimming",
-                        "StartSpinAttack",
-                        "StopSpinAttack",
-                        "InteractWithBlock",
-                        "PredictDestroyBlock",
-                        "ContinueDestroyBlock",
-                        "StartItemUseOn",
-                        "StopItemUseOn",
-                        "HandledTeleport",
-                        "MissedSwing",
-                        "StartCrawling",
-                        "StopCrawling",
-                        "StartFlying",
-                        "StopFlying",
-                        "ClientAckServerData",
-                        "StartUsingItem",
-                        "Count"
-                    ],
-                    "x-underlying-type": "int32",
-                    "x-serialization-options": [
-                        "Compression",
-                        "EnumAsValue"
-                    ],
-                    "x-ordinal-index": 1
-                },
-                "Block Position": {
-                    "$ref": "#/definitions/269289973",
-                    "x-ordinal-index": 2
-                },
-                "Face": {
-                    "type": "integer",
-                    "x-underlying-type": "int32",
-                    "x-serialization-options": [
-                        "Compression"
-                    ],
-                    "x-ordinal-index": 4
-                },
-                "Player Runtime ID": {
-                    "$ref": "#/definitions/3541243607",
-                    "x-ordinal-index": 0
-                },
-                "Result Pos": {
-                    "$ref": "#/definitions/269289973",
-                    "x-ordinal-index": 3
-                }
-            },
-            "required": [
-                "Action",
-                "Block Position",
-                "Face",
-                "Player Runtime ID",
-                "Result Pos"
-            ]
-        },
         "269289973": {
             "title": "NetworkBlockPosition",
             "type": "object",
             "properties": {
                 "X": {
                     "type": "integer",
-                    "x-underlying-type": "int32",
+                    "x-underlying-type": "int",
                     "x-serialization-options": [
                         "Compression"
                     ],
-                    "x-ordinal-index": 0
+                    "x-ordinal-index": 0,
+                    "minimum": -2147483648.0,
+                    "maximum": 2147483647.0
                 },
                 "Y": {
                     "type": "integer",
-                    "x-underlying-type": "uint32",
+                    "x-underlying-type": "unsigned int",
                     "x-serialization-options": [
                         "Compression"
                     ],
-                    "x-ordinal-index": 1
+                    "x-ordinal-index": 1,
+                    "minimum": 0.0,
+                    "maximum": 4294967295.0
                 },
                 "Z": {
                     "type": "integer",
-                    "x-underlying-type": "int32",
+                    "x-underlying-type": "int",
                     "x-serialization-options": [
                         "Compression"
                     ],
-                    "x-ordinal-index": 2
+                    "x-ordinal-index": 2,
+                    "minimum": -2147483648.0,
+                    "maximum": 2147483647.0
                 }
             },
             "required": [
@@ -131,11 +52,13 @@
             "properties": {
                 "Actor Runtime ID": {
                     "type": "integer",
-                    "x-underlying-type": "uint64",
+                    "x-underlying-type": "unsigned __int64",
                     "x-serialization-options": [
                         "Compression"
                     ],
-                    "x-ordinal-index": 0
+                    "x-ordinal-index": 0,
+                    "minimum": 0.0,
+                    "maximum": 18446744073709553000.0
                 }
             },
             "required": [
@@ -147,13 +70,86 @@
     "description": "Sent from the client whenever the player performs an action (dashing, un-dashing, use an item, mine/hit, use a block, etc).",
     "type": "object",
     "properties": {
-        "mPayload": {
-            "$ref": "#/definitions/1697950331",
+        "Action": {
+            "title": "PlayerActionType",
+            "type": "string",
+            "enum": [
+                "Unknown",
+                "StartDestroyBlock",
+                "AbortDestroyBlock",
+                "StopDestroyBlock",
+                "GetUpdatedBlock",
+                "DropItem",
+                "StartSleeping",
+                "StopSleeping",
+                "Respawn",
+                "StartJump",
+                "StartSprinting",
+                "StopSprinting",
+                "StartSneaking",
+                "StopSneaking",
+                "CreativeDestroyBlock",
+                "ChangeDimensionAck",
+                "StartGliding",
+                "StopGliding",
+                "DenyDestroyBlock",
+                "CrackBlock",
+                "ChangeSkin",
+                "UpdatedEnchantingSeed",
+                "StartSwimming",
+                "StopSwimming",
+                "StartSpinAttack",
+                "StopSpinAttack",
+                "InteractWithBlock",
+                "PredictDestroyBlock",
+                "ContinueDestroyBlock",
+                "StartItemUseOn",
+                "StopItemUseOn",
+                "HandledTeleport",
+                "MissedSwing",
+                "StartCrawling",
+                "StopCrawling",
+                "StartFlying",
+                "StopFlying",
+                "ClientAckServerData",
+                "StartUsingItem",
+                "Count"
+            ],
+            "x-underlying-type": "int",
+            "x-serialization-options": [
+                "Compression",
+                "Enum-as-Value"
+            ],
+            "x-ordinal-index": 1
+        },
+        "Block Position": {
+            "$ref": "#/definitions/269289973",
+            "x-ordinal-index": 2
+        },
+        "Face": {
+            "type": "integer",
+            "x-underlying-type": "int",
+            "x-serialization-options": [
+                "Compression"
+            ],
+            "x-ordinal-index": 4,
+            "minimum": -2147483648.0,
+            "maximum": 2147483647.0
+        },
+        "Player Runtime ID": {
+            "$ref": "#/definitions/3541243607",
             "x-ordinal-index": 0
+        },
+        "Result Pos": {
+            "$ref": "#/definitions/269289973",
+            "x-ordinal-index": 3
         }
     },
-    "$metaProperties": {
-        "[cereal:packet]": 36,
-        "[cereal:packet_details]": "The expected actions change depending on the ServerAuthMovementMode specified in the StartGamePacket.\n\tSee the PlayerActionType enum for details on which have differing behavior.\n\tSee also PlayerAuthInputPacket and InventoryTransactionPacket for similar types of player actions."
-    }
+    "required": [
+        "Action",
+        "Block Position",
+        "Face",
+        "Player Runtime ID",
+        "Result Pos"
+    ]
 }

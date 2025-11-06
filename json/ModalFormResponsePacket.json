@@ -2,61 +2,50 @@
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "2453260875",
     "x-format-version": "MISSING VERSION",
-    "x-minecraft-version": "1.21.120",
-    "x-protocol-version": 859,
+    "x-minecraft-version": "1.21.130",
+    "x-protocol-version": 893,
     "definitions": {
-        "944948646": {
-            "title": "ModalFormResponsePacketPayload",
-            "type": "object",
-            "properties": {
-                "Form Cancel Reason": {
-                    "title": "ModalFormCancelReason",
-                    "type": "string",
-                    "enum": [
-                        "UserClosed",
-                        "UserBusy"
-                    ],
-                    "x-underlying-type": "uint8",
-                    "x-serialization-options": [
-                        "EnumAsValue"
-                    ],
-                    "x-ordinal-index": 2
-                },
-                "Form ID": {
-                    "type": "integer",
-                    "x-underlying-type": "uint32",
-                    "x-serialization-options": [
-                        "Compression"
-                    ],
-                    "x-ordinal-index": 0
-                },
-                "JSON Response": {
-                    "$ref": "#/definitions/315535208",
-                    "x-ordinal-index": 1
-                }
-            },
-            "required": [
-                "Form Cancel Reason",
-                "Form ID",
-                "JSON Response"
-            ]
-        },
         "315535208": {
             "title": "Json::Value",
-            "type": "string"
+            "type": "string",
+            "x-runtime-constraint-description": "Verify that the string can be parsed as valid JSON"
         }
     },
     "title": "ModalFormResponsePacket",
     "description": "Fired in response to third party server request to show the custom UI screen.",
     "type": "object",
     "properties": {
-        "mPayload": {
-            "$ref": "#/definitions/944948646",
-            "x-ordinal-index": 0
+        "Form Cancel Reason": {
+            "title": "ModalFormCancelReason",
+            "type": "string",
+            "enum": [
+                "UserClosed",
+                "UserBusy"
+            ],
+            "x-underlying-type": "unsigned char",
+            "x-serialization-options": [
+                "Enum-as-Value"
+            ],
+            "x-ordinal-index": 2
+        },
+        "Form ID": {
+            "type": "integer",
+            "x-underlying-type": "unsigned int",
+            "x-serialization-options": [
+                "Compression"
+            ],
+            "x-ordinal-index": 0,
+            "minimum": 0.0,
+            "maximum": 4294967295.0
+        },
+        "JSON Response": {
+            "$ref": "#/definitions/315535208",
+            "x-ordinal-index": 1
         }
     },
-    "$metaProperties": {
-        "[cereal:packet]": 101,
-        "[cereal:packet_details]": "see ModalFormRequestPacket"
-    }
+    "required": [
+        "Form Cancel Reason",
+        "Form ID",
+        "JSON Response"
+    ]
 }

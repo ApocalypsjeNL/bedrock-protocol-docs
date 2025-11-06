@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LevelSoundEventPacket (123)</title>
+    <title>LevelSoundEventPacket</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -98,27 +98,22 @@
 <body>
     <div class="container">
         <p><a href="index.html">← Back to Index</a></p>
-        <h1>LevelSoundEventPacket (123)</h1>
+        <h1>LevelSoundEventPacket</h1>
 <div class="description">Level Sound Event</div>
-<div class="description">
-	Most sounds get launched on server and replicated to clients, but a handful of player initiated sounds are launched on their client and replicated through the network.
-	(In most of the codebase &#x27;Event&#x27; means telemetry events; this is not the case here, this is how sounds get replicated across the network in vanilla.)
-	With support for custom entities. Entity Id is a string and Event Id is an integer.
-	</div>
 <div style="margin-left: 0px; margin-top: 10px;">
 <table border="1" cellpadding="5" cellspacing="0" style="border-collapse: collapse; width: 100%; max-width: 800px;">
 <thead>
 <tr style="background-color: #f0f0f0;">
 <th>Field Name</th>
 <th>Type</th>
-<th>Ordinal Index</th>
+<th>Field Index</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td rowspan="2"><strong>Event ID</strong></td>
-<td>varuint32</td>
+<td>varunsigned int</td>
 <td>0</td>
 <td></td>
 </tr>
@@ -2243,6 +2238,46 @@
 </tr>
 <tr>
 <td style="text-align: center;">527</td>
+<td><code>Lunge1</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">528</td>
+<td><code>Lunge2</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">529</td>
+<td><code>Lunge3</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">530</td>
+<td><code>AttackCritical</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">531</td>
+<td><code>SpearAttackHit</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">532</td>
+<td><code>SpearAttackMiss</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">533</td>
+<td><code>WoodenSpearAttackHit</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">534</td>
+<td><code>WoodenSpearAttackMiss</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">535</td>
+<td><code>ImitateParched</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">536</td>
+<td><code>ImitateCamelHusk</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">537</td>
 <td><code>Undefined</code></td>
 </tr>
 </tbody>
@@ -2263,7 +2298,7 @@
 <tr style="background-color: #f0f0f0;">
 <th>Field Name</th>
 <th>Type</th>
-<th>Ordinal Index</th>
+<th>Field Index</th>
 <th>Description</th>
 </tr>
 </thead>
@@ -2292,7 +2327,7 @@
 </tr>
 <tr>
 <td><strong>Data</strong></td>
-<td>varint32</td>
+<td>varint</td>
 <td>2</td>
 <td></td>
 </tr>
@@ -2304,19 +2339,19 @@
 </tr>
 <tr>
 <td><strong>Is Baby</strong></td>
-<td>boolean</td>
+<td>bool</td>
 <td>4</td>
 <td></td>
 </tr>
 <tr>
 <td><strong>Is Global</strong></td>
-<td>boolean</td>
+<td>bool</td>
 <td>5</td>
 <td></td>
 </tr>
 <tr>
 <td><strong>Actor Unique Id</strong></td>
-<td>int64</td>
+<td>__int64</td>
 <td>6</td>
 <td></td>
 </tr>

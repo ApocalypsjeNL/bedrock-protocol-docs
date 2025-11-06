@@ -1,0 +1,175 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "3179482359",
+    "x-format-version": "MISSING VERSION",
+    "x-minecraft-version": "1.21.130",
+    "x-protocol-version": 893,
+    "definitions": {
+        "320823778": {
+            "title": "CommandOutputMessage",
+            "type": "object",
+            "properties": {
+                "Message ID": {
+                    "description": "The unique identifier for the message.",
+                    "type": "string",
+                    "x-ordinal-index": 0,
+                    "maxLength": 1000
+                },
+                "Parameters": {
+                    "description": "The parameters for the message.",
+                    "type": "array",
+                    "default": [],
+                    "items": {
+                        "type": "string"
+                    },
+                    "x-ordinal-index": 2,
+                    "maxItems": 1000
+                },
+                "Successful?": {
+                    "description": "The command output type.",
+                    "type": "boolean",
+                    "x-underlying-type": "bool",
+                    "x-ordinal-index": 1
+                }
+            },
+            "required": [
+                "Message ID",
+                "Successful?"
+            ]
+        },
+        "435823779": {
+            "title": "CommandOriginData",
+            "type": "object",
+            "properties": {
+                "PlayerId": {
+                    "description": "The player Id.",
+                    "type": "integer",
+                    "default": 0,
+                    "x-underlying-type": "__int64",
+                    "x-ordinal-index": 3,
+                    "minimum": -9223372036854776000.0,
+                    "maximum": 9223372036854776000.0
+                },
+                "RequestId": {
+                    "description": "The request Id.",
+                    "type": "string",
+                    "default": "",
+                    "x-ordinal-index": 2,
+                    "maxLength": 39
+                },
+                "Type": {
+                    "title": "CommandOriginType",
+                    "description": "The command origin type.",
+                    "type": "string",
+                    "enum": [
+                        "Player",
+                        "DevConsole",
+                        "Test",
+                        "AutomationPlayer"
+                    ],
+                    "x-underlying-type": "unsigned char",
+                    "x-ordinal-index": 0
+                },
+                "UUID": {
+                    "description": "The unique UUID that represents an instantiation of a command. Each time a command is run it should be given a UUID to represent that instance.",
+                    "$ref": "#/definitions/1616419299",
+                    "x-ordinal-index": 1
+                }
+            },
+            "required": [
+                "Type",
+                "UUID"
+            ]
+        },
+        "1616419299": {
+            "title": "mce::UUID",
+            "type": "object",
+            "properties": {
+                "Least Significant Bits": {
+                    "type": "integer",
+                    "x-underlying-type": "unsigned __int64",
+                    "x-ordinal-index": 1,
+                    "minimum": 0.0,
+                    "maximum": 18446744073709553000.0
+                },
+                "Most Significant Bits": {
+                    "type": "integer",
+                    "x-underlying-type": "unsigned __int64",
+                    "x-ordinal-index": 0,
+                    "minimum": 0.0,
+                    "maximum": 18446744073709553000.0
+                }
+            },
+            "required": [
+                "Least Significant Bits",
+                "Most Significant Bits"
+            ]
+        },
+        "2700246651": {
+            "title": "CommandOutput",
+            "type": "object",
+            "properties": {
+                "Data Set": {
+                    "description": "The data set.",
+                    "type": "string",
+                    "x-ordinal-index": 3
+                },
+                "Output Messages": {
+                    "description": "The messages.",
+                    "type": "array",
+                    "default": [],
+                    "items": {
+                        "$ref": "#/definitions/320823778"
+                    },
+                    "x-ordinal-index": 2,
+                    "maxItems": 100
+                },
+                "Output Type": {
+                    "title": "CommandOutputType",
+                    "description": "The command output type.",
+                    "type": "string",
+                    "enum": [
+                        "None",
+                        "LastOutput",
+                        "Silent",
+                        "AllOutput",
+                        "DataSet"
+                    ],
+                    "x-underlying-type": "int",
+                    "x-ordinal-index": 0
+                },
+                "Success Count": {
+                    "description": "The success count.",
+                    "type": "integer",
+                    "x-underlying-type": "unsigned int",
+                    "x-ordinal-index": 1,
+                    "minimum": 0.0,
+                    "maximum": 4294967295.0
+                }
+            },
+            "required": [
+                "Output Type",
+                "Success Count"
+            ]
+        }
+    },
+    "title": "CommandOutputPacket",
+    "description": "\"slash\" command execution output, server to client.",
+    "type": "object",
+    "properties": {
+        "Origin Data": {
+            "description": "The origin of the command.",
+            "$ref": "#/definitions/435823779",
+            "x-ordinal-index": 0
+        },
+        "Output": {
+            "description": "The output.",
+            "$ref": "#/definitions/2700246651",
+            "x-ordinal-index": 1
+        }
+    },
+    "required": [
+        "Origin Data",
+        "Output"
+    ]
+}

@@ -2,63 +2,22 @@
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "91121805",
     "x-format-version": "MISSING VERSION",
-    "x-minecraft-version": "1.21.120",
-    "x-protocol-version": 859,
+    "x-minecraft-version": "1.21.130",
+    "x-protocol-version": 893,
     "definitions": {
-        "1885063242": {
-            "title": "MovementEffectPacketPayload",
-            "type": "object",
-            "properties": {
-                "Effect Duration": {
-                    "type": "integer",
-                    "x-underlying-type": "int32",
-                    "x-serialization-options": [
-                        "Compression"
-                    ],
-                    "x-ordinal-index": 2
-                },
-                "Effect ID": {
-                    "title": "MovementEffectType",
-                    "type": "string",
-                    "enum": [
-                        "GLIDE_BOOST",
-                        "DOLPHIN_BOOST"
-                    ],
-                    "x-underlying-type": "int32",
-                    "x-serialization-options": [
-                        "Compression",
-                        "EnumAsValue"
-                    ],
-                    "x-ordinal-index": 1
-                },
-                "Target Runtime ID": {
-                    "$ref": "#/definitions/3541243607",
-                    "x-ordinal-index": 0
-                },
-                "Tick": {
-                    "description": "If this packet is referring to the player or a client predicted vehicle they are in control of, this should be the most recently processed PlayerInputTick from their PlayerAuthInputPacket. Otherwise zero.",
-                    "$ref": "#/definitions/1497397410",
-                    "x-ordinal-index": 3
-                }
-            },
-            "required": [
-                "Effect Duration",
-                "Effect ID",
-                "Target Runtime ID",
-                "Tick"
-            ]
-        },
         "3541243607": {
             "title": "ActorRuntimeID",
             "type": "object",
             "properties": {
                 "Actor Runtime ID": {
                     "type": "integer",
-                    "x-underlying-type": "uint64",
+                    "x-underlying-type": "unsigned __int64",
                     "x-serialization-options": [
                         "Compression"
                     ],
-                    "x-ordinal-index": 0
+                    "x-ordinal-index": 0,
+                    "minimum": 0.0,
+                    "maximum": 18446744073709553000.0
                 }
             },
             "required": [
@@ -72,11 +31,13 @@
                 "Input tick": {
                     "description": "In server authoritative movement mode the client supplies this in PlayerAuthInputPacket.\nFor any client-bound packets containing a tick, the server should supply the tick value corresponding to the most recently processed PlayerAuthInputPacket.\nThis allows the client to adjust any client predictions made while the packet was in flight.\nIf the packet is being sent to the client but not relating to data of the player or a client-predicted vehicle, it can be zero.\nIt is also acceptable to specify zero for players, although this may lead to minor visual flickers and less smooth application of CorrectPlayerMovePredictionPacket.",
                     "type": "integer",
-                    "x-underlying-type": "uint64",
+                    "x-underlying-type": "unsigned __int64",
                     "x-serialization-options": [
                         "Compression"
                     ],
-                    "x-ordinal-index": 0
+                    "x-ordinal-index": 0,
+                    "minimum": 0.0,
+                    "maximum": 18446744073709553000.0
                 }
             },
             "required": [
@@ -88,13 +49,44 @@
     "description": "These packets are sent to the client to update specific MovementEffects",
     "type": "object",
     "properties": {
-        "mPayload": {
-            "$ref": "#/definitions/1885063242",
+        "Effect Duration": {
+            "type": "integer",
+            "x-underlying-type": "int",
+            "x-serialization-options": [
+                "Compression"
+            ],
+            "x-ordinal-index": 2,
+            "minimum": -2147483648.0,
+            "maximum": 2147483647.0
+        },
+        "Effect ID": {
+            "title": "MovementEffectType",
+            "type": "string",
+            "enum": [
+                "GLIDE_BOOST",
+                "DOLPHIN_BOOST"
+            ],
+            "x-underlying-type": "int",
+            "x-serialization-options": [
+                "Compression",
+                "Enum-as-Value"
+            ],
+            "x-ordinal-index": 1
+        },
+        "Target Runtime ID": {
+            "$ref": "#/definitions/3541243607",
             "x-ordinal-index": 0
+        },
+        "Tick": {
+            "description": "If this packet is referring to the player or a client predicted vehicle they are in control of, this should be the most recently processed PlayerInputTick from their PlayerAuthInputPacket. Otherwise zero.",
+            "$ref": "#/definitions/1497397410",
+            "x-ordinal-index": 3
         }
     },
-    "$metaProperties": {
-        "[cereal:packet]": 318,
-        "[cereal:packet_details]": "\n\tThese MovementEffects can be client-predicted.\n\tEx: Fireworks Rockets used while gliding send this packet to the client so they know the exact duration of the GLIDE_BOOST MovementEffect.\n\t"
-    }
+    "required": [
+        "Effect Duration",
+        "Effect ID",
+        "Target Runtime ID",
+        "Tick"
+    ]
 }

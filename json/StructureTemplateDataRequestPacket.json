@@ -2,75 +2,42 @@
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "1030299093",
     "x-format-version": "MISSING VERSION",
-    "x-minecraft-version": "1.21.120",
-    "x-protocol-version": 859,
+    "x-minecraft-version": "1.21.130",
+    "x-protocol-version": 893,
     "definitions": {
-        "2461165538": {
-            "title": "struct StructureTemplateDataRequestPacketPayload",
-            "type": "object",
-            "properties": {
-                "Requested Operation": {
-                    "title": "enum StructureTemplateRequestOperation",
-                    "type": "string",
-                    "enum": [
-                        "None",
-                        "ExportFromSaveMode",
-                        "ExportFromLoadMode",
-                        "QuerySavedStructure"
-                    ],
-                    "x-underlying-type": "uint8",
-                    "x-serialization-options": [
-                        "EnumAsValue"
-                    ],
-                    "x-ordinal-index": 3
-                },
-                "Structure Name": {
-                    "type": "string",
-                    "x-ordinal-index": 0
-                },
-                "Structure Position": {
-                    "$ref": "#/definitions/269289973",
-                    "x-ordinal-index": 1
-                },
-                "Structure Settings": {
-                    "$ref": "#/definitions/684344651",
-                    "x-ordinal-index": 2
-                }
-            },
-            "required": [
-                "Requested Operation",
-                "Structure Name",
-                "Structure Position",
-                "Structure Settings"
-            ]
-        },
         "269289973": {
             "title": "NetworkBlockPosition",
             "type": "object",
             "properties": {
                 "X": {
                     "type": "integer",
-                    "x-underlying-type": "int32",
+                    "x-underlying-type": "int",
                     "x-serialization-options": [
                         "Compression"
                     ],
-                    "x-ordinal-index": 0
+                    "x-ordinal-index": 0,
+                    "minimum": -2147483648.0,
+                    "maximum": 2147483647.0
                 },
                 "Y": {
                     "type": "integer",
-                    "x-underlying-type": "uint32",
+                    "x-underlying-type": "unsigned int",
                     "x-serialization-options": [
                         "Compression"
                     ],
-                    "x-ordinal-index": 1
+                    "x-ordinal-index": 1,
+                    "minimum": 0.0,
+                    "maximum": 4294967295.0
                 },
                 "Z": {
                     "type": "integer",
-                    "x-underlying-type": "int32",
+                    "x-underlying-type": "int",
                     "x-serialization-options": [
                         "Compression"
                     ],
-                    "x-ordinal-index": 2
+                    "x-ordinal-index": 2,
+                    "minimum": -2147483648.0,
+                    "maximum": 2147483647.0
                 }
             },
             "required": [
@@ -86,17 +53,23 @@
                 "X": {
                     "type": "number",
                     "x-underlying-type": "float",
-                    "x-ordinal-index": 0
+                    "x-ordinal-index": 0,
+                    "minimum": 1.1754943508222876e-38,
+                    "maximum": 3.4028234663852887e38
                 },
                 "Y": {
                     "type": "number",
                     "x-underlying-type": "float",
-                    "x-ordinal-index": 1
+                    "x-ordinal-index": 1,
+                    "minimum": 1.1754943508222876e-38,
+                    "maximum": 3.4028234663852887e38
                 },
                 "Z": {
                     "type": "number",
                     "x-underlying-type": "float",
-                    "x-ordinal-index": 2
+                    "x-ordinal-index": 2,
+                    "minimum": 1.1754943508222876e-38,
+                    "maximum": 3.4028234663852887e38
                 }
             },
             "required": [
@@ -117,26 +90,32 @@
                         "Layers",
                         "Blocks"
                     ],
-                    "x-underlying-type": "uint8",
+                    "x-underlying-type": "unsigned char",
                     "x-serialization-options": [
-                        "EnumAsValue"
+                        "Enum-as-Value"
                     ],
                     "x-ordinal-index": 9
                 },
                 "Animation Seconds": {
                     "type": "number",
                     "x-underlying-type": "float",
-                    "x-ordinal-index": 10
+                    "x-ordinal-index": 10,
+                    "minimum": 1.1754943508222876e-38,
+                    "maximum": 3.4028234663852887e38
                 },
                 "Integrity Seed": {
                     "type": "integer",
-                    "x-underlying-type": "uint32",
-                    "x-ordinal-index": 12
+                    "x-underlying-type": "unsigned int",
+                    "x-ordinal-index": 12,
+                    "minimum": 0.0,
+                    "maximum": 4294967295.0
                 },
                 "Integrity Value": {
                     "type": "number",
                     "x-underlying-type": "float",
-                    "x-ordinal-index": 11
+                    "x-ordinal-index": 11,
+                    "minimum": 1.1754943508222876e-38,
+                    "maximum": 3.4028234663852887e38
                 },
                 "Last Edit Player": {
                     "description": "Player who last edited the structure block.",
@@ -152,9 +131,9 @@
                         "Z",
                         "XZ"
                     ],
-                    "x-underlying-type": "uint8",
+                    "x-underlying-type": "unsigned char",
                     "x-serialization-options": [
-                        "EnumAsValue"
+                        "Enum-as-Value"
                     ],
                     "x-ordinal-index": 8
                 },
@@ -170,9 +149,9 @@
                         "Clockwise180",
                         "CounterClockwise90"
                     ],
-                    "x-underlying-type": "uint8",
+                    "x-underlying-type": "unsigned char",
                     "x-serialization-options": [
-                        "EnumAsValue"
+                        "Enum-as-Value"
                     ],
                     "x-ordinal-index": 7
                 },
@@ -183,14 +162,17 @@
                 },
                 "Should Allow Non Ticking Player and Ticking Area Chunks": {
                     "type": "boolean",
+                    "x-underlying-type": "bool",
                     "x-ordinal-index": 3
                 },
                 "Should ignore blocks?": {
                     "type": "boolean",
+                    "x-underlying-type": "bool",
                     "x-ordinal-index": 2
                 },
                 "Should ignore entities?": {
                     "type": "boolean",
+                    "x-underlying-type": "bool",
                     "x-ordinal-index": 1
                 },
                 "Structure Offset": {
@@ -229,11 +211,13 @@
             "properties": {
                 "Actor Unique ID": {
                     "type": "integer",
-                    "x-underlying-type": "int64",
+                    "x-underlying-type": "__int64",
                     "x-serialization-options": [
                         "Compression"
                     ],
-                    "x-ordinal-index": 0
+                    "x-ordinal-index": 0,
+                    "minimum": -9223372036854776000.0,
+                    "maximum": 9223372036854776000.0
                 }
             },
             "required": [
@@ -245,13 +229,38 @@
     "description": "Used to request structure information from a server.",
     "type": "object",
     "properties": {
-        "mPayload": {
-            "$ref": "#/definitions/2461165538",
+        "Requested Operation": {
+            "title": "enum StructureTemplateRequestOperation",
+            "type": "string",
+            "enum": [
+                "None",
+                "ExportFromSaveMode",
+                "ExportFromLoadMode",
+                "QuerySavedStructure"
+            ],
+            "x-underlying-type": "unsigned char",
+            "x-serialization-options": [
+                "Enum-as-Value"
+            ],
+            "x-ordinal-index": 3
+        },
+        "Structure Name": {
+            "type": "string",
             "x-ordinal-index": 0
+        },
+        "Structure Position": {
+            "$ref": "#/definitions/269289973",
+            "x-ordinal-index": 1
+        },
+        "Structure Settings": {
+            "$ref": "#/definitions/684344651",
+            "x-ordinal-index": 2
         }
     },
-    "$metaProperties": {
-        "[cereal:packet]": 132,
-        "[cereal:packet_details]": "This is used to kick off the process of loading and returning a structure in a Tag from the server back to the client. Currently this functionality is completely disabled and does nothing."
-    }
+    "required": [
+        "Requested Operation",
+        "Structure Name",
+        "Structure Position",
+        "Structure Settings"
+    ]
 }

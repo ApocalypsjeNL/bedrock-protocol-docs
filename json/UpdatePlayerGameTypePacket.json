@@ -2,59 +2,22 @@
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "586894191",
     "x-format-version": "MISSING VERSION",
-    "x-minecraft-version": "1.21.120",
-    "x-protocol-version": 859,
+    "x-minecraft-version": "1.21.130",
+    "x-protocol-version": 893,
     "definitions": {
-        "3103000916": {
-            "title": "UpdatePlayerGameTypePacketPayload",
-            "type": "object",
-            "properties": {
-                "Player Game Type": {
-                    "title": "GameType",
-                    "type": "string",
-                    "enum": [
-                        "Undefined",
-                        "Survival",
-                        "Creative",
-                        "Adventure",
-                        "Default",
-                        "Spectator",
-                        "WorldDefault"
-                    ],
-                    "x-underlying-type": "int32",
-                    "x-serialization-options": [
-                        "Compression",
-                        "EnumAsValue"
-                    ],
-                    "x-ordinal-index": 0
-                },
-                "Target player": {
-                    "$ref": "#/definitions/1221684255",
-                    "x-ordinal-index": 1
-                },
-                "Tick": {
-                    "description": "Most relevant to supply for transitioning into and out of spectator while in motion",
-                    "$ref": "#/definitions/1497397410",
-                    "x-ordinal-index": 2
-                }
-            },
-            "required": [
-                "Player Game Type",
-                "Target player",
-                "Tick"
-            ]
-        },
         "1221684255": {
             "title": "ActorUniqueID",
             "type": "object",
             "properties": {
                 "Actor Unique ID": {
                     "type": "integer",
-                    "x-underlying-type": "int64",
+                    "x-underlying-type": "__int64",
                     "x-serialization-options": [
                         "Compression"
                     ],
-                    "x-ordinal-index": 0
+                    "x-ordinal-index": 0,
+                    "minimum": -9223372036854776000.0,
+                    "maximum": 9223372036854776000.0
                 }
             },
             "required": [
@@ -68,11 +31,13 @@
                 "Input tick": {
                     "description": "In server authoritative movement mode the client supplies this in PlayerAuthInputPacket.\nFor any client-bound packets containing a tick, the server should supply the tick value corresponding to the most recently processed PlayerAuthInputPacket.\nThis allows the client to adjust any client predictions made while the packet was in flight.\nIf the packet is being sent to the client but not relating to data of the player or a client-predicted vehicle, it can be zero.\nIt is also acceptable to specify zero for players, although this may lead to minor visual flickers and less smooth application of CorrectPlayerMovePredictionPacket.",
                     "type": "integer",
-                    "x-underlying-type": "uint64",
+                    "x-underlying-type": "unsigned __int64",
                     "x-serialization-options": [
                         "Compression"
                     ],
-                    "x-ordinal-index": 0
+                    "x-ordinal-index": 0,
+                    "minimum": 0.0,
+                    "maximum": 18446744073709553000.0
                 }
             },
             "required": [
@@ -84,13 +49,38 @@
     "description": "The server will send this back to all clients on receipt of the SetPlayerGameTypePacket so that cached game type and permissions flags in mLevel on all clients is kept up to date.",
     "type": "object",
     "properties": {
-        "mPayload": {
-            "$ref": "#/definitions/3103000916",
+        "Player Game Type": {
+            "title": "GameType",
+            "type": "string",
+            "enum": [
+                "Undefined",
+                "Survival",
+                "Creative",
+                "Adventure",
+                "Default",
+                "Spectator",
+                "WorldDefault"
+            ],
+            "x-underlying-type": "int",
+            "x-serialization-options": [
+                "Compression",
+                "Enum-as-Value"
+            ],
             "x-ordinal-index": 0
+        },
+        "Target player": {
+            "$ref": "#/definitions/1221684255",
+            "x-ordinal-index": 1
+        },
+        "Tick": {
+            "description": "Most relevant to supply for transitioning into and out of spectator while in motion",
+            "$ref": "#/definitions/1497397410",
+            "x-ordinal-index": 2
         }
     },
-    "$metaProperties": {
-        "[cereal:packet]": 151,
-        "[cereal:packet_details]": ""
-    }
+    "required": [
+        "Player Game Type",
+        "Target player",
+        "Tick"
+    ]
 }

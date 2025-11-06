@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ServerboundPackSettingChangePacket (329)</title>
+    <title>ServerboundPackSettingChangePacket</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -98,7 +98,7 @@
 <body>
     <div class="container">
         <p><a href="index.html">← Back to Index</a></p>
-        <h1>ServerboundPackSettingChangePacket (329)</h1>
+        <h1>ServerboundPackSettingChangePacket</h1>
 <div class="description">Sent from the client to the server when players change Pack Settings (pack UI).</div>
 <div style="margin-left: 0px; margin-top: 10px;">
 <table border="1" cellpadding="5" cellspacing="0" style="border-collapse: collapse; width: 100%; max-width: 800px;">
@@ -106,7 +106,7 @@
 <tr style="background-color: #f0f0f0;">
 <th>Field Name</th>
 <th>Type</th>
-<th>Ordinal Index</th>
+<th>Field Index</th>
 <th>Description</th>
 </tr>
 </thead>
@@ -125,20 +125,20 @@
 <tr style="background-color: #f0f0f0;">
 <th>Field Name</th>
 <th>Type</th>
-<th>Ordinal Index</th>
+<th>Field Index</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><strong>Most Significant Bits</strong></td>
-<td>uint64</td>
+<td>unsigned __int64</td>
 <td>0</td>
 <td></td>
 </tr>
 <tr>
 <td><strong>Least Significant Bits</strong></td>
-<td>uint64</td>
+<td>unsigned __int64</td>
 <td>1</td>
 <td></td>
 </tr>
@@ -155,12 +155,12 @@
 <tr>
 <td rowspan="2"><strong>PackSettingValue</strong></td>
 <td>oneOf</td>
-<td></td>
+<td>2</td>
 <td>The value of the setting being changed.</td>
 </tr>
 <tr>
 <td colspan="3" style="padding: 0;"><div style="margin-left: 20px; margin-top: 0px; margin-bottom: 0px;">
-<strong>oneOf&lt;float, boolean, string&gt;:</strong>
+<strong>oneOf&lt;float, bool, string&gt;:</strong>
 <table border="1" cellpadding="5" cellspacing="0" style="border-collapse: collapse; width: 100%; max-width: 760px; margin-top: 5px;">
 <thead>
 <tr style="background-color: #e8e8e8;">
@@ -177,8 +177,8 @@
 </tr>
 <tr>
 <td>1</td>
-<td><strong>boolean</strong></td>
-<td>-</td>
+<td><strong>bool</strong></td>
+<td>Underlying: bool</td>
 </tr>
 <tr>
 <td>2</td>

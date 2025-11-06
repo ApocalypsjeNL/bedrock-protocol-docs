@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ActorEventPacket (27)</title>
+    <title>ActorEventPacket</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -98,16 +98,15 @@
 <body>
     <div class="container">
         <p><a href="index.html">← Back to Index</a></p>
-        <h1>ActorEventPacket (27)</h1>
+        <h1>ActorEventPacket</h1>
 <div class="description">All kinds of actor state changes (see Actor::handleEntityEvent).</div>
-<div class="description">Ranges from a crossbow being ready to fire to taming animals..., some of which may be obsolete (frex, ADD_PLAYER_LEVELS)</div>
 <div style="margin-left: 0px; margin-top: 10px;">
 <table border="1" cellpadding="5" cellspacing="0" style="border-collapse: collapse; width: 100%; max-width: 800px;">
 <thead>
 <tr style="background-color: #f0f0f0;">
 <th>Field Name</th>
 <th>Type</th>
-<th>Ordinal Index</th>
+<th>Field Index</th>
 <th>Description</th>
 </tr>
 </thead>
@@ -126,14 +125,14 @@
 <tr style="background-color: #f0f0f0;">
 <th>Field Name</th>
 <th>Type</th>
-<th>Ordinal Index</th>
+<th>Field Index</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><strong>Actor Runtime ID</strong></td>
-<td>varuint64</td>
+<td>varunsigned __int64</td>
 <td>0</td>
 <td></td>
 </tr>
@@ -143,7 +142,7 @@
 </tr>
 <tr>
 <td rowspan="2"><strong>Event ID</strong></td>
-<td>uint8</td>
+<td>unsigned char</td>
 <td>1</td>
 <td></td>
 </tr>
@@ -394,13 +393,17 @@
 <td style="text-align: center;">58</td>
 <td><code>SHAKE_WETNESS_STOP</code></td>
 </tr>
+<tr>
+<td style="text-align: center;">59</td>
+<td><code>KINETIC_DAMAGE_DEALT</code></td>
+</tr>
 </tbody>
 </table>
 </div></td>
 </tr>
 <tr>
 <td><strong>Data</strong></td>
-<td>varint32</td>
+<td>varint</td>
 <td>2</td>
 <td></td>
 </tr>

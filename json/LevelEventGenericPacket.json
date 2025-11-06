@@ -2,43 +2,29 @@
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "3942862760",
     "x-format-version": "MISSING VERSION",
-    "x-minecraft-version": "1.21.120",
-    "x-protocol-version": 859,
-    "definitions": {
-        "3780217623": {
-            "title": "struct LevelEventGenericPacketPayload",
-            "type": "object",
-            "properties": {
-                "Event Id": {
-                    "type": "integer",
-                    "x-underlying-type": "int32",
-                    "x-serialization-options": [
-                        "Compression"
-                    ],
-                    "x-ordinal-index": 0
-                },
-                "__[[CTD]]__": {
-                    "$ref": "#/definitions/4158325036",
-                    "x-ordinal-index": 1
-                }
-            },
-            "required": [
-                "Event Id",
-                "__[[CTD]]__"
-            ]
-        }
-    },
+    "x-minecraft-version": "1.21.130",
+    "x-protocol-version": 893,
     "title": "LevelEventGenericPacket",
     "description": "LevelEventGenericPacket",
     "type": "object",
     "properties": {
-        "mPayload": {
-            "$ref": "#/definitions/3780217623",
-            "x-ordinal-index": 0
+        "Event Id": {
+            "type": "integer",
+            "x-underlying-type": "int",
+            "x-serialization-options": [
+                "Compression"
+            ],
+            "x-ordinal-index": 0,
+            "minimum": -2147483648.0,
+            "maximum": 2147483647.0
+        },
+        "__[[CTD]]__": {
+            "$ref": "#/definitions/4158325036",
+            "x-ordinal-index": 1
         }
     },
-    "$metaProperties": {
-        "[cereal:packet]": 124,
-        "[cereal:packet_details]": ""
-    }
+    "required": [
+        "Event Id",
+        "__[[CTD]]__"
+    ]
 }

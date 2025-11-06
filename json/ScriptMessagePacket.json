@@ -2,39 +2,23 @@
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "2520262741",
     "x-format-version": "MISSING VERSION",
-    "x-minecraft-version": "1.21.120",
-    "x-protocol-version": 859,
-    "definitions": {
-        "869477304": {
-            "title": "ScriptMessagePacketPayload",
-            "type": "object",
-            "properties": {
-                "Message Id": {
-                    "type": "string",
-                    "x-ordinal-index": 0
-                },
-                "Message Value": {
-                    "type": "string",
-                    "x-ordinal-index": 1
-                }
-            },
-            "required": [
-                "Message Id",
-                "Message Value"
-            ]
-        }
-    },
+    "x-minecraft-version": "1.21.130",
+    "x-protocol-version": 893,
     "title": "ScriptMessagePacket",
     "description": "Used to send custom messages between client and server.",
     "type": "object",
     "properties": {
-        "mPayload": {
-            "$ref": "#/definitions/869477304",
+        "Message Id": {
+            "type": "string",
             "x-ordinal-index": 0
+        },
+        "Message Value": {
+            "type": "string",
+            "x-ordinal-index": 1
         }
     },
-    "$metaProperties": {
-        "[cereal:packet]": 177,
-        "[cereal:packet_details]": ""
-    }
+    "required": [
+        "Message Id",
+        "Message Value"
+    ]
 }

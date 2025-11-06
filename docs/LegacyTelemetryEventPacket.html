@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LegacyTelemetryEventPacket</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+        h2 {
+            color: #34495e;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 5px;
+            margin-top: 30px;
+        }
+        h3 {
+            color: #555;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        h4 {
+            color: #666;
+            margin-top: 15px;
+            margin-bottom: 8px;
+        }
+        table {
+            background-color: white;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+        th {
+            font-weight: bold;
+            text-align: left;
+            padding: 8px !important;
+        }
+        td {
+            padding: 8px !important;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        tr:hover {
+            background-color: #e8f4f8;
+        }
+        .description {
+            color: #555;
+            font-style: italic;
+            margin: 10px 0 20px 0;
+            padding: 10px;
+            background-color: #f8f9fa;
+            border-left: 4px solid #3498db;
+        }
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .packet-list {
+            columns: 3;
+            column-gap: 20px;
+        }
+        .packet-list li {
+            margin-bottom: 8px;
+            break-inside: avoid;
+        }
+        @media (max-width: 900px) {
+            .packet-list {
+                columns: 2;
+            }
+        }
+        @media (max-width: 600px) {
+            .packet-list {
+                columns: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <p><a href="index.html">← Back to Index</a></p>
+        <h1>LegacyTelemetryEventPacket</h1>
+<div class="description">Sends telemetry events to the client so the client can then send that on to the eventing system</div>
+<div style="margin-left: 0px; margin-top: 10px;">
+<table border="1" cellpadding="5" cellspacing="0" style="border-collapse: collapse; width: 100%; max-width: 800px;">
+<thead>
+<tr style="background-color: #f0f0f0;">
+<th>Field Name</th>
+<th>Type</th>
+<th>Field Index</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td rowspan="2"><strong>Target Actor ID</strong></td>
+<td>ActorUniqueID</td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="3"><div style="margin-left: 20px; margin-top: 10px;">
+<h3>ActorUniqueID</h3>
+<table border="1" cellpadding="5" cellspacing="0" style="border-collapse: collapse; width: 100%; max-width: 800px;">
+<thead>
+<tr style="background-color: #f0f0f0;">
+<th>Field Name</th>
+<th>Type</th>
+<th>Field Index</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Actor Unique ID</strong></td>
+<td>var__int64</td>
+<td>0</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div></td>
+</tr>
+<tr>
+<td rowspan="2"><strong>Event Type</strong></td>
+<td>varint</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="3"><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 5px;">
+<strong>Enum Values:</strong>
+<table border="1" cellpadding="3" cellspacing="0" style="border-collapse: collapse; width: 100%; max-width: 760px; font-size: 12px;">
+<thead>
+<tr style="background-color: #e8e8e8;">
+<th style="width: 40px;">Index</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">0</td>
+<td><code>Achievement</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">1</td>
+<td><code>Interaction</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td><code>PortalCreated</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td><code>PortalUsed</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td><code>MobKilled</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">5</td>
+<td><code>CauldronUsed</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">6</td>
+<td><code>PlayerDied</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">7</td>
+<td><code>BossKilled</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">8</td>
+<td><code>AgentCommand_OBSOLETE</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">9</td>
+<td><code>AgentCreated</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">10</td>
+<td><code>PatternRemoved_OBSOLETE</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">11</td>
+<td><code>SlashCommand</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">12</td>
+<td><code>FishBucketed_OBSOLETE</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">13</td>
+<td><code>MobBorn</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">14</td>
+<td><code>PetDied_OBSOLETE</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">15</td>
+<td><code>POICauldronUsed</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">16</td>
+<td><code>ComposterUsed</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">17</td>
+<td><code>BellUsed</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">18</td>
+<td><code>ActorDefinition</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">19</td>
+<td><code>RaidUpdate</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">20</td>
+<td><code>PlayerMovementAnomaly_OBSOLETE</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">21</td>
+<td><code>PlayerMovementCorrected_OBSOLETE</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">22</td>
+<td><code>HoneyHarvested</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">23</td>
+<td><code>TargetBlockHit</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">24</td>
+<td><code>PiglinBarter</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">25</td>
+<td><code>PlayerWaxedOrUnwaxedCopper</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">26</td>
+<td><code>CodeBuilderRuntimeAction</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">27</td>
+<td><code>CodeBuilderScoreboard</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">28</td>
+<td><code>StriderRiddenInLavaInOverworld</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">29</td>
+<td><code>SneakCloseToSculkSensor</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">30</td>
+<td><code>CarefulRestoration</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">31</td>
+<td><code>ItemUsed</code></td>
+</tr>
+</tbody>
+</table>
+</div></td>
+</tr>
+<tr>
+<td><strong>Use Player ID</strong></td>
+<td>bool</td>
+<td>2</td>
+<td></td>
+</tr>
+<tr>
+<td rowspan="2"><strong>Event Data</strong></td>
+<td>oneOf</td>
+<td>3</td>
+<td>Actual event payload (variant) holding data specific to the type of event (achievement ID for an achievement event).</td>
+</tr>
+<tr>
+<td colspan="3" style="padding: 0;"><div style="margin-left: 20px; margin-top: 0px; margin-bottom: 0px;">
+<strong>oneOf&lt;3489467127, 2066547760, 1277110218, 2395296471, 981162443, 3298360571, 2420194999, 266193524, 3747789182, 3020183005, 500316135, 4138569497, 2098318980, 1269040124, 131536137, 2923593111, 2488130011, 3493966032, 3874194270, 2938550282, 311923022, 1830556041&gt;:</strong>
+<table border="1" cellpadding="5" cellspacing="0" style="border-collapse: collapse; width: 100%; max-width: 760px; margin-top: 5px;">
+<thead>
+<tr style="background-color: #e8e8e8;">
+<th>Control Value [varuint32]</th>
+<th>Type</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td><strong>3489467127</strong></td>
+<td>-</td>
+</tr>
+<tr>
+<td>1</td>
+<td><strong>2066547760</strong></td>
+<td>-</td>
+</tr>
+<tr>
+<td>2</td>
+<td><strong>1277110218</strong></td>
+<td>-</td>
+</tr>
+<tr>
+<td>3</td>
+<td><strong>2395296471</strong></td>
+<td>-</td>
+</tr>
+<tr>
+<td>4</td>
+<td><strong>981162443</strong></td>
+<td>-</td>
+</tr>
+<tr>
+<td>5</td>
+<td><strong>3298360571</strong></td>
+<td>-</td>
+</tr>
+<tr>
+<td>6</td>
+<td><strong>2420194999</strong></td>
+<td>-</td>
+</tr>
+<tr>
+<td>7</td>
+<td><strong>266193524</strong></td>
+<td>-</td>
+</tr>
+<tr>
+<td>8</td>
+<td><strong>3747789182</strong></td>
+<td>-</td>
+</tr>
+<tr>
+<td>9</td>
+<td><strong>3020183005</strong></td>
+<td>-</td>
+</tr>
+<tr>
+<td>10</td>
+<td><strong>500316135</strong></td>
+<td>-</td>
+</tr>
+<tr>
+<td>11</td>
+<td><strong>4138569497</strong></td>
+<td>-</td>
+</tr>
+<tr>
+<td>12</td>
+<td><strong>2098318980</strong></td>
+<td>-</td>
+</tr>
+<tr>
+<td>13</td>
+<td><strong>1269040124</strong></td>
+<td>-</td>
+</tr>
+<tr>
+<td>14</td>
+<td><strong>131536137</strong></td>
+<td>-</td>
+</tr>
+<tr>
+<td>15</td>
+<td><strong>2923593111</strong></td>
+<td>-</td>
+</tr>
+<tr>
+<td>16</td>
+<td><strong>2488130011</strong></td>
+<td>-</td>
+</tr>
+<tr>
+<td>17</td>
+<td><strong>3493966032</strong></td>
+<td>-</td>
+</tr>
+<tr>
+<td>18</td>
+<td><strong>3874194270</strong></td>
+<td>-</td>
+</tr>
+<tr>
+<td>19</td>
+<td><strong>2938550282</strong></td>
+<td>-</td>
+</tr>
+<tr>
+<td>20</td>
+<td><strong>311923022</strong></td>
+<td>-</td>
+</tr>
+<tr>
+<td>21</td>
+<td><strong>1830556041</strong></td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+</div></td>
+</tr>
+</tbody>
+</table>
+</div>
+    </div>
+</body>
+</html>

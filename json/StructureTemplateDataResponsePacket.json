@@ -2,54 +2,38 @@
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "3211677219",
     "x-format-version": "MISSING VERSION",
-    "x-minecraft-version": "1.21.120",
-    "x-protocol-version": 859,
-    "definitions": {
-        "203427718": {
-            "title": "struct StructureTemplateDataResponsePacketPayload",
-            "type": "object",
-            "properties": {
-                "Response Type": {
-                    "title": "enum StructureTemplateResponseType",
-                    "type": "string",
-                    "enum": [
-                        "None",
-                        "Export",
-                        "Query"
-                    ],
-                    "x-underlying-type": "uint8",
-                    "x-serialization-options": [
-                        "EnumAsValue"
-                    ],
-                    "x-ordinal-index": 2
-                },
-                "Structure Name": {
-                    "type": "string",
-                    "x-ordinal-index": 0
-                },
-                "Structure's NBT": {
-                    "$ref": "#/definitions/4158325036",
-                    "x-ordinal-index": 1
-                }
-            },
-            "required": [
-                "Response Type",
-                "Structure Name",
-                "Structure's NBT"
-            ]
-        }
-    },
+    "x-minecraft-version": "1.21.130",
+    "x-protocol-version": 893,
     "title": "StructureTemplateDataResponsePacket",
     "description": "This is used in exporting from load, exporting from save, and querying saved structures from structure blocks.",
     "type": "object",
     "properties": {
-        "mPayload": {
-            "$ref": "#/definitions/203427718",
+        "Response Type": {
+            "title": "enum StructureTemplateResponseType",
+            "type": "string",
+            "enum": [
+                "None",
+                "Export",
+                "Query"
+            ],
+            "x-underlying-type": "unsigned char",
+            "x-serialization-options": [
+                "Enum-as-Value"
+            ],
+            "x-ordinal-index": 2
+        },
+        "Structure Name": {
+            "type": "string",
             "x-ordinal-index": 0
+        },
+        "Structure's NBT": {
+            "$ref": "#/definitions/4158325036",
+            "x-ordinal-index": 1
         }
     },
-    "$metaProperties": {
-        "[cereal:packet]": 133,
-        "[cereal:packet_details]": "The client sends a packet to the server, from there the structure is built and then put into a Tag where it is sent back to the client, from there you can view the structure in the Structure Block Screen. Currently this functionality is completely disabled and does nothing. Used to reply to a request for structure information."
-    }
+    "required": [
+        "Response Type",
+        "Structure Name",
+        "Structure's NBT"
+    ]
 }

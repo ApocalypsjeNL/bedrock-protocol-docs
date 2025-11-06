@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CameraAimAssistPresetsPacket (320)</title>
+    <title>CameraAimAssistPresetsPacket</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -98,19 +98,15 @@
 <body>
     <div class="container">
         <p><a href="index.html">← Back to Index</a></p>
-        <h1>CameraAimAssistPresetsPacket (320)</h1>
+        <h1>CameraAimAssistPresetsPacket</h1>
 <div class="description">Camera aim-assist registry presets/categories data sent from the server to clients.</div>
-<div class="description">
-	Sent by the server to clients for initializing and updating the client aim-assist registry.
-	AddToExisting operations are sent by the server when new presets/categories are added to the registry through creator facing APIs.
-	</div>
 <div style="margin-left: 0px; margin-top: 10px;">
 <table border="1" cellpadding="5" cellspacing="0" style="border-collapse: collapse; width: 100%; max-width: 800px;">
 <thead>
 <tr style="background-color: #f0f0f0;">
 <th>Field Name</th>
 <th>Type</th>
-<th>Ordinal Index</th>
+<th>Field Index</th>
 <th>Description</th>
 </tr>
 </thead>
@@ -129,7 +125,7 @@
 <tr style="background-color: #f0f0f0;">
 <th>Field Name</th>
 <th>Type</th>
-<th>Ordinal Index</th>
+<th>Field Index</th>
 <th>Description</th>
 </tr>
 </thead>
@@ -154,7 +150,7 @@
 <tr style="background-color: #f0f0f0;">
 <th>Field Name</th>
 <th>Type</th>
-<th>Ordinal Index</th>
+<th>Field Index</th>
 <th>Description</th>
 </tr>
 </thead>
@@ -172,15 +168,21 @@
 <td>Optional. Map of Block identifiers to Aim-Assist targeting priority. Larger numbers have greater priority.</td>
 </tr>
 <tr>
-<td><strong>entity_default</strong></td>
-<td>int32</td>
+<td><strong>block_tags</strong></td>
+<td>object</td>
 <td>2</td>
+<td>Optional. Map of Block tags to Aim-Assist targeting priority. Larger numbers have greater priority.</td>
+</tr>
+<tr>
+<td><strong>entity_default</strong></td>
+<td>int</td>
+<td>3</td>
 <td>Optional. Default Aim-Assist targeting priority used for Entities not found in &#x27;entities&#x27;.</td>
 </tr>
 <tr>
 <td><strong>block_default</strong></td>
-<td>int32</td>
-<td>3</td>
+<td>int</td>
+<td>4</td>
 <td>Optional. Default Aim-Assist targeting priority used for Blocks not found in &#x27;blocks&#x27;.</td>
 </tr>
 </tbody>
@@ -205,7 +207,7 @@
 <tr style="background-color: #f0f0f0;">
 <th>Field Name</th>
 <th>Type</th>
-<th>Ordinal Index</th>
+<th>Field Index</th>
 <th>Description</th>
 </tr>
 </thead>
@@ -217,10 +219,45 @@
 <td>Namespaced identifier for Camera Aim-Assist preset. Namespace and name must be separated by a &#x27;:&#x27;.</td>
 </tr>
 <tr>
-<td><strong>exclusion_list</strong></td>
-<td>array&lt;Reference&gt;</td>
+<td rowspan="2"><strong>exclusion_settings</strong></td>
+<td>CameraAimAssistPresetExclusionDefinition</td>
 <td>1</td>
 <td>Optional. List of block/entity identifiers to exclude from aim assist targeting.</td>
+</tr>
+<tr>
+<td colspan="3"><div style="margin-left: 20px; margin-top: 10px;">
+<h3>CameraAimAssistPresetExclusionDefinition</h3>
+<table border="1" cellpadding="5" cellspacing="0" style="border-collapse: collapse; width: 100%; max-width: 800px;">
+<thead>
+<tr style="background-color: #f0f0f0;">
+<th>Field Name</th>
+<th>Type</th>
+<th>Field Index</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>blocks</strong></td>
+<td>array&lt;Reference&gt;</td>
+<td>0</td>
+<td>Optional. List of block identifiers to exclude from aim assist targeting.</td>
+</tr>
+<tr>
+<td><strong>entities</strong></td>
+<td>array&lt;Reference&gt;</td>
+<td>1</td>
+<td>Optional. List of entity identifiers to exclude from aim assist targeting.</td>
+</tr>
+<tr>
+<td><strong>block_tags</strong></td>
+<td>array&lt;string&gt;</td>
+<td>2</td>
+<td>Optional. List of block tags to exclude from aim assist targeting.</td>
+</tr>
+</tbody>
+</table>
+</div></td>
 </tr>
 <tr>
 <td><strong>liquid_targeting_list</strong></td>
@@ -252,7 +289,7 @@
 </tr>
 <tr>
 <td rowspan="2"><strong>Operation</strong></td>
-<td>uint8</td>
+<td>unsigned char</td>
 <td>2</td>
 <td></td>
 </tr>

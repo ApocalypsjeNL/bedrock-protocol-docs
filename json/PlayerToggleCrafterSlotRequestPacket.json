@@ -2,58 +2,51 @@
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "3797810866",
     "x-format-version": "MISSING VERSION",
-    "x-minecraft-version": "1.21.120",
-    "x-protocol-version": 859,
-    "definitions": {
-        "222711967": {
-            "title": "PlayerToggleCrafterSlotRequestPacketPayload",
-            "type": "object",
-            "properties": {
-                "Is Disabled": {
-                    "type": "boolean",
-                    "x-ordinal-index": 4
-                },
-                "Pos X": {
-                    "type": "integer",
-                    "x-underlying-type": "int32",
-                    "x-ordinal-index": 0
-                },
-                "Pos Y": {
-                    "type": "integer",
-                    "x-underlying-type": "int32",
-                    "x-ordinal-index": 1
-                },
-                "Pos Z": {
-                    "type": "integer",
-                    "x-underlying-type": "int32",
-                    "x-ordinal-index": 2
-                },
-                "Slot Index": {
-                    "type": "integer",
-                    "x-underlying-type": "uint8",
-                    "x-ordinal-index": 3
-                }
-            },
-            "required": [
-                "Is Disabled",
-                "Pos X",
-                "Pos Y",
-                "Pos Z",
-                "Slot Index"
-            ]
-        }
-    },
+    "x-minecraft-version": "1.21.130",
+    "x-protocol-version": 893,
     "title": "PlayerToggleCrafterSlotRequestPacket",
     "description": "PlayerToggleCrafterSlotRequestPacket",
     "type": "object",
     "properties": {
-        "mPayload": {
-            "$ref": "#/definitions/222711967",
-            "x-ordinal-index": 0
+        "Is Disabled": {
+            "type": "boolean",
+            "x-underlying-type": "bool",
+            "x-ordinal-index": 4
+        },
+        "Pos X": {
+            "type": "integer",
+            "x-underlying-type": "int",
+            "x-ordinal-index": 0,
+            "minimum": -2147483648.0,
+            "maximum": 2147483647.0
+        },
+        "Pos Y": {
+            "type": "integer",
+            "x-underlying-type": "int",
+            "x-ordinal-index": 1,
+            "minimum": -2147483648.0,
+            "maximum": 2147483647.0
+        },
+        "Pos Z": {
+            "type": "integer",
+            "x-underlying-type": "int",
+            "x-ordinal-index": 2,
+            "minimum": -2147483648.0,
+            "maximum": 2147483647.0
+        },
+        "Slot Index": {
+            "type": "integer",
+            "x-underlying-type": "unsigned char",
+            "x-ordinal-index": 3,
+            "minimum": 0.0,
+            "maximum": 255.0
         }
     },
-    "$metaProperties": {
-        "[cereal:packet]": 306,
-        "[cereal:packet_details]": ""
-    }
+    "required": [
+        "Is Disabled",
+        "Pos X",
+        "Pos Y",
+        "Pos Z",
+        "Slot Index"
+    ]
 }

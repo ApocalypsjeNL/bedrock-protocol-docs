@@ -2,51 +2,22 @@
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "1121437839",
     "x-format-version": "MISSING VERSION",
-    "x-minecraft-version": "1.21.120",
-    "x-protocol-version": 859,
+    "x-minecraft-version": "1.21.130",
+    "x-protocol-version": 893,
     "definitions": {
-        "622372906": {
-            "title": "struct ChangeDimensionPacketPayload",
-            "type": "object",
-            "properties": {
-                "Dimension ID": {
-                    "description": "Currently supported: (0 -> Overworld, 1 -> Nether, 2 -> The End, 3 -> Undefined)",
-                    "$ref": "#/definitions/2872336518",
-                    "x-ordinal-index": 0
-                },
-                "Loading Screen Id": {
-                    "description": "Leave empty if there is no loading screen expected on the client. This id needs to be unique and not conflict with any other active loading screens.  This is implemented with an unsigned integer incrementing forever, and that is expected to not have collisions when it wraps around back to 0 if that could be a possibility.",
-                    "type": "integer",
-                    "x-underlying-type": "uint32",
-                    "x-ordinal-index": 3
-                },
-                "Position": {
-                    "$ref": "#/definitions/4004946602",
-                    "x-ordinal-index": 1
-                },
-                "Respawn": {
-                    "type": "boolean",
-                    "x-ordinal-index": 2
-                }
-            },
-            "required": [
-                "Dimension ID",
-                "Loading Screen Id",
-                "Position",
-                "Respawn"
-            ]
-        },
         "2872336518": {
             "title": "DimensionType",
             "type": "object",
             "properties": {
                 "value": {
                     "type": "integer",
-                    "x-underlying-type": "int32",
+                    "x-underlying-type": "int",
                     "x-serialization-options": [
                         "Compression"
                     ],
-                    "x-ordinal-index": 0
+                    "x-ordinal-index": 0,
+                    "minimum": -2147483648.0,
+                    "maximum": 2147483647.0
                 }
             },
             "required": [
@@ -60,17 +31,23 @@
                 "X": {
                     "type": "number",
                     "x-underlying-type": "float",
-                    "x-ordinal-index": 0
+                    "x-ordinal-index": 0,
+                    "minimum": 1.1754943508222876e-38,
+                    "maximum": 3.4028234663852887e38
                 },
                 "Y": {
                     "type": "number",
                     "x-underlying-type": "float",
-                    "x-ordinal-index": 1
+                    "x-ordinal-index": 1,
+                    "minimum": 1.1754943508222876e-38,
+                    "maximum": 3.4028234663852887e38
                 },
                 "Z": {
                     "type": "number",
                     "x-underlying-type": "float",
-                    "x-ordinal-index": 2
+                    "x-ordinal-index": 2,
+                    "minimum": 1.1754943508222876e-38,
+                    "maximum": 3.4028234663852887e38
                 }
             },
             "required": [
@@ -84,13 +61,33 @@
     "description": "The server sends this packet from the level to kick off dimension changing process.",
     "type": "object",
     "properties": {
-        "mPayload": {
-            "$ref": "#/definitions/622372906",
+        "Dimension ID": {
+            "description": "Currently supported: (0 -> Overworld, 1 -> Nether, 2 -> The End, 3 -> Undefined)",
+            "$ref": "#/definitions/2872336518",
             "x-ordinal-index": 0
+        },
+        "Loading Screen Id": {
+            "description": "Leave empty if there is no loading screen expected on the client. This id needs to be unique and not conflict with any other active loading screens.  This is implemented with an unsigned integer incrementing forever, and that is expected to not have collisions when it wraps around back to 0 if that could be a possibility.",
+            "type": "integer",
+            "x-underlying-type": "unsigned int",
+            "x-ordinal-index": 3,
+            "minimum": 0.0,
+            "maximum": 4294967295.0
+        },
+        "Position": {
+            "$ref": "#/definitions/4004946602",
+            "x-ordinal-index": 1
+        },
+        "Respawn": {
+            "type": "boolean",
+            "x-underlying-type": "bool",
+            "x-ordinal-index": 2
         }
     },
-    "$metaProperties": {
-        "[cereal:packet]": 61,
-        "[cereal:packet_details]": ""
-    }
+    "required": [
+        "Dimension ID",
+        "Loading Screen Id",
+        "Position",
+        "Respawn"
+    ]
 }

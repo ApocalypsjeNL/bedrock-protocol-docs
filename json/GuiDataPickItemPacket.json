@@ -2,45 +2,31 @@
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "3441939962",
     "x-format-version": "MISSING VERSION",
-    "x-minecraft-version": "1.21.120",
-    "x-protocol-version": 859,
-    "definitions": {
-        "4248315025": {
-            "title": "GuiDataPickItemPacketPayload",
-            "type": "object",
-            "properties": {
-                "Item Effect Name": {
-                    "type": "string",
-                    "x-ordinal-index": 1
-                },
-                "Item Name": {
-                    "type": "string",
-                    "x-ordinal-index": 0
-                },
-                "Slot": {
-                    "type": "integer",
-                    "x-underlying-type": "int32",
-                    "x-ordinal-index": 2
-                }
-            },
-            "required": [
-                "Item Effect Name",
-                "Item Name",
-                "Slot"
-            ]
-        }
-    },
+    "x-minecraft-version": "1.21.130",
+    "x-protocol-version": 893,
     "title": "GuiDataPickItemPacket",
     "description": "The server telling the client what item slot to hover over in the hotbar.",
     "type": "object",
     "properties": {
-        "mPayload": {
-            "$ref": "#/definitions/4248315025",
+        "Item Effect Name": {
+            "type": "string",
+            "x-ordinal-index": 1
+        },
+        "Item Name": {
+            "type": "string",
             "x-ordinal-index": 0
+        },
+        "Slot": {
+            "type": "integer",
+            "x-underlying-type": "int",
+            "x-ordinal-index": 2,
+            "minimum": -2147483648.0,
+            "maximum": 2147483647.0
         }
     },
-    "$metaProperties": {
-        "[cereal:packet]": 54,
-        "[cereal:packet_details]": "This is only used when players use pick block, a command is used, tests, and some 3rd party content."
-    }
+    "required": [
+        "Item Effect Name",
+        "Item Name",
+        "Slot"
+    ]
 }

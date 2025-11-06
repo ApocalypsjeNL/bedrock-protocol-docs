@@ -2,14 +2,13 @@
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "1327510185",
     "x-format-version": "MISSING VERSION",
-    "x-minecraft-version": "1.21.120",
-    "x-protocol-version": 859,
+    "x-minecraft-version": "1.21.130",
+    "x-protocol-version": 893,
     "title": "enum RequestAbilityPacketPayload::Type",
     "type": "string",
     "enum": [
         "Unset",
         "Bool",
         "Float"
-    ],
-    "x-underlying-type": "uint8"
+    ]
 }

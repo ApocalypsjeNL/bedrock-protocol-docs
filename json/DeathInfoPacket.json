@@ -2,8 +2,8 @@
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "130434945",
     "x-format-version": "MISSING VERSION",
-    "x-minecraft-version": "1.21.120",
-    "x-protocol-version": 859,
+    "x-minecraft-version": "1.21.130",
+    "x-protocol-version": 893,
     "definitions": {
         "3619349709": {
             "title": "DeathCauseMessageType",
@@ -25,32 +25,18 @@
                 "Death Cause Attack Name",
                 "Death Cause Message List"
             ]
-        },
-        "378938632": {
-            "title": "DeathInfoPacketPayload",
-            "type": "object",
-            "properties": {
-                "Death Cause Message": {
-                    "$ref": "#/definitions/3619349709",
-                    "x-ordinal-index": 0
-                }
-            },
-            "required": [
-                "Death Cause Message"
-            ]
         }
     },
     "title": "DeathInfoPacket",
     "description": "Sent from the server to client when player dies (Level::onPlayerDeath).",
     "type": "object",
     "properties": {
-        "mPayload": {
-            "$ref": "#/definitions/378938632",
+        "Death Cause Message": {
+            "$ref": "#/definitions/3619349709",
             "x-ordinal-index": 0
         }
     },
-    "$metaProperties": {
-        "[cereal:packet]": 189,
-        "[cereal:packet_details]": "mDeathCauseMessage: is untranslated cause of death string vector returned from ActorDamageSource"
-    }
+    "required": [
+        "Death Cause Message"
+    ]
 }

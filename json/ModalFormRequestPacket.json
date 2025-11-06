@@ -2,43 +2,29 @@
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "2380260781",
     "x-format-version": "MISSING VERSION",
-    "x-minecraft-version": "1.21.120",
-    "x-protocol-version": 859,
-    "definitions": {
-        "2198289922": {
-            "title": "struct ModalFormRequestPacketPayload",
-            "type": "object",
-            "properties": {
-                "Form ID": {
-                    "type": "integer",
-                    "x-underlying-type": "uint32",
-                    "x-serialization-options": [
-                        "Compression"
-                    ],
-                    "x-ordinal-index": 0
-                },
-                "Form UI JSON": {
-                    "type": "string",
-                    "x-ordinal-index": 1
-                }
-            },
-            "required": [
-                "Form ID",
-                "Form UI JSON"
-            ]
-        }
-    },
+    "x-minecraft-version": "1.21.130",
+    "x-protocol-version": 893,
     "title": "ModalFormRequestPacket",
     "description": "Modal Form Request",
     "type": "object",
     "properties": {
-        "mPayload": {
-            "$ref": "#/definitions/2198289922",
-            "x-ordinal-index": 0
+        "Form ID": {
+            "type": "integer",
+            "x-underlying-type": "unsigned int",
+            "x-serialization-options": [
+                "Compression"
+            ],
+            "x-ordinal-index": 0,
+            "minimum": 0.0,
+            "maximum": 4294967295.0
+        },
+        "Form UI JSON": {
+            "type": "string",
+            "x-ordinal-index": 1
         }
     },
-    "$metaProperties": {
-        "[cereal:packet]": 100,
-        "[cereal:packet_details]": "Not sent from vanilla. The feature is meant for third-party servers to be able to drive dynamic ui forms. The request comes with some JSON that describes a custom UI screen thirdparty uses.Server->client."
-    }
+    "required": [
+        "Form ID",
+        "Form UI JSON"
+    ]
 }

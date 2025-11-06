@@ -2,25 +2,9 @@
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "2122488333",
     "x-format-version": "MISSING VERSION",
-    "x-minecraft-version": "1.21.120",
-    "x-protocol-version": 859,
+    "x-minecraft-version": "1.21.130",
+    "x-protocol-version": 893,
     "definitions": {
-        "4169773106": {
-            "title": "ContainerRegistryCleanupPacketPayload",
-            "type": "object",
-            "properties": {
-                "Removed Containers": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/2021346555"
-                    },
-                    "x-ordinal-index": 0
-                }
-            },
-            "required": [
-                "Removed Containers"
-            ]
-        },
         "2021346555": {
             "title": "FullContainerName",
             "type": "object",
@@ -94,16 +78,18 @@
                         "CrafterLevelEntityContainer",
                         "DynamicContainer"
                     ],
-                    "x-underlying-type": "uint8",
+                    "x-underlying-type": "unsigned char",
                     "x-serialization-options": [
-                        "EnumAsValue"
+                        "Enum-as-Value"
                     ],
                     "x-ordinal-index": 0
                 },
                 "Dynamic ID": {
                     "type": "integer",
-                    "x-underlying-type": "uint32",
-                    "x-ordinal-index": 1
+                    "x-underlying-type": "unsigned int",
+                    "x-ordinal-index": 1,
+                    "minimum": 0.0,
+                    "maximum": 4294967295.0
                 }
             },
             "required": [
@@ -116,13 +102,15 @@
     "description": "This is used to trigger a clientside cleanup of the dynamic container registry.",
     "type": "object",
     "properties": {
-        "mPayload": {
-            "$ref": "#/definitions/4169773106",
+        "Removed Containers": {
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/2021346555"
+            },
             "x-ordinal-index": 0
         }
     },
-    "$metaProperties": {
-        "[cereal:packet]": 317,
-        "[cereal:packet_details]": "\n\tWhenever the serverside ContainerRegistry does a clean, identifiers for the removed containers are gathered in a ContainerRegistryCleanUp\n\tpacket and sent to the client so that the clientside container registry can remove those same containers.\n\t"
-    }
+    "required": [
+        "Removed Containers"
+    ]
 }

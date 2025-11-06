@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MobEffectPacket (28)</title>
+    <title>MobEffectPacket</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -98,24 +98,15 @@
 <body>
     <div class="container">
         <p><a href="index.html">← Back to Index</a></p>
-        <h1>MobEffectPacket (28)</h1>
+        <h1>MobEffectPacket</h1>
 <div class="description">Mob Effect</div>
-<div class="description">At the start of the game the server sends any mob effects with _sendAdditionalLevelData() if the joining player saved out with them,
-and then anytime a mob effect is added, removed, or updated this packet is sent.&lt;br&gt;
-It is important for player movement simulation to ensure that the following effects are sent for the player or any client predicted vehicle they are in control of:&lt;br&gt;
-- levitation&lt;br&gt;
-- slow_falling&lt;br&gt;
-- jump&lt;br&gt;
-- movement_speed&lt;br&gt;
-- movement_slowdown&lt;br&gt;
-- weaving</div>
 <div style="margin-left: 0px; margin-top: 10px;">
 <table border="1" cellpadding="5" cellspacing="0" style="border-collapse: collapse; width: 100%; max-width: 800px;">
 <thead>
 <tr style="background-color: #f0f0f0;">
 <th>Field Name</th>
 <th>Type</th>
-<th>Ordinal Index</th>
+<th>Field Index</th>
 <th>Description</th>
 </tr>
 </thead>
@@ -134,14 +125,14 @@ It is important for player movement simulation to ensure that the following effe
 <tr style="background-color: #f0f0f0;">
 <th>Field Name</th>
 <th>Type</th>
-<th>Ordinal Index</th>
+<th>Field Index</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><strong>Actor Runtime ID</strong></td>
-<td>varuint64</td>
+<td>varunsigned __int64</td>
 <td>0</td>
 <td></td>
 </tr>
@@ -151,7 +142,7 @@ It is important for player movement simulation to ensure that the following effe
 </tr>
 <tr>
 <td rowspan="2"><strong>Event ID</strong></td>
-<td>uint8</td>
+<td>unsigned char</td>
 <td>1</td>
 <td></td>
 </tr>
@@ -188,25 +179,25 @@ It is important for player movement simulation to ensure that the following effe
 </tr>
 <tr>
 <td><strong>Effect ID</strong></td>
-<td>varint32</td>
+<td>varint</td>
 <td>2</td>
 <td></td>
 </tr>
 <tr>
 <td><strong>Effect Amplifier</strong></td>
-<td>varint32</td>
+<td>varint</td>
 <td>3</td>
 <td></td>
 </tr>
 <tr>
 <td><strong>Show Particles</strong></td>
-<td>boolean</td>
+<td>bool</td>
 <td>4</td>
 <td></td>
 </tr>
 <tr>
 <td><strong>Effect Duration Ticks</strong></td>
-<td>varint32</td>
+<td>varint</td>
 <td>5</td>
 <td></td>
 </tr>
@@ -224,14 +215,14 @@ It is important for player movement simulation to ensure that the following effe
 <tr style="background-color: #f0f0f0;">
 <th>Field Name</th>
 <th>Type</th>
-<th>Ordinal Index</th>
+<th>Field Index</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><strong>Input tick</strong></td>
-<td>varuint64</td>
+<td>varunsigned __int64</td>
 <td>0</td>
 <td>In server authoritative movement mode the client supplies this in PlayerAuthInputPacket.
 For any client-bound packets containing a tick, the server should supply the tick value corresponding to the most recently processed PlayerAuthInputPacket.
@@ -242,6 +233,12 @@ It is also acceptable to specify zero for players, although this may lead to min
 </tbody>
 </table>
 </div></td>
+</tr>
+<tr>
+<td><strong>Ambient</strong></td>
+<td>bool</td>
+<td>7</td>
+<td>If the effect is considered ambient (like the ones applied by Beacons or Conduits)</td>
 </tr>
 </tbody>
 </table>

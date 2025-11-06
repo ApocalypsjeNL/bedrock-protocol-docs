@@ -2,26 +2,9 @@
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "2749481094",
     "x-format-version": "MISSING VERSION",
-    "x-minecraft-version": "1.21.120",
-    "x-protocol-version": 859,
+    "x-minecraft-version": "1.21.130",
+    "x-protocol-version": 893,
     "definitions": {
-        "528292593": {
-            "title": "PlayerArmorDamagePacketPayload",
-            "type": "object",
-            "properties": {
-                "Armor Slot and Damage Pairs": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/2724693065"
-                    },
-                    "x-ordinal-index": 0,
-                    "maxItems": 5
-                }
-            },
-            "required": [
-                "Armor Slot and Damage Pairs"
-            ]
-        },
         "2724693065": {
             "title": "ArmorSlotAndDamagePair",
             "type": "object",
@@ -36,17 +19,19 @@
                         "Feet",
                         "Body"
                     ],
-                    "x-underlying-type": "int32",
+                    "x-underlying-type": "int",
                     "x-serialization-options": [
                         "Compression",
-                        "EnumAsValue"
+                        "Enum-as-Value"
                     ],
                     "x-ordinal-index": 0
                 },
                 "Damage": {
                     "type": "integer",
-                    "x-underlying-type": "int16",
-                    "x-ordinal-index": 1
+                    "x-underlying-type": "short",
+                    "x-ordinal-index": 1,
+                    "minimum": -32768.0,
+                    "maximum": 32767.0
                 }
             },
             "required": [
@@ -59,13 +44,16 @@
     "description": "Sent from server whenever the player's armor takes damage.",
     "type": "object",
     "properties": {
-        "mPayload": {
-            "$ref": "#/definitions/528292593",
-            "x-ordinal-index": 0
+        "Armor Slot and Damage Pairs": {
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/2724693065"
+            },
+            "x-ordinal-index": 0,
+            "maxItems": 5
         }
     },
-    "$metaProperties": {
-        "[cereal:packet]": 149,
-        "[cereal:packet_details]": ""
-    }
+    "required": [
+        "Armor Slot and Damage Pairs"
+    ]
 }

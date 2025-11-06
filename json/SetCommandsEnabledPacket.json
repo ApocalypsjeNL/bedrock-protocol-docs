@@ -2,34 +2,19 @@
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "3558097506",
     "x-format-version": "MISSING VERSION",
-    "x-minecraft-version": "1.21.120",
-    "x-protocol-version": 859,
-    "definitions": {
-        "2960270791": {
-            "title": "SetCommandsEnabledPacketPayload",
-            "type": "object",
-            "properties": {
-                "Commands Enabled": {
-                    "type": "boolean",
-                    "x-ordinal-index": 0
-                }
-            },
-            "required": [
-                "Commands Enabled"
-            ]
-        }
-    },
+    "x-minecraft-version": "1.21.130",
+    "x-protocol-version": 893,
     "title": "SetCommandsEnabledPacket",
     "description": "This is used by the world settings screen, cheats, EDU builds for teachers, and various other places to enable cheats/commands",
     "type": "object",
     "properties": {
-        "mPayload": {
-            "$ref": "#/definitions/2960270791",
+        "Commands Enabled": {
+            "type": "boolean",
+            "x-underlying-type": "bool",
             "x-ordinal-index": 0
         }
     },
-    "$metaProperties": {
-        "[cereal:packet]": 59,
-        "[cereal:packet_details]": "see SimpleEventPacket"
-    }
+    "required": [
+        "Commands Enabled"
+    ]
 }

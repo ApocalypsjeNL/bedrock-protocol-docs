@@ -2,68 +2,9 @@
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "1600343552",
     "x-format-version": "MISSING VERSION",
-    "x-minecraft-version": "1.21.120",
-    "x-protocol-version": 859,
+    "x-minecraft-version": "1.21.130",
+    "x-protocol-version": 893,
     "definitions": {
-        "2543696991": {
-            "title": "struct CorrectPlayerMovePredictionPacketPayload",
-            "type": "object",
-            "properties": {
-                "On Ground": {
-                    "description": "Is on ground",
-                    "type": "boolean",
-                    "x-ordinal-index": 5
-                },
-                "Pos": {
-                    "description": "Corrected position",
-                    "$ref": "#/definitions/4004946602",
-                    "x-ordinal-index": 1
-                },
-                "Pos Delta": {
-                    "description": "Corrected velocity",
-                    "$ref": "#/definitions/4004946602",
-                    "x-ordinal-index": 2
-                },
-                "PredictionType": {
-                    "title": "enum RewindType",
-                    "description": "Vehicle or Player Prediction",
-                    "type": "string",
-                    "enum": [
-                        "Player",
-                        "Vehicle"
-                    ],
-                    "x-underlying-type": "uint8",
-                    "x-serialization-options": [
-                        "EnumAsValue"
-                    ],
-                    "x-ordinal-index": 0
-                },
-                "Rotation": {
-                    "description": "Corrected rotation. Only sent when PredictionType is Vehicle",
-                    "$ref": "#/definitions/4021724221",
-                    "x-ordinal-index": 3
-                },
-                "Tick": {
-                    "description": "Which frame we're correcting; should match the tick in the Player Auth Input packet",
-                    "$ref": "#/definitions/1497397410",
-                    "x-ordinal-index": 6
-                },
-                "VehicleAngularVelocity": {
-                    "description": "Angular Velocity for a vehicle. Only sent when PredictionType is Vehicle",
-                    "type": "number",
-                    "x-underlying-type": "float",
-                    "x-ordinal-index": 4
-                }
-            },
-            "required": [
-                "On Ground",
-                "Pos",
-                "Pos Delta",
-                "PredictionType",
-                "Rotation",
-                "Tick"
-            ]
-        },
         "1497397410": {
             "title": "PlayerInputTick",
             "type": "object",
@@ -71,11 +12,13 @@
                 "Input tick": {
                     "description": "In server authoritative movement mode the client supplies this in PlayerAuthInputPacket.\nFor any client-bound packets containing a tick, the server should supply the tick value corresponding to the most recently processed PlayerAuthInputPacket.\nThis allows the client to adjust any client predictions made while the packet was in flight.\nIf the packet is being sent to the client but not relating to data of the player or a client-predicted vehicle, it can be zero.\nIt is also acceptable to specify zero for players, although this may lead to minor visual flickers and less smooth application of CorrectPlayerMovePredictionPacket.",
                     "type": "integer",
-                    "x-underlying-type": "uint64",
+                    "x-underlying-type": "unsigned __int64",
                     "x-serialization-options": [
                         "Compression"
                     ],
-                    "x-ordinal-index": 0
+                    "x-ordinal-index": 0,
+                    "minimum": 0.0,
+                    "maximum": 18446744073709553000.0
                 }
             },
             "required": [
@@ -89,12 +32,16 @@
                 "X": {
                     "type": "number",
                     "x-underlying-type": "float",
-                    "x-ordinal-index": 0
+                    "x-ordinal-index": 0,
+                    "minimum": 1.1754943508222876e-38,
+                    "maximum": 3.4028234663852887e38
                 },
                 "Y": {
                     "type": "number",
                     "x-underlying-type": "float",
-                    "x-ordinal-index": 1
+                    "x-ordinal-index": 1,
+                    "minimum": 1.1754943508222876e-38,
+                    "maximum": 3.4028234663852887e38
                 }
             },
             "required": [
@@ -109,17 +56,23 @@
                 "X": {
                     "type": "number",
                     "x-underlying-type": "float",
-                    "x-ordinal-index": 0
+                    "x-ordinal-index": 0,
+                    "minimum": 1.1754943508222876e-38,
+                    "maximum": 3.4028234663852887e38
                 },
                 "Y": {
                     "type": "number",
                     "x-underlying-type": "float",
-                    "x-ordinal-index": 1
+                    "x-ordinal-index": 1,
+                    "minimum": 1.1754943508222876e-38,
+                    "maximum": 3.4028234663852887e38
                 },
                 "Z": {
                     "type": "number",
                     "x-underlying-type": "float",
-                    "x-ordinal-index": 2
+                    "x-ordinal-index": 2,
+                    "minimum": 1.1754943508222876e-38,
+                    "maximum": 3.4028234663852887e38
                 }
             },
             "required": [
@@ -133,13 +86,61 @@
     "description": "Sent to a player when their simulation of movement mismatches enough from the server that it wants to correct the client.",
     "type": "object",
     "properties": {
-        "mPayload": {
-            "$ref": "#/definitions/2543696991",
+        "On Ground": {
+            "description": "Is on ground",
+            "type": "boolean",
+            "x-underlying-type": "bool",
+            "x-ordinal-index": 5
+        },
+        "Pos": {
+            "description": "Corrected position",
+            "$ref": "#/definitions/4004946602",
+            "x-ordinal-index": 1
+        },
+        "Pos Delta": {
+            "description": "Corrected velocity",
+            "$ref": "#/definitions/4004946602",
+            "x-ordinal-index": 2
+        },
+        "PredictionType": {
+            "title": "enum RewindType",
+            "description": "Vehicle or Player Prediction",
+            "type": "string",
+            "enum": [
+                "Player",
+                "Vehicle"
+            ],
+            "x-underlying-type": "unsigned char",
+            "x-serialization-options": [
+                "Enum-as-Value"
+            ],
             "x-ordinal-index": 0
+        },
+        "Rotation": {
+            "description": "Corrected rotation. Only sent when PredictionType is Vehicle",
+            "$ref": "#/definitions/4021724221",
+            "x-ordinal-index": 3
+        },
+        "Tick": {
+            "description": "Which frame we're correcting; should match the tick in the Player Auth Input packet",
+            "$ref": "#/definitions/1497397410",
+            "x-ordinal-index": 6
+        },
+        "VehicleAngularVelocity": {
+            "description": "Angular Velocity for a vehicle. Only sent when PredictionType is Vehicle",
+            "type": "number",
+            "x-underlying-type": "float",
+            "x-ordinal-index": 4,
+            "minimum": 1.1754943508222876e-38,
+            "maximum": 3.4028234663852887e38
         }
     },
-    "$metaProperties": {
-        "[cereal:packet]": 161,
-        "[cereal:packet_details]": "Used only in server authoritative movement mode, see ServerAuthMovementMode documentation.<br>\n\tSince it is sent to the specified client the target player is implied to be the receiver.<br>\n\tIt is an optional part of the server authoritative protocol. A server could choose to never send this or do all corrections\n\tthrough MovePlayerPacket, although doing so would likely provide less smooth results."
-    }
+    "required": [
+        "On Ground",
+        "Pos",
+        "Pos Delta",
+        "PredictionType",
+        "Rotation",
+        "Tick"
+    ]
 }

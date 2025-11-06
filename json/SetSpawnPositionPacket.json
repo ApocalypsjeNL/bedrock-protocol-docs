@@ -2,58 +2,22 @@
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "323203397",
     "x-format-version": "MISSING VERSION",
-    "x-minecraft-version": "1.21.120",
-    "x-protocol-version": 859,
+    "x-minecraft-version": "1.21.130",
+    "x-protocol-version": 893,
     "definitions": {
-        "2098549906": {
-            "title": "SetSpawnPositionPacketPayload",
-            "type": "object",
-            "properties": {
-                "Block Position": {
-                    "$ref": "#/definitions/269289973",
-                    "x-ordinal-index": 1
-                },
-                "Dimension type": {
-                    "$ref": "#/definitions/2872336518",
-                    "x-ordinal-index": 2
-                },
-                "Spawn Block Pos": {
-                    "$ref": "#/definitions/269289973",
-                    "x-ordinal-index": 3
-                },
-                "Spawn Position Type": {
-                    "title": "SpawnPositionType",
-                    "type": "string",
-                    "enum": [
-                        "PlayerRespawn",
-                        "WorldSpawn"
-                    ],
-                    "x-underlying-type": "int32",
-                    "x-serialization-options": [
-                        "Compression",
-                        "EnumAsValue"
-                    ],
-                    "x-ordinal-index": 0
-                }
-            },
-            "required": [
-                "Block Position",
-                "Dimension type",
-                "Spawn Block Pos",
-                "Spawn Position Type"
-            ]
-        },
         "2872336518": {
             "title": "DimensionType",
             "type": "object",
             "properties": {
                 "value": {
                     "type": "integer",
-                    "x-underlying-type": "int32",
+                    "x-underlying-type": "int",
                     "x-serialization-options": [
                         "Compression"
                     ],
-                    "x-ordinal-index": 0
+                    "x-ordinal-index": 0,
+                    "minimum": -2147483648.0,
+                    "maximum": 2147483647.0
                 }
             },
             "required": [
@@ -66,27 +30,33 @@
             "properties": {
                 "X": {
                     "type": "integer",
-                    "x-underlying-type": "int32",
+                    "x-underlying-type": "int",
                     "x-serialization-options": [
                         "Compression"
                     ],
-                    "x-ordinal-index": 0
+                    "x-ordinal-index": 0,
+                    "minimum": -2147483648.0,
+                    "maximum": 2147483647.0
                 },
                 "Y": {
                     "type": "integer",
-                    "x-underlying-type": "uint32",
+                    "x-underlying-type": "unsigned int",
                     "x-serialization-options": [
                         "Compression"
                     ],
-                    "x-ordinal-index": 1
+                    "x-ordinal-index": 1,
+                    "minimum": 0.0,
+                    "maximum": 4294967295.0
                 },
                 "Z": {
                     "type": "integer",
-                    "x-underlying-type": "int32",
+                    "x-underlying-type": "int",
                     "x-serialization-options": [
                         "Compression"
                     ],
-                    "x-ordinal-index": 2
+                    "x-ordinal-index": 2,
+                    "minimum": -2147483648.0,
+                    "maximum": 2147483647.0
                 }
             },
             "required": [
@@ -100,13 +70,37 @@
     "description": "When a player logs in or the SetWorldSpawnCommand is used this is sent from the server to the client. Does not change when using a bed, that is a separate packet (RespawnPacket)",
     "type": "object",
     "properties": {
-        "mPayload": {
-            "$ref": "#/definitions/2098549906",
+        "Block Position": {
+            "$ref": "#/definitions/269289973",
+            "x-ordinal-index": 1
+        },
+        "Dimension type": {
+            "$ref": "#/definitions/2872336518",
+            "x-ordinal-index": 2
+        },
+        "Spawn Block Pos": {
+            "$ref": "#/definitions/269289973",
+            "x-ordinal-index": 3
+        },
+        "Spawn Position Type": {
+            "title": "SpawnPositionType",
+            "type": "string",
+            "enum": [
+                "PlayerRespawn",
+                "WorldSpawn"
+            ],
+            "x-underlying-type": "int",
+            "x-serialization-options": [
+                "Compression",
+                "Enum-as-Value"
+            ],
             "x-ordinal-index": 0
         }
     },
-    "$metaProperties": {
-        "[cereal:packet]": 43,
-        "[cereal:packet_details]": "see RespawnPacket"
-    }
+    "required": [
+        "Block Position",
+        "Dimension type",
+        "Spawn Block Pos",
+        "Spawn Position Type"
+    ]
 }

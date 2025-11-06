@@ -2,44 +2,29 @@
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "1706712431",
     "x-format-version": "MISSING VERSION",
-    "x-minecraft-version": "1.21.120",
-    "x-protocol-version": 859,
-    "definitions": {
-        "3368458670": {
-            "title": "GameTestResultsPacketPayload",
-            "type": "object",
-            "properties": {
-                "Error": {
-                    "type": "string",
-                    "x-ordinal-index": 1
-                },
-                "Succeeded": {
-                    "type": "boolean",
-                    "x-ordinal-index": 0
-                },
-                "TestName": {
-                    "type": "string",
-                    "x-ordinal-index": 2
-                }
-            },
-            "required": [
-                "Error",
-                "Succeeded",
-                "TestName"
-            ]
-        }
-    },
+    "x-minecraft-version": "1.21.130",
+    "x-protocol-version": 893,
     "title": "GameTestResultsPacket",
     "description": "Game Test Results Packet",
     "type": "object",
     "properties": {
-        "mPayload": {
-            "$ref": "#/definitions/3368458670",
+        "Error": {
+            "type": "string",
+            "x-ordinal-index": 1
+        },
+        "Succeeded": {
+            "type": "boolean",
+            "x-underlying-type": "bool",
             "x-ordinal-index": 0
+        },
+        "TestName": {
+            "type": "string",
+            "x-ordinal-index": 2
         }
     },
-    "$metaProperties": {
-        "[cereal:packet]": 195,
-        "[cereal:packet_details]": "Internal Text Packet"
-    }
+    "required": [
+        "Error",
+        "Succeeded",
+        "TestName"
+    ]
 }

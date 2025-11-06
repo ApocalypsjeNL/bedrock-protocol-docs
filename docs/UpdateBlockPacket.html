@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UpdateBlockPacket (21)</title>
+    <title>UpdateBlockPacket</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -98,16 +98,15 @@
 <body>
     <div class="container">
         <p><a href="index.html">← Back to Index</a></p>
-        <h1>UpdateBlockPacket (21)</h1>
+        <h1>UpdateBlockPacket</h1>
 <div class="description">Occasional packets sent from server when blocks update or are ticked. (For example, when digging.)</div>
-<div class="description">This happens often. Luckily, the packets are small.</div>
 <div style="margin-left: 0px; margin-top: 10px;">
 <table border="1" cellpadding="5" cellspacing="0" style="border-collapse: collapse; width: 100%; max-width: 800px;">
 <thead>
 <tr style="background-color: #f0f0f0;">
 <th>Field Name</th>
 <th>Type</th>
-<th>Ordinal Index</th>
+<th>Field Index</th>
 <th>Description</th>
 </tr>
 </thead>
@@ -126,26 +125,26 @@
 <tr style="background-color: #f0f0f0;">
 <th>Field Name</th>
 <th>Type</th>
-<th>Ordinal Index</th>
+<th>Field Index</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><strong>X</strong></td>
-<td>varint32</td>
+<td>varint</td>
 <td>0</td>
 <td></td>
 </tr>
 <tr>
 <td><strong>Y</strong></td>
-<td>varuint32</td>
+<td>varunsigned int</td>
 <td>1</td>
 <td></td>
 </tr>
 <tr>
 <td><strong>Z</strong></td>
-<td>varint32</td>
+<td>varint</td>
 <td>2</td>
 <td></td>
 </tr>
@@ -155,19 +154,19 @@
 </tr>
 <tr>
 <td><strong>Block Runtime ID</strong></td>
-<td>varuint32</td>
+<td>varunsigned int</td>
 <td>1</td>
 <td></td>
 </tr>
 <tr>
 <td><strong>Flags</strong></td>
-<td>varuint32</td>
+<td>varunsigned int</td>
 <td>2</td>
 <td></td>
 </tr>
 <tr>
 <td><strong>Layer</strong></td>
-<td>varuint32</td>
+<td>varunsigned int</td>
 <td>3</td>
 <td></td>
 </tr>

@@ -2,31 +2,16 @@
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "1824368073",
     "x-format-version": "MISSING VERSION",
-    "x-minecraft-version": "1.21.120",
-    "x-protocol-version": 859,
+    "x-minecraft-version": "1.21.130",
+    "x-protocol-version": 893,
     "definitions": {
-        "202602910": {
-            "title": "ItemRegistryPacketPayload",
-            "type": "object",
-            "properties": {
-                "Item Data": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/3560424247"
-                    },
-                    "x-ordinal-index": 0
-                }
-            },
-            "required": [
-                "Item Data"
-            ]
-        },
         "3560424247": {
             "title": "ItemData",
             "type": "object",
             "properties": {
                 "Is Component Based": {
                     "type": "boolean",
+                    "x-underlying-type": "bool",
                     "x-ordinal-index": 2
                 },
                 "Item Component Data": {
@@ -36,8 +21,10 @@
                 "Item Id": {
                     "description": "Block id's < 256 (can be negative); Item id's >= 257",
                     "type": "integer",
-                    "x-underlying-type": "int16",
-                    "x-ordinal-index": 1
+                    "x-underlying-type": "short",
+                    "x-ordinal-index": 1,
+                    "minimum": -32768.0,
+                    "maximum": 32767.0
                 },
                 "Item Name": {
                     "$ref": "#/definitions/2715320761",
@@ -51,10 +38,10 @@
                         "DataDriven",
                         "None"
                     ],
-                    "x-underlying-type": "int32",
+                    "x-underlying-type": "int",
                     "x-serialization-options": [
                         "Compression",
-                        "EnumAsValue"
+                        "Enum-as-Value"
                     ],
                     "x-ordinal-index": 3
                 }
@@ -76,13 +63,16 @@
     "description": "Item data from the server. Contains component information.",
     "type": "object",
     "properties": {
-        "mPayload": {
-            "$ref": "#/definitions/202602910",
-            "x-ordinal-index": 0
+        "Item Data": {
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/3560424247"
+            },
+            "x-ordinal-index": 0,
+            "x-runtime-constraint-description": "Verify that specified items exist"
         }
     },
-    "$metaProperties": {
-        "[cereal:packet]": 162,
-        "[cereal:packet_details]": "This packet needs to be sent immediately after the StartGamePacket for primary clients."
-    }
+    "required": [
+        "Item Data"
+    ]
 }

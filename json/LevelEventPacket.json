@@ -2,41 +2,9 @@
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "4270035307",
     "x-format-version": "MISSING VERSION",
-    "x-minecraft-version": "1.21.120",
-    "x-protocol-version": 859,
+    "x-minecraft-version": "1.21.130",
+    "x-protocol-version": 893,
     "definitions": {
-        "3056216976": {
-            "title": "LevelEventPacketPayload",
-            "type": "object",
-            "properties": {
-                "Data": {
-                    "type": "integer",
-                    "x-underlying-type": "int32",
-                    "x-serialization-options": [
-                        "Compression"
-                    ],
-                    "x-ordinal-index": 2
-                },
-                "Event Id": {
-                    "type": "integer",
-                    "x-underlying-type": "int32",
-                    "x-serialization-options": [
-                        "Compression"
-                    ],
-                    "x-ordinal-index": 0
-                },
-                "Position": {
-                    "description": "Note about Event ID: Legacy particles use the @enums.html#Particle Type@ enum |ed with ParticleLegacyEvent(0x4000)",
-                    "$ref": "#/definitions/4004946602",
-                    "x-ordinal-index": 1
-                }
-            },
-            "required": [
-                "Data",
-                "Event Id",
-                "Position"
-            ]
-        },
         "4004946602": {
             "title": "Vec3",
             "type": "object",
@@ -44,17 +12,23 @@
                 "X": {
                     "type": "number",
                     "x-underlying-type": "float",
-                    "x-ordinal-index": 0
+                    "x-ordinal-index": 0,
+                    "minimum": 1.1754943508222876e-38,
+                    "maximum": 3.4028234663852887e38
                 },
                 "Y": {
                     "type": "number",
                     "x-underlying-type": "float",
-                    "x-ordinal-index": 1
+                    "x-ordinal-index": 1,
+                    "minimum": 1.1754943508222876e-38,
+                    "maximum": 3.4028234663852887e38
                 },
                 "Z": {
                     "type": "number",
                     "x-underlying-type": "float",
-                    "x-ordinal-index": 2
+                    "x-ordinal-index": 2,
+                    "minimum": 1.1754943508222876e-38,
+                    "maximum": 3.4028234663852887e38
                 }
             },
             "required": [
@@ -68,13 +42,35 @@
     "description": "Splash Potions, weather events, global pause, simlock commands, oh my!",
     "type": "object",
     "properties": {
-        "mPayload": {
-            "$ref": "#/definitions/3056216976",
-            "x-ordinal-index": 0
+        "Data": {
+            "type": "integer",
+            "x-underlying-type": "int",
+            "x-serialization-options": [
+                "Compression"
+            ],
+            "x-ordinal-index": 2,
+            "minimum": -2147483648.0,
+            "maximum": 2147483647.0
+        },
+        "Event Id": {
+            "type": "integer",
+            "x-underlying-type": "int",
+            "x-serialization-options": [
+                "Compression"
+            ],
+            "x-ordinal-index": 0,
+            "minimum": -2147483648.0,
+            "maximum": 2147483647.0
+        },
+        "Position": {
+            "description": "Note about Event ID: Legacy particles use the @enums.html#Particle Type@ enum |ed with ParticleLegacyEvent(0x4000)",
+            "$ref": "#/definitions/4004946602",
+            "x-ordinal-index": 1
         }
     },
-    "$metaProperties": {
-        "[cereal:packet]": 25,
-        "[cereal:packet_details]": ""
-    }
+    "required": [
+        "Data",
+        "Event Id",
+        "Position"
+    ]
 }

@@ -2,38 +2,24 @@
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "986000289",
     "x-format-version": "MISSING VERSION",
-    "x-minecraft-version": "1.21.120",
-    "x-protocol-version": 859,
-    "definitions": {
-        "4027698434": {
-            "title": "struct RequestNetworkSettingsPacketPayload",
-            "type": "object",
-            "properties": {
-                "ClientNetworkVersion": {
-                    "type": "integer",
-                    "x-underlying-type": "int32",
-                    "x-serialization-options": [
-                        "BigEndian"
-                    ],
-                    "x-ordinal-index": 0
-                }
-            },
-            "required": [
-                "ClientNetworkVersion"
-            ]
-        }
-    },
+    "x-minecraft-version": "1.21.130",
+    "x-protocol-version": 893,
     "title": "RequestNetworkSettingsPacket",
     "description": "Requests tunable options from host to client (compression threshold and algorithm).",
     "type": "object",
     "properties": {
-        "mPayload": {
-            "$ref": "#/definitions/4027698434",
-            "x-ordinal-index": 0
+        "ClientNetworkVersion": {
+            "type": "integer",
+            "x-underlying-type": "int",
+            "x-serialization-options": [
+                "Big Endian"
+            ],
+            "x-ordinal-index": 0,
+            "minimum": 893.0,
+            "maximum": 893.0
         }
     },
-    "$metaProperties": {
-        "[cereal:packet]": 193,
-        "[cereal:packet_details]": "This is the initial packet sent from the client to initiate a connection.  NOTE: this packet should not contain anything other than the client version, don't add new data here."
-    }
+    "required": [
+        "ClientNetworkVersion"
+    ]
 }

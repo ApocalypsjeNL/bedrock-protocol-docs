@@ -2,8 +2,8 @@
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "2148583626",
     "x-format-version": "MISSING VERSION",
-    "x-minecraft-version": "1.21.120",
-    "x-protocol-version": 859,
+    "x-minecraft-version": "1.21.130",
+    "x-protocol-version": 893,
     "definitions": {
         "641620634": {
             "title": "GameRulesChangedPacketData",
@@ -21,25 +21,13 @@
                 "Rules List"
             ]
         },
-        "4041078967": {
-            "title": "GameRulesChangedPacketPayload",
-            "type": "object",
-            "properties": {
-                "Rule Data": {
-                    "$ref": "#/definitions/641620634",
-                    "x-ordinal-index": 0
-                }
-            },
-            "required": [
-                "Rule Data"
-            ]
-        },
         "238291841": {
             "title": "GameRule",
             "type": "object",
             "properties": {
                 "Rule Can Be Modified": {
                     "type": "boolean",
+                    "x-underlying-type": "bool",
                     "x-ordinal-index": 1
                 },
                 "Rule Name": {
@@ -52,17 +40,24 @@
                             "type": "null"
                         },
                         {
-                            "type": "boolean"
+                            "type": "boolean",
+                            "x-underlying-type": "bool"
                         },
                         {
                             "type": "integer",
-                            "x-underlying-type": "int32"
+                            "x-underlying-type": "int",
+                            "minimum": -2147483648.0,
+                            "maximum": 2147483647.0
                         },
                         {
                             "type": "number",
-                            "x-underlying-type": "float"
+                            "x-underlying-type": "float",
+                            "minimum": 1.1754943508222876e-38,
+                            "maximum": 3.4028234663852887e38
                         }
-                    ]
+                    ],
+                    "x-control-value-type": "unsigned int",
+                    "x-ordinal-index": 2
                 }
             },
             "required": [
@@ -76,13 +71,12 @@
     "description": "Updates game rules.",
     "type": "object",
     "properties": {
-        "mPayload": {
-            "$ref": "#/definitions/4041078967",
+        "Rule Data": {
+            "$ref": "#/definitions/641620634",
             "x-ordinal-index": 0
         }
     },
-    "$metaProperties": {
-        "[cereal:packet]": 72,
-        "[cereal:packet_details]": "Informs client about any changes to the game rules."
-    }
+    "required": [
+        "Rule Data"
+    ]
 }

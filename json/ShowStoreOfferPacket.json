@@ -2,52 +2,26 @@
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "3443975977",
     "x-format-version": "MISSING VERSION",
-    "x-minecraft-version": "1.21.120",
-    "x-protocol-version": 859,
+    "x-minecraft-version": "1.21.130",
+    "x-protocol-version": 893,
     "definitions": {
-        "3505766602": {
-            "title": "ShowStoreOfferPacketPayload",
-            "type": "object",
-            "properties": {
-                "Offer Id": {
-                    "description": "The offer Id tells which offer to look up when navigating to a marketplace or dressing room.",
-                    "$ref": "#/definitions/1616419299",
-                    "x-ordinal-index": 0
-                },
-                "Redirect Type": {
-                    "title": "ShowStoreOfferRedirectType",
-                    "description": "The redirect type determines which page to navigate to.",
-                    "type": "string",
-                    "enum": [
-                        "MarketplaceOffer",
-                        "DressingRoomOffer",
-                        "ThirdPartyServerPage"
-                    ],
-                    "x-underlying-type": "uint8",
-                    "x-serialization-options": [
-                        "EnumAsValue"
-                    ],
-                    "x-ordinal-index": 1
-                }
-            },
-            "required": [
-                "Offer Id",
-                "Redirect Type"
-            ]
-        },
         "1616419299": {
             "title": "mce::UUID",
             "type": "object",
             "properties": {
                 "Least Significant Bits": {
                     "type": "integer",
-                    "x-underlying-type": "uint64",
-                    "x-ordinal-index": 1
+                    "x-underlying-type": "unsigned __int64",
+                    "x-ordinal-index": 1,
+                    "minimum": 0.0,
+                    "maximum": 18446744073709553000.0
                 },
                 "Most Significant Bits": {
                     "type": "integer",
-                    "x-underlying-type": "uint64",
-                    "x-ordinal-index": 0
+                    "x-underlying-type": "unsigned __int64",
+                    "x-ordinal-index": 0,
+                    "minimum": 0.0,
+                    "maximum": 18446744073709553000.0
                 }
             },
             "required": [
@@ -60,13 +34,29 @@
     "description": "Used for redirecting a user to the right offer.",
     "type": "object",
     "properties": {
-        "mPayload": {
-            "$ref": "#/definitions/3505766602",
+        "Offer Id": {
+            "description": "The offer Id tells which offer to look up when navigating to a marketplace or dressing room.",
+            "$ref": "#/definitions/1616419299",
             "x-ordinal-index": 0
+        },
+        "Redirect Type": {
+            "title": "ShowStoreOfferRedirectType",
+            "description": "The redirect type determines which page to navigate to.",
+            "type": "string",
+            "enum": [
+                "MarketplaceOffer",
+                "DressingRoomOffer",
+                "ThirdPartyServerPage"
+            ],
+            "x-underlying-type": "unsigned char",
+            "x-serialization-options": [
+                "Enum-as-Value"
+            ],
+            "x-ordinal-index": 1
         }
     },
-    "$metaProperties": {
-        "[cereal:packet]": 91,
-        "[cereal:packet_details]": "The server can redirect the user to a 3rd party server page, to a marketplace offer description page, or to a dressing room page containing desired offer."
-    }
+    "required": [
+        "Offer Id",
+        "Redirect Type"
+    ]
 }

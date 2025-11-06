@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MoveActorAbsolutePacket (18)</title>
+    <title>MoveActorAbsolutePacket</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -98,7 +98,7 @@
 <body>
     <div class="container">
         <p><a href="index.html">← Back to Index</a></p>
-        <h1>MoveActorAbsolutePacket (18)</h1>
+        <h1>MoveActorAbsolutePacket</h1>
 <div class="description">This is used primarily for motion updates of all actors from server to client.</div>
 <div style="margin-left: 0px; margin-top: 10px;">
 <table border="1" cellpadding="5" cellspacing="0" style="border-collapse: collapse; width: 100%; max-width: 800px;">
@@ -106,7 +106,7 @@
 <tr style="background-color: #f0f0f0;">
 <th>Field Name</th>
 <th>Type</th>
-<th>Ordinal Index</th>
+<th>Field Index</th>
 <th>Description</th>
 </tr>
 </thead>
@@ -125,7 +125,7 @@
 <tr style="background-color: #f0f0f0;">
 <th>Field Name</th>
 <th>Type</th>
-<th>Ordinal Index</th>
+<th>Field Index</th>
 <th>Description</th>
 </tr>
 </thead>
@@ -144,14 +144,14 @@
 <tr style="background-color: #f0f0f0;">
 <th>Field Name</th>
 <th>Type</th>
-<th>Ordinal Index</th>
+<th>Field Index</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><strong>Actor Runtime ID</strong></td>
-<td>varuint64</td>
+<td>varunsigned __int64</td>
 <td>0</td>
 <td></td>
 </tr>
@@ -161,7 +161,7 @@
 </tr>
 <tr>
 <td><strong>Header</strong></td>
-<td>uint8</td>
+<td>unsigned char</td>
 <td>1</td>
 <td>Header bits describing the status of the actor, see additional documentation in the supplemental documentation folder</td>
 </tr>
@@ -179,7 +179,7 @@
 <tr style="background-color: #f0f0f0;">
 <th>Field Name</th>
 <th>Type</th>
-<th>Ordinal Index</th>
+<th>Field Index</th>
 <th>Description</th>
 </tr>
 </thead>
@@ -208,19 +208,19 @@
 </tr>
 <tr>
 <td><strong>Rotation X</strong></td>
-<td>uint8</td>
+<td>unsigned char</td>
 <td>3</td>
 <td>The X rotation of the actor stored as an integer</td>
 </tr>
 <tr>
 <td><strong>Rotation Y</strong></td>
-<td>uint8</td>
+<td>unsigned char</td>
 <td>4</td>
 <td>The Y rotation of the actor stored as an integer</td>
 </tr>
 <tr>
 <td><strong>Rotation Y Head</strong></td>
-<td>uint8</td>
+<td>unsigned char</td>
 <td>5</td>
 <td>The head rotation of the actor if and only if it&#x27;s a Mob type, stored as an integer</td>
 </tr>

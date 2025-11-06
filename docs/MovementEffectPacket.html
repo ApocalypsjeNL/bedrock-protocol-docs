@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MovementEffectPacket (318)</title>
+    <title>MovementEffectPacket</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -98,19 +98,15 @@
 <body>
     <div class="container">
         <p><a href="index.html">← Back to Index</a></p>
-        <h1>MovementEffectPacket (318)</h1>
+        <h1>MovementEffectPacket</h1>
 <div class="description">These packets are sent to the client to update specific MovementEffects</div>
-<div class="description">
-	These MovementEffects can be client-predicted.
-	Ex: Fireworks Rockets used while gliding send this packet to the client so they know the exact duration of the GLIDE_BOOST MovementEffect.
-	</div>
 <div style="margin-left: 0px; margin-top: 10px;">
 <table border="1" cellpadding="5" cellspacing="0" style="border-collapse: collapse; width: 100%; max-width: 800px;">
 <thead>
 <tr style="background-color: #f0f0f0;">
 <th>Field Name</th>
 <th>Type</th>
-<th>Ordinal Index</th>
+<th>Field Index</th>
 <th>Description</th>
 </tr>
 </thead>
@@ -129,14 +125,14 @@
 <tr style="background-color: #f0f0f0;">
 <th>Field Name</th>
 <th>Type</th>
-<th>Ordinal Index</th>
+<th>Field Index</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><strong>Actor Runtime ID</strong></td>
-<td>varuint64</td>
+<td>varunsigned __int64</td>
 <td>0</td>
 <td></td>
 </tr>
@@ -146,7 +142,7 @@
 </tr>
 <tr>
 <td rowspan="2"><strong>Effect ID</strong></td>
-<td>varint32</td>
+<td>varint</td>
 <td>1</td>
 <td></td>
 </tr>
@@ -175,7 +171,7 @@
 </tr>
 <tr>
 <td><strong>Effect Duration</strong></td>
-<td>varint32</td>
+<td>varint</td>
 <td>2</td>
 <td></td>
 </tr>
@@ -193,14 +189,14 @@
 <tr style="background-color: #f0f0f0;">
 <th>Field Name</th>
 <th>Type</th>
-<th>Ordinal Index</th>
+<th>Field Index</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><strong>Input tick</strong></td>
-<td>varuint64</td>
+<td>varunsigned __int64</td>
 <td>0</td>
 <td>In server authoritative movement mode the client supplies this in PlayerAuthInputPacket.
 For any client-bound packets containing a tick, the server should supply the tick value corresponding to the most recently processed PlayerAuthInputPacket.

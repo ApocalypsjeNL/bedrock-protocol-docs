@@ -1,0 +1,70 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "59941711",
+    "x-format-version": "MISSING VERSION",
+    "x-minecraft-version": "1.21.130",
+    "x-protocol-version": 893,
+    "definitions": {
+        "958149751": {
+            "title": "Start Video Capture",
+            "type": "object",
+            "properties": {
+                "FilePrefix": {
+                    "type": "string",
+                    "x-ordinal-index": 1
+                },
+                "FrameRate": {
+                    "type": "integer",
+                    "x-underlying-type": "unsigned int",
+                    "x-ordinal-index": 0,
+                    "minimum": 0.0,
+                    "maximum": 4294967295.0
+                }
+            },
+            "required": [
+                "FilePrefix",
+                "FrameRate"
+            ]
+        },
+        "1309307835": {
+            "title": "Stop Video Capture"
+        }
+    },
+    "title": "PlayerVideoCapturePacket",
+    "description": "Used by a test command to start/stop video capture",
+    "type": "object",
+    "properties": {
+        "Start Video Capture": {
+            "default": {
+                "FrameRate": 30,
+                "FilePrefix": "Frame_"
+            },
+            "oneOf": [
+                {
+                    "$ref": "#/definitions/958149751"
+                },
+                {
+                    "$ref": "#/definitions/1309307835"
+                }
+            ],
+            "x-control-value-type": "unsigned int",
+            "x-ordinal-index": 0
+        },
+        "Stop Video Capture": {
+            "default": {
+                "FrameRate": 30,
+                "FilePrefix": "Frame_"
+            },
+            "oneOf": [
+                {
+                    "$ref": "#/definitions/958149751"
+                },
+                {
+                    "$ref": "#/definitions/1309307835"
+                }
+            ],
+            "x-control-value-type": "unsigned int",
+            "x-ordinal-index": 1
+        }
+    }
+}

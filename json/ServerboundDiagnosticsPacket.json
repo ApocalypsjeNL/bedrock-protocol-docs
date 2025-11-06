@@ -2,83 +2,85 @@
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "1692583562",
     "x-format-version": "MISSING VERSION",
-    "x-minecraft-version": "1.21.120",
-    "x-protocol-version": 859,
-    "definitions": {
-        "833110655": {
-            "title": "struct ServerboundDiagnosticsPacketPayload",
-            "type": "object",
-            "properties": {
-                "AvgBeginFrameTimeMS": {
-                    "type": "number",
-                    "x-underlying-type": "float",
-                    "x-ordinal-index": 3
-                },
-                "AvgClientSimTickTimeMS": {
-                    "type": "number",
-                    "x-underlying-type": "float",
-                    "x-ordinal-index": 2
-                },
-                "AvgEndFrameTimeMS": {
-                    "type": "number",
-                    "x-underlying-type": "float",
-                    "x-ordinal-index": 6
-                },
-                "AvgFps": {
-                    "type": "number",
-                    "x-underlying-type": "float",
-                    "x-ordinal-index": 0
-                },
-                "AvgInputTimeMS": {
-                    "type": "number",
-                    "x-underlying-type": "float",
-                    "x-ordinal-index": 4
-                },
-                "AvgRemainderTimePercent": {
-                    "type": "number",
-                    "x-underlying-type": "float",
-                    "x-ordinal-index": 7
-                },
-                "AvgRenderTimeMS": {
-                    "type": "number",
-                    "x-underlying-type": "float",
-                    "x-ordinal-index": 5
-                },
-                "AvgServerSimTickTimeMS": {
-                    "type": "number",
-                    "x-underlying-type": "float",
-                    "x-ordinal-index": 1
-                },
-                "AvgUnaccountedTimePercent": {
-                    "type": "number",
-                    "x-underlying-type": "float",
-                    "x-ordinal-index": 8
-                }
-            },
-            "required": [
-                "AvgBeginFrameTimeMS",
-                "AvgClientSimTickTimeMS",
-                "AvgEndFrameTimeMS",
-                "AvgFps",
-                "AvgInputTimeMS",
-                "AvgRemainderTimePercent",
-                "AvgRenderTimeMS",
-                "AvgServerSimTickTimeMS",
-                "AvgUnaccountedTimePercent"
-            ]
-        }
-    },
+    "x-minecraft-version": "1.21.130",
+    "x-protocol-version": 893,
     "title": "ServerboundDiagnosticsPacket",
     "description": "Sent from the client to the server IF ProfilerLite is enabled AND the creator toggle for additional client telemetry is enabled AND new telemetry data is ready (every 500 ms).",
     "type": "object",
     "properties": {
-        "mPayload": {
-            "$ref": "#/definitions/833110655",
-            "x-ordinal-index": 0
+        "AvgBeginFrameTimeMS": {
+            "type": "number",
+            "x-underlying-type": "float",
+            "x-ordinal-index": 3,
+            "minimum": 1.1754943508222876e-38,
+            "maximum": 3.4028234663852887e38
+        },
+        "AvgClientSimTickTimeMS": {
+            "type": "number",
+            "x-underlying-type": "float",
+            "x-ordinal-index": 2,
+            "minimum": 1.1754943508222876e-38,
+            "maximum": 3.4028234663852887e38
+        },
+        "AvgEndFrameTimeMS": {
+            "type": "number",
+            "x-underlying-type": "float",
+            "x-ordinal-index": 6,
+            "minimum": 1.1754943508222876e-38,
+            "maximum": 3.4028234663852887e38
+        },
+        "AvgFps": {
+            "type": "number",
+            "x-underlying-type": "float",
+            "x-ordinal-index": 0,
+            "minimum": 1.1754943508222876e-38,
+            "maximum": 3.4028234663852887e38
+        },
+        "AvgInputTimeMS": {
+            "type": "number",
+            "x-underlying-type": "float",
+            "x-ordinal-index": 4,
+            "minimum": 1.1754943508222876e-38,
+            "maximum": 3.4028234663852887e38
+        },
+        "AvgRemainderTimePercent": {
+            "type": "number",
+            "x-underlying-type": "float",
+            "x-ordinal-index": 7,
+            "minimum": 1.1754943508222876e-38,
+            "maximum": 3.4028234663852887e38
+        },
+        "AvgRenderTimeMS": {
+            "type": "number",
+            "x-underlying-type": "float",
+            "x-ordinal-index": 5,
+            "minimum": 1.1754943508222876e-38,
+            "maximum": 3.4028234663852887e38
+        },
+        "AvgServerSimTickTimeMS": {
+            "type": "number",
+            "x-underlying-type": "float",
+            "x-ordinal-index": 1,
+            "minimum": 1.1754943508222876e-38,
+            "maximum": 3.4028234663852887e38
+        },
+        "AvgUnaccountedTimePercent": {
+            "type": "number",
+            "x-underlying-type": "float",
+            "x-ordinal-index": 8,
+            "minimum": 1.1754943508222876e-38,
+            "maximum": 3.4028234663852887e38
         }
     },
-    "$metaProperties": {
-        "[cereal:packet]": 315,
-        "[cereal:packet_details]": ""
-    }
+    "required": [
+        "AvgBeginFrameTimeMS",
+        "AvgClientSimTickTimeMS",
+        "AvgEndFrameTimeMS",
+        "AvgFps",
+        "AvgInputTimeMS",
+        "AvgRemainderTimePercent",
+        "AvgRenderTimeMS",
+        "AvgServerSimTickTimeMS",
+        "AvgUnaccountedTimePercent"
+    ]
 }
