@@ -22,5 +22,9 @@
     "required": [
         "Content",
         "Title"
-    ]
+    ],
+    "$metaProperties": {
+        "[cereal:packet]": 186,
+        "[cereal:packet_details]": ""
+    }
 }

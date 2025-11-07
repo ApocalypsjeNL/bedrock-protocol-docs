@@ -10,14 +10,14 @@
     "properties": {
         "Container ID": {
             "type": "integer",
-            "x-underlying-type": "unsigned char",
+            "x-underlying-type": "uint8",
             "x-ordinal-index": 0,
             "minimum": 0.0,
             "maximum": 255.0
         },
         "ID": {
             "type": "integer",
-            "x-underlying-type": "int",
+            "x-underlying-type": "int32",
             "x-serialization-options": [
                 "Compression"
             ],
@@ -27,7 +27,7 @@
         },
         "Value": {
             "type": "integer",
-            "x-underlying-type": "int",
+            "x-underlying-type": "int32",
             "x-serialization-options": [
                 "Compression"
             ],
@@ -40,5 +40,9 @@
         "Container ID",
         "ID",
         "Value"
-    ]
+    ],
+    "$metaProperties": {
+        "[cereal:packet]": 51,
+        "[cereal:packet_details]": ""
+    }
 }

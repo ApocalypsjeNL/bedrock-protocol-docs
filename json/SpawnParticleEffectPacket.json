@@ -21,7 +21,7 @@
             "properties": {
                 "Actor Unique ID": {
                     "type": "integer",
-                    "x-underlying-type": "__int64",
+                    "x-underlying-type": "int64",
                     "x-serialization-options": [
                         "Compression"
                     ],
@@ -77,7 +77,7 @@
         },
         "Dimension Id": {
             "type": "integer",
-            "x-underlying-type": "unsigned char",
+            "x-underlying-type": "uint8",
             "x-ordinal-index": 0,
             "minimum": 0.0,
             "maximum": 255.0
@@ -102,5 +102,9 @@
         "Effect Name",
         "Molang Variables",
         "Position"
-    ]
+    ],
+    "$metaProperties": {
+        "[cereal:packet]": 118,
+        "[cereal:packet_details]": "This is not used for much anymore, only the Particle command (spawn particle by name at a location) and for ScriptServerSpawnParticleAttachedToActor and ScriptServerSpawnParticleInWorldEvent."
+    }
 }

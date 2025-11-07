@@ -15,5 +15,9 @@
     },
     "required": [
         "Behavior Tree Structure (JSON)"
-    ]
+    ],
+    "$metaProperties": {
+        "[cereal:packet]": 89,
+        "[cereal:packet_details]": "For automation"
+    }
 }

@@ -11,7 +11,7 @@
             "properties": {
                 "Actor Runtime ID": {
                     "type": "integer",
-                    "x-underlying-type": "unsigned __int64",
+                    "x-underlying-type": "uint64",
                     "x-serialization-options": [
                         "Compression"
                     ],
@@ -36,7 +36,7 @@
                 "Header": {
                     "description": "Header bits describing the status of the actor, see additional documentation in the supplemental documentation folder",
                     "type": "integer",
-                    "x-underlying-type": "unsigned char",
+                    "x-underlying-type": "uint8",
                     "x-ordinal-index": 1,
                     "minimum": 0.0,
                     "maximum": 255.0
@@ -49,7 +49,7 @@
                 "Rotation X": {
                     "description": "The X rotation of the actor stored as an integer",
                     "type": "integer",
-                    "x-underlying-type": "unsigned char",
+                    "x-underlying-type": "uint8",
                     "x-ordinal-index": 3,
                     "minimum": 0.0,
                     "maximum": 255.0
@@ -57,7 +57,7 @@
                 "Rotation Y": {
                     "description": "The Y rotation of the actor stored as an integer",
                     "type": "integer",
-                    "x-underlying-type": "unsigned char",
+                    "x-underlying-type": "uint8",
                     "x-ordinal-index": 4,
                     "minimum": 0.0,
                     "maximum": 255.0
@@ -65,7 +65,7 @@
                 "Rotation Y Head": {
                     "description": "The head rotation of the actor if and only if it's a Mob type, stored as an integer",
                     "type": "integer",
-                    "x-underlying-type": "unsigned char",
+                    "x-underlying-type": "uint8",
                     "x-ordinal-index": 5,
                     "minimum": 0.0,
                     "maximum": 255.0
@@ -125,5 +125,9 @@
     },
     "required": [
         "Move Data"
-    ]
+    ],
+    "$metaProperties": {
+        "[cereal:packet]": 18,
+        "[cereal:packet_details]": ""
+    }
 }

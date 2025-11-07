@@ -11,7 +11,7 @@
             "properties": {
                 "Actor Unique ID": {
                     "type": "integer",
-                    "x-underlying-type": "__int64",
+                    "x-underlying-type": "int64",
                     "x-serialization-options": [
                         "Compression"
                     ],
@@ -41,5 +41,9 @@
     "required": [
         "Camera ID",
         "Target Player ID"
-    ]
+    ],
+    "$metaProperties": {
+        "[cereal:packet]": 73,
+        "[cereal:packet_details]": ""
+    }
 }

@@ -10,7 +10,7 @@
     "properties": {
         "Client Throttle Enabled": {
             "type": "boolean",
-            "x-underlying-type": "bool",
+            "x-underlying-type": "boolean",
             "x-ordinal-index": 2
         },
         "Client Throttle Scalar": {
@@ -22,7 +22,7 @@
         },
         "Client Throttle Threshold": {
             "type": "integer",
-            "x-underlying-type": "unsigned char",
+            "x-underlying-type": "uint8",
             "x-ordinal-index": 3,
             "minimum": 0.0,
             "maximum": 255.0
@@ -30,7 +30,7 @@
         "Compression Threshold": {
             "description": "Determines the smallest size of raw network payload to compress.\nNOTE: 0 is disable compression, 1 is compress everything 1 byte or larger (so everything)",
             "type": "integer",
-            "x-underlying-type": "unsigned short",
+            "x-underlying-type": "uint16",
             "x-ordinal-index": 0,
             "minimum": 0.0,
             "maximum": 65535.0
@@ -43,7 +43,7 @@
                 "Snappy",
                 "None"
             ],
-            "x-underlying-type": "unsigned short",
+            "x-underlying-type": "uint16",
             "x-serialization-options": [
                 "Enum-as-Value"
             ],
@@ -56,5 +56,9 @@
         "Client Throttle Threshold",
         "Compression Threshold",
         "CompressionAlgorithm"
-    ]
+    ],
+    "$metaProperties": {
+        "[cereal:packet]": 143,
+        "[cereal:packet_details]": ""
+    }
 }

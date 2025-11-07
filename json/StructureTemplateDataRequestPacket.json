@@ -11,7 +11,7 @@
             "properties": {
                 "X": {
                     "type": "integer",
-                    "x-underlying-type": "int",
+                    "x-underlying-type": "int32",
                     "x-serialization-options": [
                         "Compression"
                     ],
@@ -21,7 +21,7 @@
                 },
                 "Y": {
                     "type": "integer",
-                    "x-underlying-type": "unsigned int",
+                    "x-underlying-type": "uint32",
                     "x-serialization-options": [
                         "Compression"
                     ],
@@ -31,7 +31,7 @@
                 },
                 "Z": {
                     "type": "integer",
-                    "x-underlying-type": "int",
+                    "x-underlying-type": "int32",
                     "x-serialization-options": [
                         "Compression"
                     ],
@@ -90,7 +90,7 @@
                         "Layers",
                         "Blocks"
                     ],
-                    "x-underlying-type": "unsigned char",
+                    "x-underlying-type": "uint8",
                     "x-serialization-options": [
                         "Enum-as-Value"
                     ],
@@ -105,7 +105,7 @@
                 },
                 "Integrity Seed": {
                     "type": "integer",
-                    "x-underlying-type": "unsigned int",
+                    "x-underlying-type": "uint32",
                     "x-ordinal-index": 12,
                     "minimum": 0.0,
                     "maximum": 4294967295.0
@@ -131,7 +131,7 @@
                         "Z",
                         "XZ"
                     ],
-                    "x-underlying-type": "unsigned char",
+                    "x-underlying-type": "uint8",
                     "x-serialization-options": [
                         "Enum-as-Value"
                     ],
@@ -149,7 +149,7 @@
                         "Clockwise180",
                         "CounterClockwise90"
                     ],
-                    "x-underlying-type": "unsigned char",
+                    "x-underlying-type": "uint8",
                     "x-serialization-options": [
                         "Enum-as-Value"
                     ],
@@ -162,17 +162,17 @@
                 },
                 "Should Allow Non Ticking Player and Ticking Area Chunks": {
                     "type": "boolean",
-                    "x-underlying-type": "bool",
+                    "x-underlying-type": "boolean",
                     "x-ordinal-index": 3
                 },
                 "Should ignore blocks?": {
                     "type": "boolean",
-                    "x-underlying-type": "bool",
+                    "x-underlying-type": "boolean",
                     "x-ordinal-index": 2
                 },
                 "Should ignore entities?": {
                     "type": "boolean",
-                    "x-underlying-type": "bool",
+                    "x-underlying-type": "boolean",
                     "x-ordinal-index": 1
                 },
                 "Structure Offset": {
@@ -211,7 +211,7 @@
             "properties": {
                 "Actor Unique ID": {
                     "type": "integer",
-                    "x-underlying-type": "__int64",
+                    "x-underlying-type": "int64",
                     "x-serialization-options": [
                         "Compression"
                     ],
@@ -238,7 +238,7 @@
                 "ExportFromLoadMode",
                 "QuerySavedStructure"
             ],
-            "x-underlying-type": "unsigned char",
+            "x-underlying-type": "uint8",
             "x-serialization-options": [
                 "Enum-as-Value"
             ],
@@ -262,5 +262,9 @@
         "Structure Name",
         "Structure Position",
         "Structure Settings"
-    ]
+    ],
+    "$metaProperties": {
+        "[cereal:packet]": 132,
+        "[cereal:packet_details]": "This is used to kick off the process of loading and returning a structure in a Tag from the server back to the client. Currently this functionality is completely disabled and does nothing."
+    }
 }

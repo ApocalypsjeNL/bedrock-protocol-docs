@@ -44,7 +44,7 @@
     "properties": {
         "Data": {
             "type": "integer",
-            "x-underlying-type": "int",
+            "x-underlying-type": "int32",
             "x-serialization-options": [
                 "Compression"
             ],
@@ -54,7 +54,7 @@
         },
         "Event Id": {
             "type": "integer",
-            "x-underlying-type": "int",
+            "x-underlying-type": "int32",
             "x-serialization-options": [
                 "Compression"
             ],
@@ -72,5 +72,9 @@
         "Data",
         "Event Id",
         "Position"
-    ]
+    ],
+    "$metaProperties": {
+        "[cereal:packet]": 25,
+        "[cereal:packet_details]": ""
+    }
 }

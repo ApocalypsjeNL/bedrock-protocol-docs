@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NetworkSettingsPacket</title>
+    <title>NetworkSettingsPacket (143)</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -98,7 +98,7 @@
 <body>
     <div class="container">
         <p><a href="index.html">← Back to Index</a></p>
-        <h1>NetworkSettingsPacket</h1>
+        <h1>NetworkSettingsPacket (143)</h1>
 <div class="description">Sends tunable options from host to client (compression threshold and algorithm)</div>
 <div style="margin-left: 0px; margin-top: 10px;">
 <table border="1" cellpadding="5" cellspacing="0" style="border-collapse: collapse; width: 100%; max-width: 800px;">
@@ -113,14 +113,14 @@
 <tbody>
 <tr>
 <td><strong>Compression Threshold</strong></td>
-<td>unsigned short</td>
+<td>uint16</td>
 <td>0</td>
 <td>Determines the smallest size of raw network payload to compress.
 NOTE: 0 is disable compression, 1 is compress everything 1 byte or larger (so everything)</td>
 </tr>
 <tr>
 <td rowspan="2"><strong>CompressionAlgorithm</strong></td>
-<td>unsigned short</td>
+<td>uint16</td>
 <td>1</td>
 <td></td>
 </tr>
@@ -153,13 +153,13 @@ NOTE: 0 is disable compression, 1 is compress everything 1 byte or larger (so ev
 </tr>
 <tr>
 <td><strong>Client Throttle Enabled</strong></td>
-<td>bool</td>
+<td>boolean</td>
 <td>2</td>
 <td></td>
 </tr>
 <tr>
 <td><strong>Client Throttle Threshold</strong></td>
-<td>unsigned char</td>
+<td>uint8</td>
 <td>3</td>
 <td></td>
 </tr>

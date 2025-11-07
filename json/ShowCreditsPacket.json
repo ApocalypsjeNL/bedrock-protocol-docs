@@ -11,7 +11,7 @@
             "properties": {
                 "Actor Runtime ID": {
                     "type": "integer",
-                    "x-underlying-type": "unsigned __int64",
+                    "x-underlying-type": "uint64",
                     "x-serialization-options": [
                         "Compression"
                     ],
@@ -31,7 +31,7 @@
     "properties": {
         "Credits State": {
             "type": "integer",
-            "x-underlying-type": "int",
+            "x-underlying-type": "int32",
             "x-serialization-options": [
                 "Compression"
             ],
@@ -47,5 +47,9 @@
     "required": [
         "Credits State",
         "Player Runtime ID"
-    ]
+    ],
+    "$metaProperties": {
+        "[cereal:packet]": 75,
+        "[cereal:packet_details]": "That packet is sent to the client.  When the credits have concluded, a packet is sent back to the server to let it know to reinstate the player watching the credits."
+    }
 }

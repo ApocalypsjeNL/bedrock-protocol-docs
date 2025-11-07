@@ -10,7 +10,7 @@
     "properties": {
         "Event Id": {
             "type": "integer",
-            "x-underlying-type": "int",
+            "x-underlying-type": "int32",
             "x-serialization-options": [
                 "Compression"
             ],
@@ -26,5 +26,9 @@
     "required": [
         "Event Id",
         "__[[CTD]]__"
-    ]
+    ],
+    "$metaProperties": {
+        "[cereal:packet]": 124,
+        "[cereal:packet_details]": ""
+    }
 }

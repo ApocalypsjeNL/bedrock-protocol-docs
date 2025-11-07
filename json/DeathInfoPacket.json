@@ -38,5 +38,9 @@
     },
     "required": [
         "Death Cause Message"
-    ]
+    ],
+    "$metaProperties": {
+        "[cereal:packet]": 189,
+        "[cereal:packet_details]": "mDeathCauseMessage: is untranslated cause of death string vector returned from ActorDamageSource"
+    }
 }

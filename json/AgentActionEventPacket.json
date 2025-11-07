@@ -38,7 +38,7 @@
                 "TransferItemTo",
                 "Turn"
             ],
-            "x-underlying-type": "int",
+            "x-underlying-type": "int32",
             "x-serialization-options": [
                 "Enum-as-Value"
             ],
@@ -57,5 +57,9 @@
         "Action",
         "Request Id",
         "Response"
-    ]
+    ],
+    "$metaProperties": {
+        "[cereal:packet]": 181,
+        "[cereal:packet_details]": ""
+    }
 }

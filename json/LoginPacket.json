@@ -10,7 +10,7 @@
     "properties": {
         "Client Network Version": {
             "type": "integer",
-            "x-underlying-type": "int",
+            "x-underlying-type": "int32",
             "x-serialization-options": [
                 "Big Endian"
             ],
@@ -28,5 +28,9 @@
     "required": [
         "Client Network Version",
         "Connection Request"
-    ]
+    ],
+    "$metaProperties": {
+        "[cereal:packet]": 1,
+        "[cereal:packet_details]": ""
+    }
 }

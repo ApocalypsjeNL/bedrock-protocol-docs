@@ -19,5 +19,9 @@
     },
     "required": [
         "Fog Stack"
-    ]
+    ],
+    "$metaProperties": {
+        "[cereal:packet]": 160,
+        "[cereal:packet_details]": "This is the packet that tracks the active fog stack from the server so the local players can apply different fog settings."
+    }
 }

@@ -17,7 +17,7 @@
                 "Test",
                 "INVALID"
             ],
-            "x-underlying-type": "unsigned char",
+            "x-underlying-type": "uint8",
             "x-serialization-options": [
                 "Enum-as-Value"
             ],
@@ -26,5 +26,9 @@
     },
     "required": [
         "Sim Type"
-    ]
+    ],
+    "$metaProperties": {
+        "[cereal:packet]": 168,
+        "[cereal:packet_details]": "- mSimType: an enum representing the simulation type to switch to."
+    }
 }

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SetActorMotionPacket</title>
+    <title>SetActorMotionPacket (40)</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -98,8 +98,15 @@
 <body>
     <div class="container">
         <p><a href="index.html">← Back to Index</a></p>
-        <h1>SetActorMotionPacket</h1>
+        <h1>SetActorMotionPacket (40)</h1>
 <div class="description">This is used for the server to set the velocity of a client actor.</div>
+<div class="description">
+	It is primarily relevant for client predicted entities like the player or a boat or horse they are in control of.
+	For most other actor types it does nothing.&lt;br&gt;
+	This is one of the packets that can directly affect player motion, for others, see:&lt;br&gt;
+	- MovePlayerPacket&lt;br&gt;
+	- CorrectPlayerMovePredictionPacket
+	</div>
 <div style="margin-left: 0px; margin-top: 10px;">
 <table border="1" cellpadding="5" cellspacing="0" style="border-collapse: collapse; width: 100%; max-width: 800px;">
 <thead>
@@ -132,7 +139,7 @@
 <tbody>
 <tr>
 <td><strong>Actor Runtime ID</strong></td>
-<td>varunsigned __int64</td>
+<td>varuint64</td>
 <td>0</td>
 <td></td>
 </tr>
@@ -202,7 +209,7 @@
 <tbody>
 <tr>
 <td><strong>Input tick</strong></td>
-<td>varunsigned __int64</td>
+<td>varuint64</td>
 <td>0</td>
 <td>In server authoritative movement mode the client supplies this in PlayerAuthInputPacket.
 For any client-bound packets containing a tick, the server should supply the tick value corresponding to the most recently processed PlayerAuthInputPacket.

@@ -10,7 +10,7 @@
     "properties": {
         "Time": {
             "type": "integer",
-            "x-underlying-type": "int",
+            "x-underlying-type": "int32",
             "x-serialization-options": [
                 "Compression"
             ],
@@ -21,5 +21,9 @@
     },
     "required": [
         "Time"
-    ]
+    ],
+    "$metaProperties": {
+        "[cereal:packet]": 10,
+        "[cereal:packet_details]": "Every so often (and at login) the server sends the current time to the client, and additionally the client can set the server time through 2 commands: DayLockCommand and TimeCommand"
+    }
 }

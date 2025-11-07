@@ -38,5 +38,9 @@
     },
     "required": [
         "FeaturesDataList"
-    ]
+    ],
+    "$metaProperties": {
+        "[cereal:packet]": 191,
+        "[cereal:packet_details]": ""
+    }
 }

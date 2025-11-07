@@ -49,5 +49,9 @@
     },
     "required": [
         "Pos"
-    ]
+    ],
+    "$metaProperties": {
+        "[cereal:packet]": 16,
+        "[cereal:packet_details]": "Is currently only used for debug draw. Packets will not be sent if debug draw is not available."
+    }
 }

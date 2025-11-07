@@ -10,7 +10,7 @@
     "properties": {
         "Form ID": {
             "type": "integer",
-            "x-underlying-type": "unsigned int",
+            "x-underlying-type": "uint32",
             "x-serialization-options": [
                 "Compression"
             ],
@@ -26,5 +26,9 @@
     "required": [
         "Form ID",
         "Form UI JSON"
-    ]
+    ],
+    "$metaProperties": {
+        "[cereal:packet]": 103,
+        "[cereal:packet_details]": ""
+    }
 }

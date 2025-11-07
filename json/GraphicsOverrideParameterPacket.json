@@ -64,7 +64,7 @@
                 "MoonMieStrength",
                 "SunGlareShape"
             ],
-            "x-underlying-type": "unsigned char",
+            "x-underlying-type": "uint8",
             "x-serialization-options": [
                 "Enum-as-Value"
             ],
@@ -94,7 +94,7 @@
         "Reset Parameter": {
             "description": "If true, the specified parameter will be reset. If false, the parameter will be set using the data fields.",
             "type": "boolean",
-            "x-underlying-type": "bool",
+            "x-underlying-type": "boolean",
             "x-ordinal-index": 3
         }
     },
@@ -103,5 +103,9 @@
         "Identifier for Parameter",
         "Parameter Keyframe Values",
         "Reset Parameter"
-    ]
+    ],
+    "$metaProperties": {
+        "[cereal:packet]": 331,
+        "[cereal:packet_details]": ""
+    }
 }

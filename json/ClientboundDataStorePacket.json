@@ -14,18 +14,21 @@
                     "oneOf": [
                         {
                             "type": "number",
-                            "x-underlying-type": "double"
+                            "x-underlying-type": "double",
+                            "x-ordinal-index": 0
                         },
                         {
                             "type": "boolean",
-                            "x-underlying-type": "bool"
+                            "x-underlying-type": "boolean",
+                            "x-ordinal-index": 1
                         },
                         {
                             "type": "string",
+                            "x-ordinal-index": 2,
                             "maxLength": 5000
                         }
                     ],
-                    "x-control-value-type": "unsigned int",
+                    "x-control-value-type": "uint32",
                     "x-ordinal-index": 3
                 },
                 "Data Store Name": {
@@ -50,7 +53,7 @@
                 "Update Count": {
                     "description": "The number of times this property has updated",
                     "type": "integer",
-                    "x-underlying-type": "unsigned int",
+                    "x-underlying-type": "uint32",
                     "x-ordinal-index": 4,
                     "minimum": 0.0,
                     "maximum": 4294967294.0
@@ -88,7 +91,7 @@
                 "Update Count": {
                     "description": "The number of times this property has updated",
                     "type": "integer",
-                    "x-underlying-type": "unsigned int",
+                    "x-underlying-type": "uint32",
                     "x-ordinal-index": 2,
                     "minimum": 0.0,
                     "maximum": 4294967294.0
@@ -127,16 +130,19 @@
             "items": {
                 "oneOf": [
                     {
-                        "$ref": "#/definitions/3726916960"
+                        "$ref": "#/definitions/3726916960",
+                        "x-ordinal-index": 0
                     },
                     {
-                        "$ref": "#/definitions/1547361"
+                        "$ref": "#/definitions/1547361",
+                        "x-ordinal-index": 1
                     },
                     {
-                        "$ref": "#/definitions/2666507395"
+                        "$ref": "#/definitions/2666507395",
+                        "x-ordinal-index": 2
                     }
                 ],
-                "x-control-value-type": "unsigned int"
+                "x-control-value-type": "uint32"
             },
             "x-ordinal-index": 0,
             "maxItems": 500
@@ -144,5 +150,9 @@
     },
     "required": [
         "Updates"
-    ]
+    ],
+    "$metaProperties": {
+        "[cereal:packet]": 330,
+        "[cereal:packet_details]": ""
+    }
 }

@@ -22,7 +22,7 @@
                 "UserClosed",
                 "UserBusy"
             ],
-            "x-underlying-type": "unsigned char",
+            "x-underlying-type": "uint8",
             "x-serialization-options": [
                 "Enum-as-Value"
             ],
@@ -30,7 +30,7 @@
         },
         "Form ID": {
             "type": "integer",
-            "x-underlying-type": "unsigned int",
+            "x-underlying-type": "uint32",
             "x-serialization-options": [
                 "Compression"
             ],
@@ -47,5 +47,9 @@
         "Form Cancel Reason",
         "Form ID",
         "JSON Response"
-    ]
+    ],
+    "$metaProperties": {
+        "[cereal:packet]": 101,
+        "[cereal:packet_details]": "see ModalFormRequestPacket"
+    }
 }

@@ -10,7 +10,7 @@
     "properties": {
         "Duration Ticks": {
             "type": "integer",
-            "x-underlying-type": "int",
+            "x-underlying-type": "int32",
             "x-serialization-options": [
                 "Compression"
             ],
@@ -26,5 +26,9 @@
     "required": [
         "Duration Ticks",
         "Item Category"
-    ]
+    ],
+    "$metaProperties": {
+        "[cereal:packet]": 176,
+        "[cereal:packet_details]": "Packet sent by the player to start the cooldown on an item."
+    }
 }

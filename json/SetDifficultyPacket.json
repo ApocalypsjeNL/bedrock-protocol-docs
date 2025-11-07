@@ -10,7 +10,7 @@
     "properties": {
         "Difficulty": {
             "type": "integer",
-            "x-underlying-type": "unsigned int",
+            "x-underlying-type": "uint32",
             "x-serialization-options": [
                 "Compression"
             ],
@@ -21,5 +21,9 @@
     },
     "required": [
         "Difficulty"
-    ]
+    ],
+    "$metaProperties": {
+        "[cereal:packet]": 60,
+        "[cereal:packet_details]": "Used for when a client changes difficulty through the menu or when the server changes the difficulty."
+    }
 }

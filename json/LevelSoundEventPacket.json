@@ -48,14 +48,14 @@
         },
         "Actor Unique Id": {
             "type": "integer",
-            "x-underlying-type": "__int64",
+            "x-underlying-type": "int64",
             "x-ordinal-index": 6,
             "minimum": -9223372036854776000.0,
             "maximum": 9223372036854776000.0
         },
         "Data": {
             "type": "integer",
-            "x-underlying-type": "int",
+            "x-underlying-type": "int32",
             "x-serialization-options": [
                 "Compression"
             ],
@@ -606,7 +606,7 @@
                 "ImitateCamelHusk",
                 "Undefined"
             ],
-            "x-underlying-type": "unsigned int",
+            "x-underlying-type": "uint32",
             "x-serialization-options": [
                 "Compression",
                 "Enum-as-Value"
@@ -615,12 +615,12 @@
         },
         "Is Baby": {
             "type": "boolean",
-            "x-underlying-type": "bool",
+            "x-underlying-type": "boolean",
             "x-ordinal-index": 4
         },
         "Is Global": {
             "type": "boolean",
-            "x-underlying-type": "bool",
+            "x-underlying-type": "boolean",
             "x-ordinal-index": 5
         },
         "Position": {
@@ -636,5 +636,9 @@
         "Is Baby",
         "Is Global",
         "Position"
-    ]
+    ],
+    "$metaProperties": {
+        "[cereal:packet]": 123,
+        "[cereal:packet_details]": "\n\tMost sounds get launched on server and replicated to clients, but a handful of player initiated sounds are launched on their client and replicated through the network.\n\t(In most of the codebase 'Event' means telemetry events; this is not the case here, this is how sounds get replicated across the network in vanilla.)\n\tWith support for custom entities. Entity Id is a string and Event Id is an integer.\n\t"
+    }
 }

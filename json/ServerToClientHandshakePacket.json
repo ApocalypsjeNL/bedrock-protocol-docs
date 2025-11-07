@@ -16,5 +16,9 @@
     },
     "required": [
         "Handshake WebToken"
-    ]
+    ],
+    "$metaProperties": {
+        "[cereal:packet]": 3,
+        "[cereal:packet_details]": "Sent from the server at the end of the login packet"
+    }
 }

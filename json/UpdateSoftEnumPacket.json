@@ -20,7 +20,7 @@
                 "Remove",
                 "Replace"
             ],
-            "x-underlying-type": "unsigned char",
+            "x-underlying-type": "uint8",
             "x-serialization-options": [
                 "Enum-as-Value"
             ],
@@ -38,5 +38,9 @@
         "Enum Name",
         "Update Type",
         "Values"
-    ]
+    ],
+    "$metaProperties": {
+        "[cereal:packet]": 114,
+        "[cereal:packet_details]": "This allows someone to sync between server and client tags and enums on mobs or on the level."
+    }
 }

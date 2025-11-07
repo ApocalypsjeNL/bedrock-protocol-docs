@@ -5,5 +5,9 @@
     "x-minecraft-version": "1.21.130",
     "x-protocol-version": 893,
     "title": "ClientToServerHandshakePacket",
-    "description": "Sets up encryption and authenticates in educational version once at level startup from client."
+    "description": "Sets up encryption and authenticates in educational version once at level startup from client.",
+    "$metaProperties": {
+        "[cereal:packet]": 4,
+        "[cereal:packet_details]": ""
+    }
 }

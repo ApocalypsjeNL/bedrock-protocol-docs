@@ -10,11 +10,15 @@
     "properties": {
         "Waiting For Preload": {
             "type": "boolean",
-            "x-underlying-type": "bool",
+            "x-underlying-type": "boolean",
             "x-ordinal-index": 0
         }
     },
     "required": [
         "Waiting For Preload"
-    ]
+    ],
+    "$metaProperties": {
+        "[cereal:packet]": 179,
+        "[cereal:packet_details]": ""
+    }
 }

@@ -11,7 +11,7 @@
             "properties": {
                 "X": {
                     "type": "integer",
-                    "x-underlying-type": "int",
+                    "x-underlying-type": "int32",
                     "x-serialization-options": [
                         "Compression"
                     ],
@@ -21,7 +21,7 @@
                 },
                 "Y": {
                     "type": "integer",
-                    "x-underlying-type": "int",
+                    "x-underlying-type": "int32",
                     "x-serialization-options": [
                         "Compression"
                     ],
@@ -31,7 +31,7 @@
                 },
                 "Z": {
                     "type": "integer",
-                    "x-underlying-type": "int",
+                    "x-underlying-type": "int32",
                     "x-serialization-options": [
                         "Compression"
                     ],
@@ -73,7 +73,7 @@
                 "MiscSmoke",
                 "MiscLargeSmoke"
             ],
-            "x-underlying-type": "unsigned char",
+            "x-underlying-type": "uint8",
             "x-serialization-options": [
                 "Enum-as-Value"
             ],
@@ -87,7 +87,7 @@
                 "StartReaction",
                 "Reset"
             ],
-            "x-underlying-type": "unsigned char",
+            "x-underlying-type": "uint8",
             "x-serialization-options": [
                 "Enum-as-Value"
             ],
@@ -98,5 +98,9 @@
         "Position",
         "Reaction",
         "Type"
-    ]
+    ],
+    "$metaProperties": {
+        "[cereal:packet]": 109,
+        "[cereal:packet_details]": "The packet can be fired from the client through the UI or from the server during updates."
+    }
 }

@@ -32,7 +32,7 @@
                 "Add",
                 "Stop"
             ],
-            "x-underlying-type": "unsigned char",
+            "x-underlying-type": "uint8",
             "x-serialization-options": [
                 "Enum-as-Value"
             ],
@@ -46,7 +46,7 @@
                 "Positional",
                 "Rotational"
             ],
-            "x-underlying-type": "unsigned char",
+            "x-underlying-type": "uint8",
             "x-serialization-options": [
                 "Enum-as-Value"
             ],
@@ -58,5 +58,9 @@
         "Seconds",
         "Shake Action",
         "Shake Type"
-    ]
+    ],
+    "$metaProperties": {
+        "[cereal:packet]": 159,
+        "[cereal:packet_details]": "It may be used to queue or stop a camera shake"
+    }
 }

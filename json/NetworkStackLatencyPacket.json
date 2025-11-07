@@ -10,19 +10,23 @@
     "properties": {
         "Creation Time": {
             "type": "integer",
-            "x-underlying-type": "unsigned __int64",
+            "x-underlying-type": "uint64",
             "x-ordinal-index": 0,
             "minimum": 0.0,
             "maximum": 18446744073709553000.0
         },
         "Is From Server": {
             "type": "boolean",
-            "x-underlying-type": "bool",
+            "x-underlying-type": "boolean",
             "x-ordinal-index": 1
         }
     },
     "required": [
         "Creation Time",
         "Is From Server"
-    ]
+    ],
+    "$metaProperties": {
+        "[cereal:packet]": 115,
+        "[cereal:packet_details]": "DEPRECATED. Was for testing/debug/telemetry: Used to provide ping time to in game debug graph, also for realms telemetry of actual in game latency.  Sent from both client & server."
+    }
 }

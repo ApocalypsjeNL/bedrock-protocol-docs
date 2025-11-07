@@ -11,7 +11,7 @@
             "properties": {
                 "Actor Runtime ID": {
                     "type": "integer",
-                    "x-underlying-type": "unsigned __int64",
+                    "x-underlying-type": "uint64",
                     "x-serialization-options": [
                         "Compression"
                     ],
@@ -39,7 +39,7 @@
         },
         "Emote Length Ticks": {
             "type": "integer",
-            "x-underlying-type": "unsigned int",
+            "x-underlying-type": "uint32",
             "x-serialization-options": [
                 "Compression"
             ],
@@ -49,7 +49,7 @@
         },
         "Flags": {
             "type": "integer",
-            "x-underlying-type": "unsigned char",
+            "x-underlying-type": "uint8",
             "x-ordinal-index": 5,
             "minimum": 0.0,
             "maximum": 255.0
@@ -70,5 +70,9 @@
         "Flags",
         "PlatformId",
         "Xuid"
-    ]
+    ],
+    "$metaProperties": {
+        "[cereal:packet]": 138,
+        "[cereal:packet_details]": "Sent in both directions; by client to request that an emote is played and then from the server to the clients to indicate which player needs to now emote."
+    }
 }

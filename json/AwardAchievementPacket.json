@@ -10,7 +10,7 @@
     "properties": {
         "AchievementID": {
             "type": "integer",
-            "x-underlying-type": "int",
+            "x-underlying-type": "int32",
             "x-ordinal-index": 0,
             "minimum": -2147483648.0,
             "maximum": 2147483647.0
@@ -18,5 +18,9 @@
     },
     "required": [
         "AchievementID"
-    ]
+    ],
+    "$metaProperties": {
+        "[cereal:packet]": 309,
+        "[cereal:packet_details]": ""
+    }
 }

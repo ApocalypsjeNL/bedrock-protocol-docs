@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LevelSoundEventPacket</title>
+    <title>LevelSoundEventPacket (123)</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -98,8 +98,13 @@
 <body>
     <div class="container">
         <p><a href="index.html">← Back to Index</a></p>
-        <h1>LevelSoundEventPacket</h1>
+        <h1>LevelSoundEventPacket (123)</h1>
 <div class="description">Level Sound Event</div>
+<div class="description">
+	Most sounds get launched on server and replicated to clients, but a handful of player initiated sounds are launched on their client and replicated through the network.
+	(In most of the codebase &#x27;Event&#x27; means telemetry events; this is not the case here, this is how sounds get replicated across the network in vanilla.)
+	With support for custom entities. Entity Id is a string and Event Id is an integer.
+	</div>
 <div style="margin-left: 0px; margin-top: 10px;">
 <table border="1" cellpadding="5" cellspacing="0" style="border-collapse: collapse; width: 100%; max-width: 800px;">
 <thead>
@@ -113,7 +118,7 @@
 <tbody>
 <tr>
 <td rowspan="2"><strong>Event ID</strong></td>
-<td>varunsigned int</td>
+<td>varuint32</td>
 <td>0</td>
 <td></td>
 </tr>
@@ -2327,7 +2332,7 @@
 </tr>
 <tr>
 <td><strong>Data</strong></td>
-<td>varint</td>
+<td>varint32</td>
 <td>2</td>
 <td></td>
 </tr>
@@ -2339,19 +2344,19 @@
 </tr>
 <tr>
 <td><strong>Is Baby</strong></td>
-<td>bool</td>
+<td>boolean</td>
 <td>4</td>
 <td></td>
 </tr>
 <tr>
 <td><strong>Is Global</strong></td>
-<td>bool</td>
+<td>boolean</td>
 <td>5</td>
 <td></td>
 </tr>
 <tr>
 <td><strong>Actor Unique Id</strong></td>
-<td>__int64</td>
+<td>int64</td>
 <td>6</td>
 <td></td>
 </tr>

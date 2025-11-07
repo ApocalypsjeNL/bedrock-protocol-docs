@@ -11,7 +11,7 @@
             "properties": {
                 "Actor Runtime ID": {
                     "type": "integer",
-                    "x-underlying-type": "unsigned __int64",
+                    "x-underlying-type": "uint64",
                     "x-serialization-options": [
                         "Compression"
                     ],
@@ -71,7 +71,7 @@
                 "NpcOpen",
                 "OpenInventory"
             ],
-            "x-underlying-type": "unsigned char",
+            "x-underlying-type": "uint8",
             "x-serialization-options": [
                 "Enum-as-Value"
             ],
@@ -89,5 +89,9 @@
     "required": [
         "Action",
         "Target Runtime ID"
-    ]
+    ],
+    "$metaProperties": {
+        "[cereal:packet]": 33,
+        "[cereal:packet_details]": "Used for inventory button press and in _updateInteraction() for a variety of purposes. From the client."
+    }
 }

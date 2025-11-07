@@ -11,14 +11,14 @@
             "properties": {
                 "Least Significant Bits": {
                     "type": "integer",
-                    "x-underlying-type": "unsigned __int64",
+                    "x-underlying-type": "uint64",
                     "x-ordinal-index": 1,
                     "minimum": 0.0,
                     "maximum": 18446744073709553000.0
                 },
                 "Most Significant Bits": {
                     "type": "integer",
-                    "x-underlying-type": "unsigned __int64",
+                    "x-underlying-type": "uint64",
                     "x-ordinal-index": 0,
                     "minimum": 0.0,
                     "maximum": 18446744073709553000.0
@@ -35,7 +35,7 @@
             "properties": {
                 "Actor Runtime ID": {
                     "type": "integer",
-                    "x-underlying-type": "unsigned __int64",
+                    "x-underlying-type": "uint64",
                     "x-serialization-options": [
                         "Compression"
                     ],
@@ -68,5 +68,9 @@
     "required": [
         "Emote piece ids",
         "Runtime id"
-    ]
+    ],
+    "$metaProperties": {
+        "[cereal:packet]": 152,
+        "[cereal:packet_details]": ""
+    }
 }

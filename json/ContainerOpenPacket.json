@@ -11,7 +11,7 @@
             "properties": {
                 "X": {
                     "type": "integer",
-                    "x-underlying-type": "int",
+                    "x-underlying-type": "int32",
                     "x-serialization-options": [
                         "Compression"
                     ],
@@ -21,7 +21,7 @@
                 },
                 "Y": {
                     "type": "integer",
-                    "x-underlying-type": "unsigned int",
+                    "x-underlying-type": "uint32",
                     "x-serialization-options": [
                         "Compression"
                     ],
@@ -31,7 +31,7 @@
                 },
                 "Z": {
                     "type": "integer",
-                    "x-underlying-type": "int",
+                    "x-underlying-type": "int32",
                     "x-serialization-options": [
                         "Compression"
                     ],
@@ -52,7 +52,7 @@
             "properties": {
                 "Actor Unique ID": {
                     "type": "integer",
-                    "x-underlying-type": "__int64",
+                    "x-underlying-type": "int64",
                     "x-serialization-options": [
                         "Compression"
                     ],
@@ -72,14 +72,14 @@
     "properties": {
         "Container Id": {
             "type": "integer",
-            "x-underlying-type": "unsigned char",
+            "x-underlying-type": "uint8",
             "x-ordinal-index": 0,
             "minimum": 0.0,
             "maximum": 255.0
         },
         "Container Type": {
             "type": "integer",
-            "x-underlying-type": "unsigned char",
+            "x-underlying-type": "uint8",
             "x-ordinal-index": 1,
             "minimum": 0.0,
             "maximum": 255.0
@@ -98,5 +98,9 @@
         "Container Type",
         "Position",
         "Target Actor ID"
-    ]
+    ],
+    "$metaProperties": {
+        "[cereal:packet]": 46,
+        "[cereal:packet_details]": ""
+    }
 }

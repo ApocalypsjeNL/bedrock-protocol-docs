@@ -1,0 +1,71 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "907041711",
+    "x-format-version": "MISSING VERSION",
+    "x-minecraft-version": "1.21.130",
+    "x-protocol-version": 893,
+    "definitions": {
+        "269289973": {
+            "title": "NetworkBlockPosition",
+            "type": "object",
+            "properties": {
+                "X": {
+                    "type": "integer",
+                    "x-underlying-type": "int32",
+                    "x-serialization-options": [
+                        "Compression"
+                    ],
+                    "x-ordinal-index": 0,
+                    "minimum": -2147483648.0,
+                    "maximum": 2147483647.0
+                },
+                "Y": {
+                    "type": "integer",
+                    "x-underlying-type": "uint32",
+                    "x-serialization-options": [
+                        "Compression"
+                    ],
+                    "x-ordinal-index": 1,
+                    "minimum": 0.0,
+                    "maximum": 4294967295.0
+                },
+                "Z": {
+                    "type": "integer",
+                    "x-underlying-type": "int32",
+                    "x-serialization-options": [
+                        "Compression"
+                    ],
+                    "x-ordinal-index": 2,
+                    "minimum": -2147483648.0,
+                    "maximum": 2147483647.0
+                }
+            },
+            "required": [
+                "X",
+                "Y",
+                "Z"
+            ]
+        }
+    },
+    "title": "BlockActorDataPacket",
+    "description": "Sends the entire user data compound tag and the block position to the client.",
+    "type": "object",
+    "properties": {
+        "Actor Data Tags": {
+            "$ref": "#/definitions/4158325036",
+            "x-ordinal-index": 1
+        },
+        "Block Position": {
+            "$ref": "#/definitions/269289973",
+            "x-ordinal-index": 0
+        }
+    },
+    "required": [
+        "Actor Data Tags",
+        "Block Position"
+    ],
+    "$metaProperties": {
+        "[cereal:packet]": 56,
+        "[cereal:packet_details]": ""
+    }
+}

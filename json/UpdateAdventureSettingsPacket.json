@@ -11,27 +11,27 @@
             "properties": {
                 "Auto Jump": {
                     "type": "boolean",
-                    "x-underlying-type": "bool",
+                    "x-underlying-type": "boolean",
                     "x-ordinal-index": 4
                 },
                 "Immutable World": {
                     "type": "boolean",
-                    "x-underlying-type": "bool",
+                    "x-underlying-type": "boolean",
                     "x-ordinal-index": 2
                 },
                 "Show Name Tags": {
                     "type": "boolean",
-                    "x-underlying-type": "bool",
+                    "x-underlying-type": "boolean",
                     "x-ordinal-index": 3
                 },
                 "no MvP": {
                     "type": "boolean",
-                    "x-underlying-type": "bool",
+                    "x-underlying-type": "boolean",
                     "x-ordinal-index": 1
                 },
                 "no PvM": {
                     "type": "boolean",
-                    "x-underlying-type": "bool",
+                    "x-underlying-type": "boolean",
                     "x-ordinal-index": 0
                 }
             },
@@ -55,5 +55,9 @@
     },
     "required": [
         "Adventure Settings"
-    ]
+    ],
+    "$metaProperties": {
+        "[cereal:packet]": 188,
+        "[cereal:packet_details]": "Sent by the server to update the state of AdventureSettings. Replaces the AdventureSettingsPacket for updating AdventureSettings from server to client."
+    }
 }

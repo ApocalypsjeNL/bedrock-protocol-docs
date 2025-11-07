@@ -11,7 +11,7 @@
             "properties": {
                 "Actor Runtime ID": {
                     "type": "integer",
-                    "x-underlying-type": "unsigned __int64",
+                    "x-underlying-type": "uint64",
                     "x-serialization-options": [
                         "Compression"
                     ],
@@ -61,7 +61,7 @@
         },
         "mStopExpressionVersion": {
             "type": "integer",
-            "x-underlying-type": "int",
+            "x-underlying-type": "int32",
             "x-serialization-options": [
                 "Enum-as-Value"
             ],
@@ -78,5 +78,9 @@
         "mRuntimeIds",
         "mStopExpression",
         "mStopExpressionVersion"
-    ]
+    ],
+    "$metaProperties": {
+        "[cereal:packet]": 158,
+        "[cereal:packet_details]": "Several properties can be specified in the following order:</br>\n\t- The name of the animation (a string) that the specified entities are to play.</br>\n\t- The next state to transition to (a string) once the specified animation is finished playing.</br>\n\t- The stop expression (a string), the condition that determines when to transition to the next state.</br>\n\t- The name of an animation controller (a string) that you would like to use.</br>\n\t- The blend out time (a float), the amount of time to blend out of this animation.</br>\n\t- A vector of ActorRuntimeIds of the entities that will play the specified animation."
+    }
 }

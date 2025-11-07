@@ -11,7 +11,7 @@
             "properties": {
                 "Actor Runtime ID": {
                     "type": "integer",
-                    "x-underlying-type": "unsigned __int64",
+                    "x-underlying-type": "uint64",
                     "x-serialization-options": [
                         "Compression"
                     ],
@@ -31,7 +31,7 @@
     "properties": {
         "Action Index": {
             "type": "integer",
-            "x-underlying-type": "unsigned char",
+            "x-underlying-type": "uint8",
             "x-ordinal-index": 3,
             "minimum": 0.0,
             "maximum": 255.0
@@ -56,7 +56,7 @@
                 "SetInteractText",
                 "ExecuteOpeningCommands"
             ],
-            "x-underlying-type": "unsigned char",
+            "x-underlying-type": "uint8",
             "x-serialization-options": [
                 "Enum-as-Value"
             ],
@@ -73,5 +73,9 @@
         "NPC Runtime ID",
         "Request Type",
         "Scene Name"
-    ]
+    ],
+    "$metaProperties": {
+        "[cereal:packet]": 98,
+        "[cereal:packet_details]": "A request is made from the client during an interaction with an NPC then the request is processed by the server. \n\tActor MUST have the NPCComponent to be handled. \n\tWe currently only use this for EDU, but the goal was to expose the NPC Component to creators."
+    }
 }

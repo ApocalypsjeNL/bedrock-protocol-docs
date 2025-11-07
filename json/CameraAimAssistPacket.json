@@ -41,7 +41,7 @@
                 "Set",
                 "Clear"
             ],
-            "x-underlying-type": "unsigned char",
+            "x-underlying-type": "uint8",
             "x-serialization-options": [
                 "Enum-as-Value"
             ],
@@ -60,7 +60,7 @@
         },
         "Show Debug Render": {
             "type": "boolean",
-            "x-underlying-type": "bool",
+            "x-underlying-type": "boolean",
             "x-ordinal-index": 5
         },
         "Target Mode": {
@@ -70,7 +70,7 @@
                 "Angle",
                 "Distance"
             ],
-            "x-underlying-type": "unsigned char",
+            "x-underlying-type": "uint8",
             "x-serialization-options": [
                 "Enum-as-Value"
             ],
@@ -89,5 +89,9 @@
         "Show Debug Render",
         "Target Mode",
         "View Angle"
-    ]
+    ],
+    "$metaProperties": {
+        "[cereal:packet]": 316,
+        "[cereal:packet_details]": ""
+    }
 }

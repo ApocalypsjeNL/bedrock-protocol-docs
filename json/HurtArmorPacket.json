@@ -11,7 +11,7 @@
         "Armor Slots": {
             "description": "Bitset",
             "type": "integer",
-            "x-underlying-type": "unsigned __int64",
+            "x-underlying-type": "uint64",
             "x-serialization-options": [
                 "Compression"
             ],
@@ -21,7 +21,7 @@
         },
         "Cause": {
             "type": "integer",
-            "x-underlying-type": "int",
+            "x-underlying-type": "int32",
             "x-serialization-options": [
                 "Compression"
             ],
@@ -31,7 +31,7 @@
         },
         "Damage": {
             "type": "integer",
-            "x-underlying-type": "int",
+            "x-underlying-type": "int32",
             "x-serialization-options": [
                 "Compression"
             ],
@@ -44,5 +44,9 @@
         "Armor Slots",
         "Cause",
         "Damage"
-    ]
+    ],
+    "$metaProperties": {
+        "[cereal:packet]": 38,
+        "[cereal:packet_details]": "Sends the damage taken after armor is taken into account. This looks like it is trying to be phased out, this is not sent while the ItemStackNetManagerServer is active. From the server."
+    }
 }

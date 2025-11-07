@@ -1,0 +1,14 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "944264666",
+    "x-format-version": "MISSING VERSION",
+    "x-minecraft-version": "1.21.130",
+    "x-protocol-version": 893,
+    "title": "enum PositionTrackingDBServerBroadcastPacketPayload::Action",
+    "type": "string",
+    "enum": [
+        "Update",
+        "Destroy",
+        "NotFound"
+    ]
+}

@@ -43,7 +43,7 @@
             "properties": {
                 "Actor Runtime ID": {
                     "type": "integer",
-                    "x-underlying-type": "unsigned __int64",
+                    "x-underlying-type": "uint64",
                     "x-serialization-options": [
                         "Compression"
                     ],
@@ -69,7 +69,7 @@
         "mOnGround": {
             "description": "Not falling / jumping",
             "type": "boolean",
-            "x-underlying-type": "bool",
+            "x-underlying-type": "boolean",
             "x-ordinal-index": 2
         },
         "mRuntimeId": {
@@ -82,5 +82,9 @@
         "mMotion",
         "mOnGround",
         "mRuntimeId"
-    ]
+    ],
+    "$metaProperties": {
+        "[cereal:packet]": 157,
+        "[cereal:packet_details]": "This is from the server when spatial optimizations are enabled and the server does not send a spatial update."
+    }
 }

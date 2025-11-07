@@ -11,14 +11,14 @@
             "properties": {
                 "Least Significant Bits": {
                     "type": "integer",
-                    "x-underlying-type": "unsigned __int64",
+                    "x-underlying-type": "uint64",
                     "x-ordinal-index": 1,
                     "minimum": 0.0,
                     "maximum": 18446744073709553000.0
                 },
                 "Most Significant Bits": {
                     "type": "integer",
-                    "x-underlying-type": "unsigned __int64",
+                    "x-underlying-type": "uint64",
                     "x-ordinal-index": 0,
                     "minimum": 0.0,
                     "maximum": 18446744073709553000.0
@@ -51,18 +51,21 @@
                 {
                     "type": "number",
                     "x-underlying-type": "float",
+                    "x-ordinal-index": 0,
                     "minimum": 1.1754943508222876e-38,
                     "maximum": 3.4028234663852887e38
                 },
                 {
                     "type": "boolean",
-                    "x-underlying-type": "bool"
+                    "x-underlying-type": "boolean",
+                    "x-ordinal-index": 1
                 },
                 {
-                    "type": "string"
+                    "type": "string",
+                    "x-ordinal-index": 2
                 }
             ],
-            "x-control-value-type": "unsigned int",
+            "x-control-value-type": "uint32",
             "x-ordinal-index": 2
         }
     },
@@ -70,5 +73,9 @@
         "PackId",
         "PackSettingName",
         "PackSettingValue"
-    ]
+    ],
+    "$metaProperties": {
+        "[cereal:packet]": 329,
+        "[cereal:packet_details]": ""
+    }
 }

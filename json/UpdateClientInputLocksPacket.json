@@ -44,7 +44,7 @@
     "properties": {
         "Input Lock ComponentData": {
             "type": "integer",
-            "x-underlying-type": "unsigned int",
+            "x-underlying-type": "uint32",
             "x-serialization-options": [
                 "Compression"
             ],
@@ -60,5 +60,9 @@
     "required": [
         "Input Lock ComponentData",
         "Server Pos"
-    ]
+    ],
+    "$metaProperties": {
+        "[cereal:packet]": 196,
+        "[cereal:packet_details]": "Used to update the players input permissions. Sends the full permission set and the server position of the player at the time the permission was modified."
+    }
 }

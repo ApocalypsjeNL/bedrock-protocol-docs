@@ -11,7 +11,7 @@
             "properties": {
                 "X": {
                     "type": "integer",
-                    "x-underlying-type": "int",
+                    "x-underlying-type": "int32",
                     "x-serialization-options": [
                         "Compression"
                     ],
@@ -21,7 +21,7 @@
                 },
                 "Y": {
                     "type": "integer",
-                    "x-underlying-type": "unsigned int",
+                    "x-underlying-type": "uint32",
                     "x-serialization-options": [
                         "Compression"
                     ],
@@ -31,7 +31,7 @@
                 },
                 "Z": {
                     "type": "integer",
-                    "x-underlying-type": "int",
+                    "x-underlying-type": "int32",
                     "x-serialization-options": [
                         "Compression"
                     ],
@@ -52,7 +52,7 @@
             "properties": {
                 "Actor Runtime ID": {
                     "type": "integer",
-                    "x-underlying-type": "unsigned __int64",
+                    "x-underlying-type": "uint64",
                     "x-serialization-options": [
                         "Compression"
                     ],
@@ -115,7 +115,7 @@
                 "StartUsingItem",
                 "Count"
             ],
-            "x-underlying-type": "int",
+            "x-underlying-type": "int32",
             "x-serialization-options": [
                 "Compression",
                 "Enum-as-Value"
@@ -128,7 +128,7 @@
         },
         "Face": {
             "type": "integer",
-            "x-underlying-type": "int",
+            "x-underlying-type": "int32",
             "x-serialization-options": [
                 "Compression"
             ],
@@ -151,5 +151,9 @@
         "Face",
         "Player Runtime ID",
         "Result Pos"
-    ]
+    ],
+    "$metaProperties": {
+        "[cereal:packet]": 36,
+        "[cereal:packet_details]": "The expected actions change depending on the ServerAuthMovementMode specified in the StartGamePacket.\n\tSee the PlayerActionType enum for details on which have differing behavior.\n\tSee also PlayerAuthInputPacket and InventoryTransactionPacket for similar types of player actions."
+    }
 }

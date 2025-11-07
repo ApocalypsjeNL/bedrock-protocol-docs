@@ -35,5 +35,9 @@
     },
     "required": [
         "Edu Shared URI Resource"
-    ]
+    ],
+    "$metaProperties": {
+        "[cereal:packet]": 170,
+        "[cereal:packet_details]": ""
+    }
 }

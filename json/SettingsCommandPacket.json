@@ -15,12 +15,16 @@
         },
         "Suppress Output?": {
             "type": "boolean",
-            "x-underlying-type": "bool",
+            "x-underlying-type": "boolean",
             "x-ordinal-index": 1
         }
     },
     "required": [
         "Command",
         "Suppress Output?"
-    ]
+    ],
+    "$metaProperties": {
+        "[cereal:packet]": 140,
+        "[cereal:packet_details]": "Used when the player changes the world settings like doDayNightCycle or WeatherCycle via the world settings menu"
+    }
 }

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ClientCameraAimAssistPacket</title>
+    <title>ClientCameraAimAssistPacket (321)</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -98,8 +98,13 @@
 <body>
     <div class="container">
         <p><a href="index.html">← Back to Index</a></p>
-        <h1>ClientCameraAimAssistPacket</h1>
+        <h1>ClientCameraAimAssistPacket (321)</h1>
 <div class="description">Client-side activation of aim-assist</div>
+<div class="description">
+	Sent by clients to the server for activating/deactivating aim-assist.
+	Activation uses the CameraPreset Id for server-side lookup and uses its aim_assist field
+	for aim-assist activation settings.
+	</div>
 <div style="margin-left: 0px; margin-top: 10px;">
 <table border="1" cellpadding="5" cellspacing="0" style="border-collapse: collapse; width: 100%; max-width: 800px;">
 <thead>
@@ -119,7 +124,7 @@
 </tr>
 <tr>
 <td rowspan="2"><strong>Action</strong></td>
-<td>unsigned char</td>
+<td>uint8</td>
 <td>1</td>
 <td></td>
 </tr>
@@ -148,7 +153,7 @@
 </tr>
 <tr>
 <td><strong>Allow aim assist</strong></td>
-<td>bool</td>
+<td>boolean</td>
 <td>2</td>
 <td></td>
 </tr>

@@ -10,7 +10,7 @@
     "properties": {
         "Container ID": {
             "type": "integer",
-            "x-underlying-type": "unsigned char",
+            "x-underlying-type": "uint8",
             "x-serialization-options": [
                 "Enum-as-Value"
             ],
@@ -20,7 +20,7 @@
         },
         "Selected Slot": {
             "type": "integer",
-            "x-underlying-type": "unsigned int",
+            "x-underlying-type": "uint32",
             "x-serialization-options": [
                 "Compression"
             ],
@@ -30,7 +30,7 @@
         },
         "Should select slot?": {
             "type": "boolean",
-            "x-underlying-type": "bool",
+            "x-underlying-type": "boolean",
             "x-ordinal-index": 2
         }
     },
@@ -38,5 +38,9 @@
         "Container ID",
         "Selected Slot",
         "Should select slot?"
-    ]
+    ],
+    "$metaProperties": {
+        "[cereal:packet]": 48,
+        "[cereal:packet_details]": ""
+    }
 }

@@ -10,7 +10,7 @@
     "properties": {
         "Chunk Radius": {
             "type": "integer",
-            "x-underlying-type": "int",
+            "x-underlying-type": "int32",
             "x-serialization-options": [
                 "Compression"
             ],
@@ -20,7 +20,7 @@
         },
         "Max ChunkRadius": {
             "type": "integer",
-            "x-underlying-type": "unsigned char",
+            "x-underlying-type": "uint8",
             "x-ordinal-index": 1,
             "minimum": 0.0,
             "maximum": 255.0
@@ -29,5 +29,9 @@
     "required": [
         "Chunk Radius",
         "Max ChunkRadius"
-    ]
+    ],
+    "$metaProperties": {
+        "[cereal:packet]": 69,
+        "[cereal:packet_details]": "This packet is to make sure that the server expands/shrinks first. Additionally for ClientSide Chunk Generation we can send a byte, based on client's hardware capabilities what is the max chunk radius client can handle."
+    }
 }

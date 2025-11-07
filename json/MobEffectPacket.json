@@ -11,7 +11,7 @@
             "properties": {
                 "Actor Runtime ID": {
                     "type": "integer",
-                    "x-underlying-type": "unsigned __int64",
+                    "x-underlying-type": "uint64",
                     "x-serialization-options": [
                         "Compression"
                     ],
@@ -31,7 +31,7 @@
                 "Input tick": {
                     "description": "In server authoritative movement mode the client supplies this in PlayerAuthInputPacket.\nFor any client-bound packets containing a tick, the server should supply the tick value corresponding to the most recently processed PlayerAuthInputPacket.\nThis allows the client to adjust any client predictions made while the packet was in flight.\nIf the packet is being sent to the client but not relating to data of the player or a client-predicted vehicle, it can be zero.\nIt is also acceptable to specify zero for players, although this may lead to minor visual flickers and less smooth application of CorrectPlayerMovePredictionPacket.",
                     "type": "integer",
-                    "x-underlying-type": "unsigned __int64",
+                    "x-underlying-type": "uint64",
                     "x-serialization-options": [
                         "Compression"
                     ],
@@ -52,12 +52,12 @@
         "Ambient": {
             "description": "If the effect is considered ambient (like the ones applied by Beacons or Conduits)",
             "type": "boolean",
-            "x-underlying-type": "bool",
+            "x-underlying-type": "boolean",
             "x-ordinal-index": 7
         },
         "Effect Amplifier": {
             "type": "integer",
-            "x-underlying-type": "int",
+            "x-underlying-type": "int32",
             "x-serialization-options": [
                 "Compression"
             ],
@@ -67,7 +67,7 @@
         },
         "Effect Duration Ticks": {
             "type": "integer",
-            "x-underlying-type": "int",
+            "x-underlying-type": "int32",
             "x-serialization-options": [
                 "Compression"
             ],
@@ -77,7 +77,7 @@
         },
         "Effect ID": {
             "type": "integer",
-            "x-underlying-type": "int",
+            "x-underlying-type": "int32",
             "x-serialization-options": [
                 "Compression"
             ],
@@ -94,7 +94,7 @@
                 "Update",
                 "Remove"
             ],
-            "x-underlying-type": "unsigned char",
+            "x-underlying-type": "uint8",
             "x-serialization-options": [
                 "Enum-as-Value"
             ],
@@ -102,7 +102,7 @@
         },
         "Show Particles": {
             "type": "boolean",
-            "x-underlying-type": "bool",
+            "x-underlying-type": "boolean",
             "x-ordinal-index": 4
         },
         "Target Runtime ID": {
@@ -124,5 +124,9 @@
         "Show Particles",
         "Target Runtime ID",
         "Tick"
-    ]
+    ],
+    "$metaProperties": {
+        "[cereal:packet]": 28,
+        "[cereal:packet_details]": "At the start of the game the server sends any mob effects with _sendAdditionalLevelData() if the joining player saved out with them,\nand then anytime a mob effect is added, removed, or updated this packet is sent.<br>\nIt is important for player movement simulation to ensure that the following effects are sent for the player or any client predicted vehicle they are in control of:<br>\n- levitation<br>\n- slow_falling<br>\n- jump<br>\n- movement_speed<br>\n- movement_slowdown<br>\n- weaving"
+    }
 }

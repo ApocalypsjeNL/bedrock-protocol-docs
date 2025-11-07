@@ -43,7 +43,7 @@
             "properties": {
                 "Actor Unique ID": {
                     "type": "integer",
-                    "x-underlying-type": "__int64",
+                    "x-underlying-type": "int64",
                     "x-serialization-options": [
                         "Compression"
                     ],
@@ -62,7 +62,7 @@
             "properties": {
                 "Actor Runtime ID": {
                     "type": "integer",
-                    "x-underlying-type": "unsigned __int64",
+                    "x-underlying-type": "uint64",
                     "x-serialization-options": [
                         "Compression"
                     ],
@@ -82,7 +82,7 @@
     "properties": {
         "Direction": {
             "type": "integer",
-            "x-underlying-type": "int",
+            "x-underlying-type": "int32",
             "x-serialization-options": [
                 "Compression"
             ],
@@ -113,5 +113,9 @@
         "Position",
         "Target Actor ID",
         "Target Runtime ID"
-    ]
+    ],
+    "$metaProperties": {
+        "[cereal:packet]": 22,
+        "[cereal:packet_details]": ""
+    }
 }

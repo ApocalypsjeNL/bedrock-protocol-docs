@@ -11,7 +11,7 @@
             "properties": {
                 "X": {
                     "type": "integer",
-                    "x-underlying-type": "int",
+                    "x-underlying-type": "int32",
                     "x-serialization-options": [
                         "Compression"
                     ],
@@ -21,7 +21,7 @@
                 },
                 "Y": {
                     "type": "integer",
-                    "x-underlying-type": "int",
+                    "x-underlying-type": "int32",
                     "x-serialization-options": [
                         "Compression"
                     ],
@@ -31,7 +31,7 @@
                 },
                 "Z": {
                     "type": "integer",
-                    "x-underlying-type": "int",
+                    "x-underlying-type": "int32",
                     "x-serialization-options": [
                         "Compression"
                     ],
@@ -53,7 +53,7 @@
     "properties": {
         "Max Slots": {
             "type": "integer",
-            "x-underlying-type": "unsigned char",
+            "x-underlying-type": "uint8",
             "x-ordinal-index": 2,
             "minimum": 0.0,
             "maximum": 255.0
@@ -64,7 +64,7 @@
         },
         "With Data?": {
             "type": "boolean",
-            "x-underlying-type": "bool",
+            "x-underlying-type": "boolean",
             "x-ordinal-index": 1
         }
     },
@@ -72,5 +72,9 @@
         "Max Slots",
         "Position",
         "With Data?"
-    ]
+    ],
+    "$metaProperties": {
+        "[cereal:packet]": 34,
+        "[cereal:packet_details]": ""
+    }
 }

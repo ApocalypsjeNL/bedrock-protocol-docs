@@ -82,5 +82,9 @@
         "AvgRenderTimeMS",
         "AvgServerSimTickTimeMS",
         "AvgUnaccountedTimePercent"
-    ]
+    ],
+    "$metaProperties": {
+        "[cereal:packet]": 315,
+        "[cereal:packet_details]": ""
+    }
 }

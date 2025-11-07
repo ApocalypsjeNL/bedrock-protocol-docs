@@ -11,7 +11,7 @@
             "properties": {
                 "X": {
                     "type": "integer",
-                    "x-underlying-type": "int",
+                    "x-underlying-type": "int32",
                     "x-serialization-options": [
                         "Compression"
                     ],
@@ -21,7 +21,7 @@
                 },
                 "Y": {
                     "type": "integer",
-                    "x-underlying-type": "unsigned int",
+                    "x-underlying-type": "uint32",
                     "x-serialization-options": [
                         "Compression"
                     ],
@@ -31,7 +31,7 @@
                 },
                 "Z": {
                     "type": "integer",
-                    "x-underlying-type": "int",
+                    "x-underlying-type": "int32",
                     "x-serialization-options": [
                         "Compression"
                     ],
@@ -53,7 +53,7 @@
     "properties": {
         "Actor Sync Message": {
             "type": "integer",
-            "x-underlying-type": "unsigned __int64",
+            "x-underlying-type": "uint64",
             "x-serialization-options": [
                 "Compression"
             ],
@@ -67,7 +67,7 @@
         },
         "Block Runtime ID": {
             "type": "integer",
-            "x-underlying-type": "unsigned int",
+            "x-underlying-type": "uint32",
             "x-serialization-options": [
                 "Compression"
             ],
@@ -77,7 +77,7 @@
         },
         "Flags": {
             "type": "integer",
-            "x-underlying-type": "unsigned int",
+            "x-underlying-type": "uint32",
             "x-serialization-options": [
                 "Compression"
             ],
@@ -87,7 +87,7 @@
         },
         "Layer": {
             "type": "integer",
-            "x-underlying-type": "unsigned int",
+            "x-underlying-type": "uint32",
             "x-serialization-options": [
                 "Compression"
             ],
@@ -98,7 +98,7 @@
         "Unique Actor Id": {
             "description": "Id for the Moving Block Actor",
             "type": "integer",
-            "x-underlying-type": "unsigned __int64",
+            "x-underlying-type": "uint64",
             "x-serialization-options": [
                 "Compression"
             ],
@@ -114,5 +114,9 @@
         "Flags",
         "Layer",
         "Unique Actor Id"
-    ]
+    ],
+    "$metaProperties": {
+        "[cereal:packet]": 110,
+        "[cereal:packet_details]": "Variation of UpdateBlockSyncedPacket that includes information to sync entities with renderchunk generation. Occasionally when blocks change a sync message is sent and during the change on the dimension, this packet is sent to the client to alert the update flags and sync info at a specific position."
+    }
 }

@@ -10,7 +10,7 @@
     "properties": {
         "Form ID": {
             "type": "integer",
-            "x-underlying-type": "unsigned int",
+            "x-underlying-type": "uint32",
             "x-serialization-options": [
                 "Compression"
             ],
@@ -26,5 +26,9 @@
     "required": [
         "Form ID",
         "Form UI JSON"
-    ]
+    ],
+    "$metaProperties": {
+        "[cereal:packet]": 100,
+        "[cereal:packet_details]": "Not sent from vanilla. The feature is meant for third-party servers to be able to drive dynamic ui forms. The request comes with some JSON that describes a custom UI screen thirdparty uses.Server->client."
+    }
 }

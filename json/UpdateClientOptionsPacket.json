@@ -18,7 +18,7 @@
                 "Advanced",
                 "RayTraced"
             ],
-            "x-underlying-type": "unsigned char",
+            "x-underlying-type": "uint8",
             "x-serialization-options": [
                 "Enum-as-Value"
             ],
@@ -27,5 +27,9 @@
     },
     "required": [
         "Graphics Mode Change"
-    ]
+    ],
+    "$metaProperties": {
+        "[cereal:packet]": 323,
+        "[cereal:packet_details]": "The values in this packet are originally synced through the Connection Request and then updated via this packet."
+    }
 }

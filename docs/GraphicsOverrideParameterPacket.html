@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GraphicsOverrideParameterPacket</title>
+    <title>GraphicsOverrideParameterPacket (331)</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -98,7 +98,7 @@
 <body>
     <div class="container">
         <p><a href="index.html">← Back to Index</a></p>
-        <h1>GraphicsOverrideParameterPacket</h1>
+        <h1>GraphicsOverrideParameterPacket (331)</h1>
 <div class="description">Sent from the server to the client when a server script changes the rendering settings</div>
 <div style="margin-left: 0px; margin-top: 10px;">
 <table border="1" cellpadding="5" cellspacing="0" style="border-collapse: collapse; width: 100%; max-width: 800px;">
@@ -125,7 +125,7 @@
 </tr>
 <tr>
 <td rowspan="2"><strong>Identifier for Parameter</strong></td>
-<td>unsigned char</td>
+<td>uint8</td>
 <td>2</td>
 <td>Identifier for the parameter that is having its value changed</td>
 </tr>
@@ -186,7 +186,7 @@
 </tr>
 <tr>
 <td><strong>Reset Parameter</strong></td>
-<td>bool</td>
+<td>boolean</td>
 <td>3</td>
 <td>If true, the specified parameter will be reset. If false, the parameter will be set using the data fields.</td>
 </tr>

@@ -11,7 +11,7 @@
             "properties": {
                 "(Deprecated) Always False": {
                     "type": "boolean",
-                    "x-underlying-type": "bool",
+                    "x-underlying-type": "boolean",
                     "x-ordinal-index": 8
                 },
                 "Agent Capabilities": {
@@ -20,7 +20,7 @@
                 },
                 "Can resize Code Builder": {
                     "type": "boolean",
-                    "x-underlying-type": "bool",
+                    "x-underlying-type": "boolean",
                     "x-ordinal-index": 2
                 },
                 "Code Builder Default URI": {
@@ -33,7 +33,7 @@
                 },
                 "Disable legacy title bar": {
                     "type": "boolean",
-                    "x-underlying-type": "bool",
+                    "x-underlying-type": "boolean",
                     "x-ordinal-index": 3
                 },
                 "External Link Settings": {
@@ -72,7 +72,7 @@
             "properties": {
                 "Can Modify Blocks": {
                     "type": "boolean",
-                    "x-underlying-type": "bool",
+                    "x-underlying-type": "boolean",
                     "x-ordinal-index": 0
                 }
             },
@@ -123,5 +123,9 @@
     },
     "required": [
         "Education Level Settings"
-    ]
+    ],
+    "$metaProperties": {
+        "[cereal:packet]": 137,
+        "[cereal:packet_details]": "Currently transmits EducationLevelSettings to all clients when the game is starting."
+    }
 }

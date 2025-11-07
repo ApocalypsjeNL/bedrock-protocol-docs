@@ -15,5 +15,9 @@
     },
     "required": [
         "Objective Name"
-    ]
+    ],
+    "$metaProperties": {
+        "[cereal:packet]": 106,
+        "[cereal:packet_details]": "This is just the name of the objective."
+    }
 }

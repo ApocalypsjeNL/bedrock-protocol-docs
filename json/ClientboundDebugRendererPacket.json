@@ -28,7 +28,7 @@
                 "duration": {
                     "description": "Duration (milliseconds) of the debug cube to show",
                     "type": "integer",
-                    "x-underlying-type": "unsigned __int64",
+                    "x-underlying-type": "uint64",
                     "x-ordinal-index": 3,
                     "minimum": 0.0,
                     "maximum": 18446744073709553000.0
@@ -47,7 +47,7 @@
             "properties": {
                 "Color": {
                     "type": "integer",
-                    "x-underlying-type": "int",
+                    "x-underlying-type": "int32",
                     "x-ordinal-index": 0,
                     "minimum": -2147483648.0,
                     "maximum": 2147483647.0
@@ -108,11 +108,15 @@
                 "ClearDebugMarkers",
                 "AddDebugMarkerCube"
             ],
-            "x-underlying-type": "unsigned char",
+            "x-underlying-type": "uint8",
             "x-ordinal-index": 0
         }
     },
     "required": [
         "Type"
-    ]
+    ],
+    "$metaProperties": {
+        "[cereal:packet]": 164,
+        "[cereal:packet_details]": ""
+    }
 }

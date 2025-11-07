@@ -10,14 +10,14 @@
     "properties": {
         "Custom Permission Flags": {
             "type": "integer",
-            "x-underlying-type": "unsigned short",
+            "x-underlying-type": "uint16",
             "x-ordinal-index": 2,
             "minimum": 0.0,
             "maximum": 65535.0
         },
         "Player Permission Level": {
             "type": "integer",
-            "x-underlying-type": "int",
+            "x-underlying-type": "int32",
             "x-serialization-options": [
                 "Compression",
                 "Enum-as-Value"
@@ -29,7 +29,7 @@
         "Target Player Id's Raw ID": {
             "description": "mTargetPlayerId is a ActorUniqueID",
             "type": "integer",
-            "x-underlying-type": "__int64",
+            "x-underlying-type": "int64",
             "x-ordinal-index": 0,
             "minimum": -9223372036854776000.0,
             "maximum": 9223372036854776000.0
@@ -39,5 +39,9 @@
         "Custom Permission Flags",
         "Player Permission Level",
         "Target Player Id's Raw ID"
-    ]
+    ],
+    "$metaProperties": {
+        "[cereal:packet]": 185,
+        "[cereal:packet_details]": "Can only be used by Operators or Hosts."
+    }
 }

@@ -46,7 +46,7 @@
                 },
                 "Continue Targeting": {
                     "type": "boolean",
-                    "x-underlying-type": "bool",
+                    "x-underlying-type": "boolean",
                     "x-ordinal-index": 11
                 },
                 "Control Scheme": {
@@ -59,7 +59,7 @@
                         "player_relative",
                         "player_relative_strafe"
                     ],
-                    "x-underlying-type": "unsigned char",
+                    "x-underlying-type": "uint8",
                     "x-serialization-options": [
                         "Enum-as-Value"
                     ],
@@ -85,7 +85,7 @@
                         "Camera",
                         "Player"
                     ],
-                    "x-underlying-type": "unsigned char",
+                    "x-underlying-type": "uint8",
                     "x-serialization-options": [
                         "Enum-as-Value"
                     ],
@@ -97,7 +97,7 @@
                 },
                 "Player Effects": {
                     "type": "boolean",
-                    "x-underlying-type": "bool",
+                    "x-underlying-type": "boolean",
                     "x-ordinal-index": 19
                 },
                 "Pos X": {
@@ -151,7 +151,7 @@
                 },
                 "Snap to Target": {
                     "type": "boolean",
-                    "x-underlying-type": "bool",
+                    "x-underlying-type": "boolean",
                     "x-ordinal-index": 8
                 },
                 "Vertical Rotation Limit": {
@@ -224,7 +224,7 @@
                         "angle",
                         "distance"
                     ],
-                    "x-underlying-type": "unsigned char",
+                    "x-underlying-type": "uint8",
                     "x-serialization-options": [
                         "Enum-as-Value"
                     ],
@@ -314,5 +314,9 @@
     },
     "required": [
         "Camera Presets"
-    ]
+    ],
+    "$metaProperties": {
+        "[cereal:packet]": 198,
+        "[cereal:packet_details]": ""
+    }
 }

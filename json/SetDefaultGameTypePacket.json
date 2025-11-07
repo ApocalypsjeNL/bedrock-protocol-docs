@@ -19,7 +19,7 @@
                 "Spectator",
                 "WorldDefault"
             ],
-            "x-underlying-type": "int",
+            "x-underlying-type": "int32",
             "x-serialization-options": [
                 "Compression",
                 "Enum-as-Value"
@@ -29,5 +29,9 @@
     },
     "required": [
         "Default Game Type"
-    ]
+    ],
+    "$metaProperties": {
+        "[cereal:packet]": 105,
+        "[cereal:packet_details]": ""
+    }
 }

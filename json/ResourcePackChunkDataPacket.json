@@ -10,7 +10,7 @@
     "properties": {
         "Byte Offset": {
             "type": "integer",
-            "x-underlying-type": "unsigned __int64",
+            "x-underlying-type": "uint64",
             "x-ordinal-index": 2,
             "minimum": 0.0,
             "maximum": 18446744073709553000.0
@@ -21,7 +21,7 @@
         },
         "Chunk ID": {
             "type": "integer",
-            "x-underlying-type": "unsigned int",
+            "x-underlying-type": "uint32",
             "x-ordinal-index": 1,
             "minimum": 0.0,
             "maximum": 4294967295.0
@@ -36,5 +36,9 @@
         "Chunk Data",
         "Chunk ID",
         "Resource Name"
-    ]
+    ],
+    "$metaProperties": {
+        "[cereal:packet]": 83,
+        "[cereal:packet_details]": "(only one marked for uncompressed) realms resource pack download"
+    }
 }

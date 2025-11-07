@@ -10,33 +10,33 @@
     "properties": {
         "Is Disabled": {
             "type": "boolean",
-            "x-underlying-type": "bool",
+            "x-underlying-type": "boolean",
             "x-ordinal-index": 4
         },
         "Pos X": {
             "type": "integer",
-            "x-underlying-type": "int",
+            "x-underlying-type": "int32",
             "x-ordinal-index": 0,
             "minimum": -2147483648.0,
             "maximum": 2147483647.0
         },
         "Pos Y": {
             "type": "integer",
-            "x-underlying-type": "int",
+            "x-underlying-type": "int32",
             "x-ordinal-index": 1,
             "minimum": -2147483648.0,
             "maximum": 2147483647.0
         },
         "Pos Z": {
             "type": "integer",
-            "x-underlying-type": "int",
+            "x-underlying-type": "int32",
             "x-ordinal-index": 2,
             "minimum": -2147483648.0,
             "maximum": 2147483647.0
         },
         "Slot Index": {
             "type": "integer",
-            "x-underlying-type": "unsigned char",
+            "x-underlying-type": "uint8",
             "x-ordinal-index": 3,
             "minimum": 0.0,
             "maximum": 255.0
@@ -48,5 +48,9 @@
         "Pos Y",
         "Pos Z",
         "Slot Index"
-    ]
+    ],
+    "$metaProperties": {
+        "[cereal:packet]": 306,
+        "[cereal:packet_details]": ""
+    }
 }

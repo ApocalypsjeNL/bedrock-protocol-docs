@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RequestAbilityPacket</title>
+    <title>RequestAbilityPacket (184)</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -98,8 +98,9 @@
 <body>
     <div class="container">
         <p><a href="index.html">← Back to Index</a></p>
-        <h1>RequestAbilityPacket</h1>
+        <h1>RequestAbilityPacket (184)</h1>
 <div class="description">Sent from client to server. Used to request an ability change.</div>
+<div class="description">Once changed, the server will broadcast the updated state of abilities for that player. If the request is rejected, the caller will receive their reverted state of Abilities.  Can only be used to modify the calling player.  	- mVariable: Info about this variable</div>
 <div style="margin-left: 0px; margin-top: 10px;">
 <table border="1" cellpadding="5" cellspacing="0" style="border-collapse: collapse; width: 100%; max-width: 800px;">
 <thead>
@@ -113,13 +114,13 @@
 <tbody>
 <tr>
 <td><strong>Ability</strong></td>
-<td>varint</td>
+<td>varint32</td>
 <td>0</td>
 <td></td>
 </tr>
 <tr>
 <td rowspan="2"><strong>Value Type</strong></td>
-<td>unsigned char</td>
+<td>uint8</td>
 <td>1</td>
 <td></td>
 </tr>
@@ -152,7 +153,7 @@
 </tr>
 <tr>
 <td><strong>Bool</strong></td>
-<td>bool</td>
+<td>boolean</td>
 <td>2</td>
 <td></td>
 </tr>

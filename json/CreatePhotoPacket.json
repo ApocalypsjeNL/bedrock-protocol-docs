@@ -18,7 +18,7 @@
         },
         "Raw ID": {
             "type": "integer",
-            "x-underlying-type": "unsigned __int64",
+            "x-underlying-type": "uint64",
             "x-ordinal-index": 0,
             "minimum": 0.0,
             "maximum": 18446744073709553000.0
@@ -28,5 +28,9 @@
         "Photo Item Name",
         "Photo Name",
         "Raw ID"
-    ]
+    ],
+    "$metaProperties": {
+        "[cereal:packet]": 171,
+        "[cereal:packet_details]": ""
+    }
 }

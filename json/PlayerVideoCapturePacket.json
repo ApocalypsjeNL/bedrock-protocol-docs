@@ -15,7 +15,7 @@
                 },
                 "FrameRate": {
                     "type": "integer",
-                    "x-underlying-type": "unsigned int",
+                    "x-underlying-type": "uint32",
                     "x-ordinal-index": 0,
                     "minimum": 0.0,
                     "maximum": 4294967295.0
@@ -41,13 +41,15 @@
             },
             "oneOf": [
                 {
-                    "$ref": "#/definitions/958149751"
+                    "$ref": "#/definitions/958149751",
+                    "x-ordinal-index": 0
                 },
                 {
-                    "$ref": "#/definitions/1309307835"
+                    "$ref": "#/definitions/1309307835",
+                    "x-ordinal-index": 1
                 }
             ],
-            "x-control-value-type": "unsigned int",
+            "x-control-value-type": "uint32",
             "x-ordinal-index": 0
         },
         "Stop Video Capture": {
@@ -57,14 +59,20 @@
             },
             "oneOf": [
                 {
-                    "$ref": "#/definitions/958149751"
+                    "$ref": "#/definitions/958149751",
+                    "x-ordinal-index": 0
                 },
                 {
-                    "$ref": "#/definitions/1309307835"
+                    "$ref": "#/definitions/1309307835",
+                    "x-ordinal-index": 1
                 }
             ],
-            "x-control-value-type": "unsigned int",
+            "x-control-value-type": "uint32",
             "x-ordinal-index": 1
         }
+    },
+    "$metaProperties": {
+        "[cereal:packet]": 324,
+        "[cereal:packet_details]": "Internal"
     }
 }

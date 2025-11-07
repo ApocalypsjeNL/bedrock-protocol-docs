@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UpdatePlayerGameTypePacket</title>
+    <title>UpdatePlayerGameTypePacket (151)</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -98,7 +98,7 @@
 <body>
     <div class="container">
         <p><a href="index.html">← Back to Index</a></p>
-        <h1>UpdatePlayerGameTypePacket</h1>
+        <h1>UpdatePlayerGameTypePacket (151)</h1>
 <div class="description">The server will send this back to all clients on receipt of the SetPlayerGameTypePacket so that cached game type and permissions flags in mLevel on all clients is kept up to date.</div>
 <div style="margin-left: 0px; margin-top: 10px;">
 <table border="1" cellpadding="5" cellspacing="0" style="border-collapse: collapse; width: 100%; max-width: 800px;">
@@ -113,7 +113,7 @@
 <tbody>
 <tr>
 <td rowspan="2"><strong>Player Game Type</strong></td>
-<td>varint</td>
+<td>varint32</td>
 <td>0</td>
 <td></td>
 </tr>
@@ -181,7 +181,7 @@
 <tbody>
 <tr>
 <td><strong>Actor Unique ID</strong></td>
-<td>var__int64</td>
+<td>varint64</td>
 <td>0</td>
 <td></td>
 </tr>
@@ -210,7 +210,7 @@
 <tbody>
 <tr>
 <td><strong>Input tick</strong></td>
-<td>varunsigned __int64</td>
+<td>varuint64</td>
 <td>0</td>
 <td>In server authoritative movement mode the client supplies this in PlayerAuthInputPacket.
 For any client-bound packets containing a tick, the server should supply the tick value corresponding to the most recently processed PlayerAuthInputPacket.

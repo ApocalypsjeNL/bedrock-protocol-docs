@@ -26,5 +26,9 @@
     "required": [
         "NetworkTime",
         "ServerTime"
-    ]
+    ],
+    "$metaProperties": {
+        "[cereal:packet]": 192,
+        "[cereal:packet_details]": "Sent from server."
+    }
 }

@@ -10,7 +10,7 @@
     "properties": {
         "Chunk": {
             "type": "integer",
-            "x-underlying-type": "unsigned int",
+            "x-underlying-type": "uint32",
             "x-ordinal-index": 1,
             "minimum": 0.0,
             "maximum": 4294967295.0
@@ -23,5 +23,9 @@
     "required": [
         "Chunk",
         "Resource Name"
-    ]
+    ],
+    "$metaProperties": {
+        "[cereal:packet]": 84,
+        "[cereal:packet_details]": ""
+    }
 }

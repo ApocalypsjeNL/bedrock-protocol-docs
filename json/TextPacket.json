@@ -32,7 +32,7 @@
                         "textObject",
                         "textObjectAnnouncement"
                     ],
-                    "x-underlying-type": "unsigned char",
+                    "x-underlying-type": "uint8",
                     "x-serialization-options": [
                         "Enum-as-Value"
                     ],
@@ -56,7 +56,7 @@
                         "textObject",
                         "textObjectAnnouncement"
                     ],
-                    "x-underlying-type": "unsigned char",
+                    "x-underlying-type": "uint8",
                     "x-ordinal-index": 0
                 },
                 "systemMessage": {
@@ -77,7 +77,7 @@
                         "textObject",
                         "textObjectAnnouncement"
                     ],
-                    "x-underlying-type": "unsigned char",
+                    "x-underlying-type": "uint8",
                     "x-ordinal-index": 2
                 },
                 "textObject": {
@@ -98,7 +98,7 @@
                         "textObject",
                         "textObjectAnnouncement"
                     ],
-                    "x-underlying-type": "unsigned char",
+                    "x-underlying-type": "uint8",
                     "x-ordinal-index": 5
                 },
                 "textObjectAnnouncement": {
@@ -119,7 +119,7 @@
                         "textObject",
                         "textObjectAnnouncement"
                     ],
-                    "x-underlying-type": "unsigned char",
+                    "x-underlying-type": "uint8",
                     "x-ordinal-index": 4
                 },
                 "textObjectWhisper": {
@@ -140,7 +140,7 @@
                         "textObject",
                         "textObjectAnnouncement"
                     ],
-                    "x-underlying-type": "unsigned char",
+                    "x-underlying-type": "uint8",
                     "x-ordinal-index": 3
                 },
                 "tip": {
@@ -161,7 +161,7 @@
                         "textObject",
                         "textObjectAnnouncement"
                     ],
-                    "x-underlying-type": "unsigned char",
+                    "x-underlying-type": "uint8",
                     "x-ordinal-index": 1
                 }
             },
@@ -202,7 +202,7 @@
                         "textObject",
                         "textObjectAnnouncement"
                     ],
-                    "x-underlying-type": "unsigned char",
+                    "x-underlying-type": "uint8",
                     "x-serialization-options": [
                         "Enum-as-Value"
                     ],
@@ -235,7 +235,7 @@
                         "textObject",
                         "textObjectAnnouncement"
                     ],
-                    "x-underlying-type": "unsigned char",
+                    "x-underlying-type": "uint8",
                     "x-ordinal-index": 2
                 },
                 "popup": {
@@ -256,7 +256,7 @@
                         "textObject",
                         "textObjectAnnouncement"
                     ],
-                    "x-underlying-type": "unsigned char",
+                    "x-underlying-type": "uint8",
                     "x-ordinal-index": 1
                 },
                 "translate": {
@@ -277,7 +277,7 @@
                         "textObject",
                         "textObjectAnnouncement"
                     ],
-                    "x-underlying-type": "unsigned char",
+                    "x-underlying-type": "uint8",
                     "x-ordinal-index": 0
                 }
             },
@@ -315,7 +315,7 @@
                         "textObject",
                         "textObjectAnnouncement"
                     ],
-                    "x-underlying-type": "unsigned char",
+                    "x-underlying-type": "uint8",
                     "x-serialization-options": [
                         "Enum-as-Value"
                     ],
@@ -345,7 +345,7 @@
                         "textObject",
                         "textObjectAnnouncement"
                     ],
-                    "x-underlying-type": "unsigned char",
+                    "x-underlying-type": "uint8",
                     "x-ordinal-index": 2
                 },
                 "chat": {
@@ -366,7 +366,7 @@
                         "textObject",
                         "textObjectAnnouncement"
                     ],
-                    "x-underlying-type": "unsigned char",
+                    "x-underlying-type": "uint8",
                     "x-ordinal-index": 0
                 },
                 "whisper": {
@@ -387,7 +387,7 @@
                         "textObject",
                         "textObjectAnnouncement"
                     ],
-                    "x-underlying-type": "unsigned char",
+                    "x-underlying-type": "uint8",
                     "x-ordinal-index": 1
                 }
             },
@@ -407,16 +407,19 @@
             "description": "Message content (variant based on message type)",
             "oneOf": [
                 {
-                    "$ref": "#/definitions/4075064780"
+                    "$ref": "#/definitions/4075064780",
+                    "x-ordinal-index": 0
                 },
                 {
-                    "$ref": "#/definitions/2049426924"
+                    "$ref": "#/definitions/2049426924",
+                    "x-ordinal-index": 1
                 },
                 {
-                    "$ref": "#/definitions/3338540673"
+                    "$ref": "#/definitions/3338540673",
+                    "x-ordinal-index": 2
                 }
             ],
-            "x-control-value-type": "unsigned int",
+            "x-control-value-type": "uint32",
             "x-ordinal-index": 1
         },
         "Filtered Message": {
@@ -427,7 +430,7 @@
         "Localize?": {
             "type": "boolean",
             "default": false,
-            "x-underlying-type": "bool",
+            "x-underlying-type": "boolean",
             "x-ordinal-index": 0
         },
         "Platform Id": {
@@ -445,5 +448,9 @@
         "Body",
         "Platform Id",
         "Sender's XUID"
-    ]
+    ],
+    "$metaProperties": {
+        "[cereal:packet]": 9,
+        "[cereal:packet_details]": "Used for commands, messages, and other info printed to the screen. Most of which are server->client or server broadcasted to all clients, but some cases have a client to other client via the server"
+    }
 }

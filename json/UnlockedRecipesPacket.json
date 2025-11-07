@@ -18,7 +18,7 @@
                 "RemoveUnlockedRecipes",
                 "RemoveAllUnlockedRecipes"
             ],
-            "x-underlying-type": "unsigned int",
+            "x-underlying-type": "uint32",
             "x-serialization-options": [
                 "Enum-as-Value"
             ],
@@ -35,5 +35,9 @@
     "required": [
         "Packet Type",
         "Unlocked Recipes List"
-    ]
+    ],
+    "$metaProperties": {
+        "[cereal:packet]": 199,
+        "[cereal:packet_details]": ""
+    }
 }

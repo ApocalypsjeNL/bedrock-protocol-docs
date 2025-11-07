@@ -11,7 +11,7 @@
             "properties": {
                 "Actor Runtime ID": {
                     "type": "integer",
-                    "x-underlying-type": "unsigned __int64",
+                    "x-underlying-type": "uint64",
                     "x-serialization-options": [
                         "Compression"
                     ],
@@ -39,7 +39,7 @@
                 "CriticalHit",
                 "MagicCriticalHit"
             ],
-            "x-underlying-type": "unsigned char",
+            "x-underlying-type": "uint8",
             "x-serialization-options": [
                 "Enum-as-Value"
             ],
@@ -66,7 +66,7 @@
                 "DropItem",
                 "Event"
             ],
-            "x-underlying-type": "unsigned char",
+            "x-underlying-type": "uint8",
             "x-ordinal-index": 3
         },
         "Target Actor Runtime ID": {
@@ -78,5 +78,9 @@
         "Action",
         "Data",
         "Target Actor Runtime ID"
-    ]
+    ],
+    "$metaProperties": {
+        "[cereal:packet]": 44,
+        "[cereal:packet_details]": "Combination of server bound and client bound packets to trigger animations."
+    }
 }

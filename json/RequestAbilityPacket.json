@@ -10,7 +10,7 @@
     "properties": {
         "Ability": {
             "type": "integer",
-            "x-underlying-type": "int",
+            "x-underlying-type": "int32",
             "x-serialization-options": [
                 "Compression"
             ],
@@ -20,7 +20,7 @@
         },
         "Bool": {
             "type": "boolean",
-            "x-underlying-type": "bool",
+            "x-underlying-type": "boolean",
             "x-ordinal-index": 2
         },
         "Float": {
@@ -38,7 +38,7 @@
                 "Bool",
                 "Float"
             ],
-            "x-underlying-type": "unsigned char",
+            "x-underlying-type": "uint8",
             "x-serialization-options": [
                 "Enum-as-Value"
             ],
@@ -50,5 +50,9 @@
         "Bool",
         "Float",
         "Value Type"
-    ]
+    ],
+    "$metaProperties": {
+        "[cereal:packet]": 184,
+        "[cereal:packet_details]": "Once changed, the server will broadcast the updated state of abilities for that player. If the request is rejected, the caller will receive their reverted state of Abilities.  Can only be used to modify the calling player.  \t- mVariable: Info about this variable"
+    }
 }

@@ -20,5 +20,9 @@
     "required": [
         "Message Id",
         "Message Value"
-    ]
+    ],
+    "$metaProperties": {
+        "[cereal:packet]": 177,
+        "[cereal:packet_details]": ""
+    }
 }

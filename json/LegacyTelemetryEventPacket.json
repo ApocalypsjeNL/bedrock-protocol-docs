@@ -84,7 +84,7 @@
                         "HeartTransplanter",
                         "StayHydrated"
                     ],
-                    "x-underlying-type": "unsigned char",
+                    "x-underlying-type": "uint8",
                     "x-serialization-options": [
                         "Compression",
                         "Enum-as-Value"
@@ -102,7 +102,7 @@
             "properties": {
                 "Damage Source": {
                     "type": "integer",
-                    "x-underlying-type": "int",
+                    "x-underlying-type": "int32",
                     "x-serialization-options": [
                         "Compression"
                     ],
@@ -112,7 +112,7 @@
                 },
                 "Died in Raid?": {
                     "type": "boolean",
-                    "x-underlying-type": "bool",
+                    "x-underlying-type": "boolean",
                     "x-serialization-options": [
                         "Compression"
                     ],
@@ -120,7 +120,7 @@
                 },
                 "Instigator Actor ID": {
                     "type": "integer",
-                    "x-underlying-type": "int",
+                    "x-underlying-type": "int32",
                     "x-serialization-options": [
                         "Compression"
                     ],
@@ -130,7 +130,7 @@
                 },
                 "Instigator Mob Variant": {
                     "type": "integer",
-                    "x-underlying-type": "int",
+                    "x-underlying-type": "int32",
                     "x-serialization-options": [
                         "Compression"
                     ],
@@ -152,7 +152,7 @@
             "properties": {
                 "Interacted Entity ID": {
                     "type": "integer",
-                    "x-underlying-type": "__int64",
+                    "x-underlying-type": "int64",
                     "x-serialization-options": [
                         "Compression"
                     ],
@@ -162,7 +162,7 @@
                 },
                 "Interaction Actor Color": {
                     "type": "integer",
-                    "x-underlying-type": "unsigned char",
+                    "x-underlying-type": "uint8",
                     "x-serialization-options": [
                         "Compression"
                     ],
@@ -172,7 +172,7 @@
                 },
                 "Interaction Actor Type": {
                     "type": "integer",
-                    "x-underlying-type": "int",
+                    "x-underlying-type": "int32",
                     "x-serialization-options": [
                         "Compression"
                     ],
@@ -182,7 +182,7 @@
                 },
                 "Interaction Actor Variant": {
                     "type": "integer",
-                    "x-underlying-type": "int",
+                    "x-underlying-type": "int32",
                     "x-serialization-options": [
                         "Compression"
                     ],
@@ -211,7 +211,7 @@
                         "Trusting",
                         "Commanding"
                     ],
-                    "x-underlying-type": "unsigned char",
+                    "x-underlying-type": "uint8",
                     "x-serialization-options": [
                         "Compression",
                         "Enum-as-Value"
@@ -234,7 +234,7 @@
                 "Dimension ID": {
                     "description": "Currently supported: (0 -> Overworld, 1 -> Nether, 2 -> The End, 3 -> Undefined)",
                     "type": "integer",
-                    "x-underlying-type": "int",
+                    "x-underlying-type": "int32",
                     "x-serialization-options": [
                         "Compression"
                     ],
@@ -253,7 +253,7 @@
             "properties": {
                 "Contents Color": {
                     "type": "integer",
-                    "x-underlying-type": "unsigned int",
+                    "x-underlying-type": "uint32",
                     "x-serialization-options": [
                         "Compression"
                     ],
@@ -263,7 +263,7 @@
                 },
                 "Contents Type": {
                     "type": "integer",
-                    "x-underlying-type": "short",
+                    "x-underlying-type": "int16",
                     "x-serialization-options": [
                         "Compression"
                     ],
@@ -273,7 +273,7 @@
                 },
                 "Fill Level": {
                     "type": "integer",
-                    "x-underlying-type": "short",
+                    "x-underlying-type": "int16",
                     "x-serialization-options": [
                         "Compression"
                     ],
@@ -294,7 +294,7 @@
             "properties": {
                 "Damage Source": {
                     "type": "integer",
-                    "x-underlying-type": "int",
+                    "x-underlying-type": "int32",
                     "x-serialization-options": [
                         "Compression"
                     ],
@@ -304,7 +304,7 @@
                 },
                 "Instigator Actor ID": {
                     "type": "integer",
-                    "x-underlying-type": "__int64",
+                    "x-underlying-type": "int64",
                     "x-serialization-options": [
                         "Compression"
                     ],
@@ -474,7 +474,7 @@
                         "Parched",
                         "CamelHusk"
                     ],
-                    "x-underlying-type": "int",
+                    "x-underlying-type": "int32",
                     "x-serialization-options": [
                         "Compression",
                         "Enum-as-Value"
@@ -483,7 +483,7 @@
                 },
                 "Target Actor ID": {
                     "type": "integer",
-                    "x-underlying-type": "__int64",
+                    "x-underlying-type": "int64",
                     "x-serialization-options": [
                         "Compression"
                     ],
@@ -494,7 +494,7 @@
                 "Trade Tier": {
                     "description": "-1 if not a trading actor.",
                     "type": "integer",
-                    "x-underlying-type": "int",
+                    "x-underlying-type": "int32",
                     "x-serialization-options": [
                         "Compression"
                     ],
@@ -525,7 +525,7 @@
                 "Source Dimension ID": {
                     "description": "Currently supported: (0 -> Overworld, 1 -> Nether, 2 -> The End, 3 -> Undefined)",
                     "type": "integer",
-                    "x-underlying-type": "int",
+                    "x-underlying-type": "int32",
                     "x-serialization-options": [
                         "Compression"
                     ],
@@ -536,7 +536,7 @@
                 "Target Dimension ID": {
                     "description": "Currently supported: (0 -> Overworld, 1 -> Nether, 2 -> The End, 3 -> Undefined)",
                     "type": "integer",
-                    "x-underlying-type": "int",
+                    "x-underlying-type": "int32",
                     "x-serialization-options": [
                         "Compression"
                     ],
@@ -585,7 +585,7 @@
                         "Repair",
                         "DisenchantAndRepair"
                     ],
-                    "x-underlying-type": "unsigned char",
+                    "x-underlying-type": "uint8",
                     "x-serialization-options": [
                         "Compression",
                         "Enum-as-Value"
@@ -595,7 +595,7 @@
                 "Item Id": {
                     "description": "Id of the relevant item used in the interaction.",
                     "type": "integer",
-                    "x-underlying-type": "short",
+                    "x-underlying-type": "int16",
                     "x-serialization-options": [
                         "Compression"
                     ],
@@ -615,7 +615,7 @@
             "properties": {
                 "Boss Actor ID": {
                     "type": "integer",
-                    "x-underlying-type": "__int64",
+                    "x-underlying-type": "int64",
                     "x-serialization-options": [
                         "Compression"
                     ],
@@ -625,7 +625,7 @@
                 },
                 "Boss Type": {
                     "type": "integer",
-                    "x-underlying-type": "int",
+                    "x-underlying-type": "int32",
                     "x-serialization-options": [
                         "Compression"
                     ],
@@ -635,7 +635,7 @@
                 },
                 "Party Size": {
                     "type": "integer",
-                    "x-underlying-type": "int",
+                    "x-underlying-type": "int32",
                     "x-serialization-options": [
                         "Compression"
                     ],
@@ -661,7 +661,7 @@
                 },
                 "Error Count": {
                     "type": "integer",
-                    "x-underlying-type": "int",
+                    "x-underlying-type": "int32",
                     "x-serialization-options": [
                         "Compression"
                     ],
@@ -676,7 +676,7 @@
                 },
                 "Success Count": {
                     "type": "integer",
-                    "x-underlying-type": "int",
+                    "x-underlying-type": "int32",
                     "x-serialization-options": [
                         "Compression"
                     ],
@@ -698,7 +698,7 @@
             "properties": {
                 "Born Baby: Color": {
                     "type": "integer",
-                    "x-underlying-type": "unsigned char",
+                    "x-underlying-type": "uint8",
                     "x-serialization-options": [
                         "Compression"
                     ],
@@ -708,7 +708,7 @@
                 },
                 "Born Baby: Entity Type": {
                     "type": "integer",
-                    "x-underlying-type": "int",
+                    "x-underlying-type": "int32",
                     "x-serialization-options": [
                         "Compression"
                     ],
@@ -718,7 +718,7 @@
                 },
                 "Born Baby: Entity Variant": {
                     "type": "integer",
-                    "x-underlying-type": "int",
+                    "x-underlying-type": "int32",
                     "x-serialization-options": [
                         "Compression"
                     ],
@@ -768,7 +768,7 @@
                         "Repair",
                         "DisenchantAndRepair"
                     ],
-                    "x-underlying-type": "unsigned char",
+                    "x-underlying-type": "uint8",
                     "x-serialization-options": [
                         "Compression",
                         "Enum-as-Value"
@@ -778,7 +778,7 @@
                 "Item Id": {
                     "description": "Id of the relevant item used in the interaction.",
                     "type": "integer",
-                    "x-underlying-type": "short",
+                    "x-underlying-type": "int16",
                     "x-serialization-options": [
                         "Compression"
                     ],
@@ -799,7 +799,7 @@
                 "Item Id": {
                     "description": "Id of the relevant item used in the interaction.",
                     "type": "integer",
-                    "x-underlying-type": "short",
+                    "x-underlying-type": "int16",
                     "x-serialization-options": [
                         "Compression"
                     ],
@@ -832,7 +832,7 @@
             "properties": {
                 "Current Wave": {
                     "type": "integer",
-                    "x-underlying-type": "int",
+                    "x-underlying-type": "int32",
                     "x-serialization-options": [
                         "Compression"
                     ],
@@ -842,7 +842,7 @@
                 },
                 "Success": {
                     "type": "boolean",
-                    "x-underlying-type": "bool",
+                    "x-underlying-type": "boolean",
                     "x-serialization-options": [
                         "Compression"
                     ],
@@ -850,7 +850,7 @@
                 },
                 "Total Waves": {
                     "type": "integer",
-                    "x-underlying-type": "int",
+                    "x-underlying-type": "int32",
                     "x-serialization-options": [
                         "Compression"
                     ],
@@ -871,7 +871,7 @@
             "properties": {
                 "Redstone Level": {
                     "type": "integer",
-                    "x-underlying-type": "int",
+                    "x-underlying-type": "int32",
                     "x-serialization-options": [
                         "Compression"
                     ],
@@ -890,7 +890,7 @@
             "properties": {
                 "Item Id": {
                     "type": "integer",
-                    "x-underlying-type": "int",
+                    "x-underlying-type": "int32",
                     "x-serialization-options": [
                         "Compression"
                     ],
@@ -900,7 +900,7 @@
                 },
                 "Was Targeting Bartering Player": {
                     "type": "boolean",
-                    "x-underlying-type": "bool",
+                    "x-underlying-type": "boolean",
                     "x-serialization-options": [
                         "Compression"
                     ],
@@ -918,7 +918,7 @@
             "properties": {
                 "Player Waxed or Unwaxed Copper Block ID": {
                     "type": "integer",
-                    "x-underlying-type": "int",
+                    "x-underlying-type": "int32",
                     "x-serialization-options": [
                         "Compression"
                     ],
@@ -956,7 +956,7 @@
                 },
                 "Score": {
                     "type": "integer",
-                    "x-underlying-type": "int",
+                    "x-underlying-type": "int32",
                     "x-serialization-options": [
                         "Compression"
                     ],
@@ -976,28 +976,28 @@
             "properties": {
                 "Count": {
                     "type": "integer",
-                    "x-underlying-type": "int",
+                    "x-underlying-type": "int32",
                     "x-ordinal-index": 3,
                     "minimum": -2147483648.0,
                     "maximum": 2147483647.0
                 },
                 "Item Aux": {
                     "type": "integer",
-                    "x-underlying-type": "int",
+                    "x-underlying-type": "int32",
                     "x-ordinal-index": 1,
                     "minimum": -2147483648.0,
                     "maximum": 2147483647.0
                 },
                 "Item Id": {
                     "type": "integer",
-                    "x-underlying-type": "short",
+                    "x-underlying-type": "int16",
                     "x-ordinal-index": 0,
                     "minimum": -32768.0,
                     "maximum": 32767.0
                 },
                 "Use Method": {
                     "type": "integer",
-                    "x-underlying-type": "int",
+                    "x-underlying-type": "int32",
                     "x-ordinal-index": 2,
                     "minimum": -2147483648.0,
                     "maximum": 2147483647.0
@@ -1019,7 +1019,7 @@
             "properties": {
                 "Actor Unique ID": {
                     "type": "integer",
-                    "x-underlying-type": "__int64",
+                    "x-underlying-type": "int64",
                     "x-serialization-options": [
                         "Compression"
                     ],
@@ -1041,73 +1041,95 @@
             "description": "Actual event payload (variant) holding data specific to the type of event (achievement ID for an achievement event).",
             "oneOf": [
                 {
-                    "$ref": "#/definitions/3489467127"
+                    "$ref": "#/definitions/3489467127",
+                    "x-ordinal-index": 0
                 },
                 {
-                    "$ref": "#/definitions/2066547760"
+                    "$ref": "#/definitions/2066547760",
+                    "x-ordinal-index": 1
                 },
                 {
-                    "$ref": "#/definitions/1277110218"
+                    "$ref": "#/definitions/1277110218",
+                    "x-ordinal-index": 2
                 },
                 {
-                    "$ref": "#/definitions/2395296471"
+                    "$ref": "#/definitions/2395296471",
+                    "x-ordinal-index": 3
                 },
                 {
-                    "$ref": "#/definitions/981162443"
+                    "$ref": "#/definitions/981162443",
+                    "x-ordinal-index": 4
                 },
                 {
-                    "$ref": "#/definitions/3298360571"
+                    "$ref": "#/definitions/3298360571",
+                    "x-ordinal-index": 5
                 },
                 {
-                    "$ref": "#/definitions/2420194999"
+                    "$ref": "#/definitions/2420194999",
+                    "x-ordinal-index": 6
                 },
                 {
-                    "$ref": "#/definitions/266193524"
+                    "$ref": "#/definitions/266193524",
+                    "x-ordinal-index": 7
                 },
                 {
-                    "$ref": "#/definitions/3747789182"
+                    "$ref": "#/definitions/3747789182",
+                    "x-ordinal-index": 8
                 },
                 {
-                    "$ref": "#/definitions/3020183005"
+                    "$ref": "#/definitions/3020183005",
+                    "x-ordinal-index": 9
                 },
                 {
-                    "$ref": "#/definitions/500316135"
+                    "$ref": "#/definitions/500316135",
+                    "x-ordinal-index": 10
                 },
                 {
-                    "$ref": "#/definitions/4138569497"
+                    "$ref": "#/definitions/4138569497",
+                    "x-ordinal-index": 11
                 },
                 {
-                    "$ref": "#/definitions/2098318980"
+                    "$ref": "#/definitions/2098318980",
+                    "x-ordinal-index": 12
                 },
                 {
-                    "$ref": "#/definitions/1269040124"
+                    "$ref": "#/definitions/1269040124",
+                    "x-ordinal-index": 13
                 },
                 {
-                    "$ref": "#/definitions/131536137"
+                    "$ref": "#/definitions/131536137",
+                    "x-ordinal-index": 14
                 },
                 {
-                    "$ref": "#/definitions/2923593111"
+                    "$ref": "#/definitions/2923593111",
+                    "x-ordinal-index": 15
                 },
                 {
-                    "$ref": "#/definitions/2488130011"
+                    "$ref": "#/definitions/2488130011",
+                    "x-ordinal-index": 16
                 },
                 {
-                    "$ref": "#/definitions/3493966032"
+                    "$ref": "#/definitions/3493966032",
+                    "x-ordinal-index": 17
                 },
                 {
-                    "$ref": "#/definitions/3874194270"
+                    "$ref": "#/definitions/3874194270",
+                    "x-ordinal-index": 18
                 },
                 {
-                    "$ref": "#/definitions/2938550282"
+                    "$ref": "#/definitions/2938550282",
+                    "x-ordinal-index": 19
                 },
                 {
-                    "$ref": "#/definitions/311923022"
+                    "$ref": "#/definitions/311923022",
+                    "x-ordinal-index": 20
                 },
                 {
-                    "$ref": "#/definitions/1830556041"
+                    "$ref": "#/definitions/1830556041",
+                    "x-ordinal-index": 21
                 }
             ],
-            "x-control-value-type": "unsigned int",
+            "x-control-value-type": "uint32",
             "x-ordinal-index": 3
         },
         "Event Type": {
@@ -1147,7 +1169,7 @@
                 "CarefulRestoration",
                 "ItemUsed"
             ],
-            "x-underlying-type": "int",
+            "x-underlying-type": "int32",
             "x-serialization-options": [
                 "Compression",
                 "Enum-as-Value"
@@ -1160,7 +1182,7 @@
         },
         "Use Player ID": {
             "type": "boolean",
-            "x-underlying-type": "bool",
+            "x-underlying-type": "boolean",
             "x-ordinal-index": 2
         }
     },
@@ -1169,5 +1191,9 @@
         "Event Type",
         "Target Actor ID",
         "Use Player ID"
-    ]
+    ],
+    "$metaProperties": {
+        "[cereal:packet]": 65,
+        "[cereal:packet_details]": ""
+    }
 }

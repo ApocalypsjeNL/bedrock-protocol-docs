@@ -14,7 +14,7 @@
         },
         "Succeeded": {
             "type": "boolean",
-            "x-underlying-type": "bool",
+            "x-underlying-type": "boolean",
             "x-ordinal-index": 0
         },
         "TestName": {
@@ -26,5 +26,9 @@
         "Error",
         "Succeeded",
         "TestName"
-    ]
+    ],
+    "$metaProperties": {
+        "[cereal:packet]": 195,
+        "[cereal:packet_details]": "Internal Text Packet"
+    }
 }

@@ -11,7 +11,7 @@
             "properties": {
                 "Actor Runtime ID": {
                     "type": "integer",
-                    "x-underlying-type": "unsigned __int64",
+                    "x-underlying-type": "uint64",
                     "x-serialization-options": [
                         "Compression"
                     ],
@@ -31,7 +31,7 @@
     "properties": {
         "Data": {
             "type": "integer",
-            "x-underlying-type": "int",
+            "x-underlying-type": "int32",
             "x-serialization-options": [
                 "Compression"
             ],
@@ -104,7 +104,7 @@
                 "SHAKE_WETNESS_STOP",
                 "KINETIC_DAMAGE_DEALT"
             ],
-            "x-underlying-type": "unsigned char",
+            "x-underlying-type": "uint8",
             "x-serialization-options": [
                 "Enum-as-Value"
             ],
@@ -119,5 +119,9 @@
         "Data",
         "Event ID",
         "Target Runtime ID"
-    ]
+    ],
+    "$metaProperties": {
+        "[cereal:packet]": 27,
+        "[cereal:packet_details]": "Ranges from a crossbow being ready to fire to taming animals..., some of which may be obsolete (frex, ADD_PLAYER_LEVELS)"
+    }
 }

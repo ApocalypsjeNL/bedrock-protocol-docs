@@ -10,11 +10,15 @@
     "properties": {
         "Commands Enabled": {
             "type": "boolean",
-            "x-underlying-type": "bool",
+            "x-underlying-type": "boolean",
             "x-ordinal-index": 0
         }
     },
     "required": [
         "Commands Enabled"
-    ]
+    ],
+    "$metaProperties": {
+        "[cereal:packet]": 59,
+        "[cereal:packet_details]": "see SimpleEventPacket"
+    }
 }

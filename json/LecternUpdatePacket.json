@@ -11,7 +11,7 @@
             "properties": {
                 "X": {
                     "type": "integer",
-                    "x-underlying-type": "int",
+                    "x-underlying-type": "int32",
                     "x-serialization-options": [
                         "Compression"
                     ],
@@ -21,7 +21,7 @@
                 },
                 "Y": {
                     "type": "integer",
-                    "x-underlying-type": "unsigned int",
+                    "x-underlying-type": "uint32",
                     "x-serialization-options": [
                         "Compression"
                     ],
@@ -31,7 +31,7 @@
                 },
                 "Z": {
                     "type": "integer",
-                    "x-underlying-type": "int",
+                    "x-underlying-type": "int32",
                     "x-serialization-options": [
                         "Compression"
                     ],
@@ -53,7 +53,7 @@
     "properties": {
         "New page to show": {
             "type": "integer",
-            "x-underlying-type": "unsigned char",
+            "x-underlying-type": "uint8",
             "x-ordinal-index": 0,
             "minimum": 0.0,
             "maximum": 255.0
@@ -64,7 +64,7 @@
         },
         "Total Pages": {
             "type": "integer",
-            "x-underlying-type": "unsigned char",
+            "x-underlying-type": "uint8",
             "x-ordinal-index": 1,
             "minimum": 0.0,
             "maximum": 255.0
@@ -74,5 +74,9 @@
         "New page to show",
         "Position of Lectern to update",
         "Total Pages"
-    ]
+    ],
+    "$metaProperties": {
+        "[cereal:packet]": 125,
+        "[cereal:packet_details]": "It is a request from the client to either turn the page in the lectern or drop the book."
+    }
 }

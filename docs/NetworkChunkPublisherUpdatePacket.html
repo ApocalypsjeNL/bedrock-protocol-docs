@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NetworkChunkPublisherUpdatePacket</title>
+    <title>NetworkChunkPublisherUpdatePacket (121)</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -98,8 +98,9 @@
 <body>
     <div class="container">
         <p><a href="index.html">← Back to Index</a></p>
-        <h1>NetworkChunkPublisherUpdatePacket</h1>
+        <h1>NetworkChunkPublisherUpdatePacket (121)</h1>
 <div class="description">Tells clients to update the chunk view for the local player.</div>
+<div class="description">Used (from the server) when a user&#x27;s Chunk View moves, I.e. the area that determines what chunks exist. For ClientSideGeneration we also send the client a list of ChunkPos that the Server will fully build.</div>
 <div style="margin-left: 0px; margin-top: 10px;">
 <table border="1" cellpadding="5" cellspacing="0" style="border-collapse: collapse; width: 100%; max-width: 800px;">
 <thead>
@@ -132,19 +133,19 @@
 <tbody>
 <tr>
 <td><strong>X</strong></td>
-<td>varint</td>
+<td>varint32</td>
 <td>0</td>
 <td></td>
 </tr>
 <tr>
 <td><strong>Y</strong></td>
-<td>varint</td>
+<td>varint32</td>
 <td>1</td>
 <td></td>
 </tr>
 <tr>
 <td><strong>Z</strong></td>
-<td>varint</td>
+<td>varint32</td>
 <td>2</td>
 <td></td>
 </tr>
@@ -154,7 +155,7 @@
 </tr>
 <tr>
 <td><strong>New radius for view</strong></td>
-<td>varunsigned int</td>
+<td>varuint32</td>
 <td>1</td>
 <td></td>
 </tr>
@@ -179,13 +180,13 @@
 <tbody>
 <tr>
 <td><strong>X</strong></td>
-<td>varint</td>
+<td>varint32</td>
 <td>0</td>
 <td></td>
 </tr>
 <tr>
 <td><strong>Z</strong></td>
-<td>varint</td>
+<td>varint32</td>
 <td>1</td>
 <td></td>
 </tr>

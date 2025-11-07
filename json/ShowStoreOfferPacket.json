@@ -11,14 +11,14 @@
             "properties": {
                 "Least Significant Bits": {
                     "type": "integer",
-                    "x-underlying-type": "unsigned __int64",
+                    "x-underlying-type": "uint64",
                     "x-ordinal-index": 1,
                     "minimum": 0.0,
                     "maximum": 18446744073709553000.0
                 },
                 "Most Significant Bits": {
                     "type": "integer",
-                    "x-underlying-type": "unsigned __int64",
+                    "x-underlying-type": "uint64",
                     "x-ordinal-index": 0,
                     "minimum": 0.0,
                     "maximum": 18446744073709553000.0
@@ -48,7 +48,7 @@
                 "DressingRoomOffer",
                 "ThirdPartyServerPage"
             ],
-            "x-underlying-type": "unsigned char",
+            "x-underlying-type": "uint8",
             "x-serialization-options": [
                 "Enum-as-Value"
             ],
@@ -58,5 +58,9 @@
     "required": [
         "Offer Id",
         "Redirect Type"
-    ]
+    ],
+    "$metaProperties": {
+        "[cereal:packet]": 91,
+        "[cereal:packet_details]": "The server can redirect the user to a 3rd party server page, to a marketplace offer description page, or to a dressing room page containing desired offer."
+    }
 }

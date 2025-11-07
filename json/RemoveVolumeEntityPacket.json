@@ -11,7 +11,7 @@
             "properties": {
                 "value": {
                     "type": "integer",
-                    "x-underlying-type": "int",
+                    "x-underlying-type": "int32",
                     "x-serialization-options": [
                         "Compression"
                     ],
@@ -30,7 +30,7 @@
             "properties": {
                 "Raw Id": {
                     "type": "integer",
-                    "x-underlying-type": "unsigned int",
+                    "x-underlying-type": "uint32",
                     "x-serialization-options": [
                         "Compression"
                     ],
@@ -66,5 +66,9 @@
     "required": [
         "Dimension Type",
         "Entity Network Id"
-    ]
+    ],
+    "$metaProperties": {
+        "[cereal:packet]": 167,
+        "[cereal:packet_details]": ""
+    }
 }

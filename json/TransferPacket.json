@@ -10,7 +10,7 @@
     "properties": {
         "Reload World": {
             "type": "boolean",
-            "x-underlying-type": "bool",
+            "x-underlying-type": "boolean",
             "x-ordinal-index": 2
         },
         "Server Address": {
@@ -19,7 +19,7 @@
         },
         "Server Port": {
             "type": "integer",
-            "x-underlying-type": "unsigned short",
+            "x-underlying-type": "uint16",
             "x-ordinal-index": 1,
             "minimum": 0.0,
             "maximum": 65535.0
@@ -29,5 +29,9 @@
         "Reload World",
         "Server Address",
         "Server Port"
-    ]
+    ],
+    "$metaProperties": {
+        "[cereal:packet]": 85,
+        "[cereal:packet_details]": ""
+    }
 }

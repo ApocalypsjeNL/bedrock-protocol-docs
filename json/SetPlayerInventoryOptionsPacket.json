@@ -11,7 +11,7 @@
             "properties": {
                 "Filtering": {
                     "type": "boolean",
-                    "x-underlying-type": "bool",
+                    "x-underlying-type": "boolean",
                     "x-ordinal-index": 2
                 },
                 "Layout Craft": {
@@ -23,7 +23,7 @@
                         "RecipeBook",
                         "Creative"
                     ],
-                    "x-underlying-type": "int",
+                    "x-underlying-type": "int32",
                     "x-serialization-options": [
                         "Compression",
                         "Enum-as-Value"
@@ -39,7 +39,7 @@
                         "RecipeBook",
                         "Creative"
                     ],
-                    "x-underlying-type": "int",
+                    "x-underlying-type": "int32",
                     "x-serialization-options": [
                         "Compression",
                         "Enum-as-Value"
@@ -58,7 +58,7 @@
                         "RecipeSearch",
                         "Survival"
                     ],
-                    "x-underlying-type": "int",
+                    "x-underlying-type": "int32",
                     "x-serialization-options": [
                         "Compression",
                         "Enum-as-Value"
@@ -74,7 +74,7 @@
                         "Crafting",
                         "Armor"
                     ],
-                    "x-underlying-type": "int",
+                    "x-underlying-type": "int32",
                     "x-serialization-options": [
                         "Compression",
                         "Enum-as-Value"
@@ -102,5 +102,9 @@
     },
     "required": [
         "Inventory Options"
-    ]
+    ],
+    "$metaProperties": {
+        "[cereal:packet]": 307,
+        "[cereal:packet_details]": ""
+    }
 }

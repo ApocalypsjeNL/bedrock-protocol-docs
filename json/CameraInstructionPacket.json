@@ -39,12 +39,12 @@
                 },
                 "Clear": {
                     "type": "boolean",
-                    "x-underlying-type": "bool",
+                    "x-underlying-type": "boolean",
                     "x-ordinal-index": 1
                 },
                 "DetachFromEntity": {
                     "type": "boolean",
-                    "x-underlying-type": "bool",
+                    "x-underlying-type": "boolean",
                     "x-ordinal-index": 8
                 },
                 "Fade": {
@@ -57,7 +57,7 @@
                 },
                 "RemoveTarget": {
                     "type": "boolean",
-                    "x-underlying-type": "bool",
+                    "x-underlying-type": "boolean",
                     "x-ordinal-index": 4
                 },
                 "Set": {
@@ -151,7 +151,7 @@
                         "out_elastic",
                         "in_out_elastic"
                     ],
-                    "x-underlying-type": "int",
+                    "x-underlying-type": "int32",
                     "x-ordinal-index": 2
                 },
                 "Field of View": {
@@ -163,7 +163,7 @@
                 },
                 "Field of View Clear": {
                     "type": "boolean",
-                    "x-underlying-type": "bool",
+                    "x-underlying-type": "boolean",
                     "x-ordinal-index": 3
                 }
             },
@@ -180,7 +180,7 @@
             "properties": {
                 "Entity Actor ID": {
                     "type": "integer",
-                    "x-underlying-type": "__int64",
+                    "x-underlying-type": "int64",
                     "x-ordinal-index": 0,
                     "minimum": -9223372036854776000.0,
                     "maximum": 9223372036854776000.0
@@ -224,7 +224,7 @@
                 },
                 "type": {
                     "type": "integer",
-                    "x-underlying-type": "unsigned char",
+                    "x-underlying-type": "uint8",
                     "x-ordinal-index": 1,
                     "minimum": 0.0,
                     "maximum": 255.0
@@ -361,7 +361,7 @@
             "properties": {
                 "default": {
                     "type": "boolean",
-                    "x-underlying-type": "bool",
+                    "x-underlying-type": "boolean",
                     "x-ordinal-index": 7
                 },
                 "ease": {
@@ -382,14 +382,14 @@
                 },
                 "preset": {
                     "type": "integer",
-                    "x-underlying-type": "unsigned int",
+                    "x-underlying-type": "uint32",
                     "x-ordinal-index": 0,
                     "minimum": 0.0,
                     "maximum": 4294967295.0
                 },
                 "removeIgnoreStartingValuesComponent": {
                     "type": "boolean",
-                    "x-underlying-type": "bool",
+                    "x-underlying-type": "boolean",
                     "x-ordinal-index": 8
                 },
                 "rot": {
@@ -439,7 +439,7 @@
                 },
                 "type": {
                     "type": "integer",
-                    "x-underlying-type": "unsigned char",
+                    "x-underlying-type": "uint8",
                     "x-ordinal-index": 0,
                     "minimum": 0.0,
                     "maximum": 255.0
@@ -549,7 +549,7 @@
             "properties": {
                 "Target Actor ID": {
                     "type": "integer",
-                    "x-underlying-type": "__int64",
+                    "x-underlying-type": "int64",
                     "x-ordinal-index": 1,
                     "minimum": -9223372036854776000.0,
                     "maximum": 9223372036854776000.0
@@ -576,5 +576,9 @@
     },
     "required": [
         "Camera Instruction"
-    ]
+    ],
+    "$metaProperties": {
+        "[cereal:packet]": 300,
+        "[cereal:packet_details]": ""
+    }
 }

@@ -11,7 +11,7 @@
             "properties": {
                 "Actor Runtime ID": {
                     "type": "integer",
-                    "x-underlying-type": "unsigned __int64",
+                    "x-underlying-type": "uint64",
                     "x-serialization-options": [
                         "Compression"
                     ],
@@ -36,7 +36,7 @@
                 "ArmSwing",
                 "Shrug"
             ],
-            "x-underlying-type": "unsigned char",
+            "x-underlying-type": "uint8",
             "x-serialization-options": [
                 "Enum-as-Value"
             ],
@@ -50,5 +50,9 @@
     "required": [
         "Agent Animation",
         "Runtime Id"
-    ]
+    ],
+    "$metaProperties": {
+        "[cereal:packet]": 304,
+        "[cereal:packet_details]": ""
+    }
 }

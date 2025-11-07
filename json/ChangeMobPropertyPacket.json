@@ -11,7 +11,7 @@
             "properties": {
                 "Actor Unique ID": {
                     "type": "integer",
-                    "x-underlying-type": "__int64",
+                    "x-underlying-type": "int64",
                     "x-serialization-options": [
                         "Compression"
                     ],
@@ -35,7 +35,7 @@
         },
         "BoolComponent Value": {
             "type": "boolean",
-            "x-underlying-type": "bool",
+            "x-underlying-type": "boolean",
             "x-ordinal-index": 2
         },
         "FloatComponent Value": {
@@ -47,7 +47,7 @@
         },
         "IntComponent Value": {
             "type": "integer",
-            "x-underlying-type": "int",
+            "x-underlying-type": "int32",
             "x-serialization-options": [
                 "Compression"
             ],
@@ -71,5 +71,9 @@
         "IntComponent Value",
         "Property Name",
         "StringComponent Value"
-    ]
+    ],
+    "$metaProperties": {
+        "[cereal:packet]": 182,
+        "[cereal:packet_details]": ""
+    }
 }

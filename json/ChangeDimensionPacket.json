@@ -11,7 +11,7 @@
             "properties": {
                 "value": {
                     "type": "integer",
-                    "x-underlying-type": "int",
+                    "x-underlying-type": "int32",
                     "x-serialization-options": [
                         "Compression"
                     ],
@@ -69,7 +69,7 @@
         "Loading Screen Id": {
             "description": "Leave empty if there is no loading screen expected on the client. This id needs to be unique and not conflict with any other active loading screens.  This is implemented with an unsigned integer incrementing forever, and that is expected to not have collisions when it wraps around back to 0 if that could be a possibility.",
             "type": "integer",
-            "x-underlying-type": "unsigned int",
+            "x-underlying-type": "uint32",
             "x-ordinal-index": 3,
             "minimum": 0.0,
             "maximum": 4294967295.0
@@ -80,7 +80,7 @@
         },
         "Respawn": {
             "type": "boolean",
-            "x-underlying-type": "bool",
+            "x-underlying-type": "boolean",
             "x-ordinal-index": 2
         }
     },
@@ -89,5 +89,9 @@
         "Loading Screen Id",
         "Position",
         "Respawn"
-    ]
+    ],
+    "$metaProperties": {
+        "[cereal:packet]": 61,
+        "[cereal:packet_details]": ""
+    }
 }

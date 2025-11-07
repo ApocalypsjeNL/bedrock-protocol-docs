@@ -11,7 +11,7 @@
             "properties": {
                 "Actor Runtime ID": {
                     "type": "integer",
-                    "x-underlying-type": "unsigned __int64",
+                    "x-underlying-type": "uint64",
                     "x-serialization-options": [
                         "Compression"
                     ],
@@ -36,5 +36,9 @@
     },
     "required": [
         "Player ID"
-    ]
+    ],
+    "$metaProperties": {
+        "[cereal:packet]": 113,
+        "[cereal:packet_details]": "Client tells the server that the client is ready to roll."
+    }
 }

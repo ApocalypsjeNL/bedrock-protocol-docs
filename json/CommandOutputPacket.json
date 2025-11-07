@@ -28,7 +28,7 @@
                 "Successful?": {
                     "description": "The command output type.",
                     "type": "boolean",
-                    "x-underlying-type": "bool",
+                    "x-underlying-type": "boolean",
                     "x-ordinal-index": 1
                 }
             },
@@ -45,7 +45,7 @@
                     "description": "The player Id.",
                     "type": "integer",
                     "default": 0,
-                    "x-underlying-type": "__int64",
+                    "x-underlying-type": "int64",
                     "x-ordinal-index": 3,
                     "minimum": -9223372036854776000.0,
                     "maximum": 9223372036854776000.0
@@ -67,7 +67,7 @@
                         "Test",
                         "AutomationPlayer"
                     ],
-                    "x-underlying-type": "unsigned char",
+                    "x-underlying-type": "uint8",
                     "x-ordinal-index": 0
                 },
                 "UUID": {
@@ -87,14 +87,14 @@
             "properties": {
                 "Least Significant Bits": {
                     "type": "integer",
-                    "x-underlying-type": "unsigned __int64",
+                    "x-underlying-type": "uint64",
                     "x-ordinal-index": 1,
                     "minimum": 0.0,
                     "maximum": 18446744073709553000.0
                 },
                 "Most Significant Bits": {
                     "type": "integer",
-                    "x-underlying-type": "unsigned __int64",
+                    "x-underlying-type": "uint64",
                     "x-ordinal-index": 0,
                     "minimum": 0.0,
                     "maximum": 18446744073709553000.0
@@ -135,13 +135,13 @@
                         "AllOutput",
                         "DataSet"
                     ],
-                    "x-underlying-type": "int",
+                    "x-underlying-type": "int32",
                     "x-ordinal-index": 0
                 },
                 "Success Count": {
                     "description": "The success count.",
                     "type": "integer",
-                    "x-underlying-type": "unsigned int",
+                    "x-underlying-type": "uint32",
                     "x-ordinal-index": 1,
                     "minimum": 0.0,
                     "maximum": 4294967295.0
@@ -171,5 +171,9 @@
     "required": [
         "Origin Data",
         "Output"
-    ]
+    ],
+    "$metaProperties": {
+        "[cereal:packet]": 79,
+        "[cereal:packet_details]": ""
+    }
 }

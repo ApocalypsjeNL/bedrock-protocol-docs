@@ -14,18 +14,21 @@
                     "oneOf": [
                         {
                             "type": "number",
-                            "x-underlying-type": "double"
+                            "x-underlying-type": "double",
+                            "x-ordinal-index": 0
                         },
                         {
                             "type": "boolean",
-                            "x-underlying-type": "bool"
+                            "x-underlying-type": "boolean",
+                            "x-ordinal-index": 1
                         },
                         {
                             "type": "string",
+                            "x-ordinal-index": 2,
                             "maxLength": 5000
                         }
                     ],
-                    "x-control-value-type": "unsigned int",
+                    "x-control-value-type": "uint32",
                     "x-ordinal-index": 3
                 },
                 "Data Store Name": {
@@ -50,7 +53,7 @@
                 "Update Count": {
                     "description": "The number of times this property has updated",
                     "type": "integer",
-                    "x-underlying-type": "unsigned int",
+                    "x-underlying-type": "uint32",
                     "x-ordinal-index": 4,
                     "minimum": 0.0,
                     "maximum": 4294967294.0
@@ -77,5 +80,9 @@
     },
     "required": [
         "Update"
-    ]
+    ],
+    "$metaProperties": {
+        "[cereal:packet]": 332,
+        "[cereal:packet_details]": ""
+    }
 }

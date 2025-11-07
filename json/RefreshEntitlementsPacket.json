@@ -5,5 +5,9 @@
     "x-minecraft-version": "1.21.130",
     "x-protocol-version": 893,
     "title": "RefreshEntitlementsPacket",
-    "description": "Refresh Entitlements"
+    "description": "Refresh Entitlements",
+    "$metaProperties": {
+        "[cereal:packet]": 305,
+        "[cereal:packet_details]": ""
+    }
 }

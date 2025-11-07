@@ -11,7 +11,7 @@
             "properties": {
                 "value": {
                     "type": "integer",
-                    "x-underlying-type": "int",
+                    "x-underlying-type": "int32",
                     "x-serialization-options": [
                         "Compression"
                     ],
@@ -30,7 +30,7 @@
             "properties": {
                 "X": {
                     "type": "integer",
-                    "x-underlying-type": "int",
+                    "x-underlying-type": "int32",
                     "x-serialization-options": [
                         "Compression"
                     ],
@@ -40,7 +40,7 @@
                 },
                 "Y": {
                     "type": "integer",
-                    "x-underlying-type": "unsigned int",
+                    "x-underlying-type": "uint32",
                     "x-serialization-options": [
                         "Compression"
                     ],
@@ -50,7 +50,7 @@
                 },
                 "Z": {
                     "type": "integer",
-                    "x-underlying-type": "int",
+                    "x-underlying-type": "int32",
                     "x-serialization-options": [
                         "Compression"
                     ],
@@ -89,7 +89,7 @@
                 "PlayerRespawn",
                 "WorldSpawn"
             ],
-            "x-underlying-type": "int",
+            "x-underlying-type": "int32",
             "x-serialization-options": [
                 "Compression",
                 "Enum-as-Value"
@@ -102,5 +102,9 @@
         "Dimension type",
         "Spawn Block Pos",
         "Spawn Position Type"
-    ]
+    ],
+    "$metaProperties": {
+        "[cereal:packet]": 43,
+        "[cereal:packet_details]": "see RespawnPacket"
+    }
 }

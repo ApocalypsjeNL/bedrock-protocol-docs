@@ -11,13 +11,13 @@
             "properties": {
                 "Immediate": {
                     "type": "boolean",
-                    "x-underlying-type": "bool",
+                    "x-underlying-type": "boolean",
                     "x-ordinal-index": 3
                 },
                 "Passenger Initiated": {
                     "description": "Whether the link was changed by the passenger",
                     "type": "boolean",
-                    "x-underlying-type": "bool",
+                    "x-underlying-type": "boolean",
                     "x-ordinal-index": 4
                 },
                 "Target A": {
@@ -36,7 +36,7 @@
                         "Riding",
                         "Passenger"
                     ],
-                    "x-underlying-type": "unsigned char",
+                    "x-underlying-type": "uint8",
                     "x-serialization-options": [
                         "Enum-as-Value"
                     ],
@@ -65,7 +65,7 @@
             "properties": {
                 "Actor Unique ID": {
                     "type": "integer",
-                    "x-underlying-type": "__int64",
+                    "x-underlying-type": "int64",
                     "x-serialization-options": [
                         "Compression"
                     ],
@@ -90,5 +90,9 @@
     },
     "required": [
         "Link"
-    ]
+    ],
+    "$metaProperties": {
+        "[cereal:packet]": 41,
+        "[cereal:packet_details]": "Sent when the player starts riding something. Two are sent at a time for some reason."
+    }
 }

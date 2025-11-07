@@ -12,7 +12,7 @@
                 "SubCommand First Value": {
                     "description": "The first value, the sub command value id.",
                     "type": "integer",
-                    "x-underlying-type": "unsigned int",
+                    "x-underlying-type": "uint32",
                     "x-serialization-options": [
                         "Compression"
                     ],
@@ -23,7 +23,7 @@
                 "SubCommand Second Value": {
                     "description": "The second value, the enum id.",
                     "type": "integer",
-                    "x-underlying-type": "unsigned int",
+                    "x-underlying-type": "uint32",
                     "x-serialization-options": [
                         "Compression"
                     ],
@@ -46,7 +46,7 @@
                     "type": "array",
                     "items": {
                         "type": "integer",
-                        "x-underlying-type": "unsigned char",
+                        "x-underlying-type": "uint8",
                         "minimum": 0.0,
                         "maximum": 255.0
                     },
@@ -56,7 +56,7 @@
                 "Enum Symbol": {
                     "description": "The enum symbol.",
                     "type": "integer",
-                    "x-underlying-type": "unsigned int",
+                    "x-underlying-type": "uint32",
                     "x-ordinal-index": 1,
                     "minimum": 0.0,
                     "maximum": 4294967295.0
@@ -64,7 +64,7 @@
                 "Enum Value Symbol": {
                     "description": "The enum value symbol.",
                     "type": "integer",
-                    "x-underlying-type": "unsigned int",
+                    "x-underlying-type": "uint32",
                     "x-ordinal-index": 0,
                     "minimum": 0.0,
                     "maximum": 4294967295.0
@@ -108,7 +108,7 @@
                 "Alias Enum": {
                     "description": "The command alias enum.",
                     "type": "integer",
-                    "x-underlying-type": "int",
+                    "x-underlying-type": "int32",
                     "x-ordinal-index": 4,
                     "minimum": -2147483648.0,
                     "maximum": 2147483647.0
@@ -118,7 +118,7 @@
                     "type": "array",
                     "items": {
                         "type": "integer",
-                        "x-underlying-type": "unsigned int",
+                        "x-underlying-type": "uint32",
                         "minimum": 0.0,
                         "maximum": 4294967295.0
                     },
@@ -134,7 +134,7 @@
                 "Flags": {
                     "description": "The command flags.",
                     "type": "integer",
-                    "x-underlying-type": "unsigned short",
+                    "x-underlying-type": "uint16",
                     "x-ordinal-index": 2,
                     "minimum": 0.0,
                     "maximum": 65535.0
@@ -166,7 +166,7 @@
                         "Owner",
                         "Internal"
                     ],
-                    "x-underlying-type": "unsigned char",
+                    "x-underlying-type": "uint8",
                     "x-ordinal-index": 3
                 }
             },
@@ -195,7 +195,7 @@
                 "isChaining": {
                     "description": "The is chaining command flag, true for chaining.",
                     "type": "boolean",
-                    "x-underlying-type": "bool",
+                    "x-underlying-type": "boolean",
                     "x-ordinal-index": 0
                 }
             },
@@ -211,7 +211,7 @@
                 "Is Optional?": {
                     "description": "The parameter optional flag. True for an optional parameter.",
                     "type": "boolean",
-                    "x-underlying-type": "bool",
+                    "x-underlying-type": "boolean",
                     "x-ordinal-index": 2
                 },
                 "Name": {
@@ -222,7 +222,7 @@
                 "Options": {
                     "description": "The parameter options.",
                     "type": "integer",
-                    "x-underlying-type": "unsigned char",
+                    "x-underlying-type": "uint8",
                     "x-ordinal-index": 3,
                     "minimum": 0.0,
                     "maximum": 255.0
@@ -230,7 +230,7 @@
                 "Parse Symbol": {
                     "description": "The parameter parse symbol.",
                     "type": "integer",
-                    "x-underlying-type": "unsigned int",
+                    "x-underlying-type": "uint32",
                     "x-ordinal-index": 1,
                     "minimum": 0.0,
                     "maximum": 4294967295.0
@@ -282,7 +282,7 @@
                     "type": "array",
                     "items": {
                         "type": "integer",
-                        "x-underlying-type": "unsigned int",
+                        "x-underlying-type": "uint32",
                         "minimum": 0.0,
                         "maximum": 4294967295.0
                     },
@@ -374,5 +374,9 @@
         "Enum Values",
         "Post Fixes",
         "Soft Enums"
-    ]
+    ],
+    "$metaProperties": {
+        "[cereal:packet]": 76,
+        "[cereal:packet_details]": ""
+    }
 }

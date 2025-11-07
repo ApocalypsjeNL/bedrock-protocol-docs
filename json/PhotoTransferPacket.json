@@ -18,7 +18,7 @@
         },
         "Owner ID": {
             "type": "integer",
-            "x-underlying-type": "__int64",
+            "x-underlying-type": "int64",
             "x-ordinal-index": 5,
             "minimum": -9223372036854776000.0,
             "maximum": 9223372036854776000.0
@@ -39,7 +39,7 @@
                 "PhotoItem",
                 "Book"
             ],
-            "x-underlying-type": "unsigned char",
+            "x-underlying-type": "uint8",
             "x-serialization-options": [
                 "Enum-as-Value"
             ],
@@ -53,7 +53,7 @@
                 "PhotoItem",
                 "Book"
             ],
-            "x-underlying-type": "unsigned char",
+            "x-underlying-type": "uint8",
             "x-serialization-options": [
                 "Enum-as-Value"
             ],
@@ -68,5 +68,9 @@
         "Photo Name",
         "Source Type",
         "Type"
-    ]
+    ],
+    "$metaProperties": {
+        "[cereal:packet]": 99,
+        "[cereal:packet_details]": "\n\tWhen the player uses the camera item or adds a photo to the scrapbook it sends the photo to the server, \n\tthen the server sends a response back on whether that was successful or not. \n\tEither uploads a photo to the server's photoStorage or request one from it to be stored in client's photoStorage.\n\tIf no mPhotoData is provided it is a request for the given filename.\n\t"
+    }
 }

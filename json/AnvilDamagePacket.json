@@ -11,7 +11,7 @@
             "properties": {
                 "X": {
                     "type": "integer",
-                    "x-underlying-type": "int",
+                    "x-underlying-type": "int32",
                     "x-serialization-options": [
                         "Compression"
                     ],
@@ -21,7 +21,7 @@
                 },
                 "Y": {
                     "type": "integer",
-                    "x-underlying-type": "unsigned int",
+                    "x-underlying-type": "uint32",
                     "x-serialization-options": [
                         "Compression"
                     ],
@@ -31,7 +31,7 @@
                 },
                 "Z": {
                     "type": "integer",
-                    "x-underlying-type": "int",
+                    "x-underlying-type": "int32",
                     "x-serialization-options": [
                         "Compression"
                     ],
@@ -57,7 +57,7 @@
         },
         "Damage Amount": {
             "type": "integer",
-            "x-underlying-type": "unsigned char",
+            "x-underlying-type": "uint8",
             "x-ordinal-index": 0,
             "minimum": 0.0,
             "maximum": 255.0
@@ -66,5 +66,9 @@
     "required": [
         "Block Position",
         "Damage Amount"
-    ]
+    ],
+    "$metaProperties": {
+        "[cereal:packet]": 141,
+        "[cereal:packet_details]": "Sends the current damage the anvil has taken per use from client."
+    }
 }

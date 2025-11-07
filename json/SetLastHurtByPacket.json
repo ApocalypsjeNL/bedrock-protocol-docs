@@ -170,7 +170,7 @@
                 "Parched",
                 "CamelHusk"
             ],
-            "x-underlying-type": "int",
+            "x-underlying-type": "int32",
             "x-serialization-options": [
                 "Compression",
                 "Enum-as-Value"
@@ -180,5 +180,9 @@
     },
     "required": [
         "LastHurtBy"
-    ]
+    ],
+    "$metaProperties": {
+        "[cereal:packet]": 96,
+        "[cereal:packet_details]": ""
+    }
 }

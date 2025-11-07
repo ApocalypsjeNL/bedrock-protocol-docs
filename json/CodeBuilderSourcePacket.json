@@ -16,7 +16,7 @@
                 "CodeStatus",
                 "Instantiation"
             ],
-            "x-underlying-type": "unsigned char",
+            "x-underlying-type": "uint8",
             "x-serialization-options": [
                 "Enum-as-Value"
             ],
@@ -33,7 +33,7 @@
                 "Error",
                 "Succeeded"
             ],
-            "x-underlying-type": "unsigned char",
+            "x-underlying-type": "uint8",
             "x-serialization-options": [
                 "Enum-as-Value"
             ],
@@ -48,7 +48,7 @@
                 "Set",
                 "Reset"
             ],
-            "x-underlying-type": "unsigned char",
+            "x-underlying-type": "uint8",
             "x-serialization-options": [
                 "Enum-as-Value"
             ],
@@ -59,5 +59,9 @@
         "Category",
         "CodeStatus",
         "Operation"
-    ]
+    ],
+    "$metaProperties": {
+        "[cereal:packet]": 178,
+        "[cereal:packet_details]": ""
+    }
 }

@@ -11,7 +11,7 @@
         "Actor ID": {
             "description": "Target Actor ID",
             "type": "integer",
-            "x-underlying-type": "__int64",
+            "x-underlying-type": "int64",
             "x-ordinal-index": 0,
             "minimum": -9223372036854776000.0,
             "maximum": 9223372036854776000.0
@@ -19,7 +19,7 @@
         "Max Slots": {
             "description": "number of empty hotbar slots (to decide whether to overwrite a slot or add it to an empty one)",
             "type": "integer",
-            "x-underlying-type": "unsigned char",
+            "x-underlying-type": "uint8",
             "x-ordinal-index": 1,
             "minimum": 0.0,
             "maximum": 255.0
@@ -27,7 +27,7 @@
         "With Data": {
             "description": "whether we want to store the NBT data along with the item",
             "type": "boolean",
-            "x-underlying-type": "bool",
+            "x-underlying-type": "boolean",
             "x-ordinal-index": 2
         }
     },
@@ -35,5 +35,9 @@
         "Actor ID",
         "Max Slots",
         "With Data"
-    ]
+    ],
+    "$metaProperties": {
+        "[cereal:packet]": 35,
+        "[cereal:packet_details]": ""
+    }
 }

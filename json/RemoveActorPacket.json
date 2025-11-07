@@ -11,7 +11,7 @@
             "properties": {
                 "Actor Unique ID": {
                     "type": "integer",
-                    "x-underlying-type": "__int64",
+                    "x-underlying-type": "int64",
                     "x-serialization-options": [
                         "Compression"
                     ],
@@ -36,5 +36,9 @@
     },
     "required": [
         "Target Actor ID"
-    ]
+    ],
+    "$metaProperties": {
+        "[cereal:packet]": 14,
+        "[cereal:packet_details]": "This is sent to the client to confirm which entity is being removed. This is done by sending an ActorUniqueID"
+    }
 }

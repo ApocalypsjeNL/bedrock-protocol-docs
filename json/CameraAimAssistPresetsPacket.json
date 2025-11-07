@@ -36,7 +36,7 @@
                 "block_default": {
                     "description": "Optional. Default Aim-Assist targeting priority used for Blocks not found in 'blocks'.",
                     "type": "integer",
-                    "x-underlying-type": "int",
+                    "x-underlying-type": "int32",
                     "x-ordinal-index": 4,
                     "minimum": 0.0,
                     "maximum": 100.0
@@ -46,7 +46,7 @@
                     "type": "object",
                     "additionalProperties": {
                         "type": "integer",
-                        "x-underlying-type": "int",
+                        "x-underlying-type": "int32",
                         "minimum": 0.0,
                         "maximum": 100.0
                     },
@@ -65,7 +65,7 @@
                             },
                             "value": {
                                 "type": "integer",
-                                "x-underlying-type": "int",
+                                "x-underlying-type": "int32",
                                 "minimum": -2147483648.0,
                                 "maximum": 2147483647.0
                             }
@@ -88,7 +88,7 @@
                             },
                             "value": {
                                 "type": "integer",
-                                "x-underlying-type": "int",
+                                "x-underlying-type": "int32",
                                 "minimum": -2147483648.0,
                                 "maximum": 2147483647.0
                             }
@@ -102,7 +102,7 @@
                 "entity_default": {
                     "description": "Optional. Default Aim-Assist targeting priority used for Entities not found in 'entities'.",
                     "type": "integer",
-                    "x-underlying-type": "int",
+                    "x-underlying-type": "int32",
                     "x-ordinal-index": 3,
                     "minimum": 0.0,
                     "maximum": 100.0
@@ -249,7 +249,7 @@
                 "Set",
                 "AddToExisting"
             ],
-            "x-underlying-type": "unsigned char",
+            "x-underlying-type": "uint8",
             "x-serialization-options": [
                 "Enum-as-Value"
             ],
@@ -260,5 +260,9 @@
         "Camera Aim-Assist Categories",
         "Camera Aim-Assist Presets",
         "Operation"
-    ]
+    ],
+    "$metaProperties": {
+        "[cereal:packet]": 320,
+        "[cereal:packet_details]": "\n\tSent by the server to clients for initializing and updating the client aim-assist registry.\n\tAddToExisting operations are sent by the server when new presets/categories are added to the registry through creator facing APIs.\n\t"
+    }
 }

@@ -33,7 +33,7 @@
                 "Num Segments": {
                     "description": "Integer number of segments used for the debug arrow's head.",
                     "type": "integer",
-                    "x-underlying-type": "unsigned char",
+                    "x-underlying-type": "uint8",
                     "x-ordinal-index": 3,
                     "minimum": 0.0,
                     "maximum": 255.0
@@ -53,7 +53,7 @@
                 "Num Segments": {
                     "description": "Integer number of segments used for the debug circle or sphere.",
                     "type": "integer",
-                    "x-underlying-type": "unsigned char",
+                    "x-underlying-type": "uint8",
                     "x-ordinal-index": 0,
                     "minimum": 0.0,
                     "maximum": 255.0
@@ -82,25 +82,31 @@
                     "default": null,
                     "oneOf": [
                         {
-                            "type": "null"
+                            "type": "null",
+                            "x-ordinal-index": 0
                         },
                         {
-                            "$ref": "#/definitions/96730425"
+                            "$ref": "#/definitions/96730425",
+                            "x-ordinal-index": 1
                         },
                         {
-                            "$ref": "#/definitions/3254662607"
+                            "$ref": "#/definitions/3254662607",
+                            "x-ordinal-index": 2
                         },
                         {
-                            "$ref": "#/definitions/3006597033"
+                            "$ref": "#/definitions/3006597033",
+                            "x-ordinal-index": 3
                         },
                         {
-                            "$ref": "#/definitions/3414789328"
+                            "$ref": "#/definitions/3414789328",
+                            "x-ordinal-index": 4
                         },
                         {
-                            "$ref": "#/definitions/2883805925"
+                            "$ref": "#/definitions/2883805925",
+                            "x-ordinal-index": 5
                         }
                     ],
-                    "x-control-value-type": "unsigned int",
+                    "x-control-value-type": "uint32",
                     "x-ordinal-index": 8
                 },
                 "Location": {
@@ -111,7 +117,7 @@
                 "NetworkId": {
                     "description": "uint64 network id used to identify the matching shape on the client as the server",
                     "type": "integer",
-                    "x-underlying-type": "unsigned __int64",
+                    "x-underlying-type": "uint64",
                     "x-serialization-options": [
                         "Compression"
                     ],
@@ -144,7 +150,7 @@
                         "Text",
                         "Arrow"
                     ],
-                    "x-underlying-type": "unsigned char",
+                    "x-underlying-type": "uint8",
                     "x-serialization-options": [
                         "Enum-as-Value"
                     ],
@@ -184,7 +190,7 @@
             "properties": {
                 "Color": {
                     "type": "integer",
-                    "x-underlying-type": "int",
+                    "x-underlying-type": "int32",
                     "x-ordinal-index": 0,
                     "minimum": -2147483648.0,
                     "maximum": 2147483647.0
@@ -200,7 +206,7 @@
             "properties": {
                 "value": {
                     "type": "integer",
-                    "x-underlying-type": "int",
+                    "x-underlying-type": "int32",
                     "x-serialization-options": [
                         "Compression"
                     ],
@@ -290,5 +296,9 @@
     },
     "required": [
         "Array of debug shapes (can be a mix of new, updated or removed)"
-    ]
+    ],
+    "$metaProperties": {
+        "[cereal:packet]": 328,
+        "[cereal:packet_details]": ""
+    }
 }

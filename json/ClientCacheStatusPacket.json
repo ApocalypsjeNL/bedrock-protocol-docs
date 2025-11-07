@@ -10,11 +10,15 @@
     "properties": {
         "Is cache supported?": {
             "type": "boolean",
-            "x-underlying-type": "bool",
+            "x-underlying-type": "boolean",
             "x-ordinal-index": 0
         }
     },
     "required": [
         "Is cache supported?"
-    ]
+    ],
+    "$metaProperties": {
+        "[cereal:packet]": 129,
+        "[cereal:packet_details]": "Sent by the Client once, at login, to communicate if it supports the client blob cache protocol or not.\n\t<br> Documented in <a href=https://github.com/Mojang/bedrock-docs/blob/master/GameplaySystems/ClientBlobCacheProtocol.md>https://github.com/Mojang/bedrock-docs/blob/master/GameplaySystems/ClientBlobCacheProtocol.md</a>"
+    }
 }
