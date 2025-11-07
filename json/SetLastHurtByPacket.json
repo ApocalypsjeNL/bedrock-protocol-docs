@@ -3,7 +3,7 @@
     "$id": "3146300535",
     "x-format-version": "MISSING VERSION",
     "x-minecraft-version": "1.21.130",
-    "x-protocol-version": 893,
+    "x-protocol-version": 897,
     "title": "SetLastHurtByPacket",
     "description": "Any time a player is hit, the id of the last mob that attacked them is sent to the client",
     "type": "object",

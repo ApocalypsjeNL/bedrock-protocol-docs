@@ -3,7 +3,7 @@
     "$id": "1339922872",
     "x-format-version": "MISSING VERSION",
     "x-minecraft-version": "1.21.130",
-    "x-protocol-version": 893,
+    "x-protocol-version": 897,
     "title": "PhotoTransferPacket",
     "description": "There is a camera item in EDU and they can use it to take screenshots and add them to a scrapbook.",
     "type": "object",

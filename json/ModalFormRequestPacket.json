@@ -3,7 +3,7 @@
     "$id": "2380260781",
     "x-format-version": "MISSING VERSION",
     "x-minecraft-version": "1.21.130",
-    "x-protocol-version": 893,
+    "x-protocol-version": 897,
     "title": "ModalFormRequestPacket",
     "description": "Modal Form Request",
     "type": "object",

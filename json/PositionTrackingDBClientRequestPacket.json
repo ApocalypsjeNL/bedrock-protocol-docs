@@ -3,7 +3,7 @@
     "$id": "381612363",
     "x-format-version": "MISSING VERSION",
     "x-minecraft-version": "1.21.130",
-    "x-protocol-version": 893,
+    "x-protocol-version": 897,
     "definitions": {
         "2150080226": {
             "title": "PositionTrackingId",

@@ -3,7 +3,7 @@
     "$id": "3558097506",
     "x-format-version": "MISSING VERSION",
     "x-minecraft-version": "1.21.130",
-    "x-protocol-version": 893,
+    "x-protocol-version": 897,
     "title": "SetCommandsEnabledPacket",
     "description": "This is used by the world settings screen, cheats, EDU builds for teachers, and various other places to enable cheats/commands",
     "type": "object",

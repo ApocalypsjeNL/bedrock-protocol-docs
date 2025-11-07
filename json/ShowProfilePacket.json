@@ -3,7 +3,7 @@
     "$id": "3696891821",
     "x-format-version": "MISSING VERSION",
     "x-minecraft-version": "1.21.130",
-    "x-protocol-version": 893,
+    "x-protocol-version": 897,
     "title": "ShowProfilePacket",
     "description": "Show Profile",
     "type": "object",

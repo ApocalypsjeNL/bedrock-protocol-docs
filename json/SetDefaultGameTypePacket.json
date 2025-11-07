@@ -3,7 +3,7 @@
     "$id": "2467890142",
     "x-format-version": "MISSING VERSION",
     "x-minecraft-version": "1.21.130",
-    "x-protocol-version": 893,
+    "x-protocol-version": 897,
     "title": "SetDefaultGameTypePacket",
     "description": "Same as SetPlayerGameTypePacket & UpdatePlayerGameTypePacket, the only difference is that this changes the default for all clients.",
     "type": "object",

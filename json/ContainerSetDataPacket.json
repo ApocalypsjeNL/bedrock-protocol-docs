@@ -3,7 +3,7 @@
     "$id": "920402992",
     "x-format-version": "MISSING VERSION",
     "x-minecraft-version": "1.21.130",
-    "x-protocol-version": 893,
+    "x-protocol-version": 897,
     "title": "ContainerSetDataPacket",
     "description": "This is sent from the server basically any time that the \"cooking\" state of the brewing stand or the furnace changes (i.e. the loading bar)",
     "type": "object",

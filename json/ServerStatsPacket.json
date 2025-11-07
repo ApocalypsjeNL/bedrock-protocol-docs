@@ -3,7 +3,7 @@
     "$id": "987645125",
     "x-format-version": "MISSING VERSION",
     "x-minecraft-version": "1.21.130",
-    "x-protocol-version": 893,
+    "x-protocol-version": 897,
     "title": "ServerStatsPacket",
     "description": "Used to send performance and other valuable stats back to the client",
     "type": "object",

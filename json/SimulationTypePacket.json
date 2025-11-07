@@ -3,7 +3,7 @@
     "$id": "406421174",
     "x-format-version": "MISSING VERSION",
     "x-minecraft-version": "1.21.130",
-    "x-protocol-version": 893,
+    "x-protocol-version": 897,
     "title": "SimulationTypePacket",
     "description": "Sent from the server to the client when setting the simulation type for toolbox mode. (Not yet suported)",
     "type": "object",

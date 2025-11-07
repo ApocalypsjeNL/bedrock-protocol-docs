@@ -3,7 +3,7 @@
     "$id": "1381201720",
     "x-format-version": "MISSING VERSION",
     "x-minecraft-version": "1.21.130",
-    "x-protocol-version": 893,
+    "x-protocol-version": 897,
     "title": "CameraShakePacket",
     "description": "Used to control trigger camera shake movements on the client's player camera",
     "type": "object",

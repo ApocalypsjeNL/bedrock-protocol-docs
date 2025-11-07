@@ -14,10 +14,6 @@
 <td><a href = "ResourcePackClientResponsePacket.html">ResourcePackClientResponsePacket</a></td>
 <td>Resource Pack Client Response</td>
 <td>Sent to MinecraftGame to complete the resource pack loading process.</td>
-</tr><tr><td>9</td>
-<td><a href = "TextPacket.html">TextPacket</a></td>
-<td>Text Message</td>
-<td>Used for commands, messages, and other info printed to the screen. Most of which are server->client or server broadcasted to all clients, </td>
 </tr><tr><td>11</td>
 <td><a href = "StartGamePacket.html">StartGamePacket</a></td>
 <td>Start Game</td>
@@ -54,18 +50,10 @@
 <td><a href = "MobArmorEquipmentPacket.html">MobArmorEquipmentPacket</a></td>
 <td>Mob Armor Equipment</td>
 <td>This is related to MobEquipmentPackets, but armor specifically and passes ALL equipment changes at once instead of one slot at a time.</td>
-</tr><tr><td>33</td>
-<td><a href = "InteractPacket.html">InteractPacket</a></td>
-<td>Interact</td>
-<td>Used for inventory button press and in _updateInteraction() for a variety of purposes.</td>
 </tr><tr><td>39</td>
 <td><a href = "SetActorDataPacket.html">SetActorDataPacket</a></td>
 <td>Set Actor Data</td>
 <td>Regular Actor Data delta packets, sent from the level on tick, mob and actor during normal tick</td>
-</tr><tr><td>44</td>
-<td><a href = "AnimatePacket.html">AnimatePacket</a></td>
-<td>Animate Actor</td>
-<td>Combination of server bound and client bound packets to trigger animations.<br></td>
 </tr><tr><td>49</td>
 <td><a href = "InventoryContentPacket.html">InventoryContentPacket</a></td>
 <td>Inventory Content</td>
@@ -86,10 +74,6 @@
 <td><a href = "PlayerListPacket.html">PlayerListPacket</a></td>
 <td>Player List</td>
 <td>Sent from the Server at the start of the game or when a player is added (or if the game does a clean up of disconnected players) </td>
-</tr><tr><td>65</td>
-<td><a href = "LegacyTelemetryEventPacket.html">LegacyTelemetryEventPacket</a></td>
-<td>Telemetry Event</td>
-<td>This is a legacy packet and should not be used anymore, although server side telemetry is not widely used/tested yet.</td>
 </tr><tr><td>67</td>
 <td><a href = "ClientboundMapItemDataPacket.html">ClientboundMapItemDataPacket</a></td>
 <td>ClientboundMapItemDataPacket</td>
@@ -98,22 +82,10 @@
 <td><a href = "BossEventPacket.html">BossEventPacket</a></td>
 <td>Boss Event</td>
 <td>Two-way packet.</td>
-</tr><tr><td>76</td>
-<td><a href = "AvailableCommandsPacket.html">AvailableCommandsPacket</a></td>
-<td>Available Commands</td>
-<td>This very large packet (>10k) sends the available slash commands as part of the login process. </td>
-</tr><tr><td>77</td>
-<td><a href = "CommandRequestPacket.html">CommandRequestPacket</a></td>
-<td>Command Request</td>
-<td>"slash" command execution, client to server.</td>
 </tr><tr><td>78</td>
 <td><a href = "CommandBlockUpdatePacket.html">CommandBlockUpdatePacket</a></td>
 <td>Command Block Update</td>
 <td>Sent when you close the command block screen on the client</td>
-</tr><tr><td>79</td>
-<td><a href = "CommandOutputPacket.html">CommandOutputPacket</a></td>
-<td>Command Output</td>
-<td>"slash" command execution, server to client. </td>
 </tr><tr><td>90</td>
 <td><a href = "StructureBlockUpdatePacket.html">StructureBlockUpdatePacket</a></td>
 <td>Structure Block Update</td>
@@ -174,10 +146,6 @@
 <td><a href = "ItemStackResponsePacket.html">ItemStackResponsePacket</a></td>
 <td>ItemStackResponsePacket</td>
 <td>The new server auth inventory item transaction response, sent from the server.</td>
-</tr><tr><td>164</td>
-<td><a href = "ClientboundDebugRendererPacket.html">ClientboundDebugRendererPacket</a></td>
-<td>ClientboundDebugRendererPacket</td>
-<td>Sent from the server to client to add/remove debug rendering objects</td>
 </tr><tr><td>174</td>
 <td><a href = "SubChunkPacket.html">SubChunkPacket</a></td>
 <td>SubChunkPacket</td>
@@ -206,10 +174,6 @@
 <td><a href = "ClientMovementPredictionSyncPacket.html">ClientMovementPredictionSyncPacket</a></td>
 <td>Sends client movement prediction information to the server</td>
 <td>Only used in Server-Authoritative Movement.<br>    Sent periodically if the client has received corrections from the server.<br>    Contains information about client-predictions that are relevant to movement.    </td>
-</tr><tr><td>324</td>
-<td><a href = "PlayerVideoCapturePacket.html">PlayerVideoCapturePacket</a></td>
-<td>Start/stops video capture for a player. Non-publish/test only.</td>
-<td>internalInternal. Used by a test command to start/stop video capture. Non-publish/test only.</td>
 </tr><tr><td>325</td>
 <td><a href = "PlayerUpdateEntityOverridesPacket.html">PlayerUpdateEntityOverridesPacket</a></td>
 <td>Updates client entity property override data</td>
@@ -218,8 +182,4 @@
 <td><a href = "PlayerLocationPacket.html">PlayerLocationPacket</a></td>
 <td>PlayerLocationPacket</td>
 <td>Updates the client with the position of a player in the same dimension outside of simulation distance, or whether to hide a player.</td>
-</tr><tr><td>327</td>
-<td><a href = "ClientboundControlSchemeSetPacket.html">ClientboundControlSchemeSetPacket</a></td>
-<td>Client-Bound Control Scheme Set Packet</td>
-<td>The server sends this packet to clients upon client requests or the execution of control scheme commands</td>
 </tr></table></body> </html>

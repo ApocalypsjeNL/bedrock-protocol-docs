@@ -3,7 +3,7 @@
     "$id": "3053596948",
     "x-format-version": "MISSING VERSION",
     "x-minecraft-version": "1.21.130",
-    "x-protocol-version": 893,
+    "x-protocol-version": 897,
     "title": "ServerSettingsResponsePacket",
     "description": "Server Settings Response",
     "type": "object",

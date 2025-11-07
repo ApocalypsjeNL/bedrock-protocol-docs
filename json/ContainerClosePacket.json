@@ -3,7 +3,7 @@
     "$id": "1471495628",
     "x-format-version": "MISSING VERSION",
     "x-minecraft-version": "1.21.130",
-    "x-protocol-version": 893,
+    "x-protocol-version": 897,
     "title": "ContainerClosePacket",
     "description": "After the game deletes the container manager on the client, the client sends this packet.\n\tThen the server deletes its container manager, and sends a packet back to the client that closes the container screen.",
     "type": "object",

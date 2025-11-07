@@ -3,7 +3,7 @@
     "$id": "3481231424",
     "x-format-version": "MISSING VERSION",
     "x-minecraft-version": "1.21.130",
-    "x-protocol-version": 893,
+    "x-protocol-version": 897,
     "title": "RemoveObjectivePacket",
     "description": "Using the scoreboard command, users can remove objectives that are tracked on the scoreboard.",
     "type": "object",

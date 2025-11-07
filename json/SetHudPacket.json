@@ -3,7 +3,7 @@
     "$id": "1181397288",
     "x-format-version": "MISSING VERSION",
     "x-minecraft-version": "1.21.130",
-    "x-protocol-version": 893,
+    "x-protocol-version": 897,
     "title": "SetHudPacket",
     "description": "This packet is only used via the set hud command. This is for 3rd party content.",
     "type": "object",

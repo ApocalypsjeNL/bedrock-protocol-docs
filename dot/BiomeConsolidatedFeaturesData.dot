@@ -1,0 +1,20 @@
+digraph "BiomeConsolidatedFeaturesData" {
+rankdir = LR
+72
+72 -> 73
+73 -> 74
+74 -> 75
+73 -> 76
+76 -> 77
+77 -> 125
+
+72 [label="BiomeConsolidatedFeaturesData",comment="name: \"BiomeConsolidatedFeaturesData\", typeName: \"\", id: 72, branchId: 0, recurseId: -1, attributes: 0, notes: \"\""];
+73 [label="feature",comment="name: \"feature\", typeName: \"\", id: 73, branchId: 0, recurseId: -1, attributes: 8, notes: \"\""];
+74 [label="List Size",comment="name: \"List Size\", typeName: \"\", id: 74, branchId: 0, recurseId: -1, attributes: 0, notes: \"\""];
+75 [label="unsigned varint",comment="name: \"unsigned varint\", typeName: \"\", id: 75, branchId: 0, recurseId: -1, attributes: 512, notes: \"\""];
+76 [label="example element",style=dotted,comment="name: \"example element\", typeName: \"\", id: 76, branchId: 0, recurseId: -1, attributes: 16, notes: \"\""];
+77 [label="features",comment="name: \"features\", typeName: \"BiomeConsolidatedFeatureData\", id: 77, branchId: 0, recurseId: -1, attributes: 256, notes: \"\""];
+125 [label="BiomeConsolidatedFeatureData",comment="name: \"BiomeConsolidatedFeatureData\", typeName: \"\", id: 125, branchId: 0, recurseId: -1, attributes: 512, notes: \"\""];
+{ rank = max;75;125}
+
+}

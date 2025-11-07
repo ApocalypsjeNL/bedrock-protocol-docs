@@ -3,7 +3,7 @@
     "$id": "315169571",
     "x-format-version": "MISSING VERSION",
     "x-minecraft-version": "1.21.130",
-    "x-protocol-version": 893,
+    "x-protocol-version": 897,
     "title": "ChunkRadiusUpdatedPacket",
     "description": "Sent when the world is loading. We don't know why it is sent four times. Defines the tick distance.",
     "type": "object",

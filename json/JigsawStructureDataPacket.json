@@ -3,7 +3,7 @@
     "$id": "82818363",
     "x-format-version": "MISSING VERSION",
     "x-minecraft-version": "1.21.130",
-    "x-protocol-version": 893,
+    "x-protocol-version": 897,
     "title": "JigsawStructureDataPacket",
     "description": "Jigsaw Structure data used by client jigsaw structure worldgen. This packet contains a copy of the behavior pack jigsaw structure rules.",
     "type": "object",

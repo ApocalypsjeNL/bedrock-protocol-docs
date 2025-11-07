@@ -3,7 +3,7 @@
     "$id": "986000289",
     "x-format-version": "MISSING VERSION",
     "x-minecraft-version": "1.21.130",
-    "x-protocol-version": 893,
+    "x-protocol-version": 897,
     "title": "RequestNetworkSettingsPacket",
     "description": "Requests tunable options from host to client (compression threshold and algorithm).",
     "type": "object",
@@ -15,8 +15,8 @@
                 "Big Endian"
             ],
             "x-ordinal-index": 0,
-            "minimum": 893.0,
-            "maximum": 893.0
+            "minimum": 897.0,
+            "maximum": 897.0
         }
     },
     "required": [

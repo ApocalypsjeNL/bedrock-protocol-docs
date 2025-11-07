@@ -3,7 +3,7 @@
     "$id": "3646786948",
     "x-format-version": "MISSING VERSION",
     "x-minecraft-version": "1.21.130",
-    "x-protocol-version": 893,
+    "x-protocol-version": 897,
     "title": "StopSoundPacket",
     "description": "Allows you to stop a sound or all sounds on all clients, only used in a /command",
     "type": "object",

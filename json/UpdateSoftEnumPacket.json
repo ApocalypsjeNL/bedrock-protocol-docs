@@ -3,7 +3,7 @@
     "$id": "3587589749",
     "x-format-version": "MISSING VERSION",
     "x-minecraft-version": "1.21.130",
-    "x-protocol-version": 893,
+    "x-protocol-version": 897,
     "title": "UpdateSoftEnumPacket",
     "description": "This is used for the scoreboard and tag systems (overwhelmingly used by 3rd party content)",
     "type": "object",

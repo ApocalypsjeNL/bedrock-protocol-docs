@@ -3,7 +3,7 @@
     "$id": "2577070585",
     "x-format-version": "MISSING VERSION",
     "x-minecraft-version": "1.21.130",
-    "x-protocol-version": 893,
+    "x-protocol-version": 897,
     "title": "SetHealthPacket",
     "description": "This packet is sent to the client when the player is spawned in and when they respawn.",
     "type": "object",

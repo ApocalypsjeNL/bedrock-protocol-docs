@@ -3,7 +3,7 @@
     "$id": "2293538647",
     "x-format-version": "MISSING VERSION",
     "x-minecraft-version": "1.21.130",
-    "x-protocol-version": 893,
+    "x-protocol-version": 897,
     "title": "CodeBuilderPacket",
     "description": "Code Builder Packet",
     "type": "object",

@@ -1,0 +1,40 @@
+digraph "BiomeReplacementData" {
+rankdir = LR
+366
+366 -> 367
+367 -> 368
+366 -> 369
+369 -> 370
+366 -> 371
+371 -> 372
+372 -> 373
+371 -> 374
+374 -> 375
+375 -> 376
+366 -> 377
+377 -> 378
+366 -> 379
+379 -> 380
+366 -> 381
+381 -> 382
+
+366 [label="BiomeReplacementData",comment="name: \"BiomeReplacementData\", typeName: \"\", id: 366, branchId: 0, recurseId: -1, attributes: 0, notes: \"\""];
+367 [label="biome",comment="name: \"biome\", typeName: \"short\", id: 367, branchId: 0, recurseId: -1, attributes: 256, notes: \"\""];
+368 [label="short",comment="name: \"short\", typeName: \"\", id: 368, branchId: 0, recurseId: -1, attributes: 512, notes: \"\""];
+369 [label="dimension",comment="name: \"dimension\", typeName: \"short\", id: 369, branchId: 0, recurseId: -1, attributes: 256, notes: \"\""];
+370 [label="short",comment="name: \"short\", typeName: \"\", id: 370, branchId: 0, recurseId: -1, attributes: 512, notes: \"\""];
+371 [label="string list",comment="name: \"string list\", typeName: \"\", id: 371, branchId: 0, recurseId: -1, attributes: 8, notes: \"\""];
+372 [label="List Size",comment="name: \"List Size\", typeName: \"\", id: 372, branchId: 0, recurseId: -1, attributes: 0, notes: \"\""];
+373 [label="unsigned varint",comment="name: \"unsigned varint\", typeName: \"\", id: 373, branchId: 0, recurseId: -1, attributes: 512, notes: \"\""];
+374 [label="example element",style=dotted,comment="name: \"example element\", typeName: \"\", id: 374, branchId: 0, recurseId: -1, attributes: 16, notes: \"\""];
+375 [label="target biome",comment="name: \"target biome\", typeName: \"short\", id: 375, branchId: 0, recurseId: -1, attributes: 256, notes: \"\""];
+376 [label="short",comment="name: \"short\", typeName: \"\", id: 376, branchId: 0, recurseId: -1, attributes: 512, notes: \"\""];
+377 [label="amount",comment="name: \"amount\", typeName: \"\", id: 377, branchId: 0, recurseId: -1, attributes: 0, notes: \"\""];
+378 [label="float",comment="name: \"float\", typeName: \"\", id: 378, branchId: 0, recurseId: -1, attributes: 512, notes: \"\""];
+379 [label="noise frequency scale",comment="name: \"noise frequency scale\", typeName: \"\", id: 379, branchId: 0, recurseId: -1, attributes: 0, notes: \"\""];
+380 [label="float",comment="name: \"float\", typeName: \"\", id: 380, branchId: 0, recurseId: -1, attributes: 512, notes: \"\""];
+381 [label="replacement index",comment="name: \"replacement index\", typeName: \"\", id: 381, branchId: 0, recurseId: -1, attributes: 0, notes: \"\""];
+382 [label="unsigned int",comment="name: \"unsigned int\", typeName: \"\", id: 382, branchId: 0, recurseId: -1, attributes: 512, notes: \"\""];
+{ rank = max;368;370;373;376;378;380;382}
+
+}

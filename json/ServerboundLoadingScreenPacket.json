@@ -3,7 +3,7 @@
     "$id": "826489530",
     "x-format-version": "MISSING VERSION",
     "x-minecraft-version": "1.21.130",
-    "x-protocol-version": 893,
+    "x-protocol-version": 897,
     "title": "ServerboundLoadingScreenPacket",
     "description": "Sent from the client to the server to message to the server about the state of the loading screen.",
     "type": "object",
