@@ -116,7 +116,7 @@
 </thead>
 <tbody>
 <tr>
-<td rowspan="2"><strong>PredictionType</strong></td>
+<td rowspan="2"><strong>PredictionType (Required)</strong></td>
 <td>uint8</td>
 <td>0</td>
 <td>Vehicle or Player Prediction</td>
@@ -145,7 +145,7 @@
 </div></td>
 </tr>
 <tr>
-<td rowspan="2"><strong>Pos</strong></td>
+<td rowspan="2"><strong>Pos (Required)</strong></td>
 <td>Vec3</td>
 <td>1</td>
 <td>Corrected position</td>
@@ -164,19 +164,19 @@
 </thead>
 <tbody>
 <tr>
-<td><strong>X</strong></td>
+<td><strong>X (Required)</strong></td>
 <td>float</td>
 <td>0</td>
 <td></td>
 </tr>
 <tr>
-<td><strong>Y</strong></td>
+<td><strong>Y (Required)</strong></td>
 <td>float</td>
 <td>1</td>
 <td></td>
 </tr>
 <tr>
-<td><strong>Z</strong></td>
+<td><strong>Z (Required)</strong></td>
 <td>float</td>
 <td>2</td>
 <td></td>
@@ -186,7 +186,7 @@
 </div></td>
 </tr>
 <tr>
-<td rowspan="2"><strong>Pos Delta</strong></td>
+<td rowspan="2"><strong>Pos Delta (Required)</strong></td>
 <td>Vec3</td>
 <td>2</td>
 <td>Corrected velocity</td>
@@ -205,19 +205,19 @@
 </thead>
 <tbody>
 <tr>
-<td><strong>X</strong></td>
+<td><strong>X (Required)</strong></td>
 <td>float</td>
 <td>0</td>
 <td></td>
 </tr>
 <tr>
-<td><strong>Y</strong></td>
+<td><strong>Y (Required)</strong></td>
 <td>float</td>
 <td>1</td>
 <td></td>
 </tr>
 <tr>
-<td><strong>Z</strong></td>
+<td><strong>Z (Required)</strong></td>
 <td>float</td>
 <td>2</td>
 <td></td>
@@ -227,7 +227,7 @@
 </div></td>
 </tr>
 <tr>
-<td rowspan="2"><strong>Rotation</strong></td>
+<td rowspan="2"><strong>Rotation (Required)</strong></td>
 <td>Vec2</td>
 <td>3</td>
 <td>Corrected rotation. Only sent when PredictionType is Vehicle</td>
@@ -246,13 +246,13 @@
 </thead>
 <tbody>
 <tr>
-<td><strong>X</strong></td>
+<td><strong>X (Required)</strong></td>
 <td>float</td>
 <td>0</td>
 <td></td>
 </tr>
 <tr>
-<td><strong>Y</strong></td>
+<td><strong>Y (Required)</strong></td>
 <td>float</td>
 <td>1</td>
 <td></td>
@@ -268,13 +268,13 @@
 <td>Angular Velocity for a vehicle. Only sent when PredictionType is Vehicle</td>
 </tr>
 <tr>
-<td><strong>On Ground</strong></td>
+<td><strong>On Ground (Required)</strong></td>
 <td>boolean</td>
 <td>5</td>
 <td>Is on ground</td>
 </tr>
 <tr>
-<td rowspan="2"><strong>Tick</strong></td>
+<td rowspan="2"><strong>Tick (Required)</strong></td>
 <td>PlayerInputTick</td>
 <td>6</td>
 <td>Which frame we&#x27;re correcting; should match the tick in the Player Auth Input packet</td>
@@ -293,7 +293,7 @@
 </thead>
 <tbody>
 <tr>
-<td><strong>Input tick</strong></td>
+<td><strong>Input tick (Required)</strong></td>
 <td>varuint64</td>
 <td>0</td>
 <td>In server authoritative movement mode the client supplies this in PlayerAuthInputPacket.

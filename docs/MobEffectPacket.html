@@ -121,7 +121,7 @@ It is important for player movement simulation to ensure that the following effe
 </thead>
 <tbody>
 <tr>
-<td rowspan="2"><strong>Target Runtime ID</strong></td>
+<td rowspan="2"><strong>Target Runtime ID (Required)</strong></td>
 <td>ActorRuntimeID</td>
 <td>0</td>
 <td></td>
@@ -140,7 +140,7 @@ It is important for player movement simulation to ensure that the following effe
 </thead>
 <tbody>
 <tr>
-<td><strong>Actor Runtime ID</strong></td>
+<td><strong>Actor Runtime ID (Required)</strong></td>
 <td>varuint64</td>
 <td>0</td>
 <td></td>
@@ -150,7 +150,7 @@ It is important for player movement simulation to ensure that the following effe
 </div></td>
 </tr>
 <tr>
-<td rowspan="2"><strong>Event ID</strong></td>
+<td rowspan="2"><strong>Event ID (Required)</strong></td>
 <td>uint8</td>
 <td>1</td>
 <td></td>
@@ -187,31 +187,31 @@ It is important for player movement simulation to ensure that the following effe
 </div></td>
 </tr>
 <tr>
-<td><strong>Effect ID</strong></td>
+<td><strong>Effect ID (Required)</strong></td>
 <td>varint32</td>
 <td>2</td>
 <td></td>
 </tr>
 <tr>
-<td><strong>Effect Amplifier</strong></td>
+<td><strong>Effect Amplifier (Required)</strong></td>
 <td>varint32</td>
 <td>3</td>
 <td></td>
 </tr>
 <tr>
-<td><strong>Show Particles</strong></td>
+<td><strong>Show Particles (Required)</strong></td>
 <td>boolean</td>
 <td>4</td>
 <td></td>
 </tr>
 <tr>
-<td><strong>Effect Duration Ticks</strong></td>
+<td><strong>Effect Duration Ticks (Required)</strong></td>
 <td>varint32</td>
 <td>5</td>
 <td></td>
 </tr>
 <tr>
-<td rowspan="2"><strong>Tick</strong></td>
+<td rowspan="2"><strong>Tick (Required)</strong></td>
 <td>PlayerInputTick</td>
 <td>6</td>
 <td>If this packet is referring to the player or a client predicted vehicle they are in control of, this should be the most recently processed PlayerInputTick from their PlayerAuthInputPacket. Otherwise zero.</td>
@@ -230,7 +230,7 @@ It is important for player movement simulation to ensure that the following effe
 </thead>
 <tbody>
 <tr>
-<td><strong>Input tick</strong></td>
+<td><strong>Input tick (Required)</strong></td>
 <td>varuint64</td>
 <td>0</td>
 <td>In server authoritative movement mode the client supplies this in PlayerAuthInputPacket.
@@ -244,7 +244,7 @@ It is also acceptable to specify zero for players, although this may lead to min
 </div></td>
 </tr>
 <tr>
-<td><strong>Ambient</strong></td>
+<td><strong>Ambient (Required)</strong></td>
 <td>boolean</td>
 <td>7</td>
 <td>If the effect is considered ambient (like the ones applied by Beacons or Conduits)</td>

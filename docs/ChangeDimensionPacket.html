@@ -112,7 +112,7 @@
 </thead>
 <tbody>
 <tr>
-<td rowspan="2"><strong>Dimension ID</strong></td>
+<td rowspan="2"><strong>Dimension ID (Required)</strong></td>
 <td>DimensionType</td>
 <td>0</td>
 <td>Currently supported: (0 -&gt; Overworld, 1 -&gt; Nether, 2 -&gt; The End, 3 -&gt; Undefined)</td>
@@ -131,7 +131,7 @@
 </thead>
 <tbody>
 <tr>
-<td><strong>value</strong></td>
+<td><strong>value (Required)</strong></td>
 <td>varint32</td>
 <td>0</td>
 <td></td>
@@ -141,7 +141,7 @@
 </div></td>
 </tr>
 <tr>
-<td rowspan="2"><strong>Position</strong></td>
+<td rowspan="2"><strong>Position (Required)</strong></td>
 <td>Vec3</td>
 <td>1</td>
 <td></td>
@@ -160,19 +160,19 @@
 </thead>
 <tbody>
 <tr>
-<td><strong>X</strong></td>
+<td><strong>X (Required)</strong></td>
 <td>float</td>
 <td>0</td>
 <td></td>
 </tr>
 <tr>
-<td><strong>Y</strong></td>
+<td><strong>Y (Required)</strong></td>
 <td>float</td>
 <td>1</td>
 <td></td>
 </tr>
 <tr>
-<td><strong>Z</strong></td>
+<td><strong>Z (Required)</strong></td>
 <td>float</td>
 <td>2</td>
 <td></td>
@@ -182,13 +182,13 @@
 </div></td>
 </tr>
 <tr>
-<td><strong>Respawn</strong></td>
+<td><strong>Respawn (Required)</strong></td>
 <td>boolean</td>
 <td>2</td>
 <td></td>
 </tr>
 <tr>
-<td><strong>Loading Screen Id</strong></td>
+<td><strong>Loading Screen Id (Required)</strong></td>
 <td>uint32</td>
 <td>3</td>
 <td>Leave empty if there is no loading screen expected on the client. This id needs to be unique and not conflict with any other active loading screens.  This is implemented with an unsigned integer incrementing forever, and that is expected to not have collisions when it wraps around back to 0 if that could be a possibility.</td>

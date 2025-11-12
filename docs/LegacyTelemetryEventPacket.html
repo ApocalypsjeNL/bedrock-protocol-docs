@@ -112,7 +112,7 @@
 </thead>
 <tbody>
 <tr>
-<td rowspan="2"><strong>Target Actor ID</strong></td>
+<td rowspan="2"><strong>Target Actor ID (Required)</strong></td>
 <td>ActorUniqueID</td>
 <td>0</td>
 <td></td>
@@ -131,7 +131,7 @@
 </thead>
 <tbody>
 <tr>
-<td><strong>Actor Unique ID</strong></td>
+<td><strong>Actor Unique ID (Required)</strong></td>
 <td>varint64</td>
 <td>0</td>
 <td></td>
@@ -141,7 +141,7 @@
 </div></td>
 </tr>
 <tr>
-<td rowspan="2"><strong>Event Type</strong></td>
+<td rowspan="2"><strong>Event Type (Required)</strong></td>
 <td>varint32</td>
 <td>1</td>
 <td></td>
@@ -290,13 +290,13 @@
 </div></td>
 </tr>
 <tr>
-<td><strong>Use Player ID</strong></td>
+<td><strong>Use Player ID (Required)</strong></td>
 <td>boolean</td>
 <td>2</td>
 <td></td>
 </tr>
 <tr>
-<td rowspan="2"><strong>Event Data</strong></td>
+<td rowspan="2"><strong>Event Data (Required)</strong></td>
 <td>oneOf</td>
 <td>3</td>
 <td>Actual event payload (variant) holding data specific to the type of event (achievement ID for an achievement event).</td>

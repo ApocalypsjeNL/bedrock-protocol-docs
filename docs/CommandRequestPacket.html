@@ -112,13 +112,13 @@
 </thead>
 <tbody>
 <tr>
-<td><strong>Command</strong></td>
+<td><strong>Command (Required)</strong></td>
 <td>string</td>
 <td>0</td>
 <td>The command being executed.</td>
 </tr>
 <tr>
-<td rowspan="2"><strong>Origin</strong></td>
+<td rowspan="2"><strong>Origin (Required)</strong></td>
 <td>CommandOriginData</td>
 <td>1</td>
 <td>The origin of the command.</td>
@@ -137,7 +137,7 @@
 </thead>
 <tbody>
 <tr>
-<td rowspan="2"><strong>Type</strong></td>
+<td rowspan="2"><strong>Type (Required)</strong></td>
 <td>uint8</td>
 <td>0</td>
 <td>The command origin type.</td>
@@ -174,7 +174,7 @@
 </div></td>
 </tr>
 <tr>
-<td rowspan="2"><strong>UUID</strong></td>
+<td rowspan="2"><strong>UUID (Required)</strong></td>
 <td>mce::UUID</td>
 <td>1</td>
 <td>The unique UUID that represents an instantiation of a command. Each time a command is run it should be given a UUID to represent that instance.</td>
@@ -193,13 +193,13 @@
 </thead>
 <tbody>
 <tr>
-<td><strong>Most Significant Bits</strong></td>
+<td><strong>Most Significant Bits (Required)</strong></td>
 <td>uint64</td>
 <td>0</td>
 <td></td>
 </tr>
 <tr>
-<td><strong>Least Significant Bits</strong></td>
+<td><strong>Least Significant Bits (Required)</strong></td>
 <td>uint64</td>
 <td>1</td>
 <td></td>
@@ -225,13 +225,13 @@
 </div></td>
 </tr>
 <tr>
-<td><strong>IsInternal</strong></td>
+<td><strong>IsInternal (Required)</strong></td>
 <td>boolean</td>
 <td>2</td>
 <td>Whether the command is internal or not.</td>
 </tr>
 <tr>
-<td rowspan="2"><strong>Version</strong></td>
+<td rowspan="2"><strong>Version (Required)</strong></td>
 <td>int32</td>
 <td>3</td>
 <td>The version of the command.</td>

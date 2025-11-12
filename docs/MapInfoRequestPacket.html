@@ -121,7 +121,7 @@
 </thead>
 <tbody>
 <tr>
-<td rowspan="2"><strong>Map Unique ID</strong></td>
+<td rowspan="2"><strong>Map Unique ID (Required)</strong></td>
 <td>ActorUniqueID</td>
 <td>0</td>
 <td></td>
@@ -140,7 +140,7 @@
 </thead>
 <tbody>
 <tr>
-<td><strong>Actor Unique ID</strong></td>
+<td><strong>Actor Unique ID (Required)</strong></td>
 <td>varint64</td>
 <td>0</td>
 <td></td>
@@ -150,7 +150,7 @@
 </div></td>
 </tr>
 <tr>
-<td rowspan="2"><strong>Client Pixels List</strong></td>
+<td rowspan="2"><strong>Client Pixels List (Required)</strong></td>
 <td>array&lt;struct `anonymous-namespace'::MapInfoRequestPacketAnon::ClientPixelsProxy&gt;</td>
 <td>1</td>
 <td>These are sent from the client to tell the Server map about terrain pixels it doesn&#x27;t know about</td>
@@ -169,13 +169,13 @@
 </thead>
 <tbody>
 <tr>
-<td><strong>pixel</strong></td>
+<td><strong>pixel (Required)</strong></td>
 <td>uint32</td>
 <td>0</td>
 <td></td>
 </tr>
 <tr>
-<td><strong>index</strong></td>
+<td><strong>index (Required)</strong></td>
 <td>uint16</td>
 <td>1</td>
 <td></td>

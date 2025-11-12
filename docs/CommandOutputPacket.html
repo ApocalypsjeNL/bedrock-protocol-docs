@@ -112,7 +112,7 @@
 </thead>
 <tbody>
 <tr>
-<td rowspan="2"><strong>Origin Data</strong></td>
+<td rowspan="2"><strong>Origin Data (Required)</strong></td>
 <td>CommandOriginData</td>
 <td>0</td>
 <td>The origin of the command.</td>
@@ -131,7 +131,7 @@
 </thead>
 <tbody>
 <tr>
-<td rowspan="2"><strong>Type</strong></td>
+<td rowspan="2"><strong>Type (Required)</strong></td>
 <td>uint8</td>
 <td>0</td>
 <td>The command origin type.</td>
@@ -168,7 +168,7 @@
 </div></td>
 </tr>
 <tr>
-<td rowspan="2"><strong>UUID</strong></td>
+<td rowspan="2"><strong>UUID (Required)</strong></td>
 <td>mce::UUID</td>
 <td>1</td>
 <td>The unique UUID that represents an instantiation of a command. Each time a command is run it should be given a UUID to represent that instance.</td>
@@ -187,13 +187,13 @@
 </thead>
 <tbody>
 <tr>
-<td><strong>Most Significant Bits</strong></td>
+<td><strong>Most Significant Bits (Required)</strong></td>
 <td>uint64</td>
 <td>0</td>
 <td></td>
 </tr>
 <tr>
-<td><strong>Least Significant Bits</strong></td>
+<td><strong>Least Significant Bits (Required)</strong></td>
 <td>uint64</td>
 <td>1</td>
 <td></td>
@@ -219,7 +219,7 @@
 </div></td>
 </tr>
 <tr>
-<td rowspan="2"><strong>Output</strong></td>
+<td rowspan="2"><strong>Output (Required)</strong></td>
 <td>CommandOutput</td>
 <td>1</td>
 <td>The output.</td>
@@ -238,7 +238,7 @@
 </thead>
 <tbody>
 <tr>
-<td rowspan="2"><strong>Output Type</strong></td>
+<td rowspan="2"><strong>Output Type (Required)</strong></td>
 <td>int32</td>
 <td>0</td>
 <td>The command output type.</td>
@@ -279,7 +279,7 @@
 </div></td>
 </tr>
 <tr>
-<td><strong>Success Count</strong></td>
+<td><strong>Success Count (Required)</strong></td>
 <td>uint32</td>
 <td>1</td>
 <td>The success count.</td>
@@ -304,13 +304,13 @@
 </thead>
 <tbody>
 <tr>
-<td><strong>Message ID</strong></td>
+<td><strong>Message ID (Required)</strong></td>
 <td>string</td>
 <td>0</td>
 <td>The unique identifier for the message.</td>
 </tr>
 <tr>
-<td><strong>Successful?</strong></td>
+<td><strong>Successful? (Required)</strong></td>
 <td>boolean</td>
 <td>1</td>
 <td>The command output type.</td>

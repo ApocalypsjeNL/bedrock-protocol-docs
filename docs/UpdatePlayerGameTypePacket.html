@@ -112,7 +112,7 @@
 </thead>
 <tbody>
 <tr>
-<td rowspan="2"><strong>Player Game Type</strong></td>
+<td rowspan="2"><strong>Player Game Type (Required)</strong></td>
 <td>varint32</td>
 <td>0</td>
 <td></td>
@@ -161,7 +161,7 @@
 </div></td>
 </tr>
 <tr>
-<td rowspan="2"><strong>Target player</strong></td>
+<td rowspan="2"><strong>Target player (Required)</strong></td>
 <td>ActorUniqueID</td>
 <td>1</td>
 <td></td>
@@ -180,7 +180,7 @@
 </thead>
 <tbody>
 <tr>
-<td><strong>Actor Unique ID</strong></td>
+<td><strong>Actor Unique ID (Required)</strong></td>
 <td>varint64</td>
 <td>0</td>
 <td></td>
@@ -190,7 +190,7 @@
 </div></td>
 </tr>
 <tr>
-<td rowspan="2"><strong>Tick</strong></td>
+<td rowspan="2"><strong>Tick (Required)</strong></td>
 <td>PlayerInputTick</td>
 <td>2</td>
 <td>Most relevant to supply for transitioning into and out of spectator while in motion</td>
@@ -209,7 +209,7 @@
 </thead>
 <tbody>
 <tr>
-<td><strong>Input tick</strong></td>
+<td><strong>Input tick (Required)</strong></td>
 <td>varuint64</td>
 <td>0</td>
 <td>In server authoritative movement mode the client supplies this in PlayerAuthInputPacket.
