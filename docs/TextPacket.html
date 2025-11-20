@@ -83,6 +83,26 @@
             margin-bottom: 8px;
             break-inside: avoid;
         }
+        details {
+            margin: 10px 0;
+        }
+        summary {
+            cursor: pointer;
+            font-weight: bold;
+            padding: 8px;
+            background-color: #f0f0f0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            user-select: none;
+        }
+        summary:hover {
+            background-color: #e8e8e8;
+        }
+        details[open] summary {
+            background-color: #d4edff;
+            border-color: #3498db;
+            border-left: 4px solid #3498db;
+        }
         @media (max-width: 900px) {
             .packet-list {
                 columns: 2;
@@ -126,11 +146,11 @@
 </tr>
 <tr>
 <td colspan="3" style="padding: 0;"><div style="margin-left: 20px; margin-top: 0px; margin-bottom: 0px;">
-<strong>oneOf&lt;4075064780, 2049426924, 3338540673&gt;:</strong>
+<strong>oneOf&lt;MessageOnly, AuthorAndMessage, MessageAndParams&gt;:</strong>
 <table border="1" cellpadding="5" cellspacing="0" style="border-collapse: collapse; width: 100%; max-width: 760px; margin-top: 5px;">
 <thead>
 <tr style="background-color: #e8e8e8;">
-<th>Control Value [varuint32]</th>
+<th>Control Value [uint32]</th>
 <th>Type</th>
 <th>Details</th>
 </tr>
@@ -138,21 +158,1137 @@
 <tbody>
 <tr>
 <td>0</td>
-<td><strong>4075064780</strong></td>
+<td><strong>MessageOnly</strong></td>
 <td>-</td>
 </tr>
 <tr>
 <td>1</td>
-<td><strong>2049426924</strong></td>
+<td><strong>AuthorAndMessage</strong></td>
 <td>-</td>
 </tr>
 <tr>
 <td>2</td>
-<td><strong>3338540673</strong></td>
+<td><strong>MessageAndParams</strong></td>
 <td>-</td>
 </tr>
 </tbody>
 </table>
+<details style="margin-left: 20px; margin-top: 10px;">
+<summary style="cursor: pointer; font-weight: bold; padding: 5px; background-color: #f0f0f0; border: 1px solid #ddd;"><strong>MessageOnly (Variant 0)</strong></summary>
+<div style="margin-left: 40px; margin-top: 10px;">
+<table border="1" cellpadding="5" cellspacing="0" style="border-collapse: collapse; width: 100%; max-width: 800px;">
+<thead>
+<tr style="background-color: #f0f0f0;">
+<th>Field Name</th>
+<th>Type</th>
+<th>Field Index</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td rowspan="2"><strong>raw (Required)</strong></td>
+<td>uint8</td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="3"><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 5px;">
+<strong>Enum Values:</strong>
+<table border="1" cellpadding="3" cellspacing="0" style="border-collapse: collapse; width: 100%; max-width: 760px; font-size: 12px;">
+<thead>
+<tr style="background-color: #e8e8e8;">
+<th style="width: 40px;">Index</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">0</td>
+<td><code>raw</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">1</td>
+<td><code>chat</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td><code>translate</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td><code>popup</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td><code>jukeboxPopup</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">5</td>
+<td><code>tip</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">6</td>
+<td><code>systemMessage</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">7</td>
+<td><code>whisper</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">8</td>
+<td><code>announcement</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">9</td>
+<td><code>textObjectWhisper</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">10</td>
+<td><code>textObject</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">11</td>
+<td><code>textObjectAnnouncement</code></td>
+</tr>
+</tbody>
+</table>
+</div></td>
+</tr>
+<tr>
+<td rowspan="2"><strong>tip (Required)</strong></td>
+<td>uint8</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="3"><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 5px;">
+<strong>Enum Values:</strong>
+<table border="1" cellpadding="3" cellspacing="0" style="border-collapse: collapse; width: 100%; max-width: 760px; font-size: 12px;">
+<thead>
+<tr style="background-color: #e8e8e8;">
+<th style="width: 40px;">Index</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">0</td>
+<td><code>raw</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">1</td>
+<td><code>chat</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td><code>translate</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td><code>popup</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td><code>jukeboxPopup</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">5</td>
+<td><code>tip</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">6</td>
+<td><code>systemMessage</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">7</td>
+<td><code>whisper</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">8</td>
+<td><code>announcement</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">9</td>
+<td><code>textObjectWhisper</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">10</td>
+<td><code>textObject</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">11</td>
+<td><code>textObjectAnnouncement</code></td>
+</tr>
+</tbody>
+</table>
+</div></td>
+</tr>
+<tr>
+<td rowspan="2"><strong>systemMessage (Required)</strong></td>
+<td>uint8</td>
+<td>2</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="3"><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 5px;">
+<strong>Enum Values:</strong>
+<table border="1" cellpadding="3" cellspacing="0" style="border-collapse: collapse; width: 100%; max-width: 760px; font-size: 12px;">
+<thead>
+<tr style="background-color: #e8e8e8;">
+<th style="width: 40px;">Index</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">0</td>
+<td><code>raw</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">1</td>
+<td><code>chat</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td><code>translate</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td><code>popup</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td><code>jukeboxPopup</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">5</td>
+<td><code>tip</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">6</td>
+<td><code>systemMessage</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">7</td>
+<td><code>whisper</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">8</td>
+<td><code>announcement</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">9</td>
+<td><code>textObjectWhisper</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">10</td>
+<td><code>textObject</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">11</td>
+<td><code>textObjectAnnouncement</code></td>
+</tr>
+</tbody>
+</table>
+</div></td>
+</tr>
+<tr>
+<td rowspan="2"><strong>textObjectWhisper (Required)</strong></td>
+<td>uint8</td>
+<td>3</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="3"><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 5px;">
+<strong>Enum Values:</strong>
+<table border="1" cellpadding="3" cellspacing="0" style="border-collapse: collapse; width: 100%; max-width: 760px; font-size: 12px;">
+<thead>
+<tr style="background-color: #e8e8e8;">
+<th style="width: 40px;">Index</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">0</td>
+<td><code>raw</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">1</td>
+<td><code>chat</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td><code>translate</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td><code>popup</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td><code>jukeboxPopup</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">5</td>
+<td><code>tip</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">6</td>
+<td><code>systemMessage</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">7</td>
+<td><code>whisper</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">8</td>
+<td><code>announcement</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">9</td>
+<td><code>textObjectWhisper</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">10</td>
+<td><code>textObject</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">11</td>
+<td><code>textObjectAnnouncement</code></td>
+</tr>
+</tbody>
+</table>
+</div></td>
+</tr>
+<tr>
+<td rowspan="2"><strong>textObjectAnnouncement (Required)</strong></td>
+<td>uint8</td>
+<td>4</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="3"><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 5px;">
+<strong>Enum Values:</strong>
+<table border="1" cellpadding="3" cellspacing="0" style="border-collapse: collapse; width: 100%; max-width: 760px; font-size: 12px;">
+<thead>
+<tr style="background-color: #e8e8e8;">
+<th style="width: 40px;">Index</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">0</td>
+<td><code>raw</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">1</td>
+<td><code>chat</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td><code>translate</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td><code>popup</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td><code>jukeboxPopup</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">5</td>
+<td><code>tip</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">6</td>
+<td><code>systemMessage</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">7</td>
+<td><code>whisper</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">8</td>
+<td><code>announcement</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">9</td>
+<td><code>textObjectWhisper</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">10</td>
+<td><code>textObject</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">11</td>
+<td><code>textObjectAnnouncement</code></td>
+</tr>
+</tbody>
+</table>
+</div></td>
+</tr>
+<tr>
+<td rowspan="2"><strong>textObject (Required)</strong></td>
+<td>uint8</td>
+<td>5</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="3"><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 5px;">
+<strong>Enum Values:</strong>
+<table border="1" cellpadding="3" cellspacing="0" style="border-collapse: collapse; width: 100%; max-width: 760px; font-size: 12px;">
+<thead>
+<tr style="background-color: #e8e8e8;">
+<th style="width: 40px;">Index</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">0</td>
+<td><code>raw</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">1</td>
+<td><code>chat</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td><code>translate</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td><code>popup</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td><code>jukeboxPopup</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">5</td>
+<td><code>tip</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">6</td>
+<td><code>systemMessage</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">7</td>
+<td><code>whisper</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">8</td>
+<td><code>announcement</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">9</td>
+<td><code>textObjectWhisper</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">10</td>
+<td><code>textObject</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">11</td>
+<td><code>textObjectAnnouncement</code></td>
+</tr>
+</tbody>
+</table>
+</div></td>
+</tr>
+<tr>
+<td rowspan="2"><strong>Message Type (Required)</strong></td>
+<td>uint8</td>
+<td>6</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="3"><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 5px;">
+<strong>Enum Values:</strong>
+<table border="1" cellpadding="3" cellspacing="0" style="border-collapse: collapse; width: 100%; max-width: 760px; font-size: 12px;">
+<thead>
+<tr style="background-color: #e8e8e8;">
+<th style="width: 40px;">Index</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">0</td>
+<td><code>raw</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">1</td>
+<td><code>chat</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td><code>translate</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td><code>popup</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td><code>jukeboxPopup</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">5</td>
+<td><code>tip</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">6</td>
+<td><code>systemMessage</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">7</td>
+<td><code>whisper</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">8</td>
+<td><code>announcement</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">9</td>
+<td><code>textObjectWhisper</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">10</td>
+<td><code>textObject</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">11</td>
+<td><code>textObjectAnnouncement</code></td>
+</tr>
+</tbody>
+</table>
+</div></td>
+</tr>
+<tr>
+<td><strong>Message</strong></td>
+<td>string</td>
+<td>7</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+<details style="margin-left: 20px; margin-top: 10px;">
+<summary style="cursor: pointer; font-weight: bold; padding: 5px; background-color: #f0f0f0; border: 1px solid #ddd;"><strong>AuthorAndMessage (Variant 1)</strong></summary>
+<div style="margin-left: 40px; margin-top: 10px;">
+<table border="1" cellpadding="5" cellspacing="0" style="border-collapse: collapse; width: 100%; max-width: 800px;">
+<thead>
+<tr style="background-color: #f0f0f0;">
+<th>Field Name</th>
+<th>Type</th>
+<th>Field Index</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td rowspan="2"><strong>chat (Required)</strong></td>
+<td>uint8</td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="3"><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 5px;">
+<strong>Enum Values:</strong>
+<table border="1" cellpadding="3" cellspacing="0" style="border-collapse: collapse; width: 100%; max-width: 760px; font-size: 12px;">
+<thead>
+<tr style="background-color: #e8e8e8;">
+<th style="width: 40px;">Index</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">0</td>
+<td><code>raw</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">1</td>
+<td><code>chat</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td><code>translate</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td><code>popup</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td><code>jukeboxPopup</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">5</td>
+<td><code>tip</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">6</td>
+<td><code>systemMessage</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">7</td>
+<td><code>whisper</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">8</td>
+<td><code>announcement</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">9</td>
+<td><code>textObjectWhisper</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">10</td>
+<td><code>textObject</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">11</td>
+<td><code>textObjectAnnouncement</code></td>
+</tr>
+</tbody>
+</table>
+</div></td>
+</tr>
+<tr>
+<td rowspan="2"><strong>whisper (Required)</strong></td>
+<td>uint8</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="3"><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 5px;">
+<strong>Enum Values:</strong>
+<table border="1" cellpadding="3" cellspacing="0" style="border-collapse: collapse; width: 100%; max-width: 760px; font-size: 12px;">
+<thead>
+<tr style="background-color: #e8e8e8;">
+<th style="width: 40px;">Index</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">0</td>
+<td><code>raw</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">1</td>
+<td><code>chat</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td><code>translate</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td><code>popup</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td><code>jukeboxPopup</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">5</td>
+<td><code>tip</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">6</td>
+<td><code>systemMessage</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">7</td>
+<td><code>whisper</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">8</td>
+<td><code>announcement</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">9</td>
+<td><code>textObjectWhisper</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">10</td>
+<td><code>textObject</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">11</td>
+<td><code>textObjectAnnouncement</code></td>
+</tr>
+</tbody>
+</table>
+</div></td>
+</tr>
+<tr>
+<td rowspan="2"><strong>announcement (Required)</strong></td>
+<td>uint8</td>
+<td>2</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="3"><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 5px;">
+<strong>Enum Values:</strong>
+<table border="1" cellpadding="3" cellspacing="0" style="border-collapse: collapse; width: 100%; max-width: 760px; font-size: 12px;">
+<thead>
+<tr style="background-color: #e8e8e8;">
+<th style="width: 40px;">Index</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">0</td>
+<td><code>raw</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">1</td>
+<td><code>chat</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td><code>translate</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td><code>popup</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td><code>jukeboxPopup</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">5</td>
+<td><code>tip</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">6</td>
+<td><code>systemMessage</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">7</td>
+<td><code>whisper</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">8</td>
+<td><code>announcement</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">9</td>
+<td><code>textObjectWhisper</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">10</td>
+<td><code>textObject</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">11</td>
+<td><code>textObjectAnnouncement</code></td>
+</tr>
+</tbody>
+</table>
+</div></td>
+</tr>
+<tr>
+<td rowspan="2"><strong>Message Type (Required)</strong></td>
+<td>uint8</td>
+<td>3</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="3"><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 5px;">
+<strong>Enum Values:</strong>
+<table border="1" cellpadding="3" cellspacing="0" style="border-collapse: collapse; width: 100%; max-width: 760px; font-size: 12px;">
+<thead>
+<tr style="background-color: #e8e8e8;">
+<th style="width: 40px;">Index</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">0</td>
+<td><code>raw</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">1</td>
+<td><code>chat</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td><code>translate</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td><code>popup</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td><code>jukeboxPopup</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">5</td>
+<td><code>tip</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">6</td>
+<td><code>systemMessage</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">7</td>
+<td><code>whisper</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">8</td>
+<td><code>announcement</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">9</td>
+<td><code>textObjectWhisper</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">10</td>
+<td><code>textObject</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">11</td>
+<td><code>textObjectAnnouncement</code></td>
+</tr>
+</tbody>
+</table>
+</div></td>
+</tr>
+<tr>
+<td><strong>Player Name</strong></td>
+<td>string</td>
+<td>4</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Message</strong></td>
+<td>string</td>
+<td>5</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+<details style="margin-left: 20px; margin-top: 10px;">
+<summary style="cursor: pointer; font-weight: bold; padding: 5px; background-color: #f0f0f0; border: 1px solid #ddd;"><strong>MessageAndParams (Variant 2)</strong></summary>
+<div style="margin-left: 40px; margin-top: 10px;">
+<table border="1" cellpadding="5" cellspacing="0" style="border-collapse: collapse; width: 100%; max-width: 800px;">
+<thead>
+<tr style="background-color: #f0f0f0;">
+<th>Field Name</th>
+<th>Type</th>
+<th>Field Index</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td rowspan="2"><strong>translate (Required)</strong></td>
+<td>uint8</td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="3"><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 5px;">
+<strong>Enum Values:</strong>
+<table border="1" cellpadding="3" cellspacing="0" style="border-collapse: collapse; width: 100%; max-width: 760px; font-size: 12px;">
+<thead>
+<tr style="background-color: #e8e8e8;">
+<th style="width: 40px;">Index</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">0</td>
+<td><code>raw</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">1</td>
+<td><code>chat</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td><code>translate</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td><code>popup</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td><code>jukeboxPopup</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">5</td>
+<td><code>tip</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">6</td>
+<td><code>systemMessage</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">7</td>
+<td><code>whisper</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">8</td>
+<td><code>announcement</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">9</td>
+<td><code>textObjectWhisper</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">10</td>
+<td><code>textObject</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">11</td>
+<td><code>textObjectAnnouncement</code></td>
+</tr>
+</tbody>
+</table>
+</div></td>
+</tr>
+<tr>
+<td rowspan="2"><strong>popup (Required)</strong></td>
+<td>uint8</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="3"><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 5px;">
+<strong>Enum Values:</strong>
+<table border="1" cellpadding="3" cellspacing="0" style="border-collapse: collapse; width: 100%; max-width: 760px; font-size: 12px;">
+<thead>
+<tr style="background-color: #e8e8e8;">
+<th style="width: 40px;">Index</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">0</td>
+<td><code>raw</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">1</td>
+<td><code>chat</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td><code>translate</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td><code>popup</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td><code>jukeboxPopup</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">5</td>
+<td><code>tip</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">6</td>
+<td><code>systemMessage</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">7</td>
+<td><code>whisper</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">8</td>
+<td><code>announcement</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">9</td>
+<td><code>textObjectWhisper</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">10</td>
+<td><code>textObject</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">11</td>
+<td><code>textObjectAnnouncement</code></td>
+</tr>
+</tbody>
+</table>
+</div></td>
+</tr>
+<tr>
+<td rowspan="2"><strong>jukeboxPopup (Required)</strong></td>
+<td>uint8</td>
+<td>2</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="3"><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 5px;">
+<strong>Enum Values:</strong>
+<table border="1" cellpadding="3" cellspacing="0" style="border-collapse: collapse; width: 100%; max-width: 760px; font-size: 12px;">
+<thead>
+<tr style="background-color: #e8e8e8;">
+<th style="width: 40px;">Index</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">0</td>
+<td><code>raw</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">1</td>
+<td><code>chat</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td><code>translate</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td><code>popup</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td><code>jukeboxPopup</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">5</td>
+<td><code>tip</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">6</td>
+<td><code>systemMessage</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">7</td>
+<td><code>whisper</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">8</td>
+<td><code>announcement</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">9</td>
+<td><code>textObjectWhisper</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">10</td>
+<td><code>textObject</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">11</td>
+<td><code>textObjectAnnouncement</code></td>
+</tr>
+</tbody>
+</table>
+</div></td>
+</tr>
+<tr>
+<td rowspan="2"><strong>Message Type (Required)</strong></td>
+<td>uint8</td>
+<td>3</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="3"><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 5px;">
+<strong>Enum Values:</strong>
+<table border="1" cellpadding="3" cellspacing="0" style="border-collapse: collapse; width: 100%; max-width: 760px; font-size: 12px;">
+<thead>
+<tr style="background-color: #e8e8e8;">
+<th style="width: 40px;">Index</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">0</td>
+<td><code>raw</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">1</td>
+<td><code>chat</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td><code>translate</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td><code>popup</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td><code>jukeboxPopup</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">5</td>
+<td><code>tip</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">6</td>
+<td><code>systemMessage</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">7</td>
+<td><code>whisper</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">8</td>
+<td><code>announcement</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">9</td>
+<td><code>textObjectWhisper</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">10</td>
+<td><code>textObject</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">11</td>
+<td><code>textObjectAnnouncement</code></td>
+</tr>
+</tbody>
+</table>
+</div></td>
+</tr>
+<tr>
+<td><strong>Message</strong></td>
+<td>string</td>
+<td>4</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Parameter List</strong></td>
+<td>array&lt;string&gt;</td>
+<td>5</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
 </div></td>
 </tr>
 <tr>

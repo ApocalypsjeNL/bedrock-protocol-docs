@@ -94,8 +94,12 @@ class PacketDocGenerator:
         
         # Check for $ref
         if '$ref' in field_data:
-            ref = field_data['$ref'].split('/')[-1]
-            return ref
+            ref_id = field_data['$ref'].split('/')[-1]
+            # Try to resolve the ref to get the title
+            if definitions and ref_id in definitions:
+                ref_schema = definitions[ref_id]
+                return ref_schema.get('title', ref_id)
+            return ref_id
         
         # Check for enum
         if 'enum' in field_data:
@@ -141,12 +145,17 @@ class PacketDocGenerator:
         return '\n'.join(html)
     
     def generate_oneof_table(self, field_data: Dict[str, Any], indent_level: int, definitions: Dict[str, Any]) -> str:
-        """Generate a table displaying oneOf union types."""
+        """Generate a table displaying oneOf union types with expanded definitions."""
         if 'oneOf' not in field_data:
             return ""
         
+        # Get control value type from field data, default to varuint32
+        control_value_type = field_data.get('x-control-value-type', 'varuint32')
+        
         oneof_type = 'oneOf<'
         one_of_members_html = []
+        expanded_definitions_html = []
+        
         for idx, one_of_item in enumerate(field_data['oneOf'], 0):
             underlying_type = self.get_underlying_type(one_of_item, definitions)
             oneof_type += underlying_type + ', '
@@ -167,6 +176,30 @@ class PacketDocGenerator:
             one_of_members_html.append(f'<td><strong>{underlying_type}</strong></td>')
             one_of_members_html.append(f'<td>{details_str}</td>')
             one_of_members_html.append('</tr>')
+            
+            # Try to expand the definition if it's a $ref
+            if '$ref' in one_of_item:
+                ref_id = one_of_item['$ref'].split('/')[-1]
+                if ref_id in definitions:
+                    ref_schema = definitions[ref_id]
+                    ref_title = ref_schema.get('title', ref_id)
+                    
+                    # Skip if title ends with "Payload"
+                    if not ref_title.endswith('Payload'):
+                        nested_html = self.generate_nested_table(
+                            ref_schema, 
+                            definitions, 
+                            "", 
+                            indent_level + 2  # Extra indent for oneOf variants
+                        )
+                        if nested_html:
+                            # Wrap in details element for collapsible display
+                            detail_html = []
+                            detail_html.append(f'<details style="margin-left: {(indent_level + 1) * 20}px; margin-top: 10px;">')
+                            detail_html.append(f'<summary style="cursor: pointer; font-weight: bold; padding: 5px; background-color: #f0f0f0; border: 1px solid #ddd;"><strong>{ref_title} (Variant {idx})</strong></summary>')
+                            detail_html.append(nested_html)
+                            detail_html.append('</details>')
+                            expanded_definitions_html.append('\n'.join(detail_html))
         
         oneof_type = oneof_type.rstrip(', ') + '>'
         oneof_type = escape(oneof_type)
@@ -178,7 +211,7 @@ class PacketDocGenerator:
         html.append('<table border="1" cellpadding="5" cellspacing="0" style="border-collapse: collapse; width: 100%; max-width: 760px; margin-top: 5px;">')
         html.append('<thead>')
         html.append('<tr style="background-color: #e8e8e8;">')
-        html.append('<th>Control Value [varuint32]</th>')
+        html.append(f'<th>Control Value [{control_value_type}]</th>')
         html.append('<th>Type</th>')
         html.append('<th>Details</th>')
         html.append('</tr>')
@@ -187,6 +220,11 @@ class PacketDocGenerator:
         html.extend(one_of_members_html)
         html.append('</tbody>')
         html.append('</table>')
+        
+        # Add expanded definitions after the summary table
+        if expanded_definitions_html:
+            html.extend(expanded_definitions_html)
+        
         html.append('</div>')
         
         return '\n'.join(html)
@@ -428,6 +466,26 @@ class PacketDocGenerator:
         .packet-list li {{
             margin-bottom: 8px;
             break-inside: avoid;
+        }}
+        details {{
+            margin: 10px 0;
+        }}
+        summary {{
+            cursor: pointer;
+            font-weight: bold;
+            padding: 8px;
+            background-color: #f0f0f0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            user-select: none;
+        }}
+        summary:hover {{
+            background-color: #e8e8e8;
+        }}
+        details[open] summary {{
+            background-color: #d4edff;
+            border-color: #3498db;
+            border-left: 4px solid #3498db;
         }}
         @media (max-width: 900px) {{
             .packet-list {{
