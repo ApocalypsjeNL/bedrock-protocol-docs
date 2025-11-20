@@ -70,6 +70,9 @@ class PacketDocGenerator:
             # For enums, only use x-underlying-type if "Enum-as-Value" is present
             if 'enum' in field_data:
                 if serialization_options and 'Enum-as-Value' in serialization_options:
+                    if 'Compression' in serialization_options:
+                        return 'var'+ field_data['x-underlying-type']
+                    
                     return field_data['x-underlying-type']
                 # Fall back to regular type for enums without Enum-as-Value
                 return field_data.get('type', 'unknown')
