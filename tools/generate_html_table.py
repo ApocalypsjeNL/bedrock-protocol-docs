@@ -57,6 +57,8 @@ class PacketDocGenerator:
         
         Prioritizes x-underlying-type over standard type field.
         Handles arrays, references, enums, and oneOf unions.
+        For enums: uses x-underlying-type only if "Enum-as-Value" is in serialization options,
+        otherwise falls back to the regular type.
         """
 
         serialization_options = None
@@ -65,6 +67,14 @@ class PacketDocGenerator:
 
         # Check for x-underlying-type first (preferred)
         if 'x-underlying-type' in field_data:
+            # For enums, only use x-underlying-type if "Enum-as-Value" is present
+            if 'enum' in field_data:
+                if serialization_options and 'Enum-as-Value' in serialization_options:
+                    return field_data['x-underlying-type']
+                # Fall back to regular type for enums without Enum-as-Value
+                return field_data.get('type', 'unknown')
+            
+            # For non-enums, handle compression
             if serialization_options:
                 if 'Compression' in serialization_options:
                     return 'var'+ field_data['x-underlying-type']
