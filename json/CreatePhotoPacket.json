@@ -2,43 +2,33 @@
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "3626316911",
     "x-format-version": "MISSING VERSION",
-    "x-minecraft-version": "1.21.120",
-    "x-protocol-version": 859,
-    "definitions": {
-        "4261454478": {
-            "title": "CreatePhotoPacketPayload",
-            "type": "object",
-            "properties": {
-                "Photo Item Name": {
-                    "type": "string",
-                    "x-ordinal-index": 2
-                },
-                "Photo Name": {
-                    "type": "string",
-                    "x-ordinal-index": 1
-                },
-                "Raw ID": {
-                    "type": "integer",
-                    "x-underlying-type": "uint64",
-                    "x-ordinal-index": 0
-                }
-            },
-            "required": [
-                "Photo Item Name",
-                "Photo Name",
-                "Raw ID"
-            ]
-        }
-    },
+    "x-minecraft-version": "1.21.130",
+    "x-protocol-version": 897,
     "title": "CreatePhotoPacket",
     "description": "Players now have the possibility to export photos from their portfolios into photo items in their inventory. EDU.",
     "type": "object",
     "properties": {
-        "mPayload": {
-            "$ref": "#/definitions/4261454478",
-            "x-ordinal-index": 0
+        "Photo Item Name": {
+            "type": "string",
+            "x-ordinal-index": 2
+        },
+        "Photo Name": {
+            "type": "string",
+            "x-ordinal-index": 1
+        },
+        "Raw ID": {
+            "type": "integer",
+            "x-underlying-type": "uint64",
+            "x-ordinal-index": 0,
+            "minimum": 0.0,
+            "maximum": 18446744073709553000.0
         }
     },
+    "required": [
+        "Photo Item Name",
+        "Photo Name",
+        "Raw ID"
+    ],
     "$metaProperties": {
         "[cereal:packet]": 171,
         "[cereal:packet_details]": ""

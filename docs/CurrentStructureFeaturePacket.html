@@ -83,6 +83,26 @@
             margin-bottom: 8px;
             break-inside: avoid;
         }
+        details {
+            margin: 10px 0;
+        }
+        summary {
+            cursor: pointer;
+            font-weight: bold;
+            padding: 8px;
+            background-color: #f0f0f0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            user-select: none;
+        }
+        summary:hover {
+            background-color: #e8e8e8;
+        }
+        details[open] summary {
+            background-color: #d4edff;
+            border-color: #3498db;
+            border-left: 4px solid #3498db;
+        }
         @media (max-width: 900px) {
             .packet-list {
                 columns: 2;
@@ -108,13 +128,13 @@
 <tr style="background-color: #f0f0f0;">
 <th>Field Name</th>
 <th>Type</th>
-<th>Ordinal Index</th>
+<th>Field Index</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>Current Structure Feature</strong></td>
+<td><strong>Current Structure Feature (Required)</strong></td>
 <td>string</td>
 <td>0</td>
 <td>The identifier of the Structure Feature that the player is currently occupying. If the player is not occupying a structure then this value is an empty string.</td>

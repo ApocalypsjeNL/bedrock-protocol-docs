@@ -2,33 +2,22 @@
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "4218540248",
     "x-format-version": "MISSING VERSION",
-    "x-minecraft-version": "1.21.120",
-    "x-protocol-version": 859,
+    "x-minecraft-version": "1.21.130",
+    "x-protocol-version": 897,
     "definitions": {
-        "3712476433": {
-            "title": "struct SetActorLinkPacketPayload",
-            "type": "object",
-            "properties": {
-                "Link": {
-                    "$ref": "#/definitions/2142523653",
-                    "x-ordinal-index": 0
-                }
-            },
-            "required": [
-                "Link"
-            ]
-        },
         "2142523653": {
             "title": "struct ActorLink",
             "type": "object",
             "properties": {
                 "Immediate": {
                     "type": "boolean",
+                    "x-underlying-type": "boolean",
                     "x-ordinal-index": 3
                 },
                 "Passenger Initiated": {
                     "description": "Whether the link was changed by the passenger",
                     "type": "boolean",
+                    "x-underlying-type": "boolean",
                     "x-ordinal-index": 4
                 },
                 "Target A": {
@@ -49,14 +38,16 @@
                     ],
                     "x-underlying-type": "uint8",
                     "x-serialization-options": [
-                        "EnumAsValue"
+                        "Enum-as-Value"
                     ],
                     "x-ordinal-index": 2
                 },
                 "Vehicle Angular Velocity": {
                     "type": "number",
                     "x-underlying-type": "float",
-                    "x-ordinal-index": 5
+                    "x-ordinal-index": 5,
+                    "minimum": 1.1754943508222876e-38,
+                    "maximum": 3.4028234663852887e38
                 }
             },
             "required": [
@@ -78,7 +69,9 @@
                     "x-serialization-options": [
                         "Compression"
                     ],
-                    "x-ordinal-index": 0
+                    "x-ordinal-index": 0,
+                    "minimum": -9223372036854776000.0,
+                    "maximum": 9223372036854776000.0
                 }
             },
             "required": [
@@ -90,11 +83,14 @@
     "description": "Sent by both client and server, only received by LegacyClientHandler.",
     "type": "object",
     "properties": {
-        "mPayload": {
-            "$ref": "#/definitions/3712476433",
+        "Link": {
+            "$ref": "#/definitions/2142523653",
             "x-ordinal-index": 0
         }
     },
+    "required": [
+        "Link"
+    ],
     "$metaProperties": {
         "[cereal:packet]": 41,
         "[cereal:packet_details]": "Sent when the player starts riding something. Two are sent at a time for some reason."

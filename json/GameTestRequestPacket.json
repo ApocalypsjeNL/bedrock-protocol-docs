@@ -2,8 +2,8 @@
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "3910318668",
     "x-format-version": "MISSING VERSION",
-    "x-minecraft-version": "1.21.120",
-    "x-protocol-version": 859,
+    "x-minecraft-version": "1.21.130",
+    "x-protocol-version": 897,
     "definitions": {
         "820712576": {
             "title": "BlockPos",
@@ -15,7 +15,9 @@
                     "x-serialization-options": [
                         "Compression"
                     ],
-                    "x-ordinal-index": 0
+                    "x-ordinal-index": 0,
+                    "minimum": -2147483648.0,
+                    "maximum": 2147483647.0
                 },
                 "Y": {
                     "type": "integer",
@@ -23,7 +25,9 @@
                     "x-serialization-options": [
                         "Compression"
                     ],
-                    "x-ordinal-index": 1
+                    "x-ordinal-index": 1,
+                    "minimum": -2147483648.0,
+                    "maximum": 2147483647.0
                 },
                 "Z": {
                     "type": "integer",
@@ -31,7 +35,9 @@
                     "x-serialization-options": [
                         "Compression"
                     ],
-                    "x-ordinal-index": 2
+                    "x-ordinal-index": 2,
+                    "minimum": -2147483648.0,
+                    "maximum": 2147483647.0
                 }
             },
             "required": [
@@ -39,86 +45,83 @@
                 "Y",
                 "Z"
             ]
-        },
-        "1924933243": {
-            "title": "GameTestRequestPacketPayload",
-            "type": "object",
-            "properties": {
-                "MaxTestsPerBatch": {
-                    "type": "integer",
-                    "x-underlying-type": "int32",
-                    "x-serialization-options": [
-                        "Compression"
-                    ],
-                    "x-ordinal-index": 0
-                },
-                "RepeatCount": {
-                    "type": "integer",
-                    "x-underlying-type": "int32",
-                    "x-serialization-options": [
-                        "Compression"
-                    ],
-                    "x-ordinal-index": 1
-                },
-                "Rotation": {
-                    "title": "Rotation",
-                    "type": "string",
-                    "enum": [
-                        "None",
-                        "Rotate90",
-                        "Rotate180",
-                        "Rotate270",
-                        "Clockwise90",
-                        "Clockwise180",
-                        "CounterClockwise90"
-                    ],
-                    "x-underlying-type": "uint8",
-                    "x-serialization-options": [
-                        "EnumAsValue"
-                    ],
-                    "x-ordinal-index": 2
-                },
-                "StopOnFailure": {
-                    "type": "boolean",
-                    "x-ordinal-index": 3
-                },
-                "TestName": {
-                    "type": "string",
-                    "x-ordinal-index": 6
-                },
-                "TestPos": {
-                    "$ref": "#/definitions/820712576",
-                    "x-ordinal-index": 4
-                },
-                "TestsPerRow": {
-                    "type": "integer",
-                    "x-underlying-type": "int32",
-                    "x-serialization-options": [
-                        "Compression"
-                    ],
-                    "x-ordinal-index": 5
-                }
-            },
-            "required": [
-                "MaxTestsPerBatch",
-                "RepeatCount",
-                "Rotation",
-                "StopOnFailure",
-                "TestName",
-                "TestPos",
-                "TestsPerRow"
-            ]
         }
     },
     "title": "GameTestRequestPacket",
     "description": "Internal Text Packet",
     "type": "object",
     "properties": {
-        "mPayload": {
-            "$ref": "#/definitions/1924933243",
-            "x-ordinal-index": 0
+        "MaxTestsPerBatch": {
+            "type": "integer",
+            "x-underlying-type": "int32",
+            "x-serialization-options": [
+                "Compression"
+            ],
+            "x-ordinal-index": 0,
+            "minimum": -2147483648.0,
+            "maximum": 2147483647.0
+        },
+        "RepeatCount": {
+            "type": "integer",
+            "x-underlying-type": "int32",
+            "x-serialization-options": [
+                "Compression"
+            ],
+            "x-ordinal-index": 1,
+            "minimum": -2147483648.0,
+            "maximum": 2147483647.0
+        },
+        "Rotation": {
+            "title": "Rotation",
+            "type": "string",
+            "enum": [
+                "None",
+                "Rotate90",
+                "Rotate180",
+                "Rotate270",
+                "Clockwise90",
+                "Clockwise180",
+                "CounterClockwise90"
+            ],
+            "x-underlying-type": "uint8",
+            "x-serialization-options": [
+                "Enum-as-Value"
+            ],
+            "x-ordinal-index": 2
+        },
+        "StopOnFailure": {
+            "type": "boolean",
+            "x-underlying-type": "boolean",
+            "x-ordinal-index": 3
+        },
+        "TestName": {
+            "type": "string",
+            "x-ordinal-index": 6
+        },
+        "TestPos": {
+            "$ref": "#/definitions/820712576",
+            "x-ordinal-index": 4
+        },
+        "TestsPerRow": {
+            "type": "integer",
+            "x-underlying-type": "int32",
+            "x-serialization-options": [
+                "Compression"
+            ],
+            "x-ordinal-index": 5,
+            "minimum": -2147483648.0,
+            "maximum": 2147483647.0
         }
     },
+    "required": [
+        "MaxTestsPerBatch",
+        "RepeatCount",
+        "Rotation",
+        "StopOnFailure",
+        "TestName",
+        "TestPos",
+        "TestsPerRow"
+    ],
     "$metaProperties": {
         "[cereal:packet]": 194,
         "[cereal:packet_details]": ""

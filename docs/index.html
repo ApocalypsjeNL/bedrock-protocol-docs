@@ -83,6 +83,26 @@
             margin-bottom: 8px;
             break-inside: avoid;
         }
+        details {
+            margin: 10px 0;
+        }
+        summary {
+            cursor: pointer;
+            font-weight: bold;
+            padding: 8px;
+            background-color: #f0f0f0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            user-select: none;
+        }
+        summary:hover {
+            background-color: #e8e8e8;
+        }
+        details[open] summary {
+            background-color: #d4edff;
+            border-color: #3498db;
+            border-left: 4px solid #3498db;
+        }
         @media (max-width: 900px) {
             .packet-list {
                 columns: 2;
@@ -99,7 +119,7 @@
     <div class="container">
         
         <h1>Game Protocol Documentation</h1>
-<p>Documentation for 154 protocol packets.</p>
+<p>Documentation for 166 protocol packets.</p>
 <h2>Packet List</h2>
 <ul class="packet-list">
 <li>
@@ -117,6 +137,10 @@
 <li>
 <a href="ClientToServerHandshakePacket.html"><strong>ClientToServerHandshakePacket (4)</strong></a>
 <br><span style="color: #666; font-size: 0.9em;">Sets up encryption and authenticates in educational version once at level startup from client.</span>
+</li>
+<li>
+<a href="TextPacket.html"><strong>TextPacket (9)</strong></a>
+<br><span style="color: #666; font-size: 0.9em;">Represents a text message that needs to be displayed in-game</span>
 </li>
 <li>
 <a href="SetTimePacket.html"><strong>SetTimePacket (10)</strong></a>
@@ -163,6 +187,10 @@
 <br><span style="color: #666; font-size: 0.9em;">Mob Effect</span>
 </li>
 <li>
+<a href="InteractPacket.html"><strong>InteractPacket (33)</strong></a>
+<br><span style="color: #666; font-size: 0.9em;">Interact</span>
+</li>
+<li>
 <a href="BlockPickRequestPacket.html"><strong>BlockPickRequestPacket (34)</strong></a>
 <br><span style="color: #666; font-size: 0.9em;">Player picks up a block in the world; client to server.</span>
 </li>
@@ -193,6 +221,10 @@
 <li>
 <a href="SetSpawnPositionPacket.html"><strong>SetSpawnPositionPacket (43)</strong></a>
 <br><span style="color: #666; font-size: 0.9em;">When a player logs in or the SetWorldSpawnCommand is used this is sent from the server to the client...</span>
+</li>
+<li>
+<a href="AnimatePacket.html"><strong>AnimatePacket (44)</strong></a>
+<br><span style="color: #666; font-size: 0.9em;">Animate Actor</span>
 </li>
 <li>
 <a href="RespawnPacket.html"><strong>RespawnPacket (45)</strong></a>
@@ -244,6 +276,10 @@
 <br><span style="color: #666; font-size: 0.9em;">This packet is used for enabling/disabling commands and for unlocking world template settings (both ...</span>
 </li>
 <li>
+<a href="LegacyTelemetryEventPacket.html"><strong>LegacyTelemetryEventPacket (65)</strong></a>
+<br><span style="color: #666; font-size: 0.9em;">Sends telemetry events to the client so the client can then send that on to the eventing system</span>
+</li>
+<li>
 <a href="SpawnExperienceOrbPacket.html"><strong>SpawnExperienceOrbPacket (66)</strong></a>
 <br><span style="color: #666; font-size: 0.9em;">Spawn Experience Orb</span>
 </li>
@@ -270,6 +306,18 @@
 <li>
 <a href="ShowCreditsPacket.html"><strong>ShowCreditsPacket (75)</strong></a>
 <br><span style="color: #666; font-size: 0.9em;">Starts on server when the credits screen should pop up.</span>
+</li>
+<li>
+<a href="AvailableCommandsPacket.html"><strong>AvailableCommandsPacket (76)</strong></a>
+<br><span style="color: #666; font-size: 0.9em;">Contains all the available commands.</span>
+</li>
+<li>
+<a href="CommandRequestPacket.html"><strong>CommandRequestPacket (77)</strong></a>
+<br><span style="color: #666; font-size: 0.9em;">&quot;slash&quot; command execution, client to server.</span>
+</li>
+<li>
+<a href="CommandOutputPacket.html"><strong>CommandOutputPacket (79)</strong></a>
+<br><span style="color: #666; font-size: 0.9em;">&quot;slash&quot; command execution output, server to client.</span>
 </li>
 <li>
 <a href="UpdateTradePacket.html"><strong>UpdateTradePacket (80)</strong></a>
@@ -516,6 +564,10 @@
 <br><span style="color: #666; font-size: 0.9em;">Item data from the server. Contains component information.</span>
 </li>
 <li>
+<a href="ClientboundDebugRendererPacket.html"><strong>ClientboundDebugRendererPacket (164)</strong></a>
+<br><span style="color: #666; font-size: 0.9em;">Used to add/remove debug rendering objects.</span>
+</li>
+<li>
 <a href="SyncActorPropertyPacket.html"><strong>SyncActorPropertyPacket (165)</strong></a>
 <br><span style="color: #666; font-size: 0.9em;">Allows us to synchronize Actor properties across the network.</span>
 </li>
@@ -708,6 +760,14 @@
 <br><span style="color: #666; font-size: 0.9em;">Sync the player&#x27;s options (mostly settings) to the server.</span>
 </li>
 <li>
+<a href="PlayerVideoCapturePacket.html"><strong>PlayerVideoCapturePacket (324)</strong></a>
+<br><span style="color: #666; font-size: 0.9em;">Used by a test command to start/stop video capture</span>
+</li>
+<li>
+<a href="ClientboundControlSchemeSetPacket.html"><strong>ClientboundControlSchemeSetPacket (327)</strong></a>
+<br><span style="color: #666; font-size: 0.9em;">Set the control scheme that the player should use</span>
+</li>
+<li>
 <a href="DebugDrawerPacket.html"><strong>DebugDrawerPacket (328)</strong></a>
 <br><span style="color: #666; font-size: 0.9em;">Send debug drawing shape info (from scripting) to the client for rendering</span>
 </li>
@@ -716,8 +776,16 @@
 <br><span style="color: #666; font-size: 0.9em;">Sent from the client to the server when players change Pack Settings (pack UI).</span>
 </li>
 <li>
+<a href="ClientboundDataStorePacket.html"><strong>ClientboundDataStorePacket (330)</strong></a>
+<br><span style="color: #666; font-size: 0.9em;">Sends a list of data store properties from the server to the client.</span>
+</li>
+<li>
 <a href="GraphicsOverrideParameterPacket.html"><strong>GraphicsOverrideParameterPacket (331)</strong></a>
 <br><span style="color: #666; font-size: 0.9em;">Sent from the server to the client when a server script changes the rendering settings</span>
+</li>
+<li>
+<a href="ServerboundDataStorePacket.html"><strong>ServerboundDataStorePacket (332)</strong></a>
+<br><span style="color: #666; font-size: 0.9em;">Applies a single update to the server data store from the client.</span>
 </li>
 </ul>
     </div>

@@ -83,6 +83,26 @@
             margin-bottom: 8px;
             break-inside: avoid;
         }
+        details {
+            margin: 10px 0;
+        }
+        summary {
+            cursor: pointer;
+            font-weight: bold;
+            padding: 8px;
+            background-color: #f0f0f0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            user-select: none;
+        }
+        summary:hover {
+            background-color: #e8e8e8;
+        }
+        details[open] summary {
+            background-color: #d4edff;
+            border-color: #3498db;
+            border-left: 4px solid #3498db;
+        }
         @media (max-width: 900px) {
             .packet-list {
                 columns: 2;
@@ -106,19 +126,19 @@
 <tr style="background-color: #f0f0f0;">
 <th>Field Name</th>
 <th>Type</th>
-<th>Ordinal Index</th>
+<th>Field Index</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>Npc Id Raw Id</strong></td>
+<td><strong>Npc Id Raw Id (Required)</strong></td>
 <td>uint64</td>
 <td>0</td>
 <td>The ActorUniqueID of the NPC being remote fired</td>
 </tr>
 <tr>
-<td rowspan="2"><strong>Npc Dialogue Action Type</strong></td>
+<td rowspan="2"><strong>Npc Dialogue Action Type (Required)</strong></td>
 <td>varint32</td>
 <td>1</td>
 <td></td>
@@ -147,25 +167,25 @@
 </div></td>
 </tr>
 <tr>
-<td><strong>Dialogue</strong></td>
+<td><strong>Dialogue (Required)</strong></td>
 <td>string</td>
 <td>2</td>
 <td>The text to be displayed to the client</td>
 </tr>
 <tr>
-<td><strong>Scene Name</strong></td>
+<td><strong>Scene Name (Required)</strong></td>
 <td>string</td>
 <td>3</td>
 <td>The scene the data has been pulled from for the client to reference</td>
 </tr>
 <tr>
-<td><strong>Npc Name</strong></td>
+<td><strong>Npc Name (Required)</strong></td>
 <td>string</td>
 <td>4</td>
 <td>The name of the NPC to be displayed to the client</td>
 </tr>
 <tr>
-<td><strong>Action JSON</strong></td>
+<td><strong>Action JSON (Required)</strong></td>
 <td>string</td>
 <td>5</td>
 <td>The JSON string of the buttons/actions the server can perform. The server is still authoritative on what actions can be performed</td>

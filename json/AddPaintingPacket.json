@@ -2,46 +2,9 @@
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "3166459952",
     "x-format-version": "MISSING VERSION",
-    "x-minecraft-version": "1.21.120",
-    "x-protocol-version": 859,
+    "x-minecraft-version": "1.21.130",
+    "x-protocol-version": 897,
     "definitions": {
-        "3821499363": {
-            "title": "struct AddPaintingPacketPayload",
-            "type": "object",
-            "properties": {
-                "Direction": {
-                    "type": "integer",
-                    "x-underlying-type": "int32",
-                    "x-serialization-options": [
-                        "Compression"
-                    ],
-                    "x-ordinal-index": 3
-                },
-                "Motif": {
-                    "type": "string",
-                    "x-ordinal-index": 4
-                },
-                "Position": {
-                    "$ref": "#/definitions/4004946602",
-                    "x-ordinal-index": 2
-                },
-                "Target Actor ID": {
-                    "$ref": "#/definitions/1221684255",
-                    "x-ordinal-index": 0
-                },
-                "Target Runtime ID": {
-                    "$ref": "#/definitions/3541243607",
-                    "x-ordinal-index": 1
-                }
-            },
-            "required": [
-                "Direction",
-                "Motif",
-                "Position",
-                "Target Actor ID",
-                "Target Runtime ID"
-            ]
-        },
         "4004946602": {
             "title": "Vec3",
             "type": "object",
@@ -49,17 +12,23 @@
                 "X": {
                     "type": "number",
                     "x-underlying-type": "float",
-                    "x-ordinal-index": 0
+                    "x-ordinal-index": 0,
+                    "minimum": 1.1754943508222876e-38,
+                    "maximum": 3.4028234663852887e38
                 },
                 "Y": {
                     "type": "number",
                     "x-underlying-type": "float",
-                    "x-ordinal-index": 1
+                    "x-ordinal-index": 1,
+                    "minimum": 1.1754943508222876e-38,
+                    "maximum": 3.4028234663852887e38
                 },
                 "Z": {
                     "type": "number",
                     "x-underlying-type": "float",
-                    "x-ordinal-index": 2
+                    "x-ordinal-index": 2,
+                    "minimum": 1.1754943508222876e-38,
+                    "maximum": 3.4028234663852887e38
                 }
             },
             "required": [
@@ -78,7 +47,9 @@
                     "x-serialization-options": [
                         "Compression"
                     ],
-                    "x-ordinal-index": 0
+                    "x-ordinal-index": 0,
+                    "minimum": -9223372036854776000.0,
+                    "maximum": 9223372036854776000.0
                 }
             },
             "required": [
@@ -95,7 +66,9 @@
                     "x-serialization-options": [
                         "Compression"
                     ],
-                    "x-ordinal-index": 0
+                    "x-ordinal-index": 0,
+                    "minimum": 0.0,
+                    "maximum": 18446744073709553000.0
                 }
             },
             "required": [
@@ -107,11 +80,40 @@
     "description": "Sends the information for a new painting actor from server to client.",
     "type": "object",
     "properties": {
-        "mPayload": {
-            "$ref": "#/definitions/3821499363",
+        "Direction": {
+            "type": "integer",
+            "x-underlying-type": "int32",
+            "x-serialization-options": [
+                "Compression"
+            ],
+            "x-ordinal-index": 3,
+            "minimum": -2147483648.0,
+            "maximum": 2147483647.0
+        },
+        "Motif": {
+            "type": "string",
+            "x-ordinal-index": 4
+        },
+        "Position": {
+            "$ref": "#/definitions/4004946602",
+            "x-ordinal-index": 2
+        },
+        "Target Actor ID": {
+            "$ref": "#/definitions/1221684255",
             "x-ordinal-index": 0
+        },
+        "Target Runtime ID": {
+            "$ref": "#/definitions/3541243607",
+            "x-ordinal-index": 1
         }
     },
+    "required": [
+        "Direction",
+        "Motif",
+        "Position",
+        "Target Actor ID",
+        "Target Runtime ID"
+    ],
     "$metaProperties": {
         "[cereal:packet]": 22,
         "[cereal:packet_details]": ""

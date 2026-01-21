@@ -2,8 +2,8 @@
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "1898950292",
     "x-format-version": "MISSING VERSION",
-    "x-minecraft-version": "1.21.120",
-    "x-protocol-version": 859,
+    "x-minecraft-version": "1.21.130",
+    "x-protocol-version": 897,
     "definitions": {
         "3541243607": {
             "title": "ActorRuntimeID",
@@ -15,25 +15,13 @@
                     "x-serialization-options": [
                         "Compression"
                     ],
-                    "x-ordinal-index": 0
+                    "x-ordinal-index": 0,
+                    "minimum": 0.0,
+                    "maximum": 18446744073709553000.0
                 }
             },
             "required": [
                 "Actor Runtime ID"
-            ]
-        },
-        "661741895": {
-            "title": "struct MoveActorAbsolutePacketPayload",
-            "type": "object",
-            "properties": {
-                "Move Data": {
-                    "description": "This is client bound for normal actor motion updates.",
-                    "$ref": "#/definitions/1756907636",
-                    "x-ordinal-index": 0
-                }
-            },
-            "required": [
-                "Move Data"
             ]
         },
         "1756907636": {
@@ -49,7 +37,9 @@
                     "description": "Header bits describing the status of the actor, see additional documentation in the supplemental documentation folder",
                     "type": "integer",
                     "x-underlying-type": "uint8",
-                    "x-ordinal-index": 1
+                    "x-ordinal-index": 1,
+                    "minimum": 0.0,
+                    "maximum": 255.0
                 },
                 "Position": {
                     "description": "X/Y/Z coordinates of the position of the actor, each being a 4 byte float",
@@ -60,19 +50,25 @@
                     "description": "The X rotation of the actor stored as an integer",
                     "type": "integer",
                     "x-underlying-type": "uint8",
-                    "x-ordinal-index": 3
+                    "x-ordinal-index": 3,
+                    "minimum": 0.0,
+                    "maximum": 255.0
                 },
                 "Rotation Y": {
                     "description": "The Y rotation of the actor stored as an integer",
                     "type": "integer",
                     "x-underlying-type": "uint8",
-                    "x-ordinal-index": 4
+                    "x-ordinal-index": 4,
+                    "minimum": 0.0,
+                    "maximum": 255.0
                 },
                 "Rotation Y Head": {
                     "description": "The head rotation of the actor if and only if it's a Mob type, stored as an integer",
                     "type": "integer",
                     "x-underlying-type": "uint8",
-                    "x-ordinal-index": 5
+                    "x-ordinal-index": 5,
+                    "minimum": 0.0,
+                    "maximum": 255.0
                 }
             },
             "required": [
@@ -91,17 +87,23 @@
                 "X": {
                     "type": "number",
                     "x-underlying-type": "float",
-                    "x-ordinal-index": 0
+                    "x-ordinal-index": 0,
+                    "minimum": 1.1754943508222876e-38,
+                    "maximum": 3.4028234663852887e38
                 },
                 "Y": {
                     "type": "number",
                     "x-underlying-type": "float",
-                    "x-ordinal-index": 1
+                    "x-ordinal-index": 1,
+                    "minimum": 1.1754943508222876e-38,
+                    "maximum": 3.4028234663852887e38
                 },
                 "Z": {
                     "type": "number",
                     "x-underlying-type": "float",
-                    "x-ordinal-index": 2
+                    "x-ordinal-index": 2,
+                    "minimum": 1.1754943508222876e-38,
+                    "maximum": 3.4028234663852887e38
                 }
             },
             "required": [
@@ -115,11 +117,15 @@
     "description": "This is used primarily for motion updates of all actors from server to client.",
     "type": "object",
     "properties": {
-        "mPayload": {
-            "$ref": "#/definitions/661741895",
+        "Move Data": {
+            "description": "This is client bound for normal actor motion updates.",
+            "$ref": "#/definitions/1756907636",
             "x-ordinal-index": 0
         }
     },
+    "required": [
+        "Move Data"
+    ],
     "$metaProperties": {
         "[cereal:packet]": 18,
         "[cereal:packet_details]": ""

@@ -2,35 +2,9 @@
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "381612363",
     "x-format-version": "MISSING VERSION",
-    "x-minecraft-version": "1.21.120",
-    "x-protocol-version": 859,
+    "x-minecraft-version": "1.21.130",
+    "x-protocol-version": 897,
     "definitions": {
-        "3974588162": {
-            "title": "struct PositionTrackingDBClientRequestPacketPayload",
-            "type": "object",
-            "properties": {
-                "Action": {
-                    "title": "enum PositionTrackingDBClientRequestPacketPayload::Action",
-                    "type": "string",
-                    "enum": [
-                        "Query"
-                    ],
-                    "x-underlying-type": "uint8",
-                    "x-serialization-options": [
-                        "EnumAsValue"
-                    ],
-                    "x-ordinal-index": 0
-                },
-                "Id": {
-                    "$ref": "#/definitions/2150080226",
-                    "x-ordinal-index": 1
-                }
-            },
-            "required": [
-                "Action",
-                "Id"
-            ]
-        },
         "2150080226": {
             "title": "PositionTrackingId",
             "type": "object",
@@ -41,7 +15,9 @@
                     "x-serialization-options": [
                         "Compression"
                     ],
-                    "x-ordinal-index": 0
+                    "x-ordinal-index": 0,
+                    "minimum": -2147483648.0,
+                    "maximum": 2147483647.0
                 }
             },
             "required": [
@@ -53,11 +29,27 @@
     "description": "Position Tracking DB Client Request",
     "type": "object",
     "properties": {
-        "mPayload": {
-            "$ref": "#/definitions/3974588162",
+        "Action": {
+            "title": "enum PositionTrackingDBClientRequestPacketPayload::Action",
+            "type": "string",
+            "enum": [
+                "Query"
+            ],
+            "x-underlying-type": "uint8",
+            "x-serialization-options": [
+                "Enum-as-Value"
+            ],
             "x-ordinal-index": 0
+        },
+        "Id": {
+            "$ref": "#/definitions/2150080226",
+            "x-ordinal-index": 1
         }
     },
+    "required": [
+        "Action",
+        "Id"
+    ],
     "$metaProperties": {
         "[cereal:packet]": 154,
         "[cereal:packet_details]": "Client to server packet for server authoratative runtime database (with persistent LevelStorage backup) designed primarily to track lodestone stuff. See Position Tracking DB Notes.md in bedrock-docs. see PositionTrackingDBServerBroadcastPacket"

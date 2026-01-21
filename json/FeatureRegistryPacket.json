@@ -2,25 +2,9 @@
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "742107478",
     "x-format-version": "MISSING VERSION",
-    "x-minecraft-version": "1.21.120",
-    "x-protocol-version": 859,
+    "x-minecraft-version": "1.21.130",
+    "x-protocol-version": 897,
     "definitions": {
-        "4038690937": {
-            "title": "FeatureRegistryPacketPayload",
-            "type": "object",
-            "properties": {
-                "FeaturesDataList": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/3444301485"
-                    },
-                    "x-ordinal-index": 0
-                }
-            },
-            "required": [
-                "FeaturesDataList"
-            ]
-        },
         "3444301485": {
             "title": "FeatureRegistry::FeatureBinaryJsonFormat",
             "type": "object",
@@ -44,11 +28,17 @@
     "description": "This is the packet that tracks the active feature registry data from the server so that client can place the features themselves.",
     "type": "object",
     "properties": {
-        "mPayload": {
-            "$ref": "#/definitions/4038690937",
+        "FeaturesDataList": {
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/3444301485"
+            },
             "x-ordinal-index": 0
         }
     },
+    "required": [
+        "FeaturesDataList"
+    ],
     "$metaProperties": {
         "[cereal:packet]": 191,
         "[cereal:packet_details]": ""

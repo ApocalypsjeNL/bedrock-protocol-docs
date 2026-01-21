@@ -83,6 +83,26 @@
             margin-bottom: 8px;
             break-inside: avoid;
         }
+        details {
+            margin: 10px 0;
+        }
+        summary {
+            cursor: pointer;
+            font-weight: bold;
+            padding: 8px;
+            background-color: #f0f0f0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            user-select: none;
+        }
+        summary:hover {
+            background-color: #e8e8e8;
+        }
+        details[open] summary {
+            background-color: #d4edff;
+            border-color: #3498db;
+            border-left: 4px solid #3498db;
+        }
         @media (max-width: 900px) {
             .packet-list {
                 columns: 2;
@@ -106,61 +126,61 @@
 <tr style="background-color: #f0f0f0;">
 <th>Field Name</th>
 <th>Type</th>
-<th>Ordinal Index</th>
+<th>Field Index</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>AvgFps</strong></td>
+<td><strong>AvgFps (Required)</strong></td>
 <td>float</td>
 <td>0</td>
 <td></td>
 </tr>
 <tr>
-<td><strong>AvgServerSimTickTimeMS</strong></td>
+<td><strong>AvgServerSimTickTimeMS (Required)</strong></td>
 <td>float</td>
 <td>1</td>
 <td></td>
 </tr>
 <tr>
-<td><strong>AvgClientSimTickTimeMS</strong></td>
+<td><strong>AvgClientSimTickTimeMS (Required)</strong></td>
 <td>float</td>
 <td>2</td>
 <td></td>
 </tr>
 <tr>
-<td><strong>AvgBeginFrameTimeMS</strong></td>
+<td><strong>AvgBeginFrameTimeMS (Required)</strong></td>
 <td>float</td>
 <td>3</td>
 <td></td>
 </tr>
 <tr>
-<td><strong>AvgInputTimeMS</strong></td>
+<td><strong>AvgInputTimeMS (Required)</strong></td>
 <td>float</td>
 <td>4</td>
 <td></td>
 </tr>
 <tr>
-<td><strong>AvgRenderTimeMS</strong></td>
+<td><strong>AvgRenderTimeMS (Required)</strong></td>
 <td>float</td>
 <td>5</td>
 <td></td>
 </tr>
 <tr>
-<td><strong>AvgEndFrameTimeMS</strong></td>
+<td><strong>AvgEndFrameTimeMS (Required)</strong></td>
 <td>float</td>
 <td>6</td>
 <td></td>
 </tr>
 <tr>
-<td><strong>AvgRemainderTimePercent</strong></td>
+<td><strong>AvgRemainderTimePercent (Required)</strong></td>
 <td>float</td>
 <td>7</td>
 <td></td>
 </tr>
 <tr>
-<td><strong>AvgUnaccountedTimePercent</strong></td>
+<td><strong>AvgUnaccountedTimePercent (Required)</strong></td>
 <td>float</td>
 <td>8</td>
 <td></td>

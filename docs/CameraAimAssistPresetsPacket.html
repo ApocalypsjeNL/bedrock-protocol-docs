@@ -83,6 +83,26 @@
             margin-bottom: 8px;
             break-inside: avoid;
         }
+        details {
+            margin: 10px 0;
+        }
+        summary {
+            cursor: pointer;
+            font-weight: bold;
+            padding: 8px;
+            background-color: #f0f0f0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            user-select: none;
+        }
+        summary:hover {
+            background-color: #e8e8e8;
+        }
+        details[open] summary {
+            background-color: #d4edff;
+            border-color: #3498db;
+            border-left: 4px solid #3498db;
+        }
         @media (max-width: 900px) {
             .packet-list {
                 columns: 2;
@@ -110,13 +130,13 @@
 <tr style="background-color: #f0f0f0;">
 <th>Field Name</th>
 <th>Type</th>
-<th>Ordinal Index</th>
+<th>Field Index</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td rowspan="2"><strong>Camera Aim-Assist Presets</strong></td>
+<td rowspan="2"><strong>Camera Aim-Assist Presets (Required)</strong></td>
 <td>array&lt;CameraAimAssistCategoryDefinition&gt;</td>
 <td>0</td>
 <td></td>
@@ -129,19 +149,19 @@
 <tr style="background-color: #f0f0f0;">
 <th>Field Name</th>
 <th>Type</th>
-<th>Ordinal Index</th>
+<th>Field Index</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>name</strong></td>
+<td><strong>name (Required)</strong></td>
 <td>Identifier</td>
 <td>0</td>
 <td>Name of the Aim-Assist Category used during lookup.</td>
 </tr>
 <tr>
-<td rowspan="2"><strong>priorities</strong></td>
+<td rowspan="2"><strong>priorities (Required)</strong></td>
 <td>CameraAimAssistCategoryPriorities</td>
 <td>1</td>
 <td>The set of priorities used when determining aim-assist selection.</td>
@@ -154,7 +174,7 @@
 <tr style="background-color: #f0f0f0;">
 <th>Field Name</th>
 <th>Type</th>
-<th>Ordinal Index</th>
+<th>Field Index</th>
 <th>Description</th>
 </tr>
 </thead>
@@ -172,15 +192,21 @@
 <td>Optional. Map of Block identifiers to Aim-Assist targeting priority. Larger numbers have greater priority.</td>
 </tr>
 <tr>
+<td><strong>block_tags</strong></td>
+<td>object</td>
+<td>2</td>
+<td>Optional. Map of Block tags to Aim-Assist targeting priority. Larger numbers have greater priority.</td>
+</tr>
+<tr>
 <td><strong>entity_default</strong></td>
 <td>int32</td>
-<td>2</td>
+<td>3</td>
 <td>Optional. Default Aim-Assist targeting priority used for Entities not found in &#x27;entities&#x27;.</td>
 </tr>
 <tr>
 <td><strong>block_default</strong></td>
 <td>int32</td>
-<td>3</td>
+<td>4</td>
 <td>Optional. Default Aim-Assist targeting priority used for Blocks not found in &#x27;blocks&#x27;.</td>
 </tr>
 </tbody>
@@ -192,7 +218,7 @@
 </div></td>
 </tr>
 <tr>
-<td rowspan="2"><strong>Camera Aim-Assist Categories</strong></td>
+<td rowspan="2"><strong>Camera Aim-Assist Categories (Required)</strong></td>
 <td>array&lt;CameraAimAssistPresetDefinition&gt;</td>
 <td>1</td>
 <td></td>
@@ -205,22 +231,57 @@
 <tr style="background-color: #f0f0f0;">
 <th>Field Name</th>
 <th>Type</th>
-<th>Ordinal Index</th>
+<th>Field Index</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>identifier</strong></td>
+<td><strong>identifier (Required)</strong></td>
 <td>Identifier</td>
 <td>0</td>
 <td>Namespaced identifier for Camera Aim-Assist preset. Namespace and name must be separated by a &#x27;:&#x27;.</td>
 </tr>
 <tr>
-<td><strong>exclusion_list</strong></td>
-<td>array&lt;Reference&gt;</td>
+<td rowspan="2"><strong>exclusion_settings</strong></td>
+<td>CameraAimAssistPresetExclusionDefinition</td>
 <td>1</td>
 <td>Optional. List of block/entity identifiers to exclude from aim assist targeting.</td>
+</tr>
+<tr>
+<td colspan="3"><div style="margin-left: 20px; margin-top: 10px;">
+<h3>CameraAimAssistPresetExclusionDefinition</h3>
+<table border="1" cellpadding="5" cellspacing="0" style="border-collapse: collapse; width: 100%; max-width: 800px;">
+<thead>
+<tr style="background-color: #f0f0f0;">
+<th>Field Name</th>
+<th>Type</th>
+<th>Field Index</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>blocks</strong></td>
+<td>array&lt;Reference&gt;</td>
+<td>0</td>
+<td>Optional. List of block identifiers to exclude from aim assist targeting.</td>
+</tr>
+<tr>
+<td><strong>entities</strong></td>
+<td>array&lt;Reference&gt;</td>
+<td>1</td>
+<td>Optional. List of entity identifiers to exclude from aim assist targeting.</td>
+</tr>
+<tr>
+<td><strong>block_tags</strong></td>
+<td>array&lt;string&gt;</td>
+<td>2</td>
+<td>Optional. List of block tags to exclude from aim assist targeting.</td>
+</tr>
+</tbody>
+</table>
+</div></td>
 </tr>
 <tr>
 <td><strong>liquid_targeting_list</strong></td>
@@ -251,7 +312,7 @@
 </div></td>
 </tr>
 <tr>
-<td rowspan="2"><strong>Operation</strong></td>
+<td rowspan="2"><strong>Operation (Required)</strong></td>
 <td>uint8</td>
 <td>2</td>
 <td></td>

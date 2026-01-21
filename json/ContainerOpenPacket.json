@@ -2,39 +2,9 @@
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "1116981856",
     "x-format-version": "MISSING VERSION",
-    "x-minecraft-version": "1.21.120",
-    "x-protocol-version": 859,
+    "x-minecraft-version": "1.21.130",
+    "x-protocol-version": 897,
     "definitions": {
-        "1053520343": {
-            "title": "ContainerOpenPacketPayload",
-            "type": "object",
-            "properties": {
-                "Container Id": {
-                    "type": "integer",
-                    "x-underlying-type": "uint8",
-                    "x-ordinal-index": 0
-                },
-                "Container Type": {
-                    "type": "integer",
-                    "x-underlying-type": "uint8",
-                    "x-ordinal-index": 1
-                },
-                "Position": {
-                    "$ref": "#/definitions/269289973",
-                    "x-ordinal-index": 2
-                },
-                "Target Actor ID": {
-                    "$ref": "#/definitions/1221684255",
-                    "x-ordinal-index": 3
-                }
-            },
-            "required": [
-                "Container Id",
-                "Container Type",
-                "Position",
-                "Target Actor ID"
-            ]
-        },
         "269289973": {
             "title": "NetworkBlockPosition",
             "type": "object",
@@ -45,7 +15,9 @@
                     "x-serialization-options": [
                         "Compression"
                     ],
-                    "x-ordinal-index": 0
+                    "x-ordinal-index": 0,
+                    "minimum": -2147483648.0,
+                    "maximum": 2147483647.0
                 },
                 "Y": {
                     "type": "integer",
@@ -53,7 +25,9 @@
                     "x-serialization-options": [
                         "Compression"
                     ],
-                    "x-ordinal-index": 1
+                    "x-ordinal-index": 1,
+                    "minimum": 0.0,
+                    "maximum": 4294967295.0
                 },
                 "Z": {
                     "type": "integer",
@@ -61,7 +35,9 @@
                     "x-serialization-options": [
                         "Compression"
                     ],
-                    "x-ordinal-index": 2
+                    "x-ordinal-index": 2,
+                    "minimum": -2147483648.0,
+                    "maximum": 2147483647.0
                 }
             },
             "required": [
@@ -80,7 +56,9 @@
                     "x-serialization-options": [
                         "Compression"
                     ],
-                    "x-ordinal-index": 0
+                    "x-ordinal-index": 0,
+                    "minimum": -9223372036854776000.0,
+                    "maximum": 9223372036854776000.0
                 }
             },
             "required": [
@@ -92,11 +70,35 @@
     "description": "Sent from the server so that the client knows to open the container screen and do the chest opening animation.",
     "type": "object",
     "properties": {
-        "mPayload": {
-            "$ref": "#/definitions/1053520343",
-            "x-ordinal-index": 0
+        "Container Id": {
+            "type": "integer",
+            "x-underlying-type": "uint8",
+            "x-ordinal-index": 0,
+            "minimum": 0.0,
+            "maximum": 255.0
+        },
+        "Container Type": {
+            "type": "integer",
+            "x-underlying-type": "uint8",
+            "x-ordinal-index": 1,
+            "minimum": 0.0,
+            "maximum": 255.0
+        },
+        "Position": {
+            "$ref": "#/definitions/269289973",
+            "x-ordinal-index": 2
+        },
+        "Target Actor ID": {
+            "$ref": "#/definitions/1221684255",
+            "x-ordinal-index": 3
         }
     },
+    "required": [
+        "Container Id",
+        "Container Type",
+        "Position",
+        "Target Actor ID"
+    ],
     "$metaProperties": {
         "[cereal:packet]": 46,
         "[cereal:packet_details]": ""

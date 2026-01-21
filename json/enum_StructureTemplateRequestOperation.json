@@ -2,8 +2,8 @@
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "546557485",
     "x-format-version": "MISSING VERSION",
-    "x-minecraft-version": "1.21.120",
-    "x-protocol-version": 859,
+    "x-minecraft-version": "1.21.130",
+    "x-protocol-version": 897,
     "title": "enum StructureTemplateRequestOperation",
     "type": "string",
     "enum": [
@@ -11,6 +11,5 @@
         "ExportFromSaveMode",
         "ExportFromLoadMode",
         "QuerySavedStructure"
-    ],
-    "x-underlying-type": "uint8"
+    ]
 }

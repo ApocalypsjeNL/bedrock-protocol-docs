@@ -2,71 +2,59 @@
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "1181397288",
     "x-format-version": "MISSING VERSION",
-    "x-minecraft-version": "1.21.120",
-    "x-protocol-version": 859,
-    "definitions": {
-        "1990233989": {
-            "title": "SetHudPacketPayload",
-            "type": "object",
-            "properties": {
-                "Hud Element": {
-                    "type": "array",
-                    "items": {
-                        "title": "HudElement",
-                        "type": "string",
-                        "enum": [
-                            "PaperDoll",
-                            "Armor",
-                            "ToolTips",
-                            "TouchControls",
-                            "Crosshair",
-                            "HotBar",
-                            "Health",
-                            "ProgressBar",
-                            "Hunger",
-                            "AirBubbles",
-                            "HorseHealth",
-                            "StatusEffects",
-                            "ItemText"
-                        ],
-                        "x-underlying-type": "int32"
-                    },
-                    "x-serialization-options": [
-                        "Compression",
-                        "EnumAsValue"
-                    ],
-                    "x-ordinal-index": 0
-                },
-                "Hud Visible": {
-                    "title": "HudVisibility",
-                    "type": "string",
-                    "enum": [
-                        "Hide",
-                        "Reset"
-                    ],
-                    "x-underlying-type": "int32",
-                    "x-serialization-options": [
-                        "Compression",
-                        "EnumAsValue"
-                    ],
-                    "x-ordinal-index": 1
-                }
-            },
-            "required": [
-                "Hud Element",
-                "Hud Visible"
-            ]
-        }
-    },
+    "x-minecraft-version": "1.21.130",
+    "x-protocol-version": 897,
     "title": "SetHudPacket",
     "description": "This packet is only used via the set hud command. This is for 3rd party content.",
     "type": "object",
     "properties": {
-        "mPayload": {
-            "$ref": "#/definitions/1990233989",
+        "Hud Element": {
+            "type": "array",
+            "items": {
+                "title": "HudElement",
+                "type": "string",
+                "enum": [
+                    "PaperDoll",
+                    "Armor",
+                    "ToolTips",
+                    "TouchControls",
+                    "Crosshair",
+                    "HotBar",
+                    "Health",
+                    "ProgressBar",
+                    "Hunger",
+                    "AirBubbles",
+                    "HorseHealth",
+                    "StatusEffects",
+                    "ItemText"
+                ],
+                "x-underlying-type": "int32"
+            },
+            "x-serialization-options": [
+                "Compression",
+                "Enum-as-Value"
+            ],
             "x-ordinal-index": 0
+        },
+        "Hud Visible": {
+            "title": "HudVisibility",
+            "type": "string",
+            "enum": [
+                "Hide",
+                "Reset"
+            ],
+            "x-underlying-type": "int32",
+            "x-serialization-options": [
+                "Compression",
+                "Enum-as-Value"
+            ],
+            "x-ordinal-index": 1
         }
     },
+    "required": [
+        "Hud Element",
+        "Hud Visible"
+    ],
     "$metaProperties": {
         "[cereal:packet]": 308,
         "[cereal:packet_details]": "This packet will toggle the HUD visibility."

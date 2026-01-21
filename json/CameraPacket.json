@@ -2,27 +2,9 @@
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "1165808590",
     "x-format-version": "MISSING VERSION",
-    "x-minecraft-version": "1.21.120",
-    "x-protocol-version": 859,
+    "x-minecraft-version": "1.21.130",
+    "x-protocol-version": 897,
     "definitions": {
-        "545737307": {
-            "title": "CameraPacketPayload",
-            "type": "object",
-            "properties": {
-                "Camera ID": {
-                    "$ref": "#/definitions/1221684255",
-                    "x-ordinal-index": 0
-                },
-                "Target Player ID": {
-                    "$ref": "#/definitions/1221684255",
-                    "x-ordinal-index": 1
-                }
-            },
-            "required": [
-                "Camera ID",
-                "Target Player ID"
-            ]
-        },
         "1221684255": {
             "title": "ActorUniqueID",
             "type": "object",
@@ -33,7 +15,9 @@
                     "x-serialization-options": [
                         "Compression"
                     ],
-                    "x-ordinal-index": 0
+                    "x-ordinal-index": 0,
+                    "minimum": -9223372036854776000.0,
+                    "maximum": 9223372036854776000.0
                 }
             },
             "required": [
@@ -45,11 +29,19 @@
     "description": "Used only in EDU through the tripod camera item or the TakePictureCommand. Sends the camera actor id and the target player id from the server.",
     "type": "object",
     "properties": {
-        "mPayload": {
-            "$ref": "#/definitions/545737307",
+        "Camera ID": {
+            "$ref": "#/definitions/1221684255",
             "x-ordinal-index": 0
+        },
+        "Target Player ID": {
+            "$ref": "#/definitions/1221684255",
+            "x-ordinal-index": 1
         }
     },
+    "required": [
+        "Camera ID",
+        "Target Player ID"
+    ],
     "$metaProperties": {
         "[cereal:packet]": 73,
         "[cereal:packet_details]": ""

@@ -2,55 +2,43 @@
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "3587589749",
     "x-format-version": "MISSING VERSION",
-    "x-minecraft-version": "1.21.120",
-    "x-protocol-version": 859,
-    "definitions": {
-        "3208873754": {
-            "title": "UpdateSoftEnumPacketPayload",
-            "type": "object",
-            "properties": {
-                "Enum Name": {
-                    "type": "string",
-                    "x-ordinal-index": 0
-                },
-                "Update Type": {
-                    "title": "SoftEnumUpdateType",
-                    "type": "string",
-                    "enum": [
-                        "Add",
-                        "Remove",
-                        "Replace"
-                    ],
-                    "x-underlying-type": "uint8",
-                    "x-serialization-options": [
-                        "EnumAsValue"
-                    ],
-                    "x-ordinal-index": 2
-                },
-                "Values": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    },
-                    "x-ordinal-index": 1
-                }
-            },
-            "required": [
-                "Enum Name",
-                "Update Type",
-                "Values"
-            ]
-        }
-    },
+    "x-minecraft-version": "1.21.130",
+    "x-protocol-version": 897,
     "title": "UpdateSoftEnumPacket",
     "description": "This is used for the scoreboard and tag systems (overwhelmingly used by 3rd party content)",
     "type": "object",
     "properties": {
-        "mPayload": {
-            "$ref": "#/definitions/3208873754",
+        "Enum Name": {
+            "type": "string",
             "x-ordinal-index": 0
+        },
+        "Update Type": {
+            "title": "SoftEnumUpdateType",
+            "type": "string",
+            "enum": [
+                "Add",
+                "Remove",
+                "Replace"
+            ],
+            "x-underlying-type": "uint8",
+            "x-serialization-options": [
+                "Enum-as-Value"
+            ],
+            "x-ordinal-index": 2
+        },
+        "Values": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "x-ordinal-index": 1
         }
     },
+    "required": [
+        "Enum Name",
+        "Update Type",
+        "Values"
+    ],
     "$metaProperties": {
         "[cereal:packet]": 114,
         "[cereal:packet_details]": "This allows someone to sync between server and client tags and enums on mobs or on the level."

@@ -83,6 +83,26 @@
             margin-bottom: 8px;
             break-inside: avoid;
         }
+        details {
+            margin: 10px 0;
+        }
+        summary {
+            cursor: pointer;
+            font-weight: bold;
+            padding: 8px;
+            background-color: #f0f0f0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            user-select: none;
+        }
+        summary:hover {
+            background-color: #e8e8e8;
+        }
+        details[open] summary {
+            background-color: #d4edff;
+            border-color: #3498db;
+            border-left: 4px solid #3498db;
+        }
         @media (max-width: 900px) {
             .packet-list {
                 columns: 2;
@@ -115,13 +135,13 @@
 <tr style="background-color: #f0f0f0;">
 <th>Field Name</th>
 <th>Type</th>
-<th>Ordinal Index</th>
+<th>Field Index</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td rowspan="2"><strong>Map Unique ID</strong></td>
+<td rowspan="2"><strong>Map Unique ID (Required)</strong></td>
 <td>ActorUniqueID</td>
 <td>0</td>
 <td></td>
@@ -134,13 +154,13 @@
 <tr style="background-color: #f0f0f0;">
 <th>Field Name</th>
 <th>Type</th>
-<th>Ordinal Index</th>
+<th>Field Index</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>Actor Unique ID</strong></td>
+<td><strong>Actor Unique ID (Required)</strong></td>
 <td>varint64</td>
 <td>0</td>
 <td></td>
@@ -150,32 +170,32 @@
 </div></td>
 </tr>
 <tr>
-<td rowspan="2"><strong>Client Pixels List</strong></td>
-<td>array&lt;struct `anonymous-namespace'::unity_5eb3f6f7962d9979d50bf7c8efaa92c9::ClientPixelsProxy&gt;</td>
+<td rowspan="2"><strong>Client Pixels List (Required)</strong></td>
+<td>array&lt;struct `anonymous-namespace'::MapInfoRequestPacketAnon::ClientPixelsProxy&gt;</td>
 <td>1</td>
 <td>These are sent from the client to tell the Server map about terrain pixels it doesn&#x27;t know about</td>
 </tr>
 <tr>
 <td colspan="3"><div style="margin-left: 20px; margin-top: 10px;">
-<h3>struct `anonymous-namespace&#x27;::unity_5eb3f6f7962d9979d50bf7c8efaa92c9::ClientPixelsProxy ([&#x27;NoSizeCompression&#x27;]) (Array Item)</h3>
+<h3>struct `anonymous-namespace&#x27;::MapInfoRequestPacketAnon::ClientPixelsProxy ([&#x27;No size compression&#x27;]) (Array Item)</h3>
 <table border="1" cellpadding="5" cellspacing="0" style="border-collapse: collapse; width: 100%; max-width: 800px;">
 <thead>
 <tr style="background-color: #f0f0f0;">
 <th>Field Name</th>
 <th>Type</th>
-<th>Ordinal Index</th>
+<th>Field Index</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>pixel</strong></td>
+<td><strong>pixel (Required)</strong></td>
 <td>uint32</td>
 <td>0</td>
 <td></td>
 </tr>
 <tr>
-<td><strong>index</strong></td>
+<td><strong>index (Required)</strong></td>
 <td>uint16</td>
 <td>1</td>
 <td></td>

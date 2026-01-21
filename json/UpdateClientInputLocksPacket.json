@@ -2,31 +2,9 @@
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "2580383211",
     "x-format-version": "MISSING VERSION",
-    "x-minecraft-version": "1.21.120",
-    "x-protocol-version": 859,
+    "x-minecraft-version": "1.21.130",
+    "x-protocol-version": 897,
     "definitions": {
-        "2432899724": {
-            "title": "UpdateClientInputLocksPacketPayload",
-            "type": "object",
-            "properties": {
-                "Input Lock ComponentData": {
-                    "type": "integer",
-                    "x-underlying-type": "uint32",
-                    "x-serialization-options": [
-                        "Compression"
-                    ],
-                    "x-ordinal-index": 0
-                },
-                "Server Pos": {
-                    "$ref": "#/definitions/4004946602",
-                    "x-ordinal-index": 1
-                }
-            },
-            "required": [
-                "Input Lock ComponentData",
-                "Server Pos"
-            ]
-        },
         "4004946602": {
             "title": "Vec3",
             "type": "object",
@@ -34,17 +12,23 @@
                 "X": {
                     "type": "number",
                     "x-underlying-type": "float",
-                    "x-ordinal-index": 0
+                    "x-ordinal-index": 0,
+                    "minimum": 1.1754943508222876e-38,
+                    "maximum": 3.4028234663852887e38
                 },
                 "Y": {
                     "type": "number",
                     "x-underlying-type": "float",
-                    "x-ordinal-index": 1
+                    "x-ordinal-index": 1,
+                    "minimum": 1.1754943508222876e-38,
+                    "maximum": 3.4028234663852887e38
                 },
                 "Z": {
                     "type": "number",
                     "x-underlying-type": "float",
-                    "x-ordinal-index": 2
+                    "x-ordinal-index": 2,
+                    "minimum": 1.1754943508222876e-38,
+                    "maximum": 3.4028234663852887e38
                 }
             },
             "required": [
@@ -58,11 +42,25 @@
     "description": "UpdateClientInputLocksPacket",
     "type": "object",
     "properties": {
-        "mPayload": {
-            "$ref": "#/definitions/2432899724",
-            "x-ordinal-index": 0
+        "Input Lock ComponentData": {
+            "type": "integer",
+            "x-underlying-type": "uint32",
+            "x-serialization-options": [
+                "Compression"
+            ],
+            "x-ordinal-index": 0,
+            "minimum": 0.0,
+            "maximum": 4294967295.0
+        },
+        "Server Pos": {
+            "$ref": "#/definitions/4004946602",
+            "x-ordinal-index": 1
         }
     },
+    "required": [
+        "Input Lock ComponentData",
+        "Server Pos"
+    ],
     "$metaProperties": {
         "[cereal:packet]": 196,
         "[cereal:packet_details]": "Used to update the players input permissions. Sends the full permission set and the server position of the player at the time the permission was modified."

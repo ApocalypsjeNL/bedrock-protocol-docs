@@ -2,8 +2,8 @@
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "553024203",
     "x-format-version": "MISSING VERSION",
-    "x-minecraft-version": "1.21.120",
-    "x-protocol-version": 859,
+    "x-minecraft-version": "1.21.130",
+    "x-protocol-version": 897,
     "title": "enum ActorEvent",
     "type": "string",
     "enum": [
@@ -65,7 +65,7 @@
         "ACTOR_GROW_UP",
         "VIBRATION_DETECTED",
         "DRINK_MILK",
-        "SHAKE_WETNESS_STOP"
-    ],
-    "x-underlying-type": "uint8"
+        "SHAKE_WETNESS_STOP",
+        "KINETIC_DAMAGE_DEALT"
+    ]
 }

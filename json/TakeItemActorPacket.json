@@ -2,27 +2,9 @@
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "1184763514",
     "x-format-version": "MISSING VERSION",
-    "x-minecraft-version": "1.21.120",
-    "x-protocol-version": 859,
+    "x-minecraft-version": "1.21.130",
+    "x-protocol-version": 897,
     "definitions": {
-        "4084200889": {
-            "title": "TakeItemActorPacketPayload",
-            "type": "object",
-            "properties": {
-                "Actor Runtime ID": {
-                    "$ref": "#/definitions/3541243607",
-                    "x-ordinal-index": 1
-                },
-                "Item Runtime ID": {
-                    "$ref": "#/definitions/3541243607",
-                    "x-ordinal-index": 0
-                }
-            },
-            "required": [
-                "Actor Runtime ID",
-                "Item Runtime ID"
-            ]
-        },
         "3541243607": {
             "title": "ActorRuntimeID",
             "type": "object",
@@ -33,7 +15,9 @@
                     "x-serialization-options": [
                         "Compression"
                     ],
-                    "x-ordinal-index": 0
+                    "x-ordinal-index": 0,
+                    "minimum": 0.0,
+                    "maximum": 18446744073709553000.0
                 }
             },
             "required": [
@@ -45,11 +29,19 @@
     "description": "A packet sent to the server when deal with picking up an item off the ground in the world.",
     "type": "object",
     "properties": {
-        "mPayload": {
-            "$ref": "#/definitions/4084200889",
+        "Actor Runtime ID": {
+            "$ref": "#/definitions/3541243607",
+            "x-ordinal-index": 1
+        },
+        "Item Runtime ID": {
+            "$ref": "#/definitions/3541243607",
             "x-ordinal-index": 0
         }
     },
+    "required": [
+        "Actor Runtime ID",
+        "Item Runtime ID"
+    ],
     "$metaProperties": {
         "[cereal:packet]": 17,
         "[cereal:packet_details]": "From this the item and count is turned into an item and the transaction is handled afterwards."

@@ -2,68 +2,9 @@
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "3613566615",
     "x-format-version": "MISSING VERSION",
-    "x-minecraft-version": "1.21.120",
-    "x-protocol-version": 859,
+    "x-minecraft-version": "1.21.130",
+    "x-protocol-version": 897,
     "definitions": {
-        "842030578": {
-            "title": "UpdateBlockSyncedPacketPayload",
-            "type": "object",
-            "properties": {
-                "Actor Sync Message": {
-                    "type": "integer",
-                    "x-underlying-type": "uint64",
-                    "x-serialization-options": [
-                        "Compression"
-                    ],
-                    "x-ordinal-index": 5
-                },
-                "Block Position": {
-                    "$ref": "#/definitions/269289973",
-                    "x-ordinal-index": 0
-                },
-                "Block Runtime ID": {
-                    "type": "integer",
-                    "x-underlying-type": "uint32",
-                    "x-serialization-options": [
-                        "Compression"
-                    ],
-                    "x-ordinal-index": 1
-                },
-                "Flags": {
-                    "type": "integer",
-                    "x-underlying-type": "uint32",
-                    "x-serialization-options": [
-                        "Compression"
-                    ],
-                    "x-ordinal-index": 2
-                },
-                "Layer": {
-                    "type": "integer",
-                    "x-underlying-type": "uint32",
-                    "x-serialization-options": [
-                        "Compression"
-                    ],
-                    "x-ordinal-index": 3
-                },
-                "Unique Actor Id": {
-                    "description": "Id for the Moving Block Actor",
-                    "type": "integer",
-                    "x-underlying-type": "uint64",
-                    "x-serialization-options": [
-                        "Compression"
-                    ],
-                    "x-ordinal-index": 4
-                }
-            },
-            "required": [
-                "Actor Sync Message",
-                "Block Position",
-                "Block Runtime ID",
-                "Flags",
-                "Layer",
-                "Unique Actor Id"
-            ]
-        },
         "269289973": {
             "title": "NetworkBlockPosition",
             "type": "object",
@@ -74,7 +15,9 @@
                     "x-serialization-options": [
                         "Compression"
                     ],
-                    "x-ordinal-index": 0
+                    "x-ordinal-index": 0,
+                    "minimum": -2147483648.0,
+                    "maximum": 2147483647.0
                 },
                 "Y": {
                     "type": "integer",
@@ -82,7 +25,9 @@
                     "x-serialization-options": [
                         "Compression"
                     ],
-                    "x-ordinal-index": 1
+                    "x-ordinal-index": 1,
+                    "minimum": 0.0,
+                    "maximum": 4294967295.0
                 },
                 "Z": {
                     "type": "integer",
@@ -90,7 +35,9 @@
                     "x-serialization-options": [
                         "Compression"
                     ],
-                    "x-ordinal-index": 2
+                    "x-ordinal-index": 2,
+                    "minimum": -2147483648.0,
+                    "maximum": 2147483647.0
                 }
             },
             "required": [
@@ -104,11 +51,70 @@
     "description": "Used to sync moving blocks with clients so they render correctly",
     "type": "object",
     "properties": {
-        "mPayload": {
-            "$ref": "#/definitions/842030578",
+        "Actor Sync Message": {
+            "type": "integer",
+            "x-underlying-type": "uint64",
+            "x-serialization-options": [
+                "Compression"
+            ],
+            "x-ordinal-index": 5,
+            "minimum": 0.0,
+            "maximum": 18446744073709553000.0
+        },
+        "Block Position": {
+            "$ref": "#/definitions/269289973",
             "x-ordinal-index": 0
+        },
+        "Block Runtime ID": {
+            "type": "integer",
+            "x-underlying-type": "uint32",
+            "x-serialization-options": [
+                "Compression"
+            ],
+            "x-ordinal-index": 1,
+            "minimum": 0.0,
+            "maximum": 4294967295.0
+        },
+        "Flags": {
+            "type": "integer",
+            "x-underlying-type": "uint32",
+            "x-serialization-options": [
+                "Compression"
+            ],
+            "x-ordinal-index": 2,
+            "minimum": 0.0,
+            "maximum": 4294967295.0
+        },
+        "Layer": {
+            "type": "integer",
+            "x-underlying-type": "uint32",
+            "x-serialization-options": [
+                "Compression"
+            ],
+            "x-ordinal-index": 3,
+            "minimum": 0.0,
+            "maximum": 4294967295.0
+        },
+        "Unique Actor Id": {
+            "description": "Id for the Moving Block Actor",
+            "type": "integer",
+            "x-underlying-type": "uint64",
+            "x-serialization-options": [
+                "Compression"
+            ],
+            "x-ordinal-index": 4,
+            "minimum": 0.0,
+            "maximum": 18446744073709553000.0
         }
     },
+    "required": [
+        "Actor Sync Message",
+        "Block Position",
+        "Block Runtime ID",
+        "Flags",
+        "Layer",
+        "Unique Actor Id"
+    ],
     "$metaProperties": {
         "[cereal:packet]": 110,
         "[cereal:packet_details]": "Variation of UpdateBlockSyncedPacket that includes information to sync entities with renderchunk generation. Occasionally when blocks change a sync message is sent and during the change on the dimension, this packet is sent to the client to alert the update flags and sync info at a specific position."

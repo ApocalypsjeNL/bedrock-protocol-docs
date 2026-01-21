@@ -2,28 +2,16 @@
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "2331457496",
     "x-format-version": "MISSING VERSION",
-    "x-minecraft-version": "1.21.120",
-    "x-protocol-version": 859,
+    "x-minecraft-version": "1.21.130",
+    "x-protocol-version": 897,
     "definitions": {
-        "2719525183": {
-            "title": "EducationSettingsPacketPayload",
-            "type": "object",
-            "properties": {
-                "Education Level Settings": {
-                    "$ref": "#/definitions/3556225321",
-                    "x-ordinal-index": 0
-                }
-            },
-            "required": [
-                "Education Level Settings"
-            ]
-        },
         "3556225321": {
             "title": "EducationLevelSettings",
             "type": "object",
             "properties": {
                 "(Deprecated) Always False": {
                     "type": "boolean",
+                    "x-underlying-type": "boolean",
                     "x-ordinal-index": 8
                 },
                 "Agent Capabilities": {
@@ -32,6 +20,7 @@
                 },
                 "Can resize Code Builder": {
                     "type": "boolean",
+                    "x-underlying-type": "boolean",
                     "x-ordinal-index": 2
                 },
                 "Code Builder Default URI": {
@@ -44,6 +33,7 @@
                 },
                 "Disable legacy title bar": {
                     "type": "boolean",
+                    "x-underlying-type": "boolean",
                     "x-ordinal-index": 3
                 },
                 "External Link Settings": {
@@ -82,6 +72,7 @@
             "properties": {
                 "Can Modify Blocks": {
                     "type": "boolean",
+                    "x-underlying-type": "boolean",
                     "x-ordinal-index": 0
                 }
             },
@@ -125,11 +116,14 @@
     "description": "Transmits EducationLevelSettings to all clients.",
     "type": "object",
     "properties": {
-        "mPayload": {
-            "$ref": "#/definitions/2719525183",
+        "Education Level Settings": {
+            "$ref": "#/definitions/3556225321",
             "x-ordinal-index": 0
         }
     },
+    "required": [
+        "Education Level Settings"
+    ],
     "$metaProperties": {
         "[cereal:packet]": 137,
         "[cereal:packet_details]": "Currently transmits EducationLevelSettings to all clients when the game is starting."

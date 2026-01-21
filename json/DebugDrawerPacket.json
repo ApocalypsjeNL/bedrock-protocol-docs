@@ -2,8 +2,8 @@
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "122829297",
     "x-format-version": "MISSING VERSION",
-    "x-minecraft-version": "1.21.120",
-    "x-protocol-version": 859,
+    "x-minecraft-version": "1.21.130",
+    "x-protocol-version": 897,
     "definitions": {
         "96730425": {
             "title": "struct ArrowDataPayload",
@@ -18,19 +18,25 @@
                     "description": "Length of the head of the debug arrow.",
                     "type": "number",
                     "x-underlying-type": "float",
-                    "x-ordinal-index": 1
+                    "x-ordinal-index": 1,
+                    "minimum": 1.1754943508222876e-38,
+                    "maximum": 3.4028234663852887e38
                 },
                 "Arrow Head Radius": {
                     "description": "Radius of the head of the debug arrow.",
                     "type": "number",
                     "x-underlying-type": "float",
-                    "x-ordinal-index": 2
+                    "x-ordinal-index": 2,
+                    "minimum": 1.1754943508222876e-38,
+                    "maximum": 3.4028234663852887e38
                 },
                 "Num Segments": {
                     "description": "Integer number of segments used for the debug arrow's head.",
                     "type": "integer",
                     "x-underlying-type": "uint8",
-                    "x-ordinal-index": 3
+                    "x-ordinal-index": 3,
+                    "minimum": 0.0,
+                    "maximum": 255.0
                 }
             },
             "required": [
@@ -38,24 +44,6 @@
                 "Arrow Head Length",
                 "Arrow Head Radius",
                 "Num Segments"
-            ]
-        },
-        "818882612": {
-            "title": "struct DebugDrawerPacketPayload",
-            "type": "object",
-            "properties": {
-                "Array of debug shapes (can be a mix of new, updated or removed)": {
-                    "description": "Semantic version string",
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/3553763893"
-                    },
-                    "x-ordinal-index": 0,
-                    "maxItems": 1048576
-                }
-            },
-            "required": [
-                "Array of debug shapes (can be a mix of new, updated or removed)"
             ]
         },
         "2883805925": {
@@ -66,7 +54,9 @@
                     "description": "Integer number of segments used for the debug circle or sphere.",
                     "type": "integer",
                     "x-underlying-type": "uint8",
-                    "x-ordinal-index": 0
+                    "x-ordinal-index": 0,
+                    "minimum": 0.0,
+                    "maximum": 255.0
                 }
             },
             "required": [
@@ -89,26 +79,35 @@
                 },
                 "Extra Shape Data": {
                     "description": "Extra payload (variant) holding data specific to the type of shape (such as text string for the text shape).",
+                    "default": null,
                     "oneOf": [
                         {
-                            "type": "null"
+                            "type": "null",
+                            "x-ordinal-index": 0
                         },
                         {
-                            "$ref": "#/definitions/96730425"
+                            "$ref": "#/definitions/96730425",
+                            "x-ordinal-index": 1
                         },
                         {
-                            "$ref": "#/definitions/3254662607"
+                            "$ref": "#/definitions/3254662607",
+                            "x-ordinal-index": 2
                         },
                         {
-                            "$ref": "#/definitions/3006597033"
+                            "$ref": "#/definitions/3006597033",
+                            "x-ordinal-index": 3
                         },
                         {
-                            "$ref": "#/definitions/3414789328"
+                            "$ref": "#/definitions/3414789328",
+                            "x-ordinal-index": 4
                         },
                         {
-                            "$ref": "#/definitions/2883805925"
+                            "$ref": "#/definitions/2883805925",
+                            "x-ordinal-index": 5
                         }
-                    ]
+                    ],
+                    "x-control-value-type": "uint32",
+                    "x-ordinal-index": 8
                 },
                 "Location": {
                     "description": "Vec3 location of the debug shape in the world.",
@@ -122,7 +121,9 @@
                     "x-serialization-options": [
                         "Compression"
                     ],
-                    "x-ordinal-index": 0
+                    "x-ordinal-index": 0,
+                    "minimum": 0.0,
+                    "maximum": 18446744073709553000.0
                 },
                 "Rotation": {
                     "description": "Vec3 (Euler angles in radians, PYR) rotation of the debug shape in the world.",
@@ -133,7 +134,9 @@
                     "description": "Float scale of the debug shape in the world.",
                     "type": "number",
                     "x-underlying-type": "float",
-                    "x-ordinal-index": 3
+                    "x-ordinal-index": 3,
+                    "minimum": 1.1754943508222876e-38,
+                    "maximum": 3.4028234663852887e38
                 },
                 "Shape Type": {
                     "title": "enum ScriptModuleDebugUtilities::ScriptDebugShapeType",
@@ -149,7 +152,7 @@
                     ],
                     "x-underlying-type": "uint8",
                     "x-serialization-options": [
-                        "EnumAsValue"
+                        "Enum-as-Value"
                     ],
                     "x-ordinal-index": 1
                 },
@@ -157,7 +160,9 @@
                     "description": "The total time left in seconds until this debug shape will be removed (0 meaning never).",
                     "type": "number",
                     "x-underlying-type": "float",
-                    "x-ordinal-index": 5
+                    "x-ordinal-index": 5,
+                    "minimum": 1.1754943508222876e-38,
+                    "maximum": 3.4028234663852887e38
                 }
             },
             "required": [
@@ -186,7 +191,9 @@
                 "Color": {
                     "type": "integer",
                     "x-underlying-type": "int32",
-                    "x-ordinal-index": 0
+                    "x-ordinal-index": 0,
+                    "minimum": -2147483648.0,
+                    "maximum": 2147483647.0
                 }
             },
             "required": [
@@ -203,7 +210,9 @@
                     "x-serialization-options": [
                         "Compression"
                     ],
-                    "x-ordinal-index": 0
+                    "x-ordinal-index": 0,
+                    "minimum": -2147483648.0,
+                    "maximum": 2147483647.0
                 }
             },
             "required": [
@@ -217,17 +226,23 @@
                 "X": {
                     "type": "number",
                     "x-underlying-type": "float",
-                    "x-ordinal-index": 0
+                    "x-ordinal-index": 0,
+                    "minimum": 1.1754943508222876e-38,
+                    "maximum": 3.4028234663852887e38
                 },
                 "Y": {
                     "type": "number",
                     "x-underlying-type": "float",
-                    "x-ordinal-index": 1
+                    "x-ordinal-index": 1,
+                    "minimum": 1.1754943508222876e-38,
+                    "maximum": 3.4028234663852887e38
                 },
                 "Z": {
                     "type": "number",
                     "x-underlying-type": "float",
-                    "x-ordinal-index": 2
+                    "x-ordinal-index": 2,
+                    "minimum": 1.1754943508222876e-38,
+                    "maximum": 3.4028234663852887e38
                 }
             },
             "required": [
@@ -269,11 +284,19 @@
     "description": "Send debug drawing shape info (from scripting) to the client for rendering",
     "type": "object",
     "properties": {
-        "mPayload": {
-            "$ref": "#/definitions/818882612",
-            "x-ordinal-index": 0
+        "Array of debug shapes (can be a mix of new, updated or removed)": {
+            "description": "Semantic version string",
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/3553763893"
+            },
+            "x-ordinal-index": 0,
+            "maxItems": 1048576
         }
     },
+    "required": [
+        "Array of debug shapes (can be a mix of new, updated or removed)"
+    ],
     "$metaProperties": {
         "[cereal:packet]": 328,
         "[cereal:packet_details]": ""

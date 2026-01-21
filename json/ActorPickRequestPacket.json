@@ -2,47 +2,40 @@
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "3472086964",
     "x-format-version": "MISSING VERSION",
-    "x-minecraft-version": "1.21.120",
-    "x-protocol-version": 859,
-    "definitions": {
-        "3726759737": {
-            "title": "ActorPickRequestPacketPayload",
-            "type": "object",
-            "properties": {
-                "Actor ID": {
-                    "description": "Target Actor ID",
-                    "type": "integer",
-                    "x-underlying-type": "int64",
-                    "x-ordinal-index": 0
-                },
-                "Max Slots": {
-                    "description": "number of empty hotbar slots (to decide whether to overwrite a slot or add it to an empty one)",
-                    "type": "integer",
-                    "x-underlying-type": "uint8",
-                    "x-ordinal-index": 1
-                },
-                "With Data": {
-                    "description": "whether we want to store the NBT data along with the item",
-                    "type": "boolean",
-                    "x-ordinal-index": 2
-                }
-            },
-            "required": [
-                "Actor ID",
-                "Max Slots",
-                "With Data"
-            ]
-        }
-    },
+    "x-minecraft-version": "1.21.130",
+    "x-protocol-version": 897,
     "title": "ActorPickRequestPacket",
     "description": "Player clicks on an actor in the world, eg a chicken.",
     "type": "object",
     "properties": {
-        "mPayload": {
-            "$ref": "#/definitions/3726759737",
-            "x-ordinal-index": 0
+        "Actor ID": {
+            "description": "Target Actor ID",
+            "type": "integer",
+            "x-underlying-type": "int64",
+            "x-ordinal-index": 0,
+            "minimum": -9223372036854776000.0,
+            "maximum": 9223372036854776000.0
+        },
+        "Max Slots": {
+            "description": "number of empty hotbar slots (to decide whether to overwrite a slot or add it to an empty one)",
+            "type": "integer",
+            "x-underlying-type": "uint8",
+            "x-ordinal-index": 1,
+            "minimum": 0.0,
+            "maximum": 255.0
+        },
+        "With Data": {
+            "description": "whether we want to store the NBT data along with the item",
+            "type": "boolean",
+            "x-underlying-type": "boolean",
+            "x-ordinal-index": 2
         }
     },
+    "required": [
+        "Actor ID",
+        "Max Slots",
+        "With Data"
+    ],
     "$metaProperties": {
         "[cereal:packet]": 35,
         "[cereal:packet_details]": ""

@@ -2,37 +2,26 @@
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "1217545134",
     "x-format-version": "MISSING VERSION",
-    "x-minecraft-version": "1.21.120",
-    "x-protocol-version": 859,
-    "definitions": {
-        "2222396645": {
-            "title": "EditorNetworkPacketPayload",
-            "type": "object",
-            "properties": {
-                "Binary Payload": {
-                    "$ref": "#/definitions/4158325036",
-                    "x-ordinal-index": 1
-                },
-                "Route To Manager": {
-                    "type": "boolean",
-                    "x-ordinal-index": 0
-                }
-            },
-            "required": [
-                "Binary Payload",
-                "Route To Manager"
-            ]
-        }
-    },
+    "x-minecraft-version": "1.21.130",
+    "x-protocol-version": 897,
     "title": "EditorNetworkPacket",
     "description": "General use Editor specific packet - carries a payload of whatever serialized data that the individual IEditorNetworkPayload generates.",
     "type": "object",
     "properties": {
-        "mPayload": {
-            "$ref": "#/definitions/2222396645",
+        "Binary Payload": {
+            "$ref": "#/definitions/4158325036",
+            "x-ordinal-index": 1
+        },
+        "Route To Manager": {
+            "type": "boolean",
+            "x-underlying-type": "boolean",
             "x-ordinal-index": 0
         }
     },
+    "required": [
+        "Binary Payload",
+        "Route To Manager"
+    ],
     "$metaProperties": {
         "[cereal:packet]": 190,
         "[cereal:packet_details]": ""

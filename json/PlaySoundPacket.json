@@ -2,39 +2,9 @@
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "830379746",
     "x-format-version": "MISSING VERSION",
-    "x-minecraft-version": "1.21.120",
-    "x-protocol-version": 859,
+    "x-minecraft-version": "1.21.130",
+    "x-protocol-version": 897,
     "definitions": {
-        "3338279157": {
-            "title": "PlaySoundPacketPayload",
-            "type": "object",
-            "properties": {
-                "Name": {
-                    "type": "string",
-                    "x-ordinal-index": 0
-                },
-                "Pitch": {
-                    "type": "number",
-                    "x-underlying-type": "float",
-                    "x-ordinal-index": 3
-                },
-                "Position": {
-                    "$ref": "#/definitions/269289973",
-                    "x-ordinal-index": 1
-                },
-                "Volume": {
-                    "type": "number",
-                    "x-underlying-type": "float",
-                    "x-ordinal-index": 2
-                }
-            },
-            "required": [
-                "Name",
-                "Pitch",
-                "Position",
-                "Volume"
-            ]
-        },
         "269289973": {
             "title": "NetworkBlockPosition",
             "type": "object",
@@ -45,7 +15,9 @@
                     "x-serialization-options": [
                         "Compression"
                     ],
-                    "x-ordinal-index": 0
+                    "x-ordinal-index": 0,
+                    "minimum": -2147483648.0,
+                    "maximum": 2147483647.0
                 },
                 "Y": {
                     "type": "integer",
@@ -53,7 +25,9 @@
                     "x-serialization-options": [
                         "Compression"
                     ],
-                    "x-ordinal-index": 1
+                    "x-ordinal-index": 1,
+                    "minimum": 0.0,
+                    "maximum": 4294967295.0
                 },
                 "Z": {
                     "type": "integer",
@@ -61,7 +35,9 @@
                     "x-serialization-options": [
                         "Compression"
                     ],
-                    "x-ordinal-index": 2
+                    "x-ordinal-index": 2,
+                    "minimum": -2147483648.0,
+                    "maximum": 2147483647.0
                 }
             },
             "required": [
@@ -75,11 +51,35 @@
     "description": "This packet is only used via command or script event. This is for 3rd party content.",
     "type": "object",
     "properties": {
-        "mPayload": {
-            "$ref": "#/definitions/3338279157",
+        "Name": {
+            "type": "string",
             "x-ordinal-index": 0
+        },
+        "Pitch": {
+            "type": "number",
+            "x-underlying-type": "float",
+            "x-ordinal-index": 3,
+            "minimum": 1.1754943508222876e-38,
+            "maximum": 3.4028234663852887e38
+        },
+        "Position": {
+            "$ref": "#/definitions/269289973",
+            "x-ordinal-index": 1
+        },
+        "Volume": {
+            "type": "number",
+            "x-underlying-type": "float",
+            "x-ordinal-index": 2,
+            "minimum": 1.1754943508222876e-38,
+            "maximum": 3.4028234663852887e38
         }
     },
+    "required": [
+        "Name",
+        "Pitch",
+        "Position",
+        "Volume"
+    ],
     "$metaProperties": {
         "[cereal:packet]": 86,
         "[cereal:packet_details]": ""

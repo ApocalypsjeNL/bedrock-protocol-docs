@@ -2,55 +2,49 @@
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "1848826019",
     "x-format-version": "MISSING VERSION",
-    "x-minecraft-version": "1.21.120",
-    "x-protocol-version": 859,
-    "definitions": {
-        "169551854": {
-            "title": "struct HurtArmorPacketPayload",
-            "type": "object",
-            "properties": {
-                "Armor Slots": {
-                    "description": "Bitset",
-                    "type": "integer",
-                    "x-underlying-type": "uint64",
-                    "x-serialization-options": [
-                        "Compression"
-                    ],
-                    "x-ordinal-index": 2
-                },
-                "Cause": {
-                    "type": "integer",
-                    "x-underlying-type": "int32",
-                    "x-serialization-options": [
-                        "Compression"
-                    ],
-                    "x-ordinal-index": 0
-                },
-                "Damage": {
-                    "type": "integer",
-                    "x-underlying-type": "int32",
-                    "x-serialization-options": [
-                        "Compression"
-                    ],
-                    "x-ordinal-index": 1
-                }
-            },
-            "required": [
-                "Armor Slots",
-                "Cause",
-                "Damage"
-            ]
-        }
-    },
+    "x-minecraft-version": "1.21.130",
+    "x-protocol-version": 897,
     "title": "HurtArmorPacket",
     "description": "Hurt Armor",
     "type": "object",
     "properties": {
-        "mPayload": {
-            "$ref": "#/definitions/169551854",
-            "x-ordinal-index": 0
+        "Armor Slots": {
+            "description": "Bitset",
+            "type": "integer",
+            "x-underlying-type": "uint64",
+            "x-serialization-options": [
+                "Compression"
+            ],
+            "x-ordinal-index": 2,
+            "minimum": 0.0,
+            "maximum": 18446744073709553000.0
+        },
+        "Cause": {
+            "type": "integer",
+            "x-underlying-type": "int32",
+            "x-serialization-options": [
+                "Compression"
+            ],
+            "x-ordinal-index": 0,
+            "minimum": -2147483648.0,
+            "maximum": 2147483647.0
+        },
+        "Damage": {
+            "type": "integer",
+            "x-underlying-type": "int32",
+            "x-serialization-options": [
+                "Compression"
+            ],
+            "x-ordinal-index": 1,
+            "minimum": -2147483648.0,
+            "maximum": 2147483647.0
         }
     },
+    "required": [
+        "Armor Slots",
+        "Cause",
+        "Damage"
+    ],
     "$metaProperties": {
         "[cereal:packet]": 38,
         "[cereal:packet_details]": "Sends the damage taken after armor is taken into account. This looks like it is trying to be phased out, this is not sent while the ItemStackNetManagerServer is active. From the server."

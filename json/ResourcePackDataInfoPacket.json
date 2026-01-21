@@ -2,67 +2,64 @@
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "121683812",
     "x-format-version": "MISSING VERSION",
-    "x-minecraft-version": "1.21.120",
-    "x-protocol-version": 859,
-    "definitions": {
-        "1925536177": {
-            "title": "struct ResourcePackDataInfoPacketPayload",
-            "type": "object",
-            "properties": {
-                "Chunk Size": {
-                    "type": "integer",
-                    "x-underlying-type": "uint32",
-                    "x-ordinal-index": 1
-                },
-                "File Hash": {
-                    "type": "string",
-                    "x-ordinal-index": 4
-                },
-                "File Size": {
-                    "type": "integer",
-                    "x-underlying-type": "uint64",
-                    "x-ordinal-index": 3
-                },
-                "Is Premium Pack": {
-                    "description": "Do you need an entitlement to use this pack?",
-                    "type": "boolean",
-                    "x-ordinal-index": 5
-                },
-                "Number of Chunks": {
-                    "type": "integer",
-                    "x-underlying-type": "uint32",
-                    "x-ordinal-index": 2
-                },
-                "Pack Type": {
-                    "type": "integer",
-                    "x-underlying-type": "uint8",
-                    "x-ordinal-index": 6
-                },
-                "Resource Name": {
-                    "type": "string",
-                    "x-ordinal-index": 0
-                }
-            },
-            "required": [
-                "Chunk Size",
-                "File Hash",
-                "File Size",
-                "Is Premium Pack",
-                "Number of Chunks",
-                "Pack Type",
-                "Resource Name"
-            ]
-        }
-    },
+    "x-minecraft-version": "1.21.130",
+    "x-protocol-version": 897,
     "title": "ResourcePackDataInfoPacket",
     "description": "Resource Pack Data Info",
     "type": "object",
     "properties": {
-        "mPayload": {
-            "$ref": "#/definitions/1925536177",
+        "Chunk Size": {
+            "type": "integer",
+            "x-underlying-type": "uint32",
+            "x-ordinal-index": 1,
+            "minimum": 0.0,
+            "maximum": 4294967295.0
+        },
+        "File Hash": {
+            "type": "string",
+            "x-ordinal-index": 4
+        },
+        "File Size": {
+            "type": "integer",
+            "x-underlying-type": "uint64",
+            "x-ordinal-index": 3,
+            "minimum": 0.0,
+            "maximum": 18446744073709553000.0
+        },
+        "Is Premium Pack": {
+            "description": "Do you need an entitlement to use this pack?",
+            "type": "boolean",
+            "x-underlying-type": "boolean",
+            "x-ordinal-index": 5
+        },
+        "Number of Chunks": {
+            "type": "integer",
+            "x-underlying-type": "uint32",
+            "x-ordinal-index": 2,
+            "minimum": 0.0,
+            "maximum": 4294967295.0
+        },
+        "Pack Type": {
+            "type": "integer",
+            "x-underlying-type": "uint8",
+            "x-ordinal-index": 6,
+            "minimum": 0.0,
+            "maximum": 255.0
+        },
+        "Resource Name": {
+            "type": "string",
             "x-ordinal-index": 0
         }
     },
+    "required": [
+        "Chunk Size",
+        "File Hash",
+        "File Size",
+        "Is Premium Pack",
+        "Number of Chunks",
+        "Pack Type",
+        "Resource Name"
+    ],
     "$metaProperties": {
         "[cereal:packet]": 82,
         "[cereal:packet_details]": "Sent from the serverFileChunkUploader during the initialization of the file uploader. This packet is sent to the primary client."

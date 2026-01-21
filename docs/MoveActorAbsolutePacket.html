@@ -83,6 +83,26 @@
             margin-bottom: 8px;
             break-inside: avoid;
         }
+        details {
+            margin: 10px 0;
+        }
+        summary {
+            cursor: pointer;
+            font-weight: bold;
+            padding: 8px;
+            background-color: #f0f0f0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            user-select: none;
+        }
+        summary:hover {
+            background-color: #e8e8e8;
+        }
+        details[open] summary {
+            background-color: #d4edff;
+            border-color: #3498db;
+            border-left: 4px solid #3498db;
+        }
         @media (max-width: 900px) {
             .packet-list {
                 columns: 2;
@@ -106,13 +126,13 @@
 <tr style="background-color: #f0f0f0;">
 <th>Field Name</th>
 <th>Type</th>
-<th>Ordinal Index</th>
+<th>Field Index</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td rowspan="2"><strong>Move Data</strong></td>
+<td rowspan="2"><strong>Move Data (Required)</strong></td>
 <td>class MoveActorAbsoluteData</td>
 <td>0</td>
 <td>This is client bound for normal actor motion updates.</td>
@@ -125,13 +145,13 @@
 <tr style="background-color: #f0f0f0;">
 <th>Field Name</th>
 <th>Type</th>
-<th>Ordinal Index</th>
+<th>Field Index</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td rowspan="2"><strong>ActorRuntimeID</strong></td>
+<td rowspan="2"><strong>ActorRuntimeID (Required)</strong></td>
 <td>ActorRuntimeID</td>
 <td>0</td>
 <td>The runtime id of the actor being moved</td>
@@ -144,13 +164,13 @@
 <tr style="background-color: #f0f0f0;">
 <th>Field Name</th>
 <th>Type</th>
-<th>Ordinal Index</th>
+<th>Field Index</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>Actor Runtime ID</strong></td>
+<td><strong>Actor Runtime ID (Required)</strong></td>
 <td>varuint64</td>
 <td>0</td>
 <td></td>
@@ -160,13 +180,13 @@
 </div></td>
 </tr>
 <tr>
-<td><strong>Header</strong></td>
+<td><strong>Header (Required)</strong></td>
 <td>uint8</td>
 <td>1</td>
 <td>Header bits describing the status of the actor, see additional documentation in the supplemental documentation folder</td>
 </tr>
 <tr>
-<td rowspan="2"><strong>Position</strong></td>
+<td rowspan="2"><strong>Position (Required)</strong></td>
 <td>Vec3</td>
 <td>2</td>
 <td>X/Y/Z coordinates of the position of the actor, each being a 4 byte float</td>
@@ -179,25 +199,25 @@
 <tr style="background-color: #f0f0f0;">
 <th>Field Name</th>
 <th>Type</th>
-<th>Ordinal Index</th>
+<th>Field Index</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>X</strong></td>
+<td><strong>X (Required)</strong></td>
 <td>float</td>
 <td>0</td>
 <td></td>
 </tr>
 <tr>
-<td><strong>Y</strong></td>
+<td><strong>Y (Required)</strong></td>
 <td>float</td>
 <td>1</td>
 <td></td>
 </tr>
 <tr>
-<td><strong>Z</strong></td>
+<td><strong>Z (Required)</strong></td>
 <td>float</td>
 <td>2</td>
 <td></td>
@@ -207,19 +227,19 @@
 </div></td>
 </tr>
 <tr>
-<td><strong>Rotation X</strong></td>
+<td><strong>Rotation X (Required)</strong></td>
 <td>uint8</td>
 <td>3</td>
 <td>The X rotation of the actor stored as an integer</td>
 </tr>
 <tr>
-<td><strong>Rotation Y</strong></td>
+<td><strong>Rotation Y (Required)</strong></td>
 <td>uint8</td>
 <td>4</td>
 <td>The Y rotation of the actor stored as an integer</td>
 </tr>
 <tr>
-<td><strong>Rotation Y Head</strong></td>
+<td><strong>Rotation Y Head (Required)</strong></td>
 <td>uint8</td>
 <td>5</td>
 <td>The head rotation of the actor if and only if it&#x27;s a Mob type, stored as an integer</td>

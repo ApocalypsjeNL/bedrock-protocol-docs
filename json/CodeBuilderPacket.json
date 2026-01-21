@@ -2,37 +2,26 @@
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "2293538647",
     "x-format-version": "MISSING VERSION",
-    "x-minecraft-version": "1.21.120",
-    "x-protocol-version": 859,
-    "definitions": {
-        "2058348214": {
-            "title": "CodeBuilderPacketPayload",
-            "type": "object",
-            "properties": {
-                "Should open code builder": {
-                    "type": "boolean",
-                    "x-ordinal-index": 1
-                },
-                "URL": {
-                    "type": "string",
-                    "x-ordinal-index": 0
-                }
-            },
-            "required": [
-                "Should open code builder",
-                "URL"
-            ]
-        }
-    },
+    "x-minecraft-version": "1.21.130",
+    "x-protocol-version": 897,
     "title": "CodeBuilderPacket",
     "description": "Code Builder Packet",
     "type": "object",
     "properties": {
-        "mPayload": {
-            "$ref": "#/definitions/2058348214",
+        "Should open code builder": {
+            "type": "boolean",
+            "x-underlying-type": "boolean",
+            "x-ordinal-index": 1
+        },
+        "URL": {
+            "type": "string",
             "x-ordinal-index": 0
         }
     },
+    "required": [
+        "Should open code builder",
+        "URL"
+    ],
     "$metaProperties": {
         "[cereal:packet]": 150,
         "[cereal:packet_details]": "This is EDU exclusively.It is sent once from _sendLevelData() in the start of a game from the server,\n\tand once per CodeBuilderCommand"

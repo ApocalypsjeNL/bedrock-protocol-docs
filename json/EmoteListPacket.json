@@ -2,30 +2,9 @@
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "1147720015",
     "x-format-version": "MISSING VERSION",
-    "x-minecraft-version": "1.21.120",
-    "x-protocol-version": 859,
+    "x-minecraft-version": "1.21.130",
+    "x-protocol-version": 897,
     "definitions": {
-        "1296665078": {
-            "title": "EmoteListPacketPayload",
-            "type": "object",
-            "properties": {
-                "Emote piece ids": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/1616419299"
-                    },
-                    "x-ordinal-index": 1
-                },
-                "Runtime id": {
-                    "$ref": "#/definitions/3541243607",
-                    "x-ordinal-index": 0
-                }
-            },
-            "required": [
-                "Emote piece ids",
-                "Runtime id"
-            ]
-        },
         "1616419299": {
             "title": "mce::UUID",
             "type": "object",
@@ -33,12 +12,16 @@
                 "Least Significant Bits": {
                     "type": "integer",
                     "x-underlying-type": "uint64",
-                    "x-ordinal-index": 1
+                    "x-ordinal-index": 1,
+                    "minimum": 0.0,
+                    "maximum": 18446744073709553000.0
                 },
                 "Most Significant Bits": {
                     "type": "integer",
                     "x-underlying-type": "uint64",
-                    "x-ordinal-index": 0
+                    "x-ordinal-index": 0,
+                    "minimum": 0.0,
+                    "maximum": 18446744073709553000.0
                 }
             },
             "required": [
@@ -56,7 +39,9 @@
                     "x-serialization-options": [
                         "Compression"
                     ],
-                    "x-ordinal-index": 0
+                    "x-ordinal-index": 0,
+                    "minimum": 0.0,
+                    "maximum": 18446744073709553000.0
                 }
             },
             "required": [
@@ -68,11 +53,22 @@
     "description": "Allows clients to download emotes that other clients have equipped.",
     "type": "object",
     "properties": {
-        "mPayload": {
-            "$ref": "#/definitions/1296665078",
+        "Emote piece ids": {
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/1616419299"
+            },
+            "x-ordinal-index": 1
+        },
+        "Runtime id": {
+            "$ref": "#/definitions/3541243607",
             "x-ordinal-index": 0
         }
     },
+    "required": [
+        "Emote piece ids",
+        "Runtime id"
+    ],
     "$metaProperties": {
         "[cereal:packet]": 152,
         "[cereal:packet_details]": ""

@@ -2,50 +2,42 @@
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "1151833066",
     "x-format-version": "MISSING VERSION",
-    "x-minecraft-version": "1.21.120",
-    "x-protocol-version": 859,
-    "definitions": {
-        "1317601419": {
-            "title": "LessonProgressPacketPayload",
-            "type": "object",
-            "properties": {
-                "Activity Id": {
-                    "type": "string",
-                    "x-ordinal-index": 2
-                },
-                "Lesson Action": {
-                    "type": "integer",
-                    "x-underlying-type": "int32",
-                    "x-serialization-options": [
-                        "Compression"
-                    ],
-                    "x-ordinal-index": 0
-                },
-                "Score": {
-                    "type": "integer",
-                    "x-underlying-type": "int32",
-                    "x-serialization-options": [
-                        "Compression"
-                    ],
-                    "x-ordinal-index": 1
-                }
-            },
-            "required": [
-                "Activity Id",
-                "Lesson Action",
-                "Score"
-            ]
-        }
-    },
+    "x-minecraft-version": "1.21.130",
+    "x-protocol-version": 897,
     "title": "LessonProgressPacket",
     "description": "Lesson Progress",
     "type": "object",
     "properties": {
-        "mPayload": {
-            "$ref": "#/definitions/1317601419",
-            "x-ordinal-index": 0
+        "Activity Id": {
+            "type": "string",
+            "x-ordinal-index": 2
+        },
+        "Lesson Action": {
+            "type": "integer",
+            "x-underlying-type": "int32",
+            "x-serialization-options": [
+                "Compression"
+            ],
+            "x-ordinal-index": 0,
+            "minimum": -2147483648.0,
+            "maximum": 2147483647.0
+        },
+        "Score": {
+            "type": "integer",
+            "x-underlying-type": "int32",
+            "x-serialization-options": [
+                "Compression"
+            ],
+            "x-ordinal-index": 1,
+            "minimum": -2147483648.0,
+            "maximum": 2147483647.0
         }
     },
+    "required": [
+        "Activity Id",
+        "Lesson Action",
+        "Score"
+    ],
     "$metaProperties": {
         "[cereal:packet]": 183,
         "[cereal:packet_details]": ""

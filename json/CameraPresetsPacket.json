@@ -2,22 +2,9 @@
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "1161582602",
     "x-format-version": "MISSING VERSION",
-    "x-minecraft-version": "1.21.120",
-    "x-protocol-version": 859,
+    "x-minecraft-version": "1.21.130",
+    "x-protocol-version": 897,
     "definitions": {
-        "2327787693": {
-            "title": "CameraPresetsPacketPayload",
-            "type": "object",
-            "properties": {
-                "Camera Presets": {
-                    "$ref": "#/definitions/1531171666",
-                    "x-ordinal-index": 0
-                }
-            },
-            "required": [
-                "Camera Presets"
-            ]
-        },
         "1492643634": {
             "title": "struct SharedTypes::Reference<5>",
             "type": "string"
@@ -47,16 +34,19 @@
             "type": "object",
             "properties": {
                 "Aim Assist": {
-                    "$ref": "#/definitions/3530470262",
+                    "$ref": "#/definitions/950654229",
                     "x-ordinal-index": 20
                 },
                 "Block Listening Radius": {
                     "type": "number",
                     "x-underlying-type": "float",
-                    "x-ordinal-index": 12
+                    "x-ordinal-index": 12,
+                    "minimum": 1.1754943508222876e-38,
+                    "maximum": 3.4028234663852887e38
                 },
                 "Continue Targeting": {
                     "type": "boolean",
+                    "x-underlying-type": "boolean",
                     "x-ordinal-index": 11
                 },
                 "Control Scheme": {
@@ -71,7 +61,7 @@
                     ],
                     "x-underlying-type": "uint8",
                     "x-serialization-options": [
-                        "EnumAsValue"
+                        "Enum-as-Value"
                     ],
                     "x-ordinal-index": 21
                 },
@@ -97,7 +87,7 @@
                     ],
                     "x-underlying-type": "uint8",
                     "x-serialization-options": [
-                        "EnumAsValue"
+                        "Enum-as-Value"
                     ],
                     "x-ordinal-index": 18
                 },
@@ -107,45 +97,61 @@
                 },
                 "Player Effects": {
                     "type": "boolean",
+                    "x-underlying-type": "boolean",
                     "x-ordinal-index": 19
                 },
                 "Pos X": {
                     "type": "number",
                     "x-underlying-type": "float",
-                    "x-ordinal-index": 2
+                    "x-ordinal-index": 2,
+                    "minimum": 1.1754943508222876e-38,
+                    "maximum": 3.4028234663852887e38
                 },
                 "Pos Y": {
                     "type": "number",
                     "x-underlying-type": "float",
-                    "x-ordinal-index": 3
+                    "x-ordinal-index": 3,
+                    "minimum": 1.1754943508222876e-38,
+                    "maximum": 3.4028234663852887e38
                 },
                 "Pos Z": {
                     "type": "number",
                     "x-underlying-type": "float",
-                    "x-ordinal-index": 4
+                    "x-ordinal-index": 4,
+                    "minimum": 1.1754943508222876e-38,
+                    "maximum": 3.4028234663852887e38
                 },
                 "Radius": {
                     "type": "number",
                     "x-underlying-type": "float",
-                    "x-ordinal-index": 15
+                    "x-ordinal-index": 15,
+                    "minimum": 1.1754943508222876e-38,
+                    "maximum": 3.4028234663852887e38
                 },
                 "Rot X": {
                     "type": "number",
                     "x-underlying-type": "float",
-                    "x-ordinal-index": 5
+                    "x-ordinal-index": 5,
+                    "minimum": 1.1754943508222876e-38,
+                    "maximum": 3.4028234663852887e38
                 },
                 "Rot Y": {
                     "type": "number",
                     "x-underlying-type": "float",
-                    "x-ordinal-index": 6
+                    "x-ordinal-index": 6,
+                    "minimum": 1.1754943508222876e-38,
+                    "maximum": 3.4028234663852887e38
                 },
                 "Rotation Speed": {
                     "type": "number",
                     "x-underlying-type": "float",
-                    "x-ordinal-index": 7
+                    "x-ordinal-index": 7,
+                    "minimum": 1.1754943508222876e-38,
+                    "maximum": 3.4028234663852887e38
                 },
                 "Snap to Target": {
                     "type": "boolean",
+                    "x-underlying-type": "boolean",
                     "x-ordinal-index": 8
                 },
                 "Vertical Rotation Limit": {
@@ -159,12 +165,16 @@
                 "Yaw Limit Max": {
                     "type": "number",
                     "x-underlying-type": "float",
-                    "x-ordinal-index": 17
+                    "x-ordinal-index": 17,
+                    "minimum": 1.1754943508222876e-38,
+                    "maximum": 3.4028234663852887e38
                 },
                 "Yaw Limit Min": {
                     "type": "number",
                     "x-underlying-type": "float",
-                    "x-ordinal-index": 16
+                    "x-ordinal-index": 16,
+                    "minimum": 1.1754943508222876e-38,
+                    "maximum": 3.4028234663852887e38
                 }
             },
             "required": [
@@ -192,18 +202,16 @@
                 "Yaw Limit Min"
             ]
         },
-        "3640473056": {
-            "title": "struct SharedTypes::Reference<7>",
-            "type": "string"
-        },
-        "3530470262": {
-            "title": "SharedTypes::Comprehensive::CameraPresetAimAssistDefinition",
+        "950654229": {
+            "title": "SharedTypes::Comprehensive::CameraAimAssistCommandDefinition",
             "type": "object",
             "properties": {
                 "Distance": {
                     "type": "number",
                     "x-underlying-type": "float",
-                    "x-ordinal-index": 3
+                    "x-ordinal-index": 3,
+                    "minimum": 1.1754943508222876e-38,
+                    "maximum": 3.4028234663852887e38
                 },
                 "Preset Id": {
                     "$ref": "#/definitions/1492643634",
@@ -218,7 +226,7 @@
                     ],
                     "x-underlying-type": "uint8",
                     "x-serialization-options": [
-                        "EnumAsValue"
+                        "Enum-as-Value"
                     ],
                     "x-ordinal-index": 1
                 },
@@ -241,12 +249,16 @@
                 "X": {
                     "type": "number",
                     "x-underlying-type": "float",
-                    "x-ordinal-index": 0
+                    "x-ordinal-index": 0,
+                    "minimum": 1.1754943508222876e-38,
+                    "maximum": 3.4028234663852887e38
                 },
                 "Y": {
                     "type": "number",
                     "x-underlying-type": "float",
-                    "x-ordinal-index": 1
+                    "x-ordinal-index": 1,
+                    "minimum": 1.1754943508222876e-38,
+                    "maximum": 3.4028234663852887e38
                 }
             },
             "required": [
@@ -261,17 +273,23 @@
                 "X": {
                     "type": "number",
                     "x-underlying-type": "float",
-                    "x-ordinal-index": 0
+                    "x-ordinal-index": 0,
+                    "minimum": 1.1754943508222876e-38,
+                    "maximum": 3.4028234663852887e38
                 },
                 "Y": {
                     "type": "number",
                     "x-underlying-type": "float",
-                    "x-ordinal-index": 1
+                    "x-ordinal-index": 1,
+                    "minimum": 1.1754943508222876e-38,
+                    "maximum": 3.4028234663852887e38
                 },
                 "Z": {
                     "type": "number",
                     "x-underlying-type": "float",
-                    "x-ordinal-index": 2
+                    "x-ordinal-index": 2,
+                    "minimum": 1.1754943508222876e-38,
+                    "maximum": 3.4028234663852887e38
                 }
             },
             "required": [
@@ -279,17 +297,24 @@
                 "Y",
                 "Z"
             ]
+        },
+        "3640473056": {
+            "title": "struct SharedTypes::Reference<7>",
+            "type": "string"
         }
     },
     "title": "CameraPresetsPacket",
     "description": "Used to sync CameraPresets data from server to clients.",
     "type": "object",
     "properties": {
-        "mPayload": {
-            "$ref": "#/definitions/2327787693",
+        "Camera Presets": {
+            "$ref": "#/definitions/1531171666",
             "x-ordinal-index": 0
         }
     },
+    "required": [
+        "Camera Presets"
+    ],
     "$metaProperties": {
         "[cereal:packet]": 198,
         "[cereal:packet_details]": ""

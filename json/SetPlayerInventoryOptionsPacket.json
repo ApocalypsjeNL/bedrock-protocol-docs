@@ -2,8 +2,8 @@
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "3800421896",
     "x-format-version": "MISSING VERSION",
-    "x-minecraft-version": "1.21.120",
-    "x-protocol-version": 859,
+    "x-minecraft-version": "1.21.130",
+    "x-protocol-version": 897,
     "definitions": {
         "3667194778": {
             "title": "InventoryOptions",
@@ -11,6 +11,7 @@
             "properties": {
                 "Filtering": {
                     "type": "boolean",
+                    "x-underlying-type": "boolean",
                     "x-ordinal-index": 2
                 },
                 "Layout Craft": {
@@ -25,7 +26,7 @@
                     "x-underlying-type": "int32",
                     "x-serialization-options": [
                         "Compression",
-                        "EnumAsValue"
+                        "Enum-as-Value"
                     ],
                     "x-ordinal-index": 4
                 },
@@ -41,7 +42,7 @@
                     "x-underlying-type": "int32",
                     "x-serialization-options": [
                         "Compression",
-                        "EnumAsValue"
+                        "Enum-as-Value"
                     ],
                     "x-ordinal-index": 3
                 },
@@ -60,7 +61,7 @@
                     "x-underlying-type": "int32",
                     "x-serialization-options": [
                         "Compression",
-                        "EnumAsValue"
+                        "Enum-as-Value"
                     ],
                     "x-ordinal-index": 0
                 },
@@ -76,7 +77,7 @@
                     "x-underlying-type": "int32",
                     "x-serialization-options": [
                         "Compression",
-                        "EnumAsValue"
+                        "Enum-as-Value"
                     ],
                     "x-ordinal-index": 1
                 }
@@ -88,30 +89,20 @@
                 "Left Inventory Tab",
                 "Right Inventory Tab"
             ]
-        },
-        "1008886887": {
-            "title": "SetPlayerInventoryOptionsPacketPayload",
-            "type": "object",
-            "properties": {
-                "Inventory Options": {
-                    "$ref": "#/definitions/3667194778",
-                    "x-ordinal-index": 0
-                }
-            },
-            "required": [
-                "Inventory Options"
-            ]
         }
     },
     "title": "SetPlayerInventoryOptionsPacket",
     "description": "SetPlayerInventoryOptionsPacket",
     "type": "object",
     "properties": {
-        "mPayload": {
-            "$ref": "#/definitions/1008886887",
+        "Inventory Options": {
+            "$ref": "#/definitions/3667194778",
             "x-ordinal-index": 0
         }
     },
+    "required": [
+        "Inventory Options"
+    ],
     "$metaProperties": {
         "[cereal:packet]": 307,
         "[cereal:packet_details]": ""

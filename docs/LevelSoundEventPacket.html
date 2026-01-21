@@ -83,6 +83,26 @@
             margin-bottom: 8px;
             break-inside: avoid;
         }
+        details {
+            margin: 10px 0;
+        }
+        summary {
+            cursor: pointer;
+            font-weight: bold;
+            padding: 8px;
+            background-color: #f0f0f0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            user-select: none;
+        }
+        summary:hover {
+            background-color: #e8e8e8;
+        }
+        details[open] summary {
+            background-color: #d4edff;
+            border-color: #3498db;
+            border-left: 4px solid #3498db;
+        }
         @media (max-width: 900px) {
             .packet-list {
                 columns: 2;
@@ -111,13 +131,13 @@
 <tr style="background-color: #f0f0f0;">
 <th>Field Name</th>
 <th>Type</th>
-<th>Ordinal Index</th>
+<th>Field Index</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td rowspan="2"><strong>Event ID</strong></td>
+<td rowspan="2"><strong>Event ID (Required)</strong></td>
 <td>varuint32</td>
 <td>0</td>
 <td></td>
@@ -2243,6 +2263,54 @@
 </tr>
 <tr>
 <td style="text-align: center;">527</td>
+<td><code>Lunge1</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">528</td>
+<td><code>Lunge2</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">529</td>
+<td><code>Lunge3</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">530</td>
+<td><code>AttackCritical</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">531</td>
+<td><code>SpearAttackHit</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">532</td>
+<td><code>SpearAttackMiss</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">533</td>
+<td><code>WoodenSpearAttackHit</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">534</td>
+<td><code>WoodenSpearAttackMiss</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">535</td>
+<td><code>ImitateParched</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">536</td>
+<td><code>ImitateCamelHusk</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">537</td>
+<td><code>SpearUse</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">538</td>
+<td><code>WoodenSpearUse</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">539</td>
 <td><code>Undefined</code></td>
 </tr>
 </tbody>
@@ -2250,7 +2318,7 @@
 </div></td>
 </tr>
 <tr>
-<td rowspan="2"><strong>Position</strong></td>
+<td rowspan="2"><strong>Position (Required)</strong></td>
 <td>Vec3</td>
 <td>1</td>
 <td></td>
@@ -2263,25 +2331,25 @@
 <tr style="background-color: #f0f0f0;">
 <th>Field Name</th>
 <th>Type</th>
-<th>Ordinal Index</th>
+<th>Field Index</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>X</strong></td>
+<td><strong>X (Required)</strong></td>
 <td>float</td>
 <td>0</td>
 <td></td>
 </tr>
 <tr>
-<td><strong>Y</strong></td>
+<td><strong>Y (Required)</strong></td>
 <td>float</td>
 <td>1</td>
 <td></td>
 </tr>
 <tr>
-<td><strong>Z</strong></td>
+<td><strong>Z (Required)</strong></td>
 <td>float</td>
 <td>2</td>
 <td></td>
@@ -2291,31 +2359,31 @@
 </div></td>
 </tr>
 <tr>
-<td><strong>Data</strong></td>
+<td><strong>Data (Required)</strong></td>
 <td>varint32</td>
 <td>2</td>
 <td></td>
 </tr>
 <tr>
-<td><strong>Actor Identifier</strong></td>
+<td><strong>Actor Identifier (Required)</strong></td>
 <td>string</td>
 <td>3</td>
 <td></td>
 </tr>
 <tr>
-<td><strong>Is Baby</strong></td>
+<td><strong>Is Baby (Required)</strong></td>
 <td>boolean</td>
 <td>4</td>
 <td></td>
 </tr>
 <tr>
-<td><strong>Is Global</strong></td>
+<td><strong>Is Global (Required)</strong></td>
 <td>boolean</td>
 <td>5</td>
 <td></td>
 </tr>
 <tr>
-<td><strong>Actor Unique Id</strong></td>
+<td><strong>Actor Unique Id (Required)</strong></td>
 <td>int64</td>
 <td>6</td>
 <td></td>

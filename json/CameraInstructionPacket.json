@@ -2,20 +2,31 @@
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "4233761218",
     "x-format-version": "MISSING VERSION",
-    "x-minecraft-version": "1.21.120",
-    "x-protocol-version": 859,
+    "x-minecraft-version": "1.21.130",
+    "x-protocol-version": 897,
     "definitions": {
-        "3784246425": {
-            "title": "CameraInstructionPacketPayload",
+        "4021724221": {
+            "title": "Vec2",
             "type": "object",
             "properties": {
-                "Camera Instruction": {
-                    "$ref": "#/definitions/1219428877",
-                    "x-ordinal-index": 0
+                "X": {
+                    "type": "number",
+                    "x-underlying-type": "float",
+                    "x-ordinal-index": 0,
+                    "minimum": 1.1754943508222876e-38,
+                    "maximum": 3.4028234663852887e38
+                },
+                "Y": {
+                    "type": "number",
+                    "x-underlying-type": "float",
+                    "x-ordinal-index": 1,
+                    "minimum": 1.1754943508222876e-38,
+                    "maximum": 3.4028234663852887e38
                 }
             },
             "required": [
-                "Camera Instruction"
+                "X",
+                "Y"
             ]
         },
         "1219428877": {
@@ -23,39 +34,42 @@
             "type": "object",
             "properties": {
                 "AttachToEntity": {
-                    "$ref": "#/definitions/2100148614",
+                    "$ref": "#/definitions/311463350",
                     "x-ordinal-index": 7
                 },
                 "Clear": {
                     "type": "boolean",
+                    "x-underlying-type": "boolean",
                     "x-ordinal-index": 1
                 },
                 "DetachFromEntity": {
                     "type": "boolean",
+                    "x-underlying-type": "boolean",
                     "x-ordinal-index": 8
                 },
                 "Fade": {
-                    "$ref": "#/definitions/807276817",
+                    "$ref": "#/definitions/3776911233",
                     "x-ordinal-index": 2
                 },
                 "FieldOfView": {
-                    "$ref": "#/definitions/1098411468",
+                    "$ref": "#/definitions/1293790908",
                     "x-ordinal-index": 5
                 },
                 "RemoveTarget": {
                     "type": "boolean",
+                    "x-underlying-type": "boolean",
                     "x-ordinal-index": 4
                 },
                 "Set": {
-                    "$ref": "#/definitions/3251651569",
+                    "$ref": "#/definitions/22859905",
                     "x-ordinal-index": 0
                 },
                 "Spline": {
-                    "$ref": "#/definitions/2683916060",
+                    "$ref": "#/definitions/3931859532",
                     "x-ordinal-index": 6
                 },
                 "Target": {
-                    "$ref": "#/definitions/3976246368",
+                    "$ref": "#/definitions/3785693680",
                     "x-ordinal-index": 3
                 }
             },
@@ -71,54 +85,34 @@
                 "Target"
             ]
         },
-        "2371113601": {
-            "title": "CameraInstruction::FadeInstruction::TimeOption",
+        "3776911233": {
+            "title": "CameraInstruction::FadeInstruction",
             "type": "object",
             "properties": {
-                "Fade In Time": {
-                    "type": "number",
-                    "x-underlying-type": "float",
-                    "x-ordinal-index": 0
-                },
-                "Fade Out Time": {
-                    "type": "number",
-                    "x-underlying-type": "float",
-                    "x-ordinal-index": 2
-                },
-                "Hold Time": {
-                    "type": "number",
-                    "x-underlying-type": "float",
+                "Color": {
+                    "$ref": "#/definitions/3843718221",
                     "x-ordinal-index": 1
-                }
-            },
-            "required": [
-                "Fade In Time",
-                "Fade Out Time",
-                "Hold Time"
-            ]
-        },
-        "2100148614": {
-            "title": "CameraInstruction::AttachToEntityInstruction",
-            "type": "object",
-            "properties": {
-                "Entity Actor ID": {
-                    "type": "integer",
-                    "x-underlying-type": "int64",
+                },
+                "Time": {
+                    "$ref": "#/definitions/1454186641",
                     "x-ordinal-index": 0
                 }
             },
             "required": [
-                "Entity Actor ID"
+                "Color",
+                "Time"
             ]
         },
-        "1098411468": {
+        "1293790908": {
             "title": "CameraInstruction::FovInstruction",
             "type": "object",
             "properties": {
                 "FOV Ease Time": {
                     "type": "number",
                     "x-underlying-type": "float",
-                    "x-ordinal-index": 1
+                    "x-ordinal-index": 1,
+                    "minimum": 1.1754943508222876e-38,
+                    "maximum": 3.4028234663852887e38
                 },
                 "FOV Ease Type": {
                     "title": "easing_function",
@@ -163,266 +157,40 @@
                 "Field of View": {
                     "type": "number",
                     "x-underlying-type": "float",
-                    "x-ordinal-index": 0
+                    "x-ordinal-index": 0,
+                    "minimum": 1.1754943508222876e-38,
+                    "maximum": 3.4028234663852887e38
                 },
                 "Field of View Clear": {
                     "type": "boolean",
+                    "x-underlying-type": "boolean",
                     "x-ordinal-index": 3
                 }
             },
             "required": [
                 "FOV Ease Time",
                 "FOV Ease Type",
-                "Field of View"
+                "Field of View",
+                "Field of View Clear"
             ]
         },
-        "807276817": {
-            "title": "CameraInstruction::FadeInstruction",
+        "311463350": {
+            "title": "CameraInstruction::AttachToEntityInstruction",
             "type": "object",
             "properties": {
-                "Color": {
-                    "$ref": "#/definitions/2305216605",
-                    "x-ordinal-index": 1
-                },
-                "Time": {
-                    "$ref": "#/definitions/2371113601",
-                    "x-ordinal-index": 0
-                }
-            },
-            "required": [
-                "Color",
-                "Time"
-            ]
-        },
-        "4132291350": {
-            "title": "CameraInstruction::SetInstruction::EaseOption",
-            "type": "object",
-            "properties": {
-                "time": {
-                    "type": "number",
-                    "x-underlying-type": "float",
-                    "x-ordinal-index": 1
-                },
-                "type": {
-                    "type": "integer",
-                    "x-underlying-type": "uint8",
-                    "x-ordinal-index": 0
-                }
-            },
-            "required": [
-                "time"
-            ]
-        },
-        "3976246368": {
-            "title": "CameraInstruction::TargetInstruction",
-            "type": "object",
-            "properties": {
-                "Target Actor ID": {
+                "Entity Actor ID": {
                     "type": "integer",
                     "x-underlying-type": "int64",
-                    "x-ordinal-index": 1
-                },
-                "Target Center Offset": {
-                    "$ref": "#/definitions/4004946602",
-                    "x-ordinal-index": 0
+                    "x-ordinal-index": 0,
+                    "minimum": -9223372036854776000.0,
+                    "maximum": 9223372036854776000.0
                 }
             },
             "required": [
-                "Target Actor ID",
-                "Target Center Offset"
+                "Entity Actor ID"
             ]
         },
-        "2305216605": {
-            "title": "CameraInstruction::FadeInstruction::ColorOption",
-            "type": "object",
-            "properties": {
-                "Blue": {
-                    "type": "number",
-                    "x-underlying-type": "float",
-                    "x-ordinal-index": 2
-                },
-                "Green": {
-                    "type": "number",
-                    "x-underlying-type": "float",
-                    "x-ordinal-index": 1
-                },
-                "Red": {
-                    "type": "number",
-                    "x-underlying-type": "float",
-                    "x-ordinal-index": 0
-                }
-            },
-            "required": [
-                "Blue",
-                "Green",
-                "Red"
-            ]
-        },
-        "3251651569": {
-            "title": "CameraInstruction::SetInstruction",
-            "type": "object",
-            "properties": {
-                "default": {
-                    "type": "boolean",
-                    "x-ordinal-index": 7
-                },
-                "ease": {
-                    "$ref": "#/definitions/4132291350",
-                    "x-ordinal-index": 1
-                },
-                "entity_offset": {
-                    "$ref": "#/definitions/3965305824",
-                    "x-ordinal-index": 6
-                },
-                "facing": {
-                    "$ref": "#/definitions/2547336686",
-                    "x-ordinal-index": 4
-                },
-                "pos": {
-                    "$ref": "#/definitions/1580131348",
-                    "x-ordinal-index": 2
-                },
-                "preset": {
-                    "type": "integer",
-                    "x-underlying-type": "uint32",
-                    "x-ordinal-index": 0
-                },
-                "removeIgnoreStartingValuesComponent": {
-                    "type": "boolean",
-                    "x-ordinal-index": 8
-                },
-                "rot": {
-                    "$ref": "#/definitions/4253471767",
-                    "x-ordinal-index": 3
-                },
-                "view_offset": {
-                    "$ref": "#/definitions/3883430306",
-                    "x-ordinal-index": 5
-                }
-            },
-            "required": [
-                "preset"
-            ]
-        },
-        "3965305824": {
-            "title": "CameraInstruction::SetInstruction::EntityOffsetOption",
-            "type": "object",
-            "properties": {
-                "entity_offset_x": {
-                    "type": "number",
-                    "x-underlying-type": "float",
-                    "x-ordinal-index": 0
-                },
-                "entity_offset_y": {
-                    "type": "number",
-                    "x-underlying-type": "float",
-                    "x-ordinal-index": 1
-                },
-                "entity_offset_z": {
-                    "type": "number",
-                    "x-underlying-type": "float",
-                    "x-ordinal-index": 2
-                }
-            },
-            "required": [
-                "entity_offset_x",
-                "entity_offset_y",
-                "entity_offset_z"
-            ]
-        },
-        "2547336686": {
-            "title": "CameraInstruction::SetInstruction::FacingOption",
-            "type": "object",
-            "properties": {
-                "pos": {
-                    "$ref": "#/definitions/4004946602",
-                    "x-ordinal-index": 0
-                }
-            },
-            "required": [
-                "pos"
-            ]
-        },
-        "3883430306": {
-            "title": "CameraInstruction::SetInstruction::ViewOffsetOption",
-            "type": "object",
-            "properties": {
-                "x": {
-                    "type": "number",
-                    "x-underlying-type": "float",
-                    "x-ordinal-index": 0
-                },
-                "y": {
-                    "type": "number",
-                    "x-underlying-type": "float",
-                    "x-ordinal-index": 1
-                }
-            },
-            "required": [
-                "x",
-                "y"
-            ]
-        },
-        "4004946602": {
-            "title": "Vec3",
-            "type": "object",
-            "properties": {
-                "X": {
-                    "type": "number",
-                    "x-underlying-type": "float",
-                    "x-ordinal-index": 0
-                },
-                "Y": {
-                    "type": "number",
-                    "x-underlying-type": "float",
-                    "x-ordinal-index": 1
-                },
-                "Z": {
-                    "type": "number",
-                    "x-underlying-type": "float",
-                    "x-ordinal-index": 2
-                }
-            },
-            "required": [
-                "X",
-                "Y",
-                "Z"
-            ]
-        },
-        "1580131348": {
-            "title": "CameraInstruction::SetInstruction::PosOption",
-            "type": "object",
-            "properties": {
-                "Pos": {
-                    "$ref": "#/definitions/4004946602",
-                    "x-ordinal-index": 0
-                }
-            },
-            "required": [
-                "Pos"
-            ]
-        },
-        "4253471767": {
-            "title": "CameraInstruction::SetInstruction::RotOption",
-            "type": "object",
-            "properties": {
-                "x": {
-                    "type": "number",
-                    "x-underlying-type": "float",
-                    "x-ordinal-index": 0
-                },
-                "y": {
-                    "type": "number",
-                    "x-underlying-type": "float",
-                    "x-ordinal-index": 1
-                }
-            },
-            "required": [
-                "x",
-                "y"
-            ]
-        },
-        "2683916060": {
+        "3931859532": {
             "title": "CameraInstruction::SplineInstruction",
             "type": "object",
             "properties": {
@@ -443,56 +211,75 @@
                 "rotationOption": {
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/3290637238"
+                        "$ref": "#/definitions/3609314310"
                     },
                     "x-ordinal-index": 4
                 },
                 "totalTime": {
                     "type": "number",
                     "x-underlying-type": "float",
-                    "x-ordinal-index": 0
+                    "x-ordinal-index": 0,
+                    "minimum": 1.1754943508222876e-38,
+                    "maximum": 3.4028234663852887e38
                 },
                 "type": {
                     "type": "integer",
                     "x-underlying-type": "uint8",
-                    "x-ordinal-index": 1
+                    "x-ordinal-index": 1,
+                    "minimum": 0.0,
+                    "maximum": 255.0
                 }
             },
             "required": [
                 "curve",
                 "progressKeyFrames",
+                "rotationOption",
                 "totalTime",
                 "type"
             ]
         },
-        "4021724221": {
-            "title": "Vec2",
+        "4004946602": {
+            "title": "Vec3",
             "type": "object",
             "properties": {
                 "X": {
                     "type": "number",
                     "x-underlying-type": "float",
-                    "x-ordinal-index": 0
+                    "x-ordinal-index": 0,
+                    "minimum": 1.1754943508222876e-38,
+                    "maximum": 3.4028234663852887e38
                 },
                 "Y": {
                     "type": "number",
                     "x-underlying-type": "float",
-                    "x-ordinal-index": 1
+                    "x-ordinal-index": 1,
+                    "minimum": 1.1754943508222876e-38,
+                    "maximum": 3.4028234663852887e38
+                },
+                "Z": {
+                    "type": "number",
+                    "x-underlying-type": "float",
+                    "x-ordinal-index": 2,
+                    "minimum": 1.1754943508222876e-38,
+                    "maximum": 3.4028234663852887e38
                 }
             },
             "required": [
                 "X",
-                "Y"
+                "Y",
+                "Z"
             ]
         },
-        "3290637238": {
+        "3609314310": {
             "title": "CameraInstruction::SplineInstruction::SplineRotationOption",
             "type": "object",
             "properties": {
                 "Key frame times": {
                     "type": "number",
                     "x-underlying-type": "float",
-                    "x-ordinal-index": 1
+                    "x-ordinal-index": 1,
+                    "minimum": 1.1754943508222876e-38,
+                    "maximum": 3.4028234663852887e38
                 },
                 "Key frame values": {
                     "$ref": "#/definitions/4004946602",
@@ -503,17 +290,293 @@
                 "Key frame times",
                 "Key frame values"
             ]
+        },
+        "3843718221": {
+            "title": "CameraInstruction::FadeInstruction::ColorOption",
+            "type": "object",
+            "properties": {
+                "Blue": {
+                    "type": "number",
+                    "x-underlying-type": "float",
+                    "x-ordinal-index": 2,
+                    "minimum": 1.1754943508222876e-38,
+                    "maximum": 3.4028234663852887e38
+                },
+                "Green": {
+                    "type": "number",
+                    "x-underlying-type": "float",
+                    "x-ordinal-index": 1,
+                    "minimum": 1.1754943508222876e-38,
+                    "maximum": 3.4028234663852887e38
+                },
+                "Red": {
+                    "type": "number",
+                    "x-underlying-type": "float",
+                    "x-ordinal-index": 0,
+                    "minimum": 1.1754943508222876e-38,
+                    "maximum": 3.4028234663852887e38
+                }
+            },
+            "required": [
+                "Blue",
+                "Green",
+                "Red"
+            ]
+        },
+        "1454186641": {
+            "title": "CameraInstruction::FadeInstruction::TimeOption",
+            "type": "object",
+            "properties": {
+                "Fade In Time": {
+                    "type": "number",
+                    "x-underlying-type": "float",
+                    "x-ordinal-index": 0,
+                    "minimum": 1.1754943508222876e-38,
+                    "maximum": 3.4028234663852887e38
+                },
+                "Fade Out Time": {
+                    "type": "number",
+                    "x-underlying-type": "float",
+                    "x-ordinal-index": 2,
+                    "minimum": 1.1754943508222876e-38,
+                    "maximum": 3.4028234663852887e38
+                },
+                "Hold Time": {
+                    "type": "number",
+                    "x-underlying-type": "float",
+                    "x-ordinal-index": 1,
+                    "minimum": 1.1754943508222876e-38,
+                    "maximum": 3.4028234663852887e38
+                }
+            },
+            "required": [
+                "Fade In Time",
+                "Fade Out Time",
+                "Hold Time"
+            ]
+        },
+        "22859905": {
+            "title": "CameraInstruction::SetInstruction",
+            "type": "object",
+            "properties": {
+                "default": {
+                    "type": "boolean",
+                    "x-underlying-type": "boolean",
+                    "x-ordinal-index": 7
+                },
+                "ease": {
+                    "$ref": "#/definitions/2528270022",
+                    "x-ordinal-index": 1
+                },
+                "entity_offset": {
+                    "$ref": "#/definitions/2532313488",
+                    "x-ordinal-index": 6
+                },
+                "facing": {
+                    "$ref": "#/definitions/1386558",
+                    "x-ordinal-index": 4
+                },
+                "pos": {
+                    "$ref": "#/definitions/4108615044",
+                    "x-ordinal-index": 2
+                },
+                "preset": {
+                    "type": "integer",
+                    "x-underlying-type": "uint32",
+                    "x-ordinal-index": 0,
+                    "minimum": 0.0,
+                    "maximum": 4294967295.0
+                },
+                "removeIgnoreStartingValuesComponent": {
+                    "type": "boolean",
+                    "x-underlying-type": "boolean",
+                    "x-ordinal-index": 8
+                },
+                "rot": {
+                    "$ref": "#/definitions/1279771591",
+                    "x-ordinal-index": 3
+                },
+                "view_offset": {
+                    "$ref": "#/definitions/3822099314",
+                    "x-ordinal-index": 5
+                }
+            },
+            "required": [
+                "default",
+                "ease",
+                "entity_offset",
+                "facing",
+                "pos",
+                "preset",
+                "removeIgnoreStartingValuesComponent",
+                "rot",
+                "view_offset"
+            ]
+        },
+        "1386558": {
+            "title": "CameraInstruction::SetInstruction::FacingOption",
+            "type": "object",
+            "properties": {
+                "pos": {
+                    "$ref": "#/definitions/4004946602",
+                    "x-ordinal-index": 0
+                }
+            },
+            "required": [
+                "pos"
+            ]
+        },
+        "2528270022": {
+            "title": "CameraInstruction::SetInstruction::EaseOption",
+            "type": "object",
+            "properties": {
+                "time": {
+                    "type": "number",
+                    "x-underlying-type": "float",
+                    "x-ordinal-index": 1,
+                    "minimum": 1.1754943508222876e-38,
+                    "maximum": 3.4028234663852887e38
+                },
+                "type": {
+                    "type": "integer",
+                    "x-underlying-type": "uint8",
+                    "x-ordinal-index": 0,
+                    "minimum": 0.0,
+                    "maximum": 255.0
+                }
+            },
+            "required": [
+                "time",
+                "type"
+            ]
+        },
+        "4108615044": {
+            "title": "CameraInstruction::SetInstruction::PosOption",
+            "type": "object",
+            "properties": {
+                "Pos": {
+                    "$ref": "#/definitions/4004946602",
+                    "x-ordinal-index": 0
+                }
+            },
+            "required": [
+                "Pos"
+            ]
+        },
+        "2532313488": {
+            "title": "CameraInstruction::SetInstruction::EntityOffsetOption",
+            "type": "object",
+            "properties": {
+                "entity_offset_x": {
+                    "type": "number",
+                    "x-underlying-type": "float",
+                    "x-ordinal-index": 0,
+                    "minimum": 1.1754943508222876e-38,
+                    "maximum": 3.4028234663852887e38
+                },
+                "entity_offset_y": {
+                    "type": "number",
+                    "x-underlying-type": "float",
+                    "x-ordinal-index": 1,
+                    "minimum": 1.1754943508222876e-38,
+                    "maximum": 3.4028234663852887e38
+                },
+                "entity_offset_z": {
+                    "type": "number",
+                    "x-underlying-type": "float",
+                    "x-ordinal-index": 2,
+                    "minimum": 1.1754943508222876e-38,
+                    "maximum": 3.4028234663852887e38
+                }
+            },
+            "required": [
+                "entity_offset_x",
+                "entity_offset_y",
+                "entity_offset_z"
+            ]
+        },
+        "1279771591": {
+            "title": "CameraInstruction::SetInstruction::RotOption",
+            "type": "object",
+            "properties": {
+                "x": {
+                    "type": "number",
+                    "x-underlying-type": "float",
+                    "x-ordinal-index": 0,
+                    "minimum": 1.1754943508222876e-38,
+                    "maximum": 3.4028234663852887e38
+                },
+                "y": {
+                    "type": "number",
+                    "x-underlying-type": "float",
+                    "x-ordinal-index": 1,
+                    "minimum": 1.1754943508222876e-38,
+                    "maximum": 3.4028234663852887e38
+                }
+            },
+            "required": [
+                "x",
+                "y"
+            ]
+        },
+        "3822099314": {
+            "title": "CameraInstruction::SetInstruction::ViewOffsetOption",
+            "type": "object",
+            "properties": {
+                "x": {
+                    "type": "number",
+                    "x-underlying-type": "float",
+                    "x-ordinal-index": 0,
+                    "minimum": 1.1754943508222876e-38,
+                    "maximum": 3.4028234663852887e38
+                },
+                "y": {
+                    "type": "number",
+                    "x-underlying-type": "float",
+                    "x-ordinal-index": 1,
+                    "minimum": 1.1754943508222876e-38,
+                    "maximum": 3.4028234663852887e38
+                }
+            },
+            "required": [
+                "x",
+                "y"
+            ]
+        },
+        "3785693680": {
+            "title": "CameraInstruction::TargetInstruction",
+            "type": "object",
+            "properties": {
+                "Target Actor ID": {
+                    "type": "integer",
+                    "x-underlying-type": "int64",
+                    "x-ordinal-index": 1,
+                    "minimum": -9223372036854776000.0,
+                    "maximum": 9223372036854776000.0
+                },
+                "Target Center Offset": {
+                    "$ref": "#/definitions/4004946602",
+                    "x-ordinal-index": 0
+                }
+            },
+            "required": [
+                "Target Actor ID",
+                "Target Center Offset"
+            ]
         }
     },
     "title": "CameraInstructionPacket",
     "description": "Used to send a CameraInstruction from the server to the specified clients.",
     "type": "object",
     "properties": {
-        "mPayload": {
-            "$ref": "#/definitions/3784246425",
+        "Camera Instruction": {
+            "$ref": "#/definitions/1219428877",
             "x-ordinal-index": 0
         }
     },
+    "required": [
+        "Camera Instruction"
+    ],
     "$metaProperties": {
         "[cereal:packet]": 300,
         "[cereal:packet_details]": ""

@@ -83,6 +83,26 @@
             margin-bottom: 8px;
             break-inside: avoid;
         }
+        details {
+            margin: 10px 0;
+        }
+        summary {
+            cursor: pointer;
+            font-weight: bold;
+            padding: 8px;
+            background-color: #f0f0f0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            user-select: none;
+        }
+        summary:hover {
+            background-color: #e8e8e8;
+        }
+        details[open] summary {
+            background-color: #d4edff;
+            border-color: #3498db;
+            border-left: 4px solid #3498db;
+        }
         @media (max-width: 900px) {
             .packet-list {
                 columns: 2;
@@ -106,13 +126,13 @@
 <tr style="background-color: #f0f0f0;">
 <th>Field Name</th>
 <th>Type</th>
-<th>Ordinal Index</th>
+<th>Field Index</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td rowspan="2"><strong>Sub Chunk Block Position</strong></td>
+<td rowspan="2"><strong>Sub Chunk Block Position (Required)</strong></td>
 <td>NetworkBlockPosition</td>
 <td>0</td>
 <td></td>
@@ -125,25 +145,25 @@
 <tr style="background-color: #f0f0f0;">
 <th>Field Name</th>
 <th>Type</th>
-<th>Ordinal Index</th>
+<th>Field Index</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>X</strong></td>
+<td><strong>X (Required)</strong></td>
 <td>varint32</td>
 <td>0</td>
 <td></td>
 </tr>
 <tr>
-<td><strong>Y</strong></td>
+<td><strong>Y (Required)</strong></td>
 <td>varuint32</td>
 <td>1</td>
 <td></td>
 </tr>
 <tr>
-<td><strong>Z</strong></td>
+<td><strong>Z (Required)</strong></td>
 <td>varint32</td>
 <td>2</td>
 <td></td>
@@ -153,7 +173,7 @@
 </div></td>
 </tr>
 <tr>
-<td rowspan="2"><strong>Blocks Changed</strong></td>
+<td rowspan="2"><strong>Blocks Changed (Required)</strong></td>
 <td>UpdateSubChunkBlocksChangedInfo</td>
 <td>1</td>
 <td></td>
@@ -166,13 +186,13 @@
 <tr style="background-color: #f0f0f0;">
 <th>Field Name</th>
 <th>Type</th>
-<th>Ordinal Index</th>
+<th>Field Index</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td rowspan="2"><strong>Blocks Changed - Standards</strong></td>
+<td rowspan="2"><strong>Blocks Changed - Standards (Required)</strong></td>
 <td>array&lt;UpdateSubChunkNetworkBlockInfo&gt;</td>
 <td>0</td>
 <td></td>
@@ -185,13 +205,13 @@
 <tr style="background-color: #f0f0f0;">
 <th>Field Name</th>
 <th>Type</th>
-<th>Ordinal Index</th>
+<th>Field Index</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td rowspan="2"><strong>Pos</strong></td>
+<td rowspan="2"><strong>Pos (Required)</strong></td>
 <td>NetworkBlockPosition</td>
 <td>0</td>
 <td></td>
@@ -204,25 +224,25 @@
 <tr style="background-color: #f0f0f0;">
 <th>Field Name</th>
 <th>Type</th>
-<th>Ordinal Index</th>
+<th>Field Index</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>X</strong></td>
+<td><strong>X (Required)</strong></td>
 <td>varint32</td>
 <td>0</td>
 <td></td>
 </tr>
 <tr>
-<td><strong>Y</strong></td>
+<td><strong>Y (Required)</strong></td>
 <td>varuint32</td>
 <td>1</td>
 <td></td>
 </tr>
 <tr>
-<td><strong>Z</strong></td>
+<td><strong>Z (Required)</strong></td>
 <td>varint32</td>
 <td>2</td>
 <td></td>
@@ -232,25 +252,25 @@
 </div></td>
 </tr>
 <tr>
-<td><strong>Runtime Id</strong></td>
+<td><strong>Runtime Id (Required)</strong></td>
 <td>varuint32</td>
 <td>1</td>
 <td></td>
 </tr>
 <tr>
-<td><strong>Update Flags</strong></td>
+<td><strong>Update Flags (Required)</strong></td>
 <td>varuint32</td>
 <td>2</td>
 <td></td>
 </tr>
 <tr>
-<td><strong>Sync Message - Entity Unique ID</strong></td>
+<td><strong>Sync Message - Entity Unique ID (Required)</strong></td>
 <td>varuint64</td>
 <td>3</td>
 <td></td>
 </tr>
 <tr>
-<td><strong>Sync Message - Message</strong></td>
+<td><strong>Sync Message - Message (Required)</strong></td>
 <td>varuint32</td>
 <td>4</td>
 <td></td>
@@ -260,7 +280,7 @@
 </div></td>
 </tr>
 <tr>
-<td rowspan="2"><strong>Blocks Changed - Extras</strong></td>
+<td rowspan="2"><strong>Blocks Changed - Extras (Required)</strong></td>
 <td>array&lt;UpdateSubChunkNetworkBlockInfo&gt;</td>
 <td>1</td>
 <td></td>
@@ -273,13 +293,13 @@
 <tr style="background-color: #f0f0f0;">
 <th>Field Name</th>
 <th>Type</th>
-<th>Ordinal Index</th>
+<th>Field Index</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td rowspan="2"><strong>Pos</strong></td>
+<td rowspan="2"><strong>Pos (Required)</strong></td>
 <td>NetworkBlockPosition</td>
 <td>0</td>
 <td></td>
@@ -292,25 +312,25 @@
 <tr style="background-color: #f0f0f0;">
 <th>Field Name</th>
 <th>Type</th>
-<th>Ordinal Index</th>
+<th>Field Index</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>X</strong></td>
+<td><strong>X (Required)</strong></td>
 <td>varint32</td>
 <td>0</td>
 <td></td>
 </tr>
 <tr>
-<td><strong>Y</strong></td>
+<td><strong>Y (Required)</strong></td>
 <td>varuint32</td>
 <td>1</td>
 <td></td>
 </tr>
 <tr>
-<td><strong>Z</strong></td>
+<td><strong>Z (Required)</strong></td>
 <td>varint32</td>
 <td>2</td>
 <td></td>
@@ -320,25 +340,25 @@
 </div></td>
 </tr>
 <tr>
-<td><strong>Runtime Id</strong></td>
+<td><strong>Runtime Id (Required)</strong></td>
 <td>varuint32</td>
 <td>1</td>
 <td></td>
 </tr>
 <tr>
-<td><strong>Update Flags</strong></td>
+<td><strong>Update Flags (Required)</strong></td>
 <td>varuint32</td>
 <td>2</td>
 <td></td>
 </tr>
 <tr>
-<td><strong>Sync Message - Entity Unique ID</strong></td>
+<td><strong>Sync Message - Entity Unique ID (Required)</strong></td>
 <td>varuint64</td>
 <td>3</td>
 <td></td>
 </tr>
 <tr>
-<td><strong>Sync Message - Message</strong></td>
+<td><strong>Sync Message - Message (Required)</strong></td>
 <td>varuint32</td>
 <td>4</td>
 <td></td>

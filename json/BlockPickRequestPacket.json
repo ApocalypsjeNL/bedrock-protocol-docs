@@ -2,33 +2,9 @@
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "3367404220",
     "x-format-version": "MISSING VERSION",
-    "x-minecraft-version": "1.21.120",
-    "x-protocol-version": 859,
+    "x-minecraft-version": "1.21.130",
+    "x-protocol-version": 897,
     "definitions": {
-        "4176622265": {
-            "title": "BlockPickRequestPacketPayload",
-            "type": "object",
-            "properties": {
-                "Max Slots": {
-                    "type": "integer",
-                    "x-underlying-type": "uint8",
-                    "x-ordinal-index": 2
-                },
-                "Position": {
-                    "$ref": "#/definitions/820712576",
-                    "x-ordinal-index": 0
-                },
-                "With Data?": {
-                    "type": "boolean",
-                    "x-ordinal-index": 1
-                }
-            },
-            "required": [
-                "Max Slots",
-                "Position",
-                "With Data?"
-            ]
-        },
         "820712576": {
             "title": "BlockPos",
             "type": "object",
@@ -39,7 +15,9 @@
                     "x-serialization-options": [
                         "Compression"
                     ],
-                    "x-ordinal-index": 0
+                    "x-ordinal-index": 0,
+                    "minimum": -2147483648.0,
+                    "maximum": 2147483647.0
                 },
                 "Y": {
                     "type": "integer",
@@ -47,7 +25,9 @@
                     "x-serialization-options": [
                         "Compression"
                     ],
-                    "x-ordinal-index": 1
+                    "x-ordinal-index": 1,
+                    "minimum": -2147483648.0,
+                    "maximum": 2147483647.0
                 },
                 "Z": {
                     "type": "integer",
@@ -55,7 +35,9 @@
                     "x-serialization-options": [
                         "Compression"
                     ],
-                    "x-ordinal-index": 2
+                    "x-ordinal-index": 2,
+                    "minimum": -2147483648.0,
+                    "maximum": 2147483647.0
                 }
             },
             "required": [
@@ -69,11 +51,28 @@
     "description": "Player picks up a block in the world; client to server.",
     "type": "object",
     "properties": {
-        "mPayload": {
-            "$ref": "#/definitions/4176622265",
+        "Max Slots": {
+            "type": "integer",
+            "x-underlying-type": "uint8",
+            "x-ordinal-index": 2,
+            "minimum": 0.0,
+            "maximum": 255.0
+        },
+        "Position": {
+            "$ref": "#/definitions/820712576",
             "x-ordinal-index": 0
+        },
+        "With Data?": {
+            "type": "boolean",
+            "x-underlying-type": "boolean",
+            "x-ordinal-index": 1
         }
     },
+    "required": [
+        "Max Slots",
+        "Position",
+        "With Data?"
+    ],
     "$metaProperties": {
         "[cereal:packet]": 34,
         "[cereal:packet_details]": ""

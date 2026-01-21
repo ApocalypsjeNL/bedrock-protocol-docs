@@ -15,8 +15,8 @@ rankdir = LR
 0 [label="PlayerSkinPacket",comment="name: \"PlayerSkinPacket\", typeName: \"\", id: 0, branchId: 93, recurseId: -1, attributes: 0, notes: \"\""];
 1 [label="UUID",comment="name: \"UUID\", typeName: \"mce::UUID\", id: 1, branchId: 0, recurseId: -1, attributes: 256, notes: \"\""];
 2 [label="mce::UUID",comment="name: \"mce::UUID\", typeName: \"\", id: 2, branchId: 0, recurseId: -1, attributes: 512, notes: \"\""];
-3 [label="Serialized Skin",comment="name: \"Serialized Skin\", typeName: \"SerializedSkin\", id: 3, branchId: 0, recurseId: -1, attributes: 256, notes: \"\""];
-4 [label="SerializedSkin",comment="name: \"SerializedSkin\", typeName: \"\", id: 4, branchId: 0, recurseId: -1, attributes: 512, notes: \"\""];
+3 [label="Serialized Skin",comment="name: \"Serialized Skin\", typeName: \"SerializedSkinRef\", id: 3, branchId: 0, recurseId: -1, attributes: 256, notes: \"\""];
+4 [label="SerializedSkinRef",comment="name: \"SerializedSkinRef\", typeName: \"\", id: 4, branchId: 0, recurseId: -1, attributes: 512, notes: \"\""];
 5 [label="New Skin Name",comment="name: \"New Skin Name\", typeName: \"\", id: 5, branchId: 0, recurseId: -1, attributes: 0, notes: \"\""];
 6 [label="string",comment="name: \"string\", typeName: \"\", id: 6, branchId: 0, recurseId: -1, attributes: 512, notes: \"\""];
 7 [label="Old Skin Name",comment="name: \"Old Skin Name\", typeName: \"\", id: 7, branchId: 0, recurseId: -1, attributes: 0, notes: \"\""];

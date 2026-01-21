@@ -2,27 +2,9 @@
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "2908865809",
     "x-format-version": "MISSING VERSION",
-    "x-minecraft-version": "1.21.120",
-    "x-protocol-version": 859,
+    "x-minecraft-version": "1.21.130",
+    "x-protocol-version": 897,
     "definitions": {
-        "2115987622": {
-            "title": "UpdateSubChunkBlocksPacketPayload",
-            "type": "object",
-            "properties": {
-                "Blocks Changed": {
-                    "$ref": "#/definitions/2375526472",
-                    "x-ordinal-index": 1
-                },
-                "Sub Chunk Block Position": {
-                    "$ref": "#/definitions/269289973",
-                    "x-ordinal-index": 0
-                }
-            },
-            "required": [
-                "Blocks Changed",
-                "Sub Chunk Block Position"
-            ]
-        },
         "2375526472": {
             "title": "UpdateSubChunkBlocksChangedInfo",
             "type": "object",
@@ -57,7 +39,9 @@
                     "x-serialization-options": [
                         "Compression"
                     ],
-                    "x-ordinal-index": 0
+                    "x-ordinal-index": 0,
+                    "minimum": -2147483648.0,
+                    "maximum": 2147483647.0
                 },
                 "Y": {
                     "type": "integer",
@@ -65,7 +49,9 @@
                     "x-serialization-options": [
                         "Compression"
                     ],
-                    "x-ordinal-index": 1
+                    "x-ordinal-index": 1,
+                    "minimum": 0.0,
+                    "maximum": 4294967295.0
                 },
                 "Z": {
                     "type": "integer",
@@ -73,7 +59,9 @@
                     "x-serialization-options": [
                         "Compression"
                     ],
-                    "x-ordinal-index": 2
+                    "x-ordinal-index": 2,
+                    "minimum": -2147483648.0,
+                    "maximum": 2147483647.0
                 }
             },
             "required": [
@@ -96,7 +84,9 @@
                     "x-serialization-options": [
                         "Compression"
                     ],
-                    "x-ordinal-index": 1
+                    "x-ordinal-index": 1,
+                    "minimum": 0.0,
+                    "maximum": 4294967295.0
                 },
                 "Sync Message - Entity Unique ID": {
                     "type": "integer",
@@ -104,7 +94,9 @@
                     "x-serialization-options": [
                         "Compression"
                     ],
-                    "x-ordinal-index": 3
+                    "x-ordinal-index": 3,
+                    "minimum": 0.0,
+                    "maximum": 18446744073709553000.0
                 },
                 "Sync Message - Message": {
                     "type": "integer",
@@ -112,7 +104,9 @@
                     "x-serialization-options": [
                         "Compression"
                     ],
-                    "x-ordinal-index": 4
+                    "x-ordinal-index": 4,
+                    "minimum": 0.0,
+                    "maximum": 4294967295.0
                 },
                 "Update Flags": {
                     "type": "integer",
@@ -120,7 +114,9 @@
                     "x-serialization-options": [
                         "Compression"
                     ],
-                    "x-ordinal-index": 2
+                    "x-ordinal-index": 2,
+                    "minimum": 0.0,
+                    "maximum": 4294967295.0
                 }
             },
             "required": [
@@ -136,11 +132,19 @@
     "description": "Packet sent for every set of blocks changed in a sub chunk every tick.",
     "type": "object",
     "properties": {
-        "mPayload": {
-            "$ref": "#/definitions/2115987622",
+        "Blocks Changed": {
+            "$ref": "#/definitions/2375526472",
+            "x-ordinal-index": 1
+        },
+        "Sub Chunk Block Position": {
+            "$ref": "#/definitions/269289973",
             "x-ordinal-index": 0
         }
     },
+    "required": [
+        "Blocks Changed",
+        "Sub Chunk Block Position"
+    ],
     "$metaProperties": {
         "[cereal:packet]": 172,
         "[cereal:packet_details]": ""

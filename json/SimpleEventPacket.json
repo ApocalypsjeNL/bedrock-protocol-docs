@@ -2,43 +2,31 @@
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "3601495873",
     "x-format-version": "MISSING VERSION",
-    "x-minecraft-version": "1.21.120",
-    "x-protocol-version": 859,
-    "definitions": {
-        "4070427492": {
-            "title": "SimpleEventPacketPayload",
-            "type": "object",
-            "properties": {
-                "Type": {
-                    "title": "Subtype",
-                    "type": "string",
-                    "enum": [
-                        "UninitializedSubtype",
-                        "EnableCommands",
-                        "DisableCommands",
-                        "UnlockWorldTemplateSettings"
-                    ],
-                    "x-underlying-type": "uint16",
-                    "x-serialization-options": [
-                        "EnumAsValue"
-                    ],
-                    "x-ordinal-index": 0
-                }
-            },
-            "required": [
-                "Type"
-            ]
-        }
-    },
+    "x-minecraft-version": "1.21.130",
+    "x-protocol-version": 897,
     "title": "SimpleEventPacket",
     "description": "This packet is used for enabling/disabling commands and for unlocking world template settings (both unlocking UI buttons on client and the actual setting on the server).",
     "type": "object",
     "properties": {
-        "mPayload": {
-            "$ref": "#/definitions/4070427492",
+        "Type": {
+            "title": "Subtype",
+            "type": "string",
+            "enum": [
+                "UninitializedSubtype",
+                "EnableCommands",
+                "DisableCommands",
+                "UnlockWorldTemplateSettings"
+            ],
+            "x-underlying-type": "uint16",
+            "x-serialization-options": [
+                "Enum-as-Value"
+            ],
             "x-ordinal-index": 0
         }
     },
+    "required": [
+        "Type"
+    ],
     "$metaProperties": {
         "[cereal:packet]": 64,
         "[cereal:packet_details]": "This is fired from the client to the server and a SetCommandsEnabledPacket is sent back when enabling commands."

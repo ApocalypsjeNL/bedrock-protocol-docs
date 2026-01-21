@@ -83,6 +83,26 @@
             margin-bottom: 8px;
             break-inside: avoid;
         }
+        details {
+            margin: 10px 0;
+        }
+        summary {
+            cursor: pointer;
+            font-weight: bold;
+            padding: 8px;
+            background-color: #f0f0f0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            user-select: none;
+        }
+        summary:hover {
+            background-color: #e8e8e8;
+        }
+        details[open] summary {
+            background-color: #d4edff;
+            border-color: #3498db;
+            border-left: 4px solid #3498db;
+        }
         @media (max-width: 900px) {
             .packet-list {
                 columns: 2;
@@ -107,19 +127,19 @@
 <tr style="background-color: #f0f0f0;">
 <th>Field Name</th>
 <th>Type</th>
-<th>Ordinal Index</th>
+<th>Field Index</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>Structure Name</strong></td>
+<td><strong>Structure Name (Required)</strong></td>
 <td>string</td>
 <td>0</td>
 <td></td>
 </tr>
 <tr>
-<td rowspan="2"><strong>Structure Position</strong></td>
+<td rowspan="2"><strong>Structure Position (Required)</strong></td>
 <td>NetworkBlockPosition</td>
 <td>1</td>
 <td></td>
@@ -132,25 +152,25 @@
 <tr style="background-color: #f0f0f0;">
 <th>Field Name</th>
 <th>Type</th>
-<th>Ordinal Index</th>
+<th>Field Index</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>X</strong></td>
+<td><strong>X (Required)</strong></td>
 <td>varint32</td>
 <td>0</td>
 <td></td>
 </tr>
 <tr>
-<td><strong>Y</strong></td>
+<td><strong>Y (Required)</strong></td>
 <td>varuint32</td>
 <td>1</td>
 <td></td>
 </tr>
 <tr>
-<td><strong>Z</strong></td>
+<td><strong>Z (Required)</strong></td>
 <td>varint32</td>
 <td>2</td>
 <td></td>
@@ -160,7 +180,7 @@
 </div></td>
 </tr>
 <tr>
-<td rowspan="2"><strong>Structure Settings</strong></td>
+<td rowspan="2"><strong>Structure Settings (Required)</strong></td>
 <td>class StructureSettings</td>
 <td>2</td>
 <td></td>
@@ -173,37 +193,37 @@
 <tr style="background-color: #f0f0f0;">
 <th>Field Name</th>
 <th>Type</th>
-<th>Ordinal Index</th>
+<th>Field Index</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>Structure Palette Name</strong></td>
+<td><strong>Structure Palette Name (Required)</strong></td>
 <td>string</td>
 <td>0</td>
 <td></td>
 </tr>
 <tr>
-<td><strong>Should ignore entities?</strong></td>
+<td><strong>Should ignore entities? (Required)</strong></td>
 <td>boolean</td>
 <td>1</td>
 <td></td>
 </tr>
 <tr>
-<td><strong>Should ignore blocks?</strong></td>
+<td><strong>Should ignore blocks? (Required)</strong></td>
 <td>boolean</td>
 <td>2</td>
 <td></td>
 </tr>
 <tr>
-<td><strong>Should Allow Non Ticking Player and Ticking Area Chunks</strong></td>
+<td><strong>Should Allow Non Ticking Player and Ticking Area Chunks (Required)</strong></td>
 <td>boolean</td>
 <td>3</td>
 <td></td>
 </tr>
 <tr>
-<td rowspan="2"><strong>Structure Size</strong></td>
+<td rowspan="2"><strong>Structure Size (Required)</strong></td>
 <td>NetworkBlockPosition</td>
 <td>4</td>
 <td></td>
@@ -216,25 +236,25 @@
 <tr style="background-color: #f0f0f0;">
 <th>Field Name</th>
 <th>Type</th>
-<th>Ordinal Index</th>
+<th>Field Index</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>X</strong></td>
+<td><strong>X (Required)</strong></td>
 <td>varint32</td>
 <td>0</td>
 <td></td>
 </tr>
 <tr>
-<td><strong>Y</strong></td>
+<td><strong>Y (Required)</strong></td>
 <td>varuint32</td>
 <td>1</td>
 <td></td>
 </tr>
 <tr>
-<td><strong>Z</strong></td>
+<td><strong>Z (Required)</strong></td>
 <td>varint32</td>
 <td>2</td>
 <td></td>
@@ -244,7 +264,7 @@
 </div></td>
 </tr>
 <tr>
-<td rowspan="2"><strong>Structure Offset</strong></td>
+<td rowspan="2"><strong>Structure Offset (Required)</strong></td>
 <td>NetworkBlockPosition</td>
 <td>5</td>
 <td></td>
@@ -257,25 +277,25 @@
 <tr style="background-color: #f0f0f0;">
 <th>Field Name</th>
 <th>Type</th>
-<th>Ordinal Index</th>
+<th>Field Index</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>X</strong></td>
+<td><strong>X (Required)</strong></td>
 <td>varint32</td>
 <td>0</td>
 <td></td>
 </tr>
 <tr>
-<td><strong>Y</strong></td>
+<td><strong>Y (Required)</strong></td>
 <td>varuint32</td>
 <td>1</td>
 <td></td>
 </tr>
 <tr>
-<td><strong>Z</strong></td>
+<td><strong>Z (Required)</strong></td>
 <td>varint32</td>
 <td>2</td>
 <td></td>
@@ -285,7 +305,7 @@
 </div></td>
 </tr>
 <tr>
-<td rowspan="2"><strong>Last Edit Player</strong></td>
+<td rowspan="2"><strong>Last Edit Player (Required)</strong></td>
 <td>ActorUniqueID</td>
 <td>6</td>
 <td>Player who last edited the structure block.</td>
@@ -298,13 +318,13 @@
 <tr style="background-color: #f0f0f0;">
 <th>Field Name</th>
 <th>Type</th>
-<th>Ordinal Index</th>
+<th>Field Index</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>Actor Unique ID</strong></td>
+<td><strong>Actor Unique ID (Required)</strong></td>
 <td>varint64</td>
 <td>0</td>
 <td></td>
@@ -314,7 +334,7 @@
 </div></td>
 </tr>
 <tr>
-<td rowspan="2"><strong>Rotation</strong></td>
+<td rowspan="2"><strong>Rotation (Required)</strong></td>
 <td>uint8</td>
 <td>7</td>
 <td></td>
@@ -363,7 +383,7 @@
 </div></td>
 </tr>
 <tr>
-<td rowspan="2"><strong>Mirror</strong></td>
+<td rowspan="2"><strong>Mirror (Required)</strong></td>
 <td>uint8</td>
 <td>8</td>
 <td></td>
@@ -400,7 +420,7 @@
 </div></td>
 </tr>
 <tr>
-<td rowspan="2"><strong>Animation Mode</strong></td>
+<td rowspan="2"><strong>Animation Mode (Required)</strong></td>
 <td>uint8</td>
 <td>9</td>
 <td></td>
@@ -433,25 +453,25 @@
 </div></td>
 </tr>
 <tr>
-<td><strong>Animation Seconds</strong></td>
+<td><strong>Animation Seconds (Required)</strong></td>
 <td>float</td>
 <td>10</td>
 <td></td>
 </tr>
 <tr>
-<td><strong>Integrity Value</strong></td>
+<td><strong>Integrity Value (Required)</strong></td>
 <td>float</td>
 <td>11</td>
 <td></td>
 </tr>
 <tr>
-<td><strong>Integrity Seed</strong></td>
+<td><strong>Integrity Seed (Required)</strong></td>
 <td>uint32</td>
 <td>12</td>
 <td></td>
 </tr>
 <tr>
-<td rowspan="2"><strong>Rotation Pivot</strong></td>
+<td rowspan="2"><strong>Rotation Pivot (Required)</strong></td>
 <td>Vec3</td>
 <td>13</td>
 <td>Pivot used to rotate a structure around.</td>
@@ -464,25 +484,25 @@
 <tr style="background-color: #f0f0f0;">
 <th>Field Name</th>
 <th>Type</th>
-<th>Ordinal Index</th>
+<th>Field Index</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>X</strong></td>
+<td><strong>X (Required)</strong></td>
 <td>float</td>
 <td>0</td>
 <td></td>
 </tr>
 <tr>
-<td><strong>Y</strong></td>
+<td><strong>Y (Required)</strong></td>
 <td>float</td>
 <td>1</td>
 <td></td>
 </tr>
 <tr>
-<td><strong>Z</strong></td>
+<td><strong>Z (Required)</strong></td>
 <td>float</td>
 <td>2</td>
 <td></td>
@@ -496,7 +516,7 @@
 </div></td>
 </tr>
 <tr>
-<td rowspan="2"><strong>Requested Operation</strong></td>
+<td rowspan="2"><strong>Requested Operation (Required)</strong></td>
 <td>uint8</td>
 <td>3</td>
 <td></td>
